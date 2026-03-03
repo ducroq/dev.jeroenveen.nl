@@ -1,0 +1,72 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Tokens ── */
+:root {
+  --bg: #0b0b0f;
+  --surface: #14141a;
+  --surface-hover: #1c1c24;
+  --border: #2a2a35;
+  --border-subtle: #1e1e28;
+  --text: #e8e8ed;
+  --text-muted: #9898a8;
+  --text-dim: #65657a;
+  --amber: #f0a830;
+  --amber-dim: #c88a20;
+  --amber-glow: rgba(240, 168, 48, 0.12);
+  --amber-glow-strong: rgba(240, 168, 48, 0.25);
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --max-width: 900px;
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.75rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); }
+
+p {
+  color: var(--text-muted);
+  max-width: 65ch;
+}
+
+a {
+  color: var(--amber);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--text);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
