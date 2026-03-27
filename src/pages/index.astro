@@ -3,11 +3,11 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
-    title: 'Synthetic Podcast Production',
-    desc: '30 synthetic voices, multilingual TTS pipeline, 300+ plays/episode. Full methodology from research to mastered audio.',
-    tags: ['Python', 'Chatterbox', 'ElevenLabs', 'FFmpeg', 'Astro'],
-    link: 'https://ducroq.github.io/podcast-generator',
-    linkLabel: 'Demo',
+    title: 'ovr.news — Intelligence Pipeline',
+    desc: '1500+ RSS feeds, GPU-scored ML filtering, automated publishing. Curated news intelligence updated every 15 minutes.',
+    tags: ['Python', 'TypeScript', 'ML Scoring', 'Next.js'],
+    link: 'https://ovr.news',
+    linkLabel: 'Live',
   },
   {
     title: 'Augmented Engineering',
@@ -17,11 +17,11 @@ const projects = [
     linkLabel: 'Live',
   },
   {
-    title: 'ovr.news — Intelligence Pipeline',
-    desc: '1500+ RSS feeds, GPU-scored ML filtering, automated publishing. Curated news intelligence updated every 15 minutes.',
-    tags: ['Python', 'TypeScript', 'ML Scoring', 'Next.js'],
-    link: 'https://ovr.news',
-    linkLabel: 'Live',
+    title: 'Synthetic Podcast Production',
+    desc: '30 synthetic voices, multilingual TTS pipeline, 300+ plays/episode. Full methodology from research to mastered audio.',
+    tags: ['Python', 'Chatterbox', 'ElevenLabs', 'FFmpeg', 'Astro'],
+    link: 'https://ducroq.github.io/podcast-generator',
+    linkLabel: 'Demo',
   },
   {
     title: 'vmodel.eu — Requirements Review',
@@ -31,10 +31,10 @@ const projects = [
     linkLabel: 'Live',
   },
   {
-    title: 'DSP Lab',
-    desc: 'Digital signal processing portfolio and teaching resource. 6-chapter learning path, 15 advanced topics, 114 exercises, interactive tools. Built with Quarto and Python.',
-    tags: ['Python', 'NumPy', 'SciPy', 'Quarto', 'DSP'],
-    link: 'https://ducroq.github.io/dsp-lab',
+    title: 'Augur — Energy Price Forecasting',
+    desc: 'Week-ahead electricity price predictions for the Netherlands. 18+ energy market APIs, XGBoost ML pipeline with online learning, interactive Plotly dashboard.',
+    tags: ['Python', 'XGBoost', 'River', 'Hugo', 'Plotly.js', 'Netlify'],
+    link: 'https://energy.jeroenveen.nl',
     linkLabel: 'Live',
   },
   {
@@ -51,20 +51,28 @@ const projects = [
     link: 'https://aegis.jeroenveen.nl',
     linkLabel: 'Live',
   },
+  {
+    title: 'DSP Workshop',
+    desc: 'Digital signal processing — from math to metal. 6-chapter learning path, standalone topic explorations, and exercises graded by difficulty. Python with NumPy and SciPy.',
+    tags: ['Python', 'NumPy', 'SciPy', 'Quarto', 'DSP'],
+    link: 'https://ducroq.github.io/dsp-workshop',
+    linkLabel: 'Live',
+  },
 ];
 ---
 
-<Layout title="Jeroen Veen — AI/ML Engineer & Researcher">
+<Layout title="Jeroen Veen — Engineer & Researcher">
   <main>
     <!-- Hero -->
     <section class="hero">
       <div class="hero-inner">
         <p class="hero-label">dev.jeroenveen.nl</p>
         <h1 class="hero-title">Jeroen Veen</h1>
-        <p class="hero-role">AI/ML Engineer & Researcher</p>
+        <p class="hero-role">Engineer & Researcher</p>
         <p class="hero-subtitle">
-          I build production AI systems — from synthetic media pipelines and ML-scored news intelligence
-          to AI-augmented engineering workflows. PhD (TU/e), Philips Research, HAN University.
+          I build production systems — AI/ML pipelines, embedded electronics, and product design.
+          From energy forecasting and news intelligence to DSP on microcontrollers.
+          PhD (TU/e), Philips Research, HAN University.
         </p>
       </div>
     </section>
@@ -72,7 +80,6 @@ const projects = [
     <!-- Projects -->
     <section class="section" id="projects">
       <span class="section-label">Projects</span>
-      <h2 class="section-title">What I've Built</h2>
 
       <div class="project-grid">
         {projects.map((p) => (
@@ -100,7 +107,6 @@ const projects = [
     <!-- Bio -->
     <section class="section" id="about">
       <span class="section-label">Background</span>
-      <h2 class="section-title">About</h2>
       <div class="bio">
         <p>
           Engineering researcher at HAN University of Applied Sciences, working across AI/ML,
