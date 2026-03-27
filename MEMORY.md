@@ -18,10 +18,11 @@
 ## Current State
 
 - Site is live at https://dev.jeroenveen.nl with 8 project cards
-- Last work (2026-03-27): SEO/accessibility/polish audit, visual improvements, added Augur card, rebranded to Augmented Engineering
-- Three review agent docs exist in `.claude/agents/` (copy, design, SEO) from a previous audit session
+- Last work (2026-03-27): added Augur card, renamed DSP Lab → DSP Workshop, broadened hero to "Engineer & Researcher", per-card accent color stripes, SEO/accessibility audit fixes (canonical, Twitter cards, JSON-LD, sitemap, skip-nav, WCAG contrast, aria attributes)
+- Three review agents in `.claude/agents/` (copy, design, SEO)
 - No test suite — static site, build success is the main gate
 - CI deploys on every push to main via GitHub Actions
+- Open issues: #1 (screenshots in cards), #2 (case study pages), #4 (move to Netlify + Resend contact form)
 
 ## Recently Promoted
 
@@ -31,11 +32,11 @@
 
 <!-- Supplement the project file's list with paths discovered during work -->
 
-- `src/pages/index.astro` lines 4-69: the `projects` array — this is the primary content to edit
-- `src/styles/global.css` lines 9-25: CSS custom properties (design tokens)
-- `.claude/agents/portfolio-copy-review.md`: copy quality findings
-- `.claude/agents/portfolio-design-review.md`: design review findings
-- `.claude/agents/portfolio-seo-review.md`: SEO audit findings
+- `src/pages/index.astro` lines 4-69: the `projects` array (8 cards with accent colors)
+- `src/styles/global.css` lines 9-25: CSS custom properties (design tokens, --text-dim bumped to #8585a0 for WCAG AA)
+- `src/layouts/Layout.astro`: canonical, OG, Twitter cards, JSON-LD Person schema, manifest
+- `astro.config.mjs`: site URL + @astrojs/sitemap integration
+- `public/robots.txt`, `public/site.webmanifest`: crawl rules and PWA manifest
 
 ## Active Decisions
 

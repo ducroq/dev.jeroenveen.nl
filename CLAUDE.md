@@ -20,7 +20,7 @@ Personal portfolio site for Jeroen Veen (Engineer & Researcher). Single-page Ast
 
 ## Hard Constraints
 
-- No JavaScript frameworks or client-side JS — this is a pure static site, zero JS shipped to the browser
+- Minimal client-side JS is fine (e.g., card filtering, theme toggle) but avoid heavy frameworks — keep the site fast and lightweight
 - All styling uses CSS custom properties defined in `global.css` — do not introduce Tailwind, Sass, or CSS modules
 - The `CNAME` file must stay as `dev.jeroenveen.nl` — GitHub Pages custom domain
 - Node 20 for CI (pinned in `.github/workflows/deploy.yml`)
