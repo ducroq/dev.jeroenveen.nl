@@ -13,14 +13,32 @@ const { title, description = 'Jeroen Veen — Engineer & Researcher. Production 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href="https://dev.jeroenveen.nl" />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dev.jeroenveen.nl" />
 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jeroen Veen",
+      "url": "https://dev.jeroenveen.nl",
+      "jobTitle": "Engineer & Researcher",
+      "sameAs": [
+        "https://github.com/ducroq",
+        "https://linkedin.com/in/jeroenveen"
+      ]
+    })} />
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

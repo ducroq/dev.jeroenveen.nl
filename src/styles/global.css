@@ -14,7 +14,7 @@
   --border-subtle: #1e1e28;
   --text: #e8e8ed;
   --text-muted: #9898a8;
-  --text-dim: #65657a;
+  --text-dim: #8585a0;
   --amber: #f0a830;
   --amber-dim: #c88a20;
   --amber-glow: rgba(240, 168, 48, 0.12);
@@ -63,6 +63,32 @@ a {
 }
 a:hover {
   color: var(--text);
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* ── Skip Nav ── */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--amber);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+}
+.skip-nav:focus {
+  top: 0;
+  color: var(--bg);
 }
 
 /* ── Scrollbar ── */

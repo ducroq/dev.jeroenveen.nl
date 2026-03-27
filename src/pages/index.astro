@@ -70,6 +70,7 @@ const projects = [
 ---
 
 <Layout title="Jeroen Veen — Engineer & Researcher">
+  <a href="#projects" class="skip-nav">Skip to projects</a>
   <main>
     <!-- Hero -->
     <section class="hero">
@@ -92,7 +93,7 @@ const projects = [
       <div class="project-grid">
         {projects.map((p) => (
           <div class="project-card" style={`--card-accent: ${p.accent}`}>
-            <h3 class="project-title">{p.title}</h3>
+            <h2 class="project-title">{p.title}</h2>
             <p class="project-desc">{p.desc}</p>
             <div class="project-tags">
               {p.tags.map((tag) => (
@@ -100,9 +101,9 @@ const projects = [
               ))}
             </div>
             {p.link && (
-              <a href={p.link} class="project-link" target="_blank" rel="noopener">
+              <a href={p.link} class="project-link" target="_blank" rel="noopener" aria-label={`${p.linkLabel} — ${p.title}`}>
                 {p.linkLabel}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                   <path d="M7 17L17 7M17 7H7M17 7v10"/>
                 </svg>
               </a>
@@ -257,6 +258,7 @@ const projects = [
   }
 
   .project-title {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
     margin-bottom: 0.5rem;
   }
 
@@ -294,6 +296,8 @@ const projects = [
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--card-accent);
+    min-height: 44px;
+    min-width: 44px;
   }
   .project-link:hover {
     color: var(--text);
