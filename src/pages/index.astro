@@ -8,6 +8,7 @@ const projects = [
     tags: ['Python', 'TypeScript', 'ML Scoring', 'Next.js'],
     link: 'https://ovr.news',
     linkLabel: 'Live',
+    accent: '#f0a830',
   },
   {
     title: 'Augmented Engineering',
@@ -15,6 +16,7 @@ const projects = [
     tags: ['Systems Engineering', 'AI Agents', 'V&V', 'Methodology'],
     link: 'https://ducroq.github.io/augmented-engineering',
     linkLabel: 'Live',
+    accent: '#a78bfa',
   },
   {
     title: 'Synthetic Podcast Production',
@@ -22,13 +24,15 @@ const projects = [
     tags: ['Python', 'Chatterbox', 'ElevenLabs', 'FFmpeg', 'Astro'],
     link: 'https://ducroq.github.io/podcast-generator',
     linkLabel: 'Demo',
+    accent: '#f472b6',
   },
   {
     title: 'vmodel.eu — Requirements Review',
-    desc: 'AI-powered V-model validation for engineering documents. Automated traceability checks across specifications.',
+    desc: 'AI-powered V-model validation across 50+ requirement types. Automated traceability checks and compliance scoring for engineering specifications.',
     tags: ['Python', 'NLP', 'RAG', 'SaaS'],
     link: 'https://vmodel.eu',
     linkLabel: 'Live',
+    accent: '#34d399',
   },
   {
     title: 'Augur — Energy Price Forecasting',
@@ -36,13 +40,15 @@ const projects = [
     tags: ['Python', 'XGBoost', 'River', 'Hugo', 'Plotly.js', 'Netlify'],
     link: 'https://energy.jeroenveen.nl',
     linkLabel: 'Live',
+    accent: '#38bdf8',
   },
   {
     title: 'ese-bot — Chat with Your Docs',
-    desc: 'EU-compliant RAG system for querying academic documents with natural language. Local embeddings, GDPR-safe chat logging, Dockerized.',
+    desc: 'EU-compliant RAG system serving 500+ students. Query academic documents in natural language with local embeddings and GDPR-safe logging.',
     tags: ['FastAPI', 'Vue.js', 'Weaviate', 'Mistral AI', 'Docker'],
     link: 'https://ese-bot.jeroenveen.nl',
     linkLabel: 'Live',
+    accent: '#fb923c',
   },
   {
     title: 'Aegis — Portfolio Risk Early Warning',
@@ -50,13 +56,15 @@ const projects = [
     tags: ['Python', 'FRED API', 'Quantitative', 'Netlify'],
     link: 'https://aegis.jeroenveen.nl',
     linkLabel: 'Live',
+    accent: '#f87171',
   },
   {
     title: 'DSP Workshop',
-    desc: 'Digital signal processing — from math to metal. 6-chapter learning path, standalone topic explorations, and exercises graded by difficulty. Python with NumPy and SciPy.',
-    tags: ['Python', 'NumPy', 'SciPy', 'Quarto', 'DSP'],
+    desc: 'Digital signal processing — from math to metal. 6-chapter learning path, 15 topics, 114 exercises. From theory through Python to embedded C on real microcontrollers.',
+    tags: ['Python', 'NumPy', 'SciPy', 'Quarto', 'DSP', 'Embedded C'],
     link: 'https://ducroq.github.io/dsp-workshop',
     linkLabel: 'Live',
+    accent: '#2dd4bf',
   },
 ];
 ---
@@ -70,9 +78,9 @@ const projects = [
         <h1 class="hero-title">Jeroen Veen</h1>
         <p class="hero-role">Engineer & Researcher</p>
         <p class="hero-subtitle">
-          I build production systems — AI/ML pipelines, embedded electronics, and product design.
-          From energy forecasting and news intelligence to DSP on microcontrollers.
-          PhD (TU/e), Philips Research, HAN University.
+          Production systems that ship — ML pipelines processing 1500+ feeds,
+          energy forecasters on 18 APIs, embedded DSP on bare metal.
+          <span class="hero-credentials">PhD (TU/e) · Philips Research · HAN University</span>
         </p>
       </div>
     </section>
@@ -83,7 +91,7 @@ const projects = [
 
       <div class="project-grid">
         {projects.map((p) => (
-          <div class="project-card">
+          <div class="project-card" style={`--card-accent: ${p.accent}`}>
             <h3 class="project-title">{p.title}</h3>
             <p class="project-desc">{p.desc}</p>
             <div class="project-tags">
@@ -192,6 +200,15 @@ const projects = [
     margin: 0 auto;
   }
 
+  .hero-credentials {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+  }
+
   /* ── Section ── */
   .section {
     padding: 5rem 1.5rem;
@@ -222,17 +239,21 @@ const projects = [
   }
 
   .project-card {
+    --card-accent: var(--amber);
     background: var(--surface);
     border: 1px solid var(--border);
+    border-top: 2px solid var(--card-accent);
     border-radius: 12px;
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   }
   .project-card:hover {
-    border-color: var(--amber-dim);
-    box-shadow: 0 0 24px var(--amber-glow);
+    border-color: color-mix(in srgb, var(--card-accent) 50%, transparent);
+    border-top-color: var(--card-accent);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--card-accent) 15%, transparent);
+    transform: translateY(-2px);
   }
 
   .project-title {
@@ -272,6 +293,10 @@ const projects = [
     font-family: var(--font-mono);
     font-size: 0.8rem;
     font-weight: 600;
+    color: var(--card-accent);
+  }
+  .project-link:hover {
+    color: var(--text);
   }
 
   /* ── Bio ── */

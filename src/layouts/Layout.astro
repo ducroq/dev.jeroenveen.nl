@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Jeroen Veen — AI/ML Engineer & Researcher. Production AI systems, synthetic media, and applied science.' } = Astro.props;
+const { title, description = 'Jeroen Veen — Engineer & Researcher. Production systems across AI/ML, embedded electronics, and product design.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,6 +19,8 @@ const { title, description = 'Jeroen Veen — AI/ML Engineer & Researcher. Produ
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dev.jeroenveen.nl" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
