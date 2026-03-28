@@ -3,44 +3,13 @@ import Layout from '../layouts/Layout.astro';
 
 const projects = [
   {
-    title: 'ovr.news — Intelligence Pipeline',
-    desc: '1500+ RSS feeds, GPU-scored ML filtering, automated publishing. Curated news intelligence updated every 15 minutes.',
-    tags: ['Python', 'TypeScript', 'ML Scoring', 'Next.js'],
-    link: 'https://ovr.news',
-    linkLabel: 'Live',
-    accent: '#f0a830',
-  },
-  {
-    title: 'Augmented Engineering',
-    desc: 'Four patterns from nine real projects: what\'s genuinely new when engineers work with AI agents. Layered verification, context architecture, and evidence-based practice.',
-    tags: ['Systems Engineering', 'AI Agents', 'V&V', 'Methodology'],
-    link: 'https://ducroq.github.io/augmented-engineering',
-    linkLabel: 'Live',
-    accent: '#a78bfa',
-  },
-  {
-    title: 'Synthetic Podcast Production',
-    desc: '30 synthetic voices, multilingual TTS pipeline, 300+ plays/episode. Full methodology from research to mastered audio.',
-    tags: ['Python', 'Chatterbox', 'ElevenLabs', 'FFmpeg', 'Astro'],
-    link: 'https://ducroq.github.io/podcast-generator',
-    linkLabel: 'Demo',
-    accent: '#f472b6',
-  },
-  {
-    title: 'vmodel.eu — Requirements Review',
-    desc: 'AI-powered V-model validation across 50+ requirement types. Automated traceability checks and compliance scoring for engineering specifications.',
-    tags: ['Python', 'NLP', 'RAG', 'SaaS'],
-    link: 'https://vmodel.eu',
-    linkLabel: 'Live',
-    accent: '#34d399',
-  },
-  {
     title: 'Augur — Energy Price Forecasting',
     desc: 'Week-ahead electricity price predictions for the Netherlands. 18+ energy market APIs, XGBoost ML pipeline with online learning, interactive Plotly dashboard.',
     tags: ['Python', 'XGBoost', 'River', 'Hugo', 'Plotly.js', 'Netlify'],
     link: 'https://energy.jeroenveen.nl',
     linkLabel: 'Live',
     accent: '#38bdf8',
+    img: '/screenshots/augur.png',
   },
   {
     title: 'ese-bot — Chat with Your Docs',
@@ -51,12 +20,22 @@ const projects = [
     accent: '#fb923c',
   },
   {
-    title: 'Aegis — Portfolio Risk Early Warning',
-    desc: 'Four-layer macro risk monitor with live dashboard. Backtested against every major crisis since 2000, automated daily updates.',
-    tags: ['Python', 'FRED API', 'Quantitative', 'Netlify'],
-    link: 'https://aegis.jeroenveen.nl',
+    title: 'ovr.news — Intelligence Pipeline',
+    desc: '1500+ RSS feeds, GPU-scored ML filtering, automated publishing. Curated news intelligence updated every 15 minutes.',
+    tags: ['Python', 'TypeScript', 'ML Scoring', 'Next.js'],
+    link: 'https://ovr.news',
     linkLabel: 'Live',
-    accent: '#f87171',
+    accent: '#f0a830',
+    img: '/screenshots/ovr-news.png',
+  },
+  {
+    title: 'vmodel.eu — Requirements Review',
+    desc: 'AI-powered V-model validation across 50+ requirement types. Automated traceability checks and compliance scoring for engineering specifications.',
+    tags: ['Python', 'NLP', 'RAG', 'SaaS'],
+    link: 'https://vmodel.eu',
+    linkLabel: 'Live',
+    accent: '#34d399',
+    img: '/screenshots/vmodel.png',
   },
   {
     title: 'DSP Workshop',
@@ -65,6 +44,34 @@ const projects = [
     link: 'https://ducroq.github.io/dsp-workshop',
     linkLabel: 'Live',
     accent: '#2dd4bf',
+    img: '/screenshots/dsp-workshop.png',
+  },
+  {
+    title: 'Aegis — Portfolio Risk Early Warning',
+    desc: 'Four-layer macro risk monitor with live dashboard. Backtested against every major crisis since 2000, automated daily updates.',
+    tags: ['Python', 'FRED API', 'Quantitative', 'Netlify'],
+    link: 'https://aegis.jeroenveen.nl',
+    linkLabel: 'Live',
+    accent: '#f87171',
+    img: '/screenshots/aegis.png',
+  },
+  {
+    title: 'Augmented Engineering',
+    desc: 'Four patterns from nine real projects: what\'s genuinely new when engineers work with AI agents. Layered verification, context architecture, and evidence-based practice.',
+    tags: ['Systems Engineering', 'AI Agents', 'V&V', 'Methodology'],
+    link: 'https://ducroq.github.io/augmented-engineering',
+    linkLabel: 'Live',
+    accent: '#a78bfa',
+    img: '/screenshots/augmented-engineering.png',
+  },
+  {
+    title: 'Synthetic Podcast Production',
+    desc: '30 synthetic voices, multilingual TTS pipeline, 300+ plays/episode. Full methodology from research to mastered audio.',
+    tags: ['Python', 'Chatterbox', 'ElevenLabs', 'FFmpeg', 'Astro'],
+    link: 'https://ducroq.github.io/podcast-generator',
+    linkLabel: 'Demo',
+    accent: '#f472b6',
+    img: '/screenshots/podcast-generator.png',
   },
 ];
 ---
@@ -76,8 +83,7 @@ const projects = [
     <section class="hero">
       <div class="hero-inner">
         <p class="hero-label">dev.jeroenveen.nl</p>
-        <h1 class="hero-title">Jeroen Veen</h1>
-        <p class="hero-role">Engineer & Researcher</p>
+        <h1 class="hero-title">Engineer & Researcher</h1>
         <p class="hero-subtitle">
           Production systems that ship — ML pipelines processing 1500+ feeds,
           energy forecasters on 18 APIs, embedded DSP on bare metal.
@@ -93,6 +99,11 @@ const projects = [
       <div class="project-grid">
         {projects.map((p) => (
           <div class="project-card" style={`--card-accent: ${p.accent}`}>
+            {p.img && (
+              <div class="project-img">
+                <img src={p.img} alt={`Screenshot of ${p.title}`} loading="lazy" />
+              </div>
+            )}
             <h2 class="project-title">{p.title}</h2>
             <p class="project-desc">{p.desc}</p>
             <div class="project-tags">
@@ -139,6 +150,8 @@ const projects = [
       <a href="https://linkedin.com/in/jeroenveen" target="_blank" rel="noopener">LinkedIn</a>
       <span class="sep">/</span>
       <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
     </nav>
   </footer>
 </Layout>
@@ -185,13 +198,6 @@ const projects = [
   .hero-title {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 0.5rem;
-  }
-
-  .hero-role {
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    color: var(--amber);
-    margin-bottom: 2rem;
   }
 
   .hero-subtitle {
@@ -245,10 +251,47 @@ const projects = [
     border: 1px solid var(--border);
     border-top: 2px solid var(--card-accent);
     border-radius: 12px;
-    padding: 1.75rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
     transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    overflow: hidden;
+  }
+  .project-card > :not(.project-img) {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+  .project-card > .project-title {
+    padding-top: 1.75rem;
+  }
+  .project-card > .project-link {
+    padding-bottom: 1.75rem;
+  }
+  /* Cards without an image still get inner padding */
+  .project-card:not(:has(.project-img)) {
+    padding: 1.75rem;
+  }
+  .project-card:not(:has(.project-img)) > :not(.project-img) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .project-card:not(:has(.project-img)) > .project-title {
+    padding-top: 0;
+  }
+  .project-card:not(:has(.project-img)) > .project-link {
+    padding-bottom: 0;
+  }
+  .project-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
   }
   .project-card:hover {
     border-color: color-mix(in srgb, var(--card-accent) 50%, transparent);
