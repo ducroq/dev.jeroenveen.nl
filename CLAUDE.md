@@ -1,6 +1,6 @@
 # dev.jeroenveen.nl
 
-Personal portfolio site for Jeroen Veen (Engineer & Researcher). Single-page Astro static site with project cards, hero section, bio, and footer. Dark theme with amber accent. Deployed to GitHub Pages via CI on push to main.
+Personal portfolio site for Jeroen Veen (Research & Engineering). Single-page Astro static site with project cards, hero section, bio, and footer. Dark theme with amber accent. Deployed to GitHub Pages via CI on push to main.
 
 - **Stack**: Astro 5, TypeScript (strict), CSS custom properties, GitHub Actions
 - **Status**: Production (live at https://dev.jeroenveen.nl)
@@ -38,12 +38,13 @@ dev.jeroenveen.nl/
     CNAME                   # GitHub Pages custom domain
     robots.txt              # Crawl rules + sitemap pointer
     site.webmanifest        # PWA manifest (name, colors)
+    screenshots/            # Project card screenshots (PNG, 2x retina)
   .github/workflows/
     deploy.yml              # CI: npm ci -> build -> deploy to GitHub Pages
   astro.config.mjs          # Site URL + sitemap integration
 ```
 
-The entire site is one page. The `projects` array in `index.astro` is the primary content — each object has `title`, `desc`, `tags`, `link`, `linkLabel`, and `accent` color. Cards render in a responsive CSS grid.
+The entire site is one page. The `projects` array in `index.astro` is the primary content — each object has `title`, `desc`, `tags`, `link`, `linkLabel`, `accent` color, and optional `img` (screenshot path). Cards render in a responsive CSS grid with optional 16:9 screenshot thumbnails.
 
 ## Key Paths
 
@@ -56,6 +57,7 @@ The entire site is one page. The `projects` array in `index.astro` is the primar
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |
 | `.github/workflows/deploy.yml` | CI/CD pipeline |
 | `public/robots.txt` | Crawl directives |
+| `public/screenshots/` | Project card screenshot images |
 | `.claude/agents/` | Three review agents (copy, design, SEO) from prior audits |
 
 ## How to Work Here
@@ -88,6 +90,7 @@ Add an object to the `projects` array in `src/pages/index.astro`:
   link: 'https://example.com',
   linkLabel: 'Live',   // or 'Demo', 'Repo'
   accent: '#hex',      // unique accent color for the card top border
+  img: '/screenshots/name.png',  // optional screenshot
 },
 ```
 
