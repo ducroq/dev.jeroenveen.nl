@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { articles, formatDate } from '../data/writing.ts';
+
+const recentWriting = [...articles]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 2);
 
 const projects = [
   {
@@ -125,6 +130,32 @@ const projects = [
       </div>
     </section>
 
+    <!-- Writing -->
+    {recentWriting.length > 0 && (
+      <section class="section" id="writing">
+        <div class="section-head">
+          <span class="section-label">Writing</span>
+          <a href="/writing/" class="section-more">All writing →</a>
+        </div>
+
+        <ul class="writing-list">
+          {recentWriting.map((a) => (
+            <li class="writing-item">
+              <a href={`/writing/${a.slug}/`} class="writing-link">
+                <div class="writing-meta">
+                  <time datetime={a.date}>{formatDate(a.date)}</time>
+                  <span class="writing-sep">·</span>
+                  <span>{a.readTime}</span>
+                </div>
+                <h2 class="writing-title">{a.title}</h2>
+                <p class="writing-excerpt">{a.excerpt}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
     <!-- Bio -->
     <section class="section" id="about">
       <span class="section-label">Background</span>
@@ -147,6 +178,8 @@ const projects = [
   <!-- Footer -->
   <footer class="site-footer">
     <nav class="footer-links">
+      <a href="/writing/">Writing</a>
+      <span class="sep">/</span>
       <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
       <span class="sep">/</span>
       <a href="https://linkedin.com/in/jeroenveen" target="_blank" rel="noopener">LinkedIn</a>
@@ -348,6 +381,92 @@ const projects = [
   }
   .project-link:hover {
     color: var(--text);
+  }
+
+  /* ── Writing ── */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .section-head .section-label {
+    margin-bottom: 0;
+  }
+
+  .section-more {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--amber);
+  }
+  .section-more:hover {
+    color: var(--text);
+  }
+
+  .writing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .writing-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--amber);
+    border-radius: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+
+  .writing-item:hover {
+    border-color: color-mix(in srgb, var(--amber) 50%, transparent);
+    border-top-color: var(--amber);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--amber) 15%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .writing-link {
+    display: block;
+    padding: 1.5rem 1.75rem;
+    color: inherit;
+  }
+
+  .writing-meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .writing-sep {
+    color: var(--border);
+  }
+
+  .writing-title {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .writing-link:hover .writing-title {
+    color: var(--amber);
+  }
+
+  .writing-excerpt {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    max-width: none;
+    margin: 0;
   }
 
   /* ── Bio ── */
