@@ -9,7 +9,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: 'ese-bot-eu-sovereign-rag',
-    title: 'A small GDPR-safe chatbot for my course',
+    title: 'A small GDPR-safe chatbot',
     excerpt:
       'Notes from a side project that stuck around. Observations on location as architecture, why chunking beat embeddings, and how the European AI picture shifted in a year.',
     date: '2026-04-21',
