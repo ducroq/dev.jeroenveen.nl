@@ -17,12 +17,15 @@
 
 ## Current State
 
-- Site is live at https://dev.jeroenveen.nl with 8 project cards
-- Last work (2026-03-27): added Augur card, renamed DSP Lab → DSP Workshop, broadened hero to "Engineer & Researcher", per-card accent color stripes, SEO/accessibility audit fixes (canonical, Twitter cards, JSON-LD, sitemap, skip-nav, WCAG contrast, aria attributes)
-- Three review agents in `.claude/agents/` (copy, design, SEO)
-- No test suite — static site, build success is the main gate
-- CI deploys on every push to main via GitHub Actions
-- Open issues: #1 (screenshots in cards), #2 (case study pages), #4 (move to Netlify + Resend contact form)
+- Site live at https://dev.jeroenveen.nl — **hosted on Netlify** (auto-deploys on push to `main`). `.github/workflows/deploy.yml` is orphaned from the prior GitHub Pages setup; kept but inactive.
+- 8 projects defined in the `projects` array, but only the **first 2 publicly visible** via `VISIBLE_PROJECT_COUNT = 2` in `src/pages/index.astro` (drip-feed stance, 2026-04-21). Bump the constant to re-expose.
+- **Hero section commented out** (JSX `{/* ... */}` wrapper). Source intact for restore.
+- **New /writing section** (2026-04-21): index at `src/pages/writing/index.astro`, per-article pages, shared metadata in `src/data/writing.ts`. First article: "A small GDPR-safe chatbot" at `/writing/ese-bot-eu-sovereign-rag/`.
+- Homepage Writing section shows the 2 most recent articles between Projects and Background.
+- **Background section rewritten** 2026-04-21 — real positioning (physics + signals + AI), concrete examples (Parkinson's ESP32 / Augur / ESE Bot / vmodel.eu), soft freelance availability. See auto-memory `feedback_positioning_quiet.md`.
+- Three review agents in `.claude/agents/` (copy, design, SEO).
+- No test suite — static site, build success is the gate.
+- **Open issues**: #2 (case study pages) — arguably served by the new /writing section; consider closing or reframing.
 
 ## Recently Promoted
 
@@ -32,16 +35,24 @@
 
 <!-- Supplement the project file's list with paths discovered during work -->
 
-- `src/pages/index.astro` lines 4-69: the `projects` array (8 cards with accent colors)
-- `src/styles/global.css` lines 9-25: CSS custom properties (design tokens, --text-dim bumped to #8585a0 for WCAG AA)
+- `src/pages/index.astro`: `projects` array (8 cards), `VISIBLE_PROJECT_COUNT` constant, hero block (currently JSX-commented), Writing section importing from `src/data/writing.ts`
+- `src/data/writing.ts`: article metadata (slug, title, excerpt, date, readTime) shared between homepage and `/writing/` index
+- `src/pages/writing/index.astro`: article listing page
+- `src/pages/writing/ese-bot-eu-sovereign-rag.astro`: first article (2026-04-21)
+- `src/styles/global.css` lines 9-25: CSS custom properties (design tokens, --text-dim bumped to #8585a0 for WCAG AA). Note: global `p { max-width: 65ch }` is overridden by `.bio p` (homepage) and `.article-body p` (article) to allow full-width prose where needed.
 - `src/layouts/Layout.astro`: canonical, OG, Twitter cards, JSON-LD Person schema, manifest
 - `astro.config.mjs`: site URL + @astrojs/sitemap integration
 - `public/robots.txt`, `public/site.webmanifest`: crawl rules and PWA manifest
+- `public/screenshots/`: project + article screenshots (PNG, 2x retina)
+- `.github/workflows/deploy.yml`: **orphaned** GitHub Pages workflow from pre-Netlify era — kept but inactive
 
 ## Active Decisions
 
 <!-- One-liners about recent architectural choices -->
 
-- Single-page architecture chosen deliberately — no routing, no page transitions, just a fast portfolio
+- Single-page architecture chosen deliberately — no routing, no page transitions, just a fast portfolio (a /writing section was added 2026-04-21 but kept minimal — plain `.astro` pages, no content collections)
 - JetBrains Mono loaded from Google Fonts for headings and mono elements; system-ui for body
 - Per-card accent colors via CSS custom property `--card-accent` set inline
+- **Drip-feed publishing** (2026-04-21): expose projects one at a time via `VISIBLE_PROJECT_COUNT`; each LinkedIn drop points to one piece at a time
+- **Writing as `.astro` pages, not content collections** (2026-04-21): upgrade to Astro content collections when the article count exceeds ~3
+- **Hosting: Netlify, not GitHub Pages** (migration pre-dates this session). The GitHub Actions workflow file is retained but inactive

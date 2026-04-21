@@ -1,6 +1,6 @@
 # dev.jeroenveen.nl
 
-Personal portfolio site for Jeroen Veen (Research & Engineering). Single-page Astro static site with project cards, hero section, bio, and footer. Dark theme with amber accent. Deployed to GitHub Pages via CI on push to main.
+Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static site with a homepage (projects, writing, background) and a `/writing/` section for articles. Dark theme with amber accent. Deployed to Netlify (auto-rebuilds on push to `main`).
 
 - **Stack**: Astro 5, TypeScript (strict), CSS custom properties, GitHub Actions
 - **Status**: Production (live at https://dev.jeroenveen.nl)
@@ -22,8 +22,8 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Single-page As
 
 - Minimal client-side JS is fine (e.g., card filtering, theme toggle) but avoid heavy frameworks — keep the site fast and lightweight
 - All styling uses CSS custom properties defined in `global.css` — do not introduce Tailwind, Sass, or CSS modules
-- The `CNAME` file must stay as `dev.jeroenveen.nl` — GitHub Pages custom domain
-- Node 20 for CI (pinned in `.github/workflows/deploy.yml`)
+- The `CNAME` file must stay as `dev.jeroenveen.nl` — retained from the GitHub Pages era; Netlify uses the DNS settings directly
+- `.github/workflows/deploy.yml` is an orphaned GitHub Pages workflow — do not treat it as active CI. Deployment goes through Netlify.
 - Keep the site accessible: skip-nav link, `aria-label` on external links, `:focus-visible` styles, semantic HTML
 
 ## Architecture
@@ -76,7 +76,7 @@ npm run build
 npm run preview
 ```
 
-Deployment is automatic: push to `main` triggers the GitHub Actions workflow that builds and deploys to GitHub Pages.
+Deployment is automatic: push to `main` triggers Netlify to rebuild and deploy. Build log visible at https://app.netlify.com.
 
 ## Adding a Project Card
 

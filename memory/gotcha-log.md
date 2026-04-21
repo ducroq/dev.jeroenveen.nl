@@ -22,6 +22,12 @@
 
 -->
 
+### New content shipped without a discovery path (2026-04-21) [RESOLVED]
+**Problem**: First draft of the Writing section shipped the article at `src/pages/writing/ese-bot-eu-sovereign-rag.astro` with no homepage link and no `/writing/` index page. A reader handed the direct URL would find it, but nobody else would. Flagged by Jeroen before publication.
+**Root cause**: I treated "add an article" as a one-file change. On a static site, content has no built-in navigation — discovery is deliberate.
+**Fix**: Added `src/pages/writing/index.astro` (listing page), a Writing section on the homepage that pulls from `src/data/writing.ts`, and a "Writing" link in the footer. One commit, three entry points.
+**Pattern**: When adding a new page to the Astro site, always add the discovery path in the same change — homepage entry, listing page, or nav link. A page without a link is not published; it's just uploaded.
+
 ## Promoted
 
 <!-- Track gotchas that have been promoted to topic files or the memory index.
