@@ -6,6 +6,9 @@ const recentWriting = [...articles]
   .sort((a, b) => b.date.localeCompare(a.date))
   .slice(0, 2);
 
+// Only show the first N projects publicly; keep the rest in the array for easy re-exposure.
+const VISIBLE_PROJECT_COUNT = 2;
+
 const projects = [
   {
     title: 'Augur — Energy Price Forecasting',
@@ -85,7 +88,8 @@ const projects = [
 <Layout title="Jeroen Veen — Research & Engineering">
   <a href="#projects" class="skip-nav">Skip to projects</a>
   <main>
-    <!-- Hero -->
+    {/* Hero hidden while trimming the public site.
+        Restore by removing the surrounding JSX comment.
     <section class="hero">
       <div class="hero-inner">
         <p class="hero-label">dev.jeroenveen.nl</p>
@@ -97,13 +101,14 @@ const projects = [
         </p>
       </div>
     </section>
+    */}
 
     <!-- Projects -->
     <section class="section" id="projects">
       <span class="section-label">Projects</span>
 
       <div class="project-grid">
-        {projects.map((p) => (
+        {projects.slice(0, VISIBLE_PROJECT_COUNT).map((p) => (
           <div class="project-card" style={`--card-accent: ${p.accent}`}>
             {p.img && (
               <div class="project-img">
