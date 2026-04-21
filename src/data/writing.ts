@@ -9,11 +9,11 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: 'ese-bot-eu-sovereign-rag',
-    title: 'Building an EU-sovereign AI chatbot for my students',
+    title: 'A small GDPR-safe chatbot for my course',
     excerpt:
-      'Lessons from roughly 1,400 real student questions across one semester: GDPR as architecture, a minimal stack, why chunking beats embeddings, and the state of the European AI ecosystem.',
+      'Notes from a side project that stuck around. Observations on location as architecture, why chunking beat embeddings, and how the European AI picture shifted in a year.',
     date: '2026-04-21',
-    readTime: '~8 min',
+    readTime: '~5 min',
   },
 ];
 

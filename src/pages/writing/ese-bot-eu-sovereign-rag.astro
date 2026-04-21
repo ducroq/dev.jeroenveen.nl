@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const title = 'Building an EU-sovereign AI chatbot for my students — dev.jeroenveen.nl';
-const description = 'Lessons from roughly 1,400 real student questions: GDPR as architecture, a minimal stack, why chunking beats embeddings, and the state of the European AI ecosystem.';
+const title = 'A small GDPR-safe chatbot for my course — dev.jeroenveen.nl';
+const description = 'Notes from a side project that stuck around. What a small EU-only course chatbot taught me about location, chunking, and the European AI picture.';
 const publishedOn = '2026-04-21';
 ---
 
@@ -16,155 +16,115 @@ const publishedOn = '2026-04-21';
 
       <header class="article-header" id="article">
         <span class="article-label">Writing</span>
-        <h1 class="article-title">Building an EU-sovereign AI chatbot for my students</h1>
+        <h1 class="article-title">A small GDPR-safe chatbot for my course</h1>
         <p class="article-subtitle">
-          Lessons from roughly 1,400 real questions across one semester.
+          Notes from a side project that stuck around.
         </p>
         <p class="article-meta">
           <time datetime={publishedOn}>21 April 2026</time>
           <span class="sep">·</span>
-          <span>~8 min read</span>
+          <span>~5 min read</span>
         </p>
       </header>
 
       <div class="article-body">
         <p>
-          Sometime in 2025 I decided my students should have a better way to search course
-          materials than <code>Ctrl-F</code>. They study embedded machine learning — lecture notes,
-          datasheets, MCU reference manuals, standards documents. A ChatGPT-style interface would
-          be ideal. But every option I looked at sent their queries, their phrasing, their
-          struggles, and their names to servers outside Europe.
+          I wanted my students to have a better way to search their course materials
+          than <code>Ctrl-F</code>. They study embedded machine learning, so the sources
+          are lecture slides, datasheets, the usual MCU reference manuals, a few standards
+          documents. A ChatGPT-style interface for that pile would obviously be useful.
         </p>
 
         <p>
-          Under GDPR that's a problem. Not just student grades are personal data — every question
-          a student asks is personal data about their learning. Sending all of that to a US cloud
-          to get it paraphrased by a language model is a gift to whoever processes it there. So I
-          built my own.
-        </p>
-
-        <p>
-          A year later, two cohorts have used it, the deployment has answered roughly 1,400 real
-          questions in a two-month window of the spring semester alone, and I've learned some
-          things. I paid for the server myself and built the system in evenings and weekends, so
-          what follows is one person's report — not a vendor pitch.
+          The hesitation was simple. Every option I looked at would have sent their
+          queries, their phrasing, their confusion, and their names to servers outside
+          Europe. Under GDPR that is a problem, not because student grades are personal
+          data but because every question a student asks about the course is personal
+          data about how they are learning. Shipping all of it to a US cloud to get
+          paraphrased felt like a strange thing to do on their behalf.
         </p>
 
         <figure class="article-figure">
           <img src="/screenshots/ese-bot.png" alt="ESE Bot landing screen: Your AI assistant for Embedded Machine Learning" loading="lazy" />
-          <figcaption>ESE Bot landing screen. Four suggested topics, one input, dark theme.</figcaption>
+          <figcaption>The landing screen. Four suggested topics, one input, dark theme.</figcaption>
         </figure>
 
-        <h2>The stack I ended up with</h2>
-
-        <p>Every component runs within the EU:</p>
-
-        <ul>
-          <li><strong>Weaviate</strong> (Netherlands) for vector search and embedding storage</li>
-          <li><strong>Mistral AI</strong> (France, GDPR-compliant inference) for the language model</li>
-          <li><strong>Hetzner</strong> (Germany) for hosting, on a small VPS</li>
-          <li><strong>Vue.js + FastAPI</strong>, deployed with Docker Compose, nginx in front for TLS</li>
-        </ul>
-
         <p>
-          No US cloud services. No OpenAI. No Pinecone. Every component processes data within EU
-          borders. The whole deployment comes up with a single <code>docker compose up</code>
-          command on a cheap Hetzner box.
-        </p>
-
-        <h2>What I rejected, and why</h2>
-
-        <p>
-          <strong>LangChain.</strong> I wanted a codebase I could audit in an afternoon. Heavy
-          orchestration frameworks make it easy to start and hard to understand. Direct API calls
-          gave me a codebase small enough to fit in my head — and that students can read and learn
-          from. This was a design decision I wrote down in an ADR so I wouldn't quietly drift back
-          later.
+          So I built a small one that stays in the EU. Weaviate in the Netherlands for
+          the vector store, Mistral in France for the model, a Hetzner box in Germany
+          for hosting, a FastAPI service with a Vue frontend in front. It comes up with
+          one <code>docker compose up</code> on a cheap VPS. I paid for it myself and
+          wrote it in evenings.
         </p>
 
         <p>
-          <strong>US-hosted LLMs of any flavor.</strong> Even when a provider offers "European
-          endpoints," the data-processing chain often crosses the Atlantic for training,
-          monitoring, or safety review. Mistral's commercial tier keeps the whole chain inside the
-          EU and has the DPA to match. That was the cleanest path.
+          A year later, two small cohorts have used it. I have noticed a few things.
         </p>
 
         <p>
-          <strong>Managed vector databases with unclear residency.</strong> Weaviate runs as a
-          container on my own server. The embeddings, the queries, the cached retrievals — all of
-          it lives on the same box.
-        </p>
-
-        <h2>Four things that actually mattered</h2>
-
-        <h3>1. A minimal stack paid for itself</h3>
-        <p>
-          Every dependency I avoided was a question I didn't have to answer later. When a student
-          reports a weird retrieval, I can read the code end-to-end in under an hour. When
-          Dependabot opens a PR, I can usually decide in minutes. When I hand this over to a
-          successor, there's nothing hidden. This compounds.
-        </p>
-
-        <h3>2. GDPR compliance is an architecture decision, not a checklist</h3>
-        <p>
-          You can't retrofit sovereignty. If your vector database is in us-east-1, your LLM is in
-          California, and your logs ship to a SaaS in Delaware, no amount of cookie banners fixes
-          it. The <em>location</em> of every component is load-bearing. Choosing those components
-          first — and constraining everything else around them — was the only way to get a system
-          I could defend to a DPO.
-        </p>
-
-        <h3>3. Chunking strategy beats embedding model</h3>
-        <p>
-          I spent a lot of time benchmarking embedding models. I shouldn't have. The biggest
-          retrieval quality improvements came from chunking: sentence-level splitting, preserving
-          heading breadcrumbs, keeping tables intact, not letting chunks cross document
-          boundaries. Once that was right, swapping embedding models made a marginal difference.
-          Get the chunker right first.
-        </p>
-
-        <h3>4. The EU AI ecosystem is further along than I expected</h3>
-        <p>
-          A year ago I assumed I'd be making compromises. I haven't needed to. Mistral has been
-          solid for the inference workload. And for future-proofing, the landscape has filled out
-          considerably:
-        </p>
-        <ul>
-          <li><strong>EuroLLM</strong> — 35 EU languages, Apache 2.0, built by a European consortium</li>
-          <li><strong>GPT-NL</strong> — Dutch sovereign LLM, backed by TNO and SURF</li>
-          <li><strong>Salamandra</strong> — Barcelona Supercomputing Center, open weights</li>
-          <li><strong>Teuken</strong> — German sovereign LLM initiative</li>
-        </ul>
-        <p>
-          These aren't curiosities. They're production-credible alternatives arriving on a 12–24
-          month horizon. The argument that "there's no European option" is no longer true.
-        </p>
-
-        <h2>What the usage data shows</h2>
-
-        <p>
-          Across a two-month window in spring 2025, the system answered roughly 1,400 student
-          questions. The distribution is what you'd hope for in an embedded ML course: ML concepts,
-          hardware selection, model optimization, performance tradeoffs, and plenty of debugging
-          questions — code the student is stuck on, a datasheet they don't understand, a shield
-          they can't figure out. The bot became a patient first-line reviewer: not replacing the
-          lecturer, but absorbing the questions that don't really need one.
-        </p>
-
-        <h2>Where this goes next</h2>
-
-        <p>
-          I'm now generalizing the EU-sovereign core — the retrieval layer, the GDPR-safe logging,
-          the deployment pattern — for teams who need the same guarantees outside education:
-          healthcare, legal, government, SMEs. Anywhere the data cannot leave Europe but the users
-          still want an AI assistant. It isn't productized yet, and I'm not running a cold outbound
-          campaign. If you're working on something in this space and want to compare notes, I'm
-          happy to.
+          Avoiding orchestration frameworks saved me. I looked at LangChain, decided I
+          wanted a codebase I could read end-to-end in an afternoon, and called the APIs
+          directly instead. The code is now small enough to fit in my head. When a
+          student reports a weird answer I can trace it. When Dependabot opens a PR I
+          can usually decide quickly. Nothing about this feels clever; it is just the
+          absence of hidden machinery. I have since noticed that most of the projects
+          that give me trouble are the ones where I took a framework's word for
+          something.
         </p>
 
         <p>
-          The ESE Bot itself will stay where it is: one small server, one educator, two cohorts,
-          and an experiment that became a production system somewhere along the way.
+          What I have come to see more clearly is that GDPR compliance is a location
+          problem, not a policy problem. If the vector store is in us-east-1 and the
+          model is in California and the logs ship to a SaaS in Delaware, no amount of
+          cookie-banner work changes where the data lives. The only way to get
+          compliance cleanly is to pick components first and let that decision
+          constrain the rest. It sounds obvious when written down. It does not look
+          obvious given how many "GDPR-compliant" products are shipped that are
+          neither.
+        </p>
+
+        <p>
+          I also wasted more time than I should have on embedding models. Swapping
+          embeddings moved retrieval quality in small ways. Changing how documents were
+          chunked moved it a lot. Sentence boundaries, heading context, leaving tables
+          alone, not letting a chunk straddle two unrelated sections. The embedding
+          model turned out to be the part I thought about first and should have thought
+          about last.
+        </p>
+
+        <p>
+          The European AI picture is less bleak than I assumed a year ago. Mistral has
+          been fine for what I need. Around it, EuroLLM now covers 35 EU languages
+          under Apache 2.0. GPT-NL is underway with TNO and SURF. Salamandra sits at
+          the Barcelona Supercomputing Center. Teuken is a German initiative. I am not
+          claiming any of these replace Mistral for my workload today, and some of them
+          are still more announcement than product. But a year ago my honest answer
+          to "is there a European alternative?" was "not really." Today it is
+          "yes, probably, depending on your horizon." That is not a small shift.
+        </p>
+
+        <p>
+          On scale: across the window I have clean logs for, the bot answered roughly
+          150 questions over about 20 active days, from a handful of students. Not a
+          huge number. It is not a huge course. The interesting part was not the count
+          but the shape: a mix of conceptual questions, hardware-choice questions, and
+          debugging questions where the student was stuck on a piece of code or a
+          datasheet. The bot ended up being a patient first-line reader, which is what
+          students often ask lecturers for and which lecturers don't always have time
+          to be.
+        </p>
+
+        <p>
+          I am quietly trying the same pattern in other contexts where data cannot
+          leave Europe but the users still want an assistant. Nothing productised, and
+          nothing I am pushing on anyone. If you are building in that space and want to
+          trade notes, I will read the email.
+        </p>
+
+        <p>
+          The chatbot will stay where it is. A small server, one course, something I
+          built for my students in evenings that ended up being useful enough to keep
+          running.
         </p>
 
         <hr />
@@ -256,31 +216,6 @@ const publishedOn = '2026-04-21';
     margin-bottom: 1.25rem;
   }
 
-  .article-body h2 {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: var(--amber);
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  }
-
-  .article-body h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    color: var(--text);
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-  }
-
-  .article-body ul {
-    margin-bottom: 1.5rem;
-    padding-left: 1.25rem;
-    color: var(--text);
-  }
-
-  .article-body li {
-    margin-bottom: 0.5rem;
-    line-height: 1.7;
-  }
-
   .article-body code {
     font-family: var(--font-mono);
     font-size: 0.88em;
@@ -289,15 +224,6 @@ const publishedOn = '2026-04-21';
     padding: 0.1rem 0.35rem;
     border-radius: 4px;
     color: var(--amber);
-  }
-
-  .article-body strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  .article-body em {
-    color: var(--text);
   }
 
   .article-body a {
