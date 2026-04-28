@@ -13,6 +13,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 |------|------|
 | Adding or editing a project card | `src/pages/index.astro` — the `projects` array at the top defines all cards |
 | Drafting, reviewing, or planning an article | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, what to avoid |
+| Continuing a parked draft | `drafts/<slug>.md` — articles in progress live here until they ship |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css` — all CSS custom properties live here |
@@ -40,7 +41,9 @@ dev.jeroenveen.nl/
     data/writing.ts                 # Article metadata: slug, title, date, excerpt, readTime
     styles/global.css               # Design tokens, reset, typography, scrollbar
   docs/
-    writing-guide.md                # Voice, audience, LinkedIn packaging — read before drafting
+    writing-guide.md                # Voice, audience, LinkedIn packaging, read before drafting
+  drafts/
+    <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
   public/
     CNAME                           # GitHub Pages custom domain
     robots.txt                      # Crawl rules + sitemap pointer
@@ -108,11 +111,12 @@ Add an object to the `projects` array in `src/pages/index.astro`:
 
 ## Adding an Article
 
-1. Read `docs/writing-guide.md` first — voice, audience, LinkedIn packaging, what to avoid.
-2. Create `src/pages/writing/<slug>.astro` (use the existing article as a template).
-3. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
-4. Run `npm run dev` and check the article reads cleanly cold.
-5. Push to `main`; Netlify rebuilds and deploys.
+1. Read `docs/writing-guide.md` first: voice, audience, LinkedIn packaging, what to avoid.
+2. Draft in `drafts/<slug>.md` first. Sit on it overnight. Cold re-read tomorrow.
+3. Once approved, move the body into `src/pages/writing/<slug>.astro` (use the existing article as a template).
+4. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
+5. Run `npm run dev` and check the article reads cleanly cold.
+6. Commit and push to `main`. Netlify rebuilds and deploys.
 
 ## Commit Conventions
 
