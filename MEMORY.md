@@ -14,6 +14,7 @@
 | File | When to load | Key insight |
 |------|-------------|-------------|
 | `memory/gotcha-log.md` | Stuck or debugging | Problem-fix archive |
+| `docs/writing-guide.md` | Drafting / reviewing / planning an article (or a LinkedIn cross-post of one) | Audience filtering, LinkedIn packaging, named-colleague rule, what to avoid |
 
 ## Current State
 
@@ -22,7 +23,8 @@
 - **Hero section commented out** (JSX `{/* ... */}` wrapper). Source intact for restore.
 - **New /writing section** (2026-04-21): index at `src/pages/writing/index.astro`, per-article pages, shared metadata in `src/data/writing.ts`. First article: "A small GDPR-safe chatbot" at `/writing/ese-bot-eu-sovereign-rag/`.
 - Homepage Writing section shows the 2 most recent articles between Projects and Background.
-- **Background section rewritten** 2026-04-21 — real positioning (physics + signals + AI), concrete examples (Parkinson's ESP32 / Augur / ESE Bot / vmodel.eu), soft freelance availability. See auto-memory `feedback_positioning_quiet.md`.
+- **Background section rewritten** 2026-04-21 — real positioning (physics + signals + AI), concrete examples (Parkinson's ESP32 / Augur / ESE Bot / vmodel.eu), soft freelance availability.
+- **Project-local writing guide added** 2026-04-28 (`docs/writing-guide.md`). Captures lessons from the ESE Bot LinkedIn post-mortem (audience filtering, packaging) and the named-colleague rule. CLAUDE.md "Before You Start" + "Adding an Article" point to it. Replaces two short-lived auto-memory feedback files (now removed; canonical content lives in the guide).
 - Three review agents in `.claude/agents/` (copy, design, SEO).
 - No test suite — static site, build success is the gate.
 - **Open issues**: #2 (case study pages) — arguably served by the new /writing section; consider closing or reframing.
@@ -31,10 +33,14 @@
 
 <!-- "if [situation], then [what to do] — promoted from gotcha-log YYYY-MM-DD" -->
 
+- if drafting or reviewing an article (or its LinkedIn cross-post), then read `docs/writing-guide.md` first — promoted from this session's analytics-driven post-mortem (2026-04-28)
+- if proposing an article anchored on a named colleague's anecdote, then substitute with own work or an aggregate pattern — see `docs/writing-guide.md` Section 5 (2026-04-28)
+
 ## Key File Paths
 
 <!-- Supplement the project file's list with paths discovered during work -->
 
+- `docs/writing-guide.md`: project-local writing guide — read before drafting any article
 - `src/pages/index.astro`: `projects` array (8 cards), `VISIBLE_PROJECT_COUNT` constant, hero block (currently JSX-commented), Writing section importing from `src/data/writing.ts`
 - `src/data/writing.ts`: article metadata (slug, title, excerpt, date, readTime) shared between homepage and `/writing/` index
 - `src/pages/writing/index.astro`: article listing page

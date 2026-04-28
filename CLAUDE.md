@@ -12,6 +12,8 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | When | Read |
 |------|------|
 | Adding or editing a project card | `src/pages/index.astro` — the `projects` array at the top defines all cards |
+| Drafting, reviewing, or planning an article | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, what to avoid |
+| Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css` — all CSS custom properties live here |
 | Stuck or debugging something weird | `memory/gotcha-log.md` — problem-fix archive |
@@ -31,31 +33,41 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 ```
 dev.jeroenveen.nl/
   src/
-    layouts/Layout.astro    # HTML shell: head, meta, OG, structured data, fonts
-    pages/index.astro       # Single page: projects array + hero + grid + bio + footer
-    styles/global.css       # Design tokens, reset, typography, scrollbar
+    layouts/Layout.astro            # HTML shell: head, meta, OG, structured data, fonts
+    pages/index.astro               # Homepage: projects array + hero + grid + bio + footer
+    pages/writing/index.astro       # Writing index: lists articles from src/data/writing.ts
+    pages/writing/<slug>.astro      # Individual articles (one .astro file per article)
+    data/writing.ts                 # Article metadata: slug, title, date, excerpt, readTime
+    styles/global.css               # Design tokens, reset, typography, scrollbar
+  docs/
+    writing-guide.md                # Voice, audience, LinkedIn packaging — read before drafting
   public/
-    CNAME                   # GitHub Pages custom domain
-    robots.txt              # Crawl rules + sitemap pointer
-    site.webmanifest        # PWA manifest (name, colors)
-    screenshots/            # Project card screenshots (PNG, 2x retina)
+    CNAME                           # GitHub Pages custom domain
+    robots.txt                      # Crawl rules + sitemap pointer
+    site.webmanifest                # PWA manifest (name, colors)
+    screenshots/                    # Project card screenshot images (PNG, 2x retina)
   .github/workflows/
-    deploy.yml              # CI: npm ci -> build -> deploy to GitHub Pages
-  astro.config.mjs          # Site URL + sitemap integration
+    deploy.yml                      # Orphaned GitHub Pages workflow (Netlify is the active deploy)
+  astro.config.mjs                  # Site URL + sitemap integration
 ```
 
-The entire site is one page. The `projects` array in `index.astro` is the primary content — each object has `title`, `desc`, `tags`, `link`, `linkLabel`, `accent` color, and optional `img` (screenshot path). Cards render in a responsive CSS grid with optional 16:9 screenshot thumbnails.
+The homepage is one page driven by the `projects` array in `index.astro` — each object has `title`, `desc`, `tags`, `link`, `linkLabel`, `accent` color, and optional `img` (screenshot path). Cards render in a responsive CSS grid with optional 16:9 screenshot thumbnails.
+
+The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is the registry; `src/pages/writing/index.astro` lists from it; each article is its own `.astro` file under `src/pages/writing/`.
 
 ## Key Paths
 
 | Path | What it is |
 |------|-----------|
-| `src/pages/index.astro` | The entire page: project data + HTML + scoped CSS |
+| `src/pages/index.astro` | Homepage: project data + HTML + scoped CSS |
+| `src/pages/writing/index.astro` | Writing index page |
+| `src/pages/writing/<slug>.astro` | Individual articles |
+| `src/data/writing.ts` | Article registry (slug, title, date, excerpt, readTime) |
 | `src/styles/global.css` | Design tokens, reset, typography |
 | `src/layouts/Layout.astro` | HTML head, SEO meta, OG tags, structured data |
+| `docs/writing-guide.md` | Project-specific writing guide for articles |
 | `astro.config.mjs` | Site URL, sitemap integration |
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |
-| `.github/workflows/deploy.yml` | CI/CD pipeline |
 | `public/robots.txt` | Crawl directives |
 | `public/screenshots/` | Project card screenshot images |
 | `.claude/agents/` | Three review agents (copy, design, SEO) from prior audits |
@@ -93,6 +105,14 @@ Add an object to the `projects` array in `src/pages/index.astro`:
   img: '/screenshots/name.png',  // optional screenshot
 },
 ```
+
+## Adding an Article
+
+1. Read `docs/writing-guide.md` first — voice, audience, LinkedIn packaging, what to avoid.
+2. Create `src/pages/writing/<slug>.astro` (use the existing article as a template).
+3. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
+4. Run `npm run dev` and check the article reads cleanly cold.
+5. Push to `main`; Netlify rebuilds and deploys.
 
 ## Commit Conventions
 

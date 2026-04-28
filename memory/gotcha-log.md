@@ -28,6 +28,12 @@
 **Fix**: Added `src/pages/writing/index.astro` (listing page), a Writing section on the homepage that pulls from `src/data/writing.ts`, and a "Writing" link in the footer. One commit, three entry points.
 **Pattern**: When adding a new page to the Astro site, always add the discovery path in the same change — homepage entry, listing page, or nav link. A page without a link is not published; it's just uploaded.
 
+### Sub-agents inherit the parent's working-directory sandbox (2026-04-28)
+**Problem**: Dispatched a sub-agent to investigate `C:\local_dev\augmented-engineering` while working in `C:\local_dev\dev.jeroenveen.nl`. The agent could `Glob` paths there but every `Read`, `Grep`, and `Bash` call was denied. It returned a structural map and a list of what it could not answer. I had to substitute by reading the files myself in the parent session, which had access.
+**Root cause**: Sub-agent permissions inherit the parent session's working-directory restrictions. Sibling project folders are outside the sandbox, even though file paths look reachable from the OS.
+**Fix**: For cross-project investigations, do the cross-project file reads in the parent session before (or instead of) dispatching an agent. Keep agent scopes inside the current working directory — or arrange the work so the agent only needs to operate on data the parent has already pasted into the prompt.
+**Pattern**: When dispatching multiple parallel investigation agents, route any work that touches sibling repos through the parent session, not through agents. The parent's reach is broader than its children's.
+
 ## Promoted
 
 <!-- Track gotchas that have been promoted to topic files or the memory index.
