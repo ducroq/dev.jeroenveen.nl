@@ -34,6 +34,12 @@
 **Fix**: For cross-project investigations, do the cross-project file reads in the parent session before (or instead of) dispatching an agent. Keep agent scopes inside the current working directory — or arrange the work so the agent only needs to operate on data the parent has already pasted into the prompt.
 **Pattern**: When dispatching multiple parallel investigation agents, route any work that touches sibling repos through the parent session, not through agents. The parent's reach is broader than its children's.
 
+### Em-dashes in LinkedIn comment drafts despite project rule (2026-04-29)
+**Problem**: While drafting Dutch LinkedIn comment variants (a reply to Witek's post), I used em-dashes throughout the first four variants. Jeroen had to flag the slip. Em-dashes are explicitly disallowed in the project's writing voice per `docs/writing-guide.md` (personal preference + known LLM tic).
+**Root cause**: The auto-memory index says to read the writing-guide "before drafting or reviewing any article". A LinkedIn comment felt like a different category, so I skipped the guide before drafting and applied a generic LLM register instead. The rule applies to voice, not to publication channel.
+**Fix**: Re-read the guide, found the explicit em-dash rule, rewrote variants with colons, commas, or sentence breaks. Updated MEMORY.md scope text to include external comments and replies, not just articles.
+**Pattern**: When drafting anything that will appear in Jeroen's voice (articles, LinkedIn comments, replies, posts), read `docs/writing-guide.md` first. The voice rules are channel-independent.
+
 ## Promoted
 
 <!-- Track gotchas that have been promoted to topic files or the memory index.

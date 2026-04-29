@@ -1,0 +1,25 @@
+# External Comments Log
+
+Reactions and replies posted on LinkedIn or other external platforms. Captured here so we can revisit framing, track which threads we've engaged with, and reuse phrasings later.
+
+## 2026-04-29 — Reply to Witek ten Hove on spec-driven assessment
+
+**Context:** Witek posted on LinkedIn (28 April 2026) framing AI's assessment shift in education using Karpathy's "software 3.0" analogy. Students submit a specification, the AI generates the artifact, and the artifact becomes a "wegwerpartefact". The rubric shifts to: are assumptions explicit, are alternatives weighed, is the scope right, is the problem understood. He posed three questions about what this means at the level of beroepsproduct, docentschap, and opleiding.
+
+**Reply posted (mix of Reproduce-Don't-Assess and voorzichtig tegendraads on "wegwerpartefact"):**
+
+> Eens met de richting, Witek. In eigen werk zien we vaker dat AI-agents een berekening 'fysisch correct' verklaren waar reproductie alsnog fouten oplevert. Dat maakt me voorzichtig met "wegwerpartefact": voor code die je goedkoop kunt regenereren klopt het, maar voor embedded firmware die één keer geflasht wordt, gecertificeerde medische of automotive software, etc. is de implementatie zelf het contract, en dat was nu net wat het V-model probeerde te ondervangen. De student-vraag van morgen lijkt me dus dubbel: kan ze de spec verantwoorden, én aantonen dat de gegenereerde uitkomst eraan voldoet?
+
+**What this draws on:**
+- Augmented Engineering pattern: Reproduce, Don't Assess (driven-pendulum case: 68 equations, two LLMs found zero errors, reproduction caught three)
+- vmodel.eu: V-model framing, requirements as artifact-not-throwaway
+- Domain pushback: embedded firmware, certified medical/automotive software, numerical implementations — domains where the implementation is the contract, not a throwaway
+
+**Why this framing:** Witek is a friend in the same Dutch AI-onderwijs space, not a debate opponent. Goal was to add a dimension (validation of output) without overwriting his three questions, and to gently complicate the "wegwerpartefact" analogy without dismissing it. The V-model reference is a subtle nod to vmodel.eu work that Witek can pick up if he wants to follow the thread.
+
+**Iterations the comment went through (for future reuse):**
+- A: short, plain "validation matters" addition — too generic
+- B: SER-2025 / Digital Engineers framing — too research-paper for a comment
+- C: full Reproduce-Don't-Assess case with numbers (68/0/3, factor 5) — too many specifics for a comment
+- D: tegendraads on "wegwerpartefact" — risk of reading as correction to a friend
+- E (final, mix of C+D): empirical pattern in one line + voorzichtige nuance + domain examples + V-model + dual student-vraag closing

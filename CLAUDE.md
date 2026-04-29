@@ -12,8 +12,9 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | When | Read |
 |------|------|
 | Adding or editing a project card | `src/pages/index.astro` — the `projects` array at the top defines all cards |
-| Drafting, reviewing, or planning an article | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, what to avoid |
+| Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
 | Continuing a parked draft | `drafts/<slug>.md` — articles in progress live here until they ship |
+| Reviewing past LinkedIn comments or external replies | `memory/external-comments.md` — log of posted reactions with framing notes and iteration history |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css` — all CSS custom properties live here |
