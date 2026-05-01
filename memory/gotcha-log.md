@@ -34,11 +34,17 @@
 **Fix**: For cross-project investigations, do the cross-project file reads in the parent session before (or instead of) dispatching an agent. Keep agent scopes inside the current working directory — or arrange the work so the agent only needs to operate on data the parent has already pasted into the prompt.
 **Pattern**: When dispatching multiple parallel investigation agents, route any work that touches sibling repos through the parent session, not through agents. The parent's reach is broader than its children's.
 
-### Em-dashes in LinkedIn comment drafts despite project rule (2026-04-29)
+### Em-dashes in LinkedIn comment drafts despite project rule (2026-04-29) [PROMOTED]
 **Problem**: While drafting Dutch LinkedIn comment variants (a reply to Witek's post), I used em-dashes throughout the first four variants. Jeroen had to flag the slip. Em-dashes are explicitly disallowed in the project's writing voice per `docs/writing-guide.md` (personal preference + known LLM tic).
 **Root cause**: The auto-memory index says to read the writing-guide "before drafting or reviewing any article". A LinkedIn comment felt like a different category, so I skipped the guide before drafting and applied a generic LLM register instead. The rule applies to voice, not to publication channel.
 **Fix**: Re-read the guide, found the explicit em-dash rule, rewrote variants with colons, commas, or sentence breaks. Updated MEMORY.md scope text to include external comments and replies, not just articles.
 **Pattern**: When drafting anything that will appear in Jeroen's voice (articles, LinkedIn comments, replies, posts), read `docs/writing-guide.md` first. The voice rules are channel-independent.
+
+### Argument-form title crossed into "you missed it" register (2026-05-01)
+**Problem**: Drafted title "The work is splitting. Most teams haven't noticed." for the WHY post. The second sentence reads as "I see what they don't" — implicates the reader's team and crosses into the kind of arrogance the site is built to avoid. Jeroen flagged it before LinkedIn went live, so we updated four files (website .astro, registry, both drafts) before publishing externally.
+**Root cause**: I leaned on the writing-guide's argument-form title example (which literally cites this exact phrasing as the model) without filtering it through the documented modesty register from `user_profile.md` and `feedback_modest_hero.md`. The writing-guide's title example is craft-correct but does not carry the personal-voice override.
+**Fix**: Revised the second sentence to "The conversations haven't caught up." Same argument-form rhythm; criticism shifts from teams (implicating the reader) to public discourse (impersonal). Updated all four occurrences in sync (h1, registry, article draft, LinkedIn draft) so copy-paste at publish was current.
+**Pattern**: When drafting two-sentence argument-form titles for publication, audit the second sentence specifically against the modesty register. Acceptable targets of criticism: discourse, conventions, frameworks, the public conversation. Risky targets: "teams," "people," "engineers" — anything that implicates the reader directly. The writing-guide's craft examples are not exempt.
 
 ## Promoted
 
@@ -51,5 +57,6 @@
 
 | Entry | Promoted to | Date |
 |-------|------------|------|
+| Em-dashes in LinkedIn comment drafts despite project rule | `docs/writing-guide.md` Section 6 (em-dash rule) + `MEMORY.md` scope-widening note (voice rules apply channel-independently) | 2026-04-29 |
 
 -->

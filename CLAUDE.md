@@ -16,6 +16,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Continuing a parked draft | `drafts/<slug>.md` — articles in progress live here until they ship |
 | Reviewing past LinkedIn comments or external replies | `memory/external-comments.md` — log of posted reactions with framing notes and iteration history |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
+| Generating a social/cover image for an article | `scripts/gen-social-image.py` — outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css` — all CSS custom properties live here |
 | Stuck or debugging something weird | `memory/gotcha-log.md` — problem-fix archive |
@@ -50,6 +51,9 @@ dev.jeroenveen.nl/
     robots.txt                      # Crawl rules + sitemap pointer
     site.webmanifest                # PWA manifest (name, colors)
     screenshots/                    # Project card screenshot images (PNG, 2x retina)
+    social/                         # Article cover / OG images (1200×630 PNG, generated)
+  scripts/
+    gen-social-image.py             # Generates the typographic cover image for an article
   .github/workflows/
     deploy.yml                      # Orphaned GitHub Pages workflow (Netlify is the active deploy)
   astro.config.mjs                  # Site URL + sitemap integration
@@ -74,6 +78,8 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |
 | `public/robots.txt` | Crawl directives |
 | `public/screenshots/` | Project card screenshot images |
+| `public/social/` | Article cover / OG images (generated, 1200×630 PNG) |
+| `scripts/gen-social-image.py` | Generates a typographic cover image; edit the headline + slug constants per article and run `python scripts/gen-social-image.py` |
 | `.claude/agents/` | Three review agents (copy, design, SEO) from prior audits |
 
 ## How to Work Here
@@ -116,8 +122,21 @@ Add an object to the `projects` array in `src/pages/index.astro`:
 2. Draft in `drafts/<slug>.md` first. Sit on it overnight. Cold re-read tomorrow.
 3. Once approved, move the body into `src/pages/writing/<slug>.astro` (use the existing article as a template).
 4. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
-5. Run `npm run dev` and check the article reads cleanly cold.
-6. Commit and push to `main`. Netlify rebuilds and deploys.
+5. Generate a cover image: edit the headline and slug constants in `scripts/gen-social-image.py`, then `python scripts/gen-social-image.py`. Output lands at `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover.
+6. Run `npm run dev` and check the article reads cleanly cold.
+7. Commit and push to `main`. Netlify rebuilds and deploys.
+
+### LinkedIn cross-post (after the article is live)
+
+The default packaging for a published article is **all three surfaces**:
+
+1. **Pulse article (long-form)** — body copied from the website article, with `Originally published at dev.jeroenveen.nl/writing/<slug>` footer.
+2. **Short feed post** — links to the Pulse article (or to the website, depending on goal). Hook in first ~210 chars; one comment prompt at the end.
+3. **Canonical home** — the dev.jeroenveen.nl article page itself.
+
+Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. Log the publish in `memory/external-comments.md` with all three URLs and a 5–7 day check-in note (which surface out-reached, what landed, what to feed into the next post).
+
+The Pulse vs short-post-only choice is a tradeoff: Pulse gives more LinkedIn reach but creates a duplicate-content situation that hurts website SEO (LinkedIn Pulse can outrank a young site). Default to both surfaces while the site is young and inbound is thin; revisit when the site has authority.
 
 ## Commit Conventions
 
