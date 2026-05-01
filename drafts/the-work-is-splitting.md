@@ -1,4 +1,4 @@
-# The work is splitting. Most teams haven't noticed.
+# The work is splitting. The conversations haven't caught up.
 
 > **Status:** DRAFT, awaiting cold re-read (parked 2026-04-28).
 > **Series:** post 1 of 3 (the WHY / framing post).
@@ -36,7 +36,7 @@ If you have noticed your own version of this, if validation has become heavier t
 
 This is the framing post for a three-post arc:
 
-1. **The work is splitting. Most teams haven't noticed.** (this post). Sets up the validation-vs-production lens. Argument-driven, observational voice.
+1. **The work is splitting. The conversations haven't caught up.** (this post). Sets up the validation-vs-production lens. Argument-driven, observational voice.
 2. **Senior developers trust AI less than juniors.** Counter-intuitive data post. Anchor: JetBrains 2025 Developer Ecosystem survey. ~600 to 800 words. Engagement-shaped.
 3. **AI productivity research has a software bias problem.** Domain-differentiation post. Anchor: HAZOP study (86% textual plausibility, 19 to 37% semantic validity). Carves a senior embedded/hardware audience. Soft link out to OPAL on the Augmented Engineering site for methodology depth.
 

@@ -9,7 +9,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: 'the-work-is-splitting',
-    title: "The work is splitting. Most teams haven't noticed.",
+    title: "The work is splitting. The conversations haven't caught up.",
     excerpt:
       'Engineering work is decomposing into producing output and validating it. Production is now cheap and fast. Validation is not. An observation from a few years of building with AI agents.',
     date: '2026-05-01',
