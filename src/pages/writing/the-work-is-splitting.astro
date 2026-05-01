@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'The work is splitting — dev.jeroenveen.nl';
+const description = 'Engineering work is decomposing into producing output and validating it. Production is now cheap and fast. Validation is not. An observation from a few years of building with AI agents.';
+const publishedOn = '2026-05-01';
+---
+
+<Layout title={title} description={description}>
+  <a href="#article" class="skip-nav">Skip to article</a>
+  <main>
+    <article class="article">
+      <nav class="article-nav" aria-label="Site navigation">
+        <a href="/">← dev.jeroenveen.nl</a>
+      </nav>
+
+      <header class="article-header" id="article">
+        <span class="article-label">Writing</span>
+        <h1 class="article-title">The work is splitting. Most teams haven't noticed.</h1>
+        <p class="article-subtitle">
+          An observation from a few years of building with AI agents.
+        </p>
+        <p class="article-meta">
+          <time datetime={publishedOn}>1 May 2026</time>
+          <span class="sep">·</span>
+          <span>~5 min read</span>
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          I keep running into the same moment in my own work. I review something AI
+          helped me produce, and the validation is harder than the production was.
+          Not by a small margin. The output is plausible, well-structured, often
+          impressive on first read. The work of deciding whether it is actually
+          right takes longer than the work of generating it would have, and demands
+          more of me than the generation did.
+        </p>
+
+        <p>
+          This is not a complaint about AI. The tools are useful. I have shipped
+          things faster than I would have without them. But somewhere in that
+          speed-up, the work changed shape, and most of the conversations I read
+          about engineering with AI are still describing the old shape.
+        </p>
+
+        <p>
+          The standard takes are familiar. Productivity will go up. Junior work
+          will be automated. Learn to prompt. None of them say what I keep
+          noticing, which is more specific and harder to reduce to a slide.
+        </p>
+
+        <p>
+          What is happening, in the projects I have looked at carefully, is that
+          engineering work is decomposing into two activities that used to be one.
+          There is the work of producing engineering output: the code, the
+          schematic, the calculation, the report. And there is the work of
+          validating that output: checking it against the physics, the
+          requirements, the standards, the system, the room of possible failure
+          modes that does not appear on the screen. These two were always
+          nominally separate, but in practice they were tangled. You could not
+          produce competent output without thinking about what could be wrong with
+          it. Validation was distributed through the act of writing.
+        </p>
+
+        <p>
+          AI breaks that. Production is now cheap and fast. Validation is not.
+          The people I see adopting AI most successfully are the ones who have
+          noticed this and are paying attention to validation as if it were a new
+          kind of work, because in a sense it is. The people I see frustrated are
+          often the ones still treating it as something that happens automatically
+          when the output looks right.
+        </p>
+
+        <p>
+          Adoption numbers do not tell you anything about this. About 90% of
+          engineering teams use AI tools now, depending on which survey you trust.
+          That number reads like a triumph. Underneath it sits a different number:
+          the share of teams that can say, with evidence, what their AI use is
+          actually doing to their output quality. In Jellyfish's 2025 survey, only
+          20% of organisations using AI extensively could measure its impact. The
+          other 80% are doing the work and hoping.
+        </p>
+
+        <p>
+          I do not think this is a transient problem. The shape of the change is
+          structural. We are forming habits about how we trust AI-assisted output:
+          in our teams, in our review processes, in our personal sense of what
+          counts as "checked." Habits are easier to form than to revise. Most of
+          the engineers I talk to suspect this without quite naming it. They sense
+          that something about their work has shifted in the last two years, and
+          they are not sure whether to call it productivity gain or something else.
+        </p>
+
+        <p>
+          I want to call it something else. The next few pieces here are going to
+          be about what I have been seeing across my own projects, across the
+          engineers I work with, across the published evidence I can verify. The
+          first lens I want to pick up is the one I keep needing in my own work:
+          the gap between producing engineering output and validating it. It is
+          the lens that makes most of the rest of the picture clearer.
+        </p>
+
+        <p>
+          If you have noticed your own version of this, if validation has become
+          heavier than production somewhere in your work, or if you have not
+          noticed it but suspect you should be looking, I would like to know where
+          you have seen it. Engineering work is a quiet kind of evidence. Most of
+          it lives in heads and pull requests and design reviews, never written
+          down. The more specifically I can trace where the shape of the work has
+          changed, the less of this I have to write from one engineer's window.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links">
+      <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://linkedin.com/in/jeroenveen" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .article-nav {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 60ch;
+  }
+
+  .article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-meta .sep {
+    color: var(--border);
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--amber);
+  }
+
+  .article-body a {
+    border-bottom: 1px dotted var(--amber-dim);
+  }
+  .article-body a:hover {
+    border-bottom-color: var(--text);
+  }
+
+  .article-body hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0 2rem;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links .sep {
+    color: var(--text-dim);
+  }
+</style>
