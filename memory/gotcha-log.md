@@ -46,6 +46,18 @@
 **Fix**: Revised the second sentence to "The conversations haven't caught up." Same argument-form rhythm; criticism shifts from teams (implicating the reader) to public discourse (impersonal). Updated all four occurrences in sync (h1, registry, article draft, LinkedIn draft) so copy-paste at publish was current.
 **Pattern**: When drafting two-sentence argument-form titles for publication, audit the second sentence specifically against the modesty register. Acceptable targets of criticism: discourse, conventions, frameworks, the public conversation. Risky targets: "teams," "people," "engineers" — anything that implicates the reader directly. The writing-guide's craft examples are not exempt.
 
+### Em-dashes in `docs/glossary.md` despite the project rule (2026-05-04) [PROMOTED]
+**Problem**: While drafting `docs/glossary.md` I added 11 em-dashes to the file. Caught on review only because Jeroen asked for one. The em-dash rule from the writing-guide had already been promoted (2026-04-29) after the same slip in LinkedIn comment drafts. This is the second recurrence inside roughly a week.
+**Root cause**: The previously-promoted rule was scoped to "anything that will appear in Jeroen's voice (articles, LinkedIn comments, replies, posts)." A glossary file in `docs/` is internal reference material, not voiced output, so the channel-independence framing did not catch it. The pattern is repo-style, not just voice-style.
+**Fix**: Stripped all 11 em-dashes from `docs/glossary.md`, replaced with colons, commas, semicolons, or sentence breaks. Widened the em-dash rule in `docs/writing-guide.md` Section 6 to apply to any text committed to this repo, voiced or not. Updated the Promoted table below.
+**Pattern**: The em-dash rule is repo-scoped, not voice-scoped. Apply it to articles, glossary entries, draft notes, and internal docs alike. Anything written into this repo. (Memory log files in the auto-memory dir at `C:\Users\scbry\.claude\projects\...` remain outside that scope, since the user maintains those for their own use.)
+
+### Glossary scope creep: from 3 to 15 entries despite "small and organic" agreement (2026-05-04)
+**Problem**: Recommended seeding the glossary with 2-3 entries and growing organically when triggers fire. Two messages later, when the user asked for field vocabulary too, I added 12 entries in one pass. This is the opposite of the principle I had just stated. Several "Jeroen's positioning" notes in those entries were extrapolations rather than grounded preferences.
+**Root cause**: A user request to "expand to include field vocabulary" felt like authorisation to add comprehensively rather than to add the next 1-2 useful entries. Compounded by a tendency to fill structural fields (e.g., "Jeroen's positioning") even when there was no real input to base them on.
+**Fix**: Reviewed the glossary against the original principle, trimmed back to 7 earned entries, restructured "Jeroen's positioning" as "Relevance to AE frame" so the section describes adjacency rather than prescribing usage. Removed entries where I had no grounded basis for the positioning notes.
+**Pattern**: When the user expands the scope of a thing we agreed to keep small, the right move is to add 1-2 entries that match the new scope, not to populate the whole space. If a structural field would require extrapolation to fill, leave it empty or rename the field. Comprehensive-feeling drafts read as overreach; under-filled drafts that earn each line read as honest.
+
 ## Promoted
 
 <!-- Track gotchas that have been promoted to topic files or the memory index.
@@ -58,5 +70,6 @@
 | Entry | Promoted to | Date |
 |-------|------------|------|
 | Em-dashes in LinkedIn comment drafts despite project rule | `docs/writing-guide.md` Section 6 (em-dash rule) + `MEMORY.md` scope-widening note (voice rules apply channel-independently) | 2026-04-29 |
+| Em-dashes in `docs/glossary.md` despite the project rule | `docs/writing-guide.md` Section 6 (em-dash rule scope widened from voice-channels to all repo docs) | 2026-05-04 |
 
 -->

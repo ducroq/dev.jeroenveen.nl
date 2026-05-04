@@ -110,7 +110,7 @@ These show up reliably when drafts drift toward institutional or academic framin
 | "Our research shows…" / "We at HAN…" | This is a personal site, not institutional | First person singular when the experience is the point; observation otherwise |
 | "If you are building in this space, get in touch" stacked at the bottom | Reads as fundraising | One soft contact line at most. Not on every piece |
 | Framework labels: "P1 Validation Primacy," "Three-Layer Competency Architecture" | PhD-defence flavour | Use the underlying idea without the capitalised label |
-| **Em-dashes (—)** | Personal voice preference: dislike. Also a known LLM tic — graders and discerning readers spot them | Avoid. Use a colon for list-introduction (`output: the code, the schematic`), a comma or period for pauses, or restructure the sentence. Hyphens (`-`) and en-dashes (`–`) for ranges are fine |
+| **Em-dashes (—)** | Personal voice preference: dislike. Also a known LLM tic — graders and discerning readers spot them | Avoid. Use a colon for list-introduction (`output: the code, the schematic`), a comma or period for pauses, or restructure the sentence. Hyphens (`-`) and en-dashes (`–`) for ranges are fine. **Scope:** the em-dash rule applies to *any* text committed to this repo (articles, glossary entries, draft notes, internal docs), not only voice-channel output. The rule is about the repo's style, not just the published surface. |
 
 ---
 

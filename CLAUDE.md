@@ -13,8 +13,10 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 |------|------|
 | Adding or editing a project card | `src/pages/index.astro` — the `projects` array at the top defines all cards |
 | Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
+| Defining or auditing a term Jeroen uses (coined frames like validation, AE, ground truth; or field vocabulary like agent, workflow, evaluator-optimizer, HITL) | `docs/glossary.md`: working definitions, drift notes, AE-frame relevance |
 | Continuing a parked draft | `drafts/<slug>.md` — articles in progress live here until they ship |
 | Reviewing past LinkedIn comments or external replies | `memory/external-comments.md` — log of posted reactions with framing notes and iteration history |
+| Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
 | Generating a social/cover image for an article | `scripts/gen-social-image.py` — outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
@@ -44,6 +46,7 @@ dev.jeroenveen.nl/
     styles/global.css               # Design tokens, reset, typography, scrollbar
   docs/
     writing-guide.md                # Voice, audience, LinkedIn packaging, read before drafting
+    glossary.md                     # Working definitions for terms Jeroen uses (validation, AE, ground truth, …)
   drafts/
     <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
   public/
@@ -74,6 +77,10 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `src/styles/global.css` | Design tokens, reset, typography |
 | `src/layouts/Layout.astro` | HTML head, SEO meta, OG tags, structured data |
 | `docs/writing-guide.md` | Project-specific writing guide for articles |
+| `docs/glossary.md` | Working definitions: Jeroen's coined frames + field vocabulary, with drift notes |
+| `memory/external-comments.md` | Log of posted LinkedIn / external replies |
+| `memory/external-references.md` | Observed external content filed for later reference (foils, vocabulary) |
+| `memory/gotcha-log.md` | Problem-fix archive; reviewed at end of session |
 | `astro.config.mjs` | Site URL, sitemap integration |
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |
 | `public/robots.txt` | Crawl directives |

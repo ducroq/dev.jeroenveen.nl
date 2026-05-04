@@ -45,3 +45,60 @@ Reactions and replies posted on LinkedIn or other external platforms. Captured h
 - Reshare patterns. Who reshared, what context they added. Anyone we should engage with directly?
 - Any phrasings from comments worth reusing in posts 2 (JetBrains senior-trust data) and 3 (HAZOP / domain bias).
 - If the validation-vs-production framing landed, post 2 can build on it directly without re-explaining; if it didn't, posts 2 and 3 need more independent framing of their own.
+
+---
+
+## 2026-05-03 — Reply to Witek on "tests in the context" (follow-up to WHY post 1)
+
+**Context:** Witek replied (under the WHY post 1 thread, "The work is splitting") raising "tests in the context" as a counter / mitigation: that having tests alongside the code in the agent's context narrows the gap between generated output and correct output.
+
+**Reply posted:**
+
+> Fair, with one caveat. Tests in the context help, but the gap between "passes the suite" and "is correct" predates AI. What AI changes is the leverage on that gap. Two shifts. One: production is cheap now, so test-passing-but-incorrect output is generated at much higher rates than humans ever could. Two: if the same agent writes the code and proposes the tests, "tests in the context" stops being an independent check; the validator inherits the implementation's assumptions. So validation tests in the context, yes; keeping the validator independent of what is being validated, harder.
+
+**Why this framing:**
+- Concession-then-nuance ("Fair, with one caveat") preserves collegial tone. Witek is a friend, not a sparring partner; doesn't overwrite his point.
+- Two-shift structure rather than one separates the *rate* problem (more wrong-but-passing artifacts per unit time) from the *independence* problem (single agent authoring both sides). These are distinct failure modes and both matter.
+- Closing aphorism deliberately mirrors the "Production is cheap. Validation is not." rhythm from the article: parallel "yes, ... harder" structure. Reinforces the article's frame without repeating it verbatim.
+- Stays inside the audience filter: anyone whose tests are written by the same agent that writes the code recognises the problem immediately; anyone for whom this is news isn't the target reader.
+
+**Phrasings worth reusing:**
+- "the validator inherits the implementation's assumptions": sharp one-liner, candidate for post 3 (HAZOP / domain bias) where the same dynamic shows up at the *requirements* layer (agent that elicits requirements also proposes the design that satisfies them).
+- "test-passing-but-incorrect output is generated at much higher rates than humans ever could": concrete restatement of the production-cheap / validation-hard asymmetry, useful when the abstract framing doesn't land.
+- "leverage on the gap": economical way to say "AI didn't create the problem, it amplified it." Reusable whenever someone says "but X predates AI."
+
+**To watch for:**
+- Whether Witek picks up the independence point or stays on the rate point. The independence problem (agent authoring both code and tests) is the harder of the two and the more useful thread to continue if he engages with it.
+- If the exchange goes another round, this is approaching the territory of post 2 (JetBrains senior-trust data); at some point it's worth saying "I'm writing about exactly this, here's where it goes" rather than developing the argument privately in the comments.
+
+---
+
+## 2026-05-03 — Reply to Geert van Kollenburg on "Lazy prompting"
+
+**Context:** Geert van Kollenburg (1st-degree connection, Co-founder/CTO Precubitus, Professor of Human-AI collaboration) posted on LinkedIn about "Lazy prompting", a method of using minimum-effort prompts to test what AI can and can't do. His worked example: posing a suggestive question about palm oil to Gemini Pro, where he already knew the answer (palm oil is the most efficient vegetable oil crop in the EU), to see whether the model would surface that critical evaluation. The post then generalised: "for everyday applications, try to be lazy. Don't put too much effort in, these tools should make your life easier."
+
+**Reply posted (additive, not corrective):**
+
+> Useful frame, Geert. One extension: when you don't have a known answer to check against, fire the same lazy question at two different models. Where they disagree is where the boundary you're probing tends to show up. Same lazy spirit, different check source.
+
+**Why this framing:**
+- Audience-relationship constraint dictated the move: Jeroen doesn't know Geert well, may need him in future, no rapport bank to spend on substantive public pushback.
+- Add-don't-carve approach: extends his frame instead of dividing it into halves. The validation-independence point (two models = independent check sources) travels in without ever being named as a correction.
+- Closing line "Same lazy spirit, different check source" reinforces his frame as the parent idea, not the target. Easy for him to like, build on, or share.
+
+**The punchier version, NOT posted (saved for reuse if rapport allows or in adjacent future contexts):**
+
+> Like the frame, Geert, with one distinction. Posing a lazy question and checking against ground truth you already have is more probe than shortcut: it works because you have somewhere independent to check. The generalisation to everyday use is a different claim. Without ground truth, lazy prompting doesn't make AI more useful; it just hides whether the answer is correct. The saving isn't in the prompt effort. It's having validation independent of the model. Generating is cheap now; verifying isn't.
+
+**Why the punchier version was held back:**
+- It does substantive disagreement in 75 words. Compression made the disagreement land harder than the same content at 200 words would.
+- Two lines do most of the cutting: "doesn't make AI more useful; it just hides whether the answer is correct" reads as declaring his everyday-use advice misleading; "the saving isn't in the prompt effort" negates the headline takeaway of his post.
+- Geert is a peer-with-standing (professor, CTO) and Jeroen has no relationship history with him to soften how a public carve-up would land. The collegial-pushback move worked with Witek (close friend) but the relationship asymmetry made it the wrong call here.
+
+**Phrasings worth reusing from the held-back version:**
+- "more probe than shortcut": useful any time someone calls a methodologically rigorous move "casual" or "lightweight."
+- "Without ground truth, lazy prompting doesn't make AI more useful; it just hides whether the answer is correct": sharp condensed form of the validation asymmetry. Candidate for post 2 or 3 in the WHY arc, or for a context where direct framing is welcome (talk, internal doc, AE post).
+- "Same lazy spirit, different check source": reusable parallel structure for "yes, and here's a sibling pattern" moves where you want to honour the original frame.
+
+**Decision rule learned:**
+- When relationship rapport is thin and the interlocutor named/coined the frame, default to add-don't-carve. Save the carve-version for: known peers who welcome it, or for first-person publishing where the analytical move is the point.
