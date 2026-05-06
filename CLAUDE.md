@@ -32,6 +32,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 - The `CNAME` file must stay as `dev.jeroenveen.nl` — retained from the GitHub Pages era; Netlify uses the DNS settings directly
 - `.github/workflows/deploy.yml` is an orphaned GitHub Pages workflow — do not treat it as active CI. Deployment goes through Netlify.
 - Keep the site accessible: skip-nav link, `aria-label` on external links, `:focus-visible` styles, semantic HTML
+- **LinkedIn post drafts are SSoT here**, not in `work-income`. Naming: `drafts/linkedin-post-<topic>-unpublished.md` while drafted; drop the `-unpublished` suffix once posted (or move the record to `memory/external-comments.md`). Career strategy stays in `work-income/cv/`.
 
 ## Architecture
 
@@ -49,6 +50,7 @@ dev.jeroenveen.nl/
     glossary.md                     # Working definitions for terms Jeroen uses (validation, AE, ground truth, …)
   drafts/
     <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
+    linkedin-post-<topic>-unpublished.md  # LinkedIn post drafts (SSoT — not in work-income)
   public/
     CNAME                           # GitHub Pages custom domain
     robots.txt                      # Crawl rules + sitemap pointer
