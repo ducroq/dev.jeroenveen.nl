@@ -102,3 +102,37 @@ Reactions and replies posted on LinkedIn or other external platforms. Captured h
 
 **Decision rule learned:**
 - When relationship rapport is thin and the interlocutor named/coined the frame, default to add-don't-carve. Save the carve-version for: known peers who welcome it, or for first-person publishing where the analytical move is the point.
+
+---
+
+## 2026-05-04 — DRAFT (pending, not yet posted) — Reply to Geert van Kollenburg's "another model, or new instance" follow-up
+
+**Context:** Geert replied to the 2026-05-03 thread above with: *"I generally ask another model, or at least a new instance, to validate the answer I get. Like in humans: it's much easier to criticize someone else's work than to produce new content :)"*. Friendly, additive, but the "or at least a new instance" caveat flattens a distinction that matters for the validation argument.
+
+**Draft reply (to be posted by Jeroen, with possible edits):**
+
+> Nice analogy. Worth pulling on: a different reviewer has different knowledge and blind spots, which is what makes the criticism useful. A fresh instance in critic mode catches things the original prompt missed (overlooked case, sloppy step), but can't see past the model's own blind spots. Closer to re-reading your own draft an hour later than to a colleague reviewing it. Both useful, different reach.
+
+**Why this framing:**
+- Add-don't-carve still applies (thin rapport with Geert; per `feedback_thin_rapport_add_dont_carve.md`).
+- Honours his human analogy as the load-bearing device, then uses it to surface the distinction he flattened.
+- Concedes that critic-mode prompts genuinely catch things (so the reply doesn't read as dismissive of his habit).
+- Names the limit precisely: same model can't see past its own blind spots, regardless of prompt.
+- "Closer to re-reading your own draft" / "than to a colleague reviewing it": concrete reframe, both familiar, both have value but they're not the same operation.
+- "Both useful, different reach" closes warmly without negating his practice.
+
+**Analytical refinement (came out of an internal pushback round):**
+The first draft used "different priors / same priors" to frame the cross-model vs. same-model-new-instance distinction. That framing is imprecise: a different prompt does shift *something* (stance, what knowledge is foregrounded, role adopted), and "prior" can defensibly refer to that shift. The sharper distinction is by error class:
+- **Stance-shaped errors** (overlooked case, sloppy reasoning step, ambiguous phrasing): same-model-different-prompt can catch these. Critic-mode prompts genuinely work for this class.
+- **Knowledge-shaped errors** (hallucinated API, factual error baked into training, blind spot in the training distribution): same-model-different-prompt typically cannot catch these, because the gap is the same. A different model has different gaps and so different reach.
+
+This split is sharper than "independence vs not" and worth keeping for future writing on validation independence.
+
+**Phrasings worth reusing:**
+- "stance-shaped errors / knowledge-shaped errors": clean two-bucket distinction for what same-model-different-prompt critique can and can't catch. Candidate for post 3 (HAZOP / domain bias) or for AE pattern writing on evaluator-optimizer / critic-actor.
+- "Closer to re-reading your own draft an hour later than to a colleague reviewing it": concrete analogy that travels. Reusable any time someone proposes self-critique as a validation move.
+- "Both useful, different reach": gracious closer for "yes, and here's a distinction" moves where you want to preserve the interlocutor's practice.
+
+**To do once posted:**
+- Promote this entry from DRAFT to a regular dated entry (drop the "pending" marker).
+- Watch whether Geert engages with the stance-shaped vs. knowledge-shaped split. If he does, this thread is approaching post 2 / 3 territory and may be worth signalling redirect rather than continuing to refine privately.

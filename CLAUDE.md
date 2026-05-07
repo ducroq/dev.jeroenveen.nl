@@ -11,26 +11,27 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 
 | When | Read |
 |------|------|
-| Adding or editing a project card | `src/pages/index.astro` — the `projects` array at the top defines all cards |
-| Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md` — voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
+| Adding or editing a project card | `src/pages/index.astro`. The `projects` array at the top defines all cards |
+| Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md`: voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
 | Defining or auditing a term Jeroen uses (coined frames like validation, AE, ground truth; or field vocabulary like agent, workflow, evaluator-optimizer, HITL) | `docs/glossary.md`: working definitions, drift notes, AE-frame relevance |
-| Continuing a parked draft | `drafts/<slug>.md` — articles in progress live here until they ship |
-| Reviewing past LinkedIn comments or external replies | `memory/external-comments.md` — log of posted reactions with framing notes and iteration history |
+| Continuing a parked draft | `drafts/<slug>.md`: articles in progress live here until they ship |
+| Reviewing past LinkedIn comments or external replies | `memory/external-comments.md`: log of posted reactions with framing notes and iteration history |
 | Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
-| Generating a social/cover image for an article | `scripts/gen-social-image.py` — outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
-| Changing layout, SEO, or meta tags | `src/layouts/Layout.astro` — head, OG tags, structured data |
-| Changing design tokens or global styles | `src/styles/global.css` — all CSS custom properties live here |
-| Stuck or debugging something weird | `memory/gotcha-log.md` — problem-fix archive |
-| Reviewing copy, design, or SEO concerns | `.claude/agents/` — three review docs from previous audit sessions |
-| Ending a session | `memory/gotcha-log.md` — review, promote patterns, retire stale entries |
+| Generating a social/cover image for an article | `scripts/gen-social-image.py`. Outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
+| Generating an in-article diagram or figure | `scripts/gen-<slug>-diagram.py` (sketch register: jittered SVG paths, mono lowercase labels) or `scripts/gen-<slug>-figure.py` (Tufte typographic: numbers + citation, no shapes). Output to `public/diagrams/<slug>.svg`. Audit against the visual-register memory rule (`feedback_visual_register.md`) before shipping any figure. |
+| Changing layout, SEO, or meta tags | `src/layouts/Layout.astro`: head, OG tags, structured data |
+| Changing design tokens or global styles | `src/styles/global.css`: all CSS custom properties live here |
+| Stuck or debugging something weird | `memory/gotcha-log.md`: problem-fix archive |
+| Reviewing copy, design, or SEO concerns | `.claude/agents/`: three review docs from previous audit sessions |
+| Ending a session | `memory/gotcha-log.md`: review, promote patterns, retire stale entries |
 
 ## Hard Constraints
 
-- Minimal client-side JS is fine (e.g., card filtering, theme toggle) but avoid heavy frameworks — keep the site fast and lightweight
-- All styling uses CSS custom properties defined in `global.css` — do not introduce Tailwind, Sass, or CSS modules
-- The `CNAME` file must stay as `dev.jeroenveen.nl` — retained from the GitHub Pages era; Netlify uses the DNS settings directly
-- `.github/workflows/deploy.yml` is an orphaned GitHub Pages workflow — do not treat it as active CI. Deployment goes through Netlify.
+- Minimal client-side JS is fine (e.g., card filtering, theme toggle) but avoid heavy frameworks. Keep the site fast and lightweight.
+- All styling uses CSS custom properties defined in `global.css`. Do not introduce Tailwind, Sass, or CSS modules.
+- The `CNAME` file must stay as `dev.jeroenveen.nl`. Retained from the GitHub Pages era; Netlify uses the DNS settings directly.
+- `.github/workflows/deploy.yml` is an orphaned GitHub Pages workflow. Do not treat it as active CI. Deployment goes through Netlify.
 - Keep the site accessible: skip-nav link, `aria-label` on external links, `:focus-visible` styles, semantic HTML
 - **LinkedIn post drafts are SSoT here**, not in `work-income`. Naming: `drafts/linkedin-post-<topic>-unpublished.md` while drafted; drop the `-unpublished` suffix once posted (or move the record to `memory/external-comments.md`). Career strategy stays in `work-income/cv/`.
 
@@ -50,21 +51,24 @@ dev.jeroenveen.nl/
     glossary.md                     # Working definitions for terms Jeroen uses (validation, AE, ground truth, …)
   drafts/
     <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
-    linkedin-post-<topic>-unpublished.md  # LinkedIn post drafts (SSoT — not in work-income)
+    linkedin-post-<topic>-unpublished.md  # LinkedIn post drafts (SSoT, not in work-income)
   public/
     CNAME                           # GitHub Pages custom domain
     robots.txt                      # Crawl rules + sitemap pointer
     site.webmanifest                # PWA manifest (name, colors)
     screenshots/                    # Project card screenshot images (PNG, 2x retina)
     social/                         # Article cover / OG images (1200×630 PNG, generated)
+    diagrams/                       # In-article SVG diagrams and figures (generated)
   scripts/
     gen-social-image.py             # Generates the typographic cover image for an article
+    gen-<slug>-diagram.py           # Per-article sketch generators (jittered SVG paths)
+    gen-<slug>-figure.py            # Per-article Tufte-style typographic figure generators
   .github/workflows/
     deploy.yml                      # Orphaned GitHub Pages workflow (Netlify is the active deploy)
   astro.config.mjs                  # Site URL + sitemap integration
 ```
 
-The homepage is one page driven by the `projects` array in `index.astro` — each object has `title`, `desc`, `tags`, `link`, `linkLabel`, `accent` color, and optional `img` (screenshot path). Cards render in a responsive CSS grid with optional 16:9 screenshot thumbnails.
+The homepage is one page driven by the `projects` array in `index.astro`. Each object has `title`, `desc`, `tags`, `link`, `linkLabel`, `accent` color, and optional `img` (screenshot path). Cards render in a responsive CSS grid with optional 16:9 screenshot thumbnails.
 
 The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is the registry; `src/pages/writing/index.astro` lists from it; each article is its own `.astro` file under `src/pages/writing/`.
 
@@ -88,7 +92,10 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `public/robots.txt` | Crawl directives |
 | `public/screenshots/` | Project card screenshot images |
 | `public/social/` | Article cover / OG images (generated, 1200×630 PNG) |
+| `public/diagrams/` | In-article SVG diagrams and figures (generated) |
 | `scripts/gen-social-image.py` | Generates a typographic cover image; edit the headline + slug constants per article and run `python scripts/gen-social-image.py` |
+| `scripts/gen-<slug>-diagram.py` | Per-article sketch diagram generators (jittered paths, sketch register) |
+| `scripts/gen-<slug>-figure.py` | Per-article typographic figure generators (Tufte-style data citations) |
 | `.claude/agents/` | Three review agents (copy, design, SEO) from prior audits |
 
 ## How to Work Here
@@ -132,16 +139,17 @@ Add an object to the `projects` array in `src/pages/index.astro`:
 3. Once approved, move the body into `src/pages/writing/<slug>.astro` (use the existing article as a template).
 4. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
 5. Generate a cover image: edit the headline and slug constants in `scripts/gen-social-image.py`, then `python scripts/gen-social-image.py`. Output lands at `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover.
-6. Run `npm run dev` and check the article reads cleanly cold.
-7. Commit and push to `main`. Netlify rebuilds and deploys.
+6. Decide if the argument earns an in-article figure. Most do not. If yes, follow one of the patterns: `scripts/gen-<slug>-diagram.py` (sketch register, see `gen-article-diagram.py` and `gen-ese-bot-diagram.py`) or `scripts/gen-<slug>-figure.py` (Tufte typographic, see `gen-senior-trust-figure.py`). Output to `public/diagrams/<slug>.svg`. Embed via `<figure class="article-sketch">` (borderless), distinct from `<figure class="article-figure">` (the polished card used for screenshots). Audit against the *It Is Both* visual-register memory rule (`feedback_visual_register.md`) before shipping any figure.
+7. Run `npm run dev` and check the article reads cleanly cold.
+8. Commit and push to `main`. Netlify rebuilds and deploys.
 
 ### LinkedIn cross-post (after the article is live)
 
 The default packaging for a published article is **all three surfaces**:
 
-1. **Pulse article (long-form)** — body copied from the website article, with `Originally published at dev.jeroenveen.nl/writing/<slug>` footer.
-2. **Short feed post** — links to the Pulse article (or to the website, depending on goal). Hook in first ~210 chars; one comment prompt at the end.
-3. **Canonical home** — the dev.jeroenveen.nl article page itself.
+1. **Pulse article (long-form)**: body copied from the website article, with `Originally published at dev.jeroenveen.nl/writing/<slug>` footer.
+2. **Short feed post**: links to the Pulse article (or to the website, depending on goal). Hook in first ~210 chars; one comment prompt at the end.
+3. **Canonical home**: the dev.jeroenveen.nl article page itself.
 
 Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. Log the publish in `memory/external-comments.md` with all three URLs and a 5–7 day check-in note (which surface out-reached, what landed, what to feed into the next post).
 
