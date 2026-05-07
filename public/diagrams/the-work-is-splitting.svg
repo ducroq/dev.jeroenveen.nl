@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460"
+     width="1000" height="460" role="img"
+     aria-label="A small box labelled 'work' with the note 'produce + validate, entangled', followed by an arrow pointing to a small 'make' box and a much larger 'validate' box.">
+  <rect width="1000" height="460" fill="#0b0b0f"/>
+  
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#8a8895"/>
+  </marker>
+</defs>
+
+  
+  <!-- work -->
+  <path d="M 98.7,118.0 L 186.1,118.3 L 271.2,119.5 L 362.1,121.5 L 361.3,175.3 L 360.2,232.2 L 358.4,288.0 L 271.9,292.1 L 188.3,291.5 L 101.5,288.5 L 99.0,234.0 L 101.2,178.4 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="230.0" y="216.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="32" fill="#b8b5b0">work</text>
+  <text x="100" y="326"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="20" font-style="italic" fill="#7a7a85">produce + validate, entangled</text>
+
+  <!-- arrow -->
+  <line x1="390" y1="205.0" x2="550" y2="205.0"
+        stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"
+        marker-end="url(#arr)"/>
+
+  <!-- make -->
+  <path d="M 581.9,167.9 L 607.2,170.9 L 633.4,168.4 L 659.9,167.9 L 662.2,190.2 L 660.2,205.7 L 662.0,225.4 L 635.2,226.7 L 606.7,224.6 L 580.5,224.7 L 578.3,205.7 L 581.6,186.0 Z" fill="none" stroke="#c88a20"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="620.0" y="205.5"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="22" fill="#b8b5b0">make</text>
+
+  <!-- validate -->
+  <path d="M 577.7,255.6 L 692.2,255.2 L 806.5,254.2 L 922.5,253.5 L 919.6,310.2 L 920.7,367.2 L 919.3,426.2 L 805.8,425.3 L 695.4,423.0 L 577.8,423.6 L 581.3,368.9 L 578.7,310.8 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="750.0" y="354.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="42" fill="#b8b5b0">validate</text>
+
+</svg>

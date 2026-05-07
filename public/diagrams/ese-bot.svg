@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460"
+     width="1000" height="460" role="img"
+     aria-label="A browser box outside a dashed EU perimeter, with an arrow leading into an API box labelled 'api · de'. Inside the EU, the api connects to two further boxes: 'weaviate · nl' and 'mistral · fr'.">
+  <rect width="1000" height="460" fill="#0b0b0f"/>
+  
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="7" markerHeight="7" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#8a8895"/>
+  </marker>
+</defs>
+
+  
+  <!-- eu envelope (dashed) -->
+  <path d="M 199.8,69.4 L 451.5,71.8 L 704.2,70.0 L 962.0,67.9 L 960.3,183.9 L 957.7,296.1 L 961.0,409.8 L 707.8,408.3 L 452.0,408.1 L 200.0,412.1 L 200.5,298.0 L 199.4,184.6 Z" fill="none" stroke="#5a5862"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="6 5"/>
+  <text x="214" y="94"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="18" font-style="italic" fill="#7a7a85">eu</text>
+
+  <!-- browser (external) -->
+  <path d="M 48.0,194.0 L 84.2,196.1 L 116.3,192.9 L 148.8,193.5 L 148.9,219.9 L 148.5,243.6 L 151.9,262.8 L 116.1,265.0 L 81.0,264.6 L 52.0,263.1 L 50.5,239.8 L 50.4,220.3 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="100.0" y="237.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="20" fill="#b8b5b0">browser</text>
+
+  <!-- browser → api -->
+  <line x1="155" y1="230.0" x2="232" y2="230.0"
+        stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"
+        marker-end="url(#arr)"/>
+
+  <!-- api -->
+  <path d="M 238.5,192.5 L 294.6,195.2 L 350.9,192.9 L 410.0,197.1 L 409.6,217.8 L 410.7,239.6 L 410.4,263.4 L 353.9,267.3 L 294.4,265.3 L 240.5,263.2 L 238.8,244.1 L 242.5,216.4 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="325.0" y="238.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="22" fill="#b8b5b0">api · de</text>
+
+  <!-- api → weaviate (curved) -->
+  <path d="M 415.0,230.0 C 458.5,230.0 458.5,150.0 502.0,150.0" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round"
+        marker-end="url(#arr)"/>
+
+  <!-- weaviate -->
+  <path d="M 511.0,112.3 L 582.0,110.6 L 654.4,109.3 L 730.9,110.5 L 731.4,134.6 L 729.2,165.2 L 730.4,189.8 L 656.2,192.4 L 583.7,187.6 L 511.5,189.1 L 509.7,161.9 L 509.7,135.8 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="620.0" y="159.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="24" fill="#b8b5b0">weaviate · nl</text>
+
+  <!-- api → mistral (curved) -->
+  <path d="M 415.0,230.0 C 458.5,230.0 458.5,320.0 502.0,320.0" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round"
+        marker-end="url(#arr)"/>
+
+  <!-- mistral -->
+  <path d="M 507.9,280.6 L 581.3,281.4 L 654.3,281.4 L 731.5,280.0 L 731.0,305.4 L 731.2,333.0 L 728.7,362.3 L 656.2,359.4 L 585.1,359.3 L 510.8,358.4 L 511.7,332.1 L 507.8,309.0 Z" fill="none" stroke="#8a8895"
+        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="620.0" y="329.0"
+        text-anchor="middle"
+        font-family="JetBrains Mono, ui-monospace, monospace"
+        font-size="24" fill="#b8b5b0">mistral · fr</text>
+
+</svg>
