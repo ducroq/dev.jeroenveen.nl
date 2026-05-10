@@ -15,15 +15,15 @@
 
 I notice the senior engineers I work with often trust AI output less than the juniors do. They read what the agent produced, recognise that it looks plausible, and slow down. The juniors paste it in. For a while I assumed this was the standard generational story: older devs are slower with new tools. The data does not support that read.
 
-[JetBrains' 2025 Developer Ecosystem survey](https://www.jetbrains.com/lp/devecosystem-2025/) of 24,500 software developers found that those with ten or more years of experience report low trust in AI output 61% of the time. Those with zero to two years of experience report low trust 48% of the time. [Stack Overflow's 2025 Developer Survey](https://survey.stackoverflow.co/2025), separately, with 49,000 respondents, found that 46% of developers actively distrust AI output accuracy. Of the experienced developers in the sample, only 2.6% reported "highly trusting" AI outputs and 20% reported "highly distrusting" them: the lowest trust and highest distrust of any experience bracket.
+The clearest measurement comes from [METR's 2025 study](https://arxiv.org/abs/2507.09089). They put 16 experienced developers on tasks in their own codebases, with and without AI assistance. The contributors finished 19% slower with AI. After the study they reported feeling 20% faster. That is a 39 percentage point gap between what was measured and what was felt, in people who do this work full-time, on code they wrote themselves. The calibration is happening, but slowly, and not where the user can feel it.
+
+The pattern shows up at scale too. [JetBrains' 2025 Developer Ecosystem survey](https://www.jetbrains.com/lp/devecosystem-2025/) of 24,500 software developers found that those with ten or more years of experience report low trust in AI output 61% of the time. Those with zero to two years of experience report low trust 48% of the time. [Stack Overflow's 2025 Developer Survey](https://survey.stackoverflow.co/2025), separately, with 49,000 respondents, found that 46% of developers actively distrust AI output accuracy. Of the experienced developers in the sample, only 2.6% reported "highly trusting" AI outputs and 20% reported "highly distrusting" them: the lowest trust and highest distrust of any experience bracket.
 
 Engineers with more years of practice trust the tool less. That is the opposite of how new tools usually work.
 
 The piece I wrote last week argued that engineering work has decomposed into producing output and validating it, and that validation is the harder of the two. The senior-trust gap is the same observation from a different angle. Seniors trust less because they have validated more, and validation has shown them more. They have seen the plausible-but-wrong code enough times to recognise the pattern in AI output specifically. Juniors have not yet seen enough wrong-looking code in general to develop the calibration.
 
 A small concrete example. Three weeks ago I was reviewing a retrieval function the agent had written for the ese-bot codebase. Plausible. Type-checked. Wrong about which boundary the retrieval was supposed to respect. It took me fifteen minutes to find the error. The generation had taken seconds. The trust calibration in that moment was not about familiarity with AI. It was about familiarity with the failure modes of code that looks right but is not.
-
-The other 2025 study worth pairing with this is [METR's](https://arxiv.org/abs/2507.09089). They put senior open-source contributors on tasks in their own codebases, with and without AI assistance. The contributors were 19% slower with AI. They reported feeling 20% faster. The discrepancy is the senior-trust pattern made visible in stopwatch terms: the calibration is happening, but slowly, and not where the user can feel it.
 
 The conventional take in industry coverage is that AI is a junior-shaped problem. It replaces junior work, and seniors will be fine because they were already fine. The data flips this. AI is most disruptive to the population that knows enough to validate what it produced. Seniors are the ones currently noticing. Juniors will inherit a code base shaped by validation that did not happen.
 
@@ -35,9 +35,9 @@ If you have noticed your own trust in AI output going down rather than up, where
 
 ## Sources
 
+- Becker, J., Rush, N., Barnes, B., & Rein, D. (2025). *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.* arXiv:2507.09089. https://arxiv.org/abs/2507.09089
 - JetBrains. (2025). *State of Developer Ecosystem 2025.* https://www.jetbrains.com/lp/devecosystem-2025/
 - Stack Overflow. (2025). *2025 Developer Survey.* https://survey.stackoverflow.co/2025
-- Becker, J., Rush, N., Barnes, B., & Rein, D. (2025). *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.* arXiv:2507.09089. https://arxiv.org/abs/2507.09089
 
 ---
 

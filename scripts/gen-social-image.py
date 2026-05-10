@@ -40,18 +40,18 @@ def render(out_path: Path) -> None:
     label_font = font(20, bold=True)
     draw.text((PAD_L, PAD_T), "W R I T I N G", font=label_font, fill=AMBER)
 
-    # Headline: the strongest line, broken across three lines for poster rhythm
-    head_size = 78
+    # Headline: three body-line observations from the article, third line in amber
+    head_size = 68
     head_font = font(head_size, bold=True)
     line_h = int(head_size * 1.18)
     headline = [
-        "Senior developers",
-        "trust AI less",
-        "than juniors.",
+        "The juniors paste it in.",
+        "The seniors slow down.",
+        "The data flips it.",
     ]
-    head_y = PAD_T + 70
+    head_y = PAD_T + 80
     for i, line in enumerate(headline):
-        # The third line gets the amber for emphasis ("Validation is not.")
+        # The third line gets the amber for emphasis (mirrors the splitting cover pattern)
         fill = AMBER if i == 2 else TEXT
         draw.text((PAD_L, head_y + i * line_h), line, font=head_font, fill=fill)
 
