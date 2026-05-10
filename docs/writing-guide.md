@@ -126,6 +126,30 @@ Same principle as the canonical guide's *Integrating Evidence* section: weave so
 
 When citing your own work, link to the project page or the source (GitHub, the AE pattern page) rather than re-narrating it.
 
+### Verify before publish
+
+Every load-bearing statistic, named study, or coined attribution gets a verification record at `docs/verification/<slug>.md` before the article ships. Apply Step 0 + Steps 4–6 of the [agent-ready-papers anti-hallucination checklist](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md). Trace each number to primary source — not to an intermediate ANALYSIS file or a downstream registry that says it's already verified. The fluency of an existing summary is exactly the surface where citation drift hides.
+
+Map confidence tier to article language:
+
+| Tier | Use when… | Article language |
+|---|---|---|
+| ESTABLISHED | Verified at primary source, exact numbers | "demonstrates", "shows", "found" |
+| SUPPORTED | Verified via registry chain or a partial primary-source extract | "found", "indicates" |
+| EMERGING | Plausible but disputed or only partially extracted | "may", "preliminary evidence suggests" |
+| SPECULATIVE | Plausible, unverified | "warrants investigation", "remains unclear" |
+
+If a number cannot survive Step 6 (read the relevant section of the primary source and confirm it says what you claim it says), the article either drops the claim or downshifts the language to match the actual confidence tier. Citation drift is silent: the failure mode is to leave the language at ESTABLISHED ("demonstrates X") when the source only supports SUPPORTED ("found X in this sample").
+
+### In-article references
+
+Cited sources get two surfaces, working together:
+
+- **Inline link** on the first mention in the prose: `<a href="..." target="_blank" rel="noopener">JetBrains' 2025 Developer Ecosystem survey</a>`. One link per source, on first mention only — repeated mentions don't get re-linked.
+- **Sources block** at the end of the article body, listed alphabetically by first author/org. Use `<aside class="article-sources">` with `<span class="article-label">Sources</span>` heading + `<ul>` of citations. The `.article-sources` CSS rule is defined in each article's style block (mono caps amber heading, dim mono list, dotted-amber link underlines). See `src/pages/writing/the-work-is-splitting.astro` or `src/pages/writing/senior-developers-trust-ai-less.astro` for the working pattern.
+
+The verification record (in `docs/verification/`) is the internal audit trail; the inline links + Sources block are the public-facing version of the same evidence chain. Anyone asking *"where does that number come from?"* should be able to follow the inline link to the source page; anyone asking *"how do I know you read it?"* should be able to find the verification record.
+
 ---
 
 ## 8. End-of-article CTA

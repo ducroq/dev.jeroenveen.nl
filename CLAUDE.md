@@ -18,6 +18,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Reviewing past LinkedIn comments or external replies | `memory/external-comments.md`: log of posted reactions with framing notes and iteration history |
 | Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `src/pages/writing/<slug>.astro` + register in `src/data/writing.ts` |
+| Verifying claims in an article (draft or published) | `docs/verification/<slug>.md`: per-article anti-hallucination record. Apply Step 0 + Steps 4–6 of the [agent-ready-papers](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md) checklist for every load-bearing statistic, named study, or coined attribution before publish. Trace each number to primary source — not to an intermediate ANALYSIS file. Confidence tier (ESTABLISHED / SUPPORTED / EMERGING / SPECULATIVE) maps to the article's language. |
 | Generating a social/cover image for an article | `scripts/gen-social-image.py`. Outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
 | Generating an in-article diagram or figure | `scripts/gen-<slug>-diagram.py` (sketch register: jittered SVG paths, mono lowercase labels) or `scripts/gen-<slug>-figure.py` (Tufte typographic: numbers + citation, no shapes). Output to `public/diagrams/<slug>.svg`. Audit against the visual-register memory rule (`feedback_visual_register.md`) before shipping any figure. |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro`: head, OG tags, structured data |
@@ -49,6 +50,7 @@ dev.jeroenveen.nl/
   docs/
     writing-guide.md                # Voice, audience, LinkedIn packaging, read before drafting
     glossary.md                     # Working definitions for terms Jeroen uses (validation, AE, ground truth, …)
+    verification/<slug>.md          # Per-article anti-hallucination audit (Step 0 + Steps 4–6, confidence tiers, Sources block)
   drafts/
     <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
     linkedin-post-<topic>-unpublished.md  # LinkedIn post drafts (SSoT, not in work-income)
@@ -84,6 +86,7 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `src/layouts/Layout.astro` | HTML head, SEO meta, OG tags, structured data |
 | `docs/writing-guide.md` | Project-specific writing guide for articles |
 | `docs/glossary.md` | Working definitions: Jeroen's coined frames + field vocabulary, with drift notes |
+| `docs/verification/<slug>.md` | Per-article anti-hallucination verification record. One file per article slug. Step 0 + Steps 4–6 of the agent-ready-papers checklist; confidence tier per claim; recommended Sources block to embed in the article. |
 | `memory/external-comments.md` | Log of posted LinkedIn / external replies |
 | `memory/external-references.md` | Observed external content filed for later reference (foils, vocabulary) |
 | `memory/gotcha-log.md` | Problem-fix archive; reviewed at end of session |
@@ -136,12 +139,14 @@ Add an object to the `projects` array in `src/pages/index.astro`:
 
 1. Read `docs/writing-guide.md` first: voice, audience, LinkedIn packaging, what to avoid.
 2. Draft in `drafts/<slug>.md` first. Sit on it overnight. Cold re-read tomorrow.
-3. Once approved, move the body into `src/pages/writing/<slug>.astro` (use the existing article as a template).
-4. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
-5. Generate a cover image: edit the headline and slug constants in `scripts/gen-social-image.py`, then `python scripts/gen-social-image.py`. Output lands at `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover.
-6. Decide if the argument earns an in-article figure. Most do not. If yes, follow one of the patterns: `scripts/gen-<slug>-diagram.py` (sketch register, see `gen-article-diagram.py` and `gen-ese-bot-diagram.py`) or `scripts/gen-<slug>-figure.py` (Tufte typographic, see `gen-senior-trust-figure.py`). Output to `public/diagrams/<slug>.svg`. Embed via `<figure class="article-sketch">` (borderless), distinct from `<figure class="article-figure">` (the polished card used for screenshots). Audit against the *It Is Both* visual-register memory rule (`feedback_visual_register.md`) before shipping any figure.
-7. Run `npm run dev` and check the article reads cleanly cold.
-8. Commit and push to `main`. Netlify rebuilds and deploys.
+3. **Build a verification record at `docs/verification/<slug>.md`** for every load-bearing statistic, named study, or coined attribution. Use Step 0 + Steps 4–6 of the [agent-ready-papers](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md) checklist. Trace each number to primary source. Map confidence tier to article language: ESTABLISHED ("demonstrates", "shows"), SUPPORTED ("found", "indicates"), EMERGING ("may", "preliminary evidence"), SPECULATIVE ("warrants investigation"). If a number cannot be traced to primary source, weaken the language or drop the claim.
+4. Once approved, move the body into `src/pages/writing/<slug>.astro` (use the existing article as a template).
+5. Register the article in `src/data/writing.ts` so it appears on `/writing/`.
+6. **Add inline links + Sources block.** First mention of each cited source in prose gets a hyperlink. End of article body gets a Sources `<aside class="article-sources">` block listing each citation with full URL. The `.article-sources` CSS class is defined per-article in the page's style block (mono caps amber heading, dim mono list, dotted-amber link underlines). Citation order: alphabetical by first author/org, which usually matches order of appearance.
+7. Generate a cover image: edit the headline and slug constants in `scripts/gen-social-image.py`, then `python scripts/gen-social-image.py`. Output lands at `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover.
+8. Decide if the argument earns an in-article figure. Most do not. If yes, follow one of the patterns: `scripts/gen-<slug>-diagram.py` (sketch register, see `gen-article-diagram.py` and `gen-ese-bot-diagram.py`) or `scripts/gen-<slug>-figure.py` (Tufte typographic, see `gen-senior-trust-figure.py`). Output to `public/diagrams/<slug>.svg`. Embed via `<figure class="article-sketch">` (borderless), distinct from `<figure class="article-figure">` (the polished card used for screenshots). Audit against the *It Is Both* visual-register memory rule (`feedback_visual_register.md`) before shipping any figure.
+9. Run `npm run dev` and check the article reads cleanly cold.
+10. Commit and push to `main`. Netlify rebuilds and deploys.
 
 ### LinkedIn cross-post (after the article is live)
 
