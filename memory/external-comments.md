@@ -26,6 +26,30 @@ Reactions and replies posted on LinkedIn or other external platforms. Captured h
 
 ---
 
+## 2026-04-21 — Publish: "A small GDPR-safe chatbot" (ese-bot)
+
+**Surfaces shipped (all three live):**
+- Short LinkedIn post (link share): https://www.linkedin.com/posts/jeroen-veen-3244444_a-year-ago-my-honest-answer-to-is-there-activity-7452614482687819776-vp4V
+- LinkedIn Pulse (long-form): https://www.linkedin.com/pulse/small-gdpr-safe-chatbot-jeroen-veen-sotoe/
+- Canonical home: https://dev.jeroenveen.nl/writing/ese-bot-eu-sovereign-rag/
+
+**Posted short-post hook (captured 2026-05-10 from the live URL, partial — LinkedIn gates the rest):**
+
+> A year ago my honest answer to "is there a European alternative?" was "not really." Today it is "yes, probably, depending on your horizon."
+>
+> Notes from running a small GDPR-safe chatbot for my students, one year in.
+
+The full body, hashtags, and closing prompt were not retrievable without auth. At fetch time: 29 reactions, 2 comments (Rudie Van Den Heuvel, Casper T.).
+
+**Notes:**
+- Logged retroactively (URLs supplied 2026-05-10). Strategy notes from publish-time were not captured.
+- The posted short-post hook ("A year ago my honest answer to 'is there a European alternative?'...") differs materially from the body in `drafts/linkedin-post-ese-bot-unpublished.md` ("Last year I built a RAG chatbot for my students."). The draft never shipped as-written; the actual published version reframed around the European-alternative question. Treat the draft as historical, not as a record of what's live.
+
+**Phrasing worth reusing:**
+- *"A year ago my honest answer to '[X]?' was 'not really.' Today it is 'yes, probably, depending on your horizon.'"* — durable opener structure for tracking shifts in capability or availability over time. The "depending on your horizon" hedge does real work: it concedes that "yes" isn't unconditional without retreating to "no."
+
+---
+
 ## 2026-05-01 — Publish: "The work is splitting" (post 1 of 3 in WHY arc)
 
 **Surfaces shipped (all three live):**
