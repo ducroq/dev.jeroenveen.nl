@@ -8,6 +8,14 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'senior-developers-trust-ai-less',
+    title: 'Senior developers trust AI less than juniors.',
+    excerpt:
+      'Three 2025 surveys keep finding the same pattern: more experience, less trust in AI output. The data flips the conventional take that AI is a junior-shaped problem.',
+    date: '2026-05-12',
+    readTime: '~5 min',
+  },
+  {
     slug: 'the-work-is-splitting',
     title: "The work is splitting. The conversations haven't caught up.",
     excerpt:

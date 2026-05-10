@@ -1,6 +1,7 @@
 # Verification record — *Senior developers trust AI less than juniors.*
 
-**Article**: `src/pages/writing/senior-developers-trust-ai-less.astro` (status: draft, awaiting publish)
+**Article**: `src/pages/writing/senior-developers-trust-ai-less.astro` (status: **published 2026-05-12**)
+**Live URL**: https://dev.jeroenveen.nl/writing/senior-developers-trust-ai-less/
 **Article slug**: `senior-developers-trust-ai-less`
 **Last verified**: 2026-05-10
 **Method**: Anti-hallucination checklist (Step 0 + Steps 4–6) per [agent-ready-papers framework](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md).
