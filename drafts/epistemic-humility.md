@@ -80,11 +80,18 @@ Where in your work with agents has your own confidence become the bigger risk th
 
 ## When ready to publish
 
-1. Verify Robson citation per the open question above.
-2. Pick a concrete moment for paragraph 4 or 5 if the cold re-read agrees one would help, and verify it is real and shareable (not someone else's lived moment).
-3. Move body into `src/pages/writing/epistemic-humility-with-agents.astro` (use ESE Bot or splitting article as template).
-4. Register in `src/data/writing.ts`.
-5. Generate cover image: edit headline and slug in `scripts/gen-social-image.py`, run, lands at `public/social/epistemic-humility-with-agents.png`.
-6. No diagram for this piece (audited above).
-7. Run `npm run dev`, read cold, ship via Netlify.
-8. Cross-post to LinkedIn (Pulse + short feed post + log in `memory/external-comments.md` per CLAUDE.md's three-surface default). Hook candidate for the short feed post: "The agent supplies fluency. The human supplies the doubt." Lead with that line if it survives the cold re-read.
+1. **Citation strategy decision.** The Robson framing was previously flagged for the named-attribution verification problem (`feedback_verify_named_attributions.md` memory rule). The HAN Digital Engineers registry has peer-reviewed empirical alternatives that do the same work without that risk. Decide whether to keep Robson as the popular-science entry point or replace it entirely. Candidates from the registry:
+   - **Fernandes et al. 2026** — *Computers in Human Behavior* 175:108779. Reverse Dunning-Kruger: AI literacy correlates with LOWER metacognitive accuracy. Local PDF: `OneDrive - HAN/Research/Digital engineers/sources/pdfs/Fernandes-2026-Reverse-DK.pdf`. Registry P4-H2.5a–c VERIFIED P0.
+   - **Microsoft Research / CMU 2025 (CHI)** — *The Impact of Generative AI on Critical Thinking* (n=319, 936 examples). Higher GenAI confidence ↔ less critical thinking. URL: https://www.microsoft.com/en-us/research/publication/the-impact-of-generative-ai-on-critical-thinking/. Registry P4-H5.5a HIGH CONF.
+   - **Agrawal 2025 (IMF F&D)** — As AI prediction improves, human judgment becomes MORE valuable. Registry P1-H5b VERIFIED P0.
+   - **Steyvers 2024** — *Perspectives on Psychological Science.* Three challenges: complementarity, calibrated reliance, cognitive engagement. Registry P1-H5f VERIFIED P1.
+2. **Citation verification.** Build a verification record at `docs/verification/epistemic-humility-with-agents.md` modeled on the post-2 record. Step 6 reading required for whichever sources end up cited. Fernandes 2026 PDF is locally available; others need WebFetch.
+3. Verify Robson citation per the open question above (only relevant if Robson is kept after step 1).
+4. Pick a concrete moment for paragraph 4 or 5 if the cold re-read agrees one would help, and verify it is real and shareable (not someone else's lived moment).
+5. Move body into `src/pages/writing/epistemic-humility-with-agents.astro` (use ESE Bot or splitting article as template).
+6. Register in `src/data/writing.ts`.
+7. Generate cover image: edit headline and slug in `scripts/gen-social-image.py`, run, lands at `public/social/epistemic-humility-with-agents.png`.
+8. No diagram for this piece (audited above).
+9. Add inline source links + Sources block at the bottom of the article (style decision logged 2026-05-10).
+10. Run `npm run dev`, read cold, ship via Netlify.
+11. Cross-post to LinkedIn (Pulse + short feed post + log in `memory/external-comments.md` per CLAUDE.md's three-surface default). Hook candidate for the short feed post: "The agent supplies fluency. The human supplies the doubt." Lead with that line if it survives the cold re-read.

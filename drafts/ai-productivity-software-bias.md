@@ -83,10 +83,17 @@ A small typographic figure is pre-generated at `public/diagrams/ai-productivity-
 
 ## When ready to publish
 
-1. Verify the OPAL paragraph against the actual case study documentation.
-2. Move body into `src/pages/writing/ai-productivity-software-bias.astro` (use ese-bot or splitting article as template).
-3. Register in `src/data/writing.ts`.
-4. Generate cover image: edit headline and slug in `scripts/gen-social-image.py`, run, lands at `public/social/ai-productivity-software-bias.png`.
-5. Embed `public/diagrams/ai-productivity-software-bias.svg` (already generated).
-6. Run `npm run dev`, read cold, ship via Netlify.
-7. Cross-post to LinkedIn (Pulse + short feed post + log in `memory/external-comments.md` per CLAUDE.md's three-surface default).
+1. **Citation verification.** Build a verification record at `docs/verification/ai-productivity-software-bias.md` modeled on the post-2 record. Required Step 6 reading at primary source for each cited claim. Local PDFs available in HAN Digital Engineers project at `OneDrive - HAN/Research/Digital engineers/sources/pdfs/`:
+   - `Naser-2023-FE-PE-Exam.pdf` — 0% structural design, 70.9% FE overall (registry P1-H4b VERIFIED P0)
+   - No local PDF for Park HAZOP / *Safety Science* 2025 — fetch via DOI: https://www.sciencedirect.com/science/article/abs/pii/S0925753525002644
+   - No local PDFs for Akolekar 2025, Oblitas, Moss 2025 (arXiv:2506.14567), Ghosh & Mittal (arXiv:2511.14478) — fetch via arXiv / DOI
+   - HAN registry has these all at VERIFIED P0/P1 — see `propositions/CLAIM-REGISTRY.md` claims P1-H4a–h
+2. **Consider broadening the evidence base** beyond Park + OPAL. Registry P1-H4 has 8 cross-domain validation studies (chemical, civil, mechanical, IC, power, electronics) showing the same plausible-but-wrong pattern. Currently the article uses 1 + own work. Stronger argument with 3–4 + own work (the cross-domain convergence is itself the evidence for "this isn't software-specific").
+3. Verify the OPAL paragraph against the actual case study documentation (`OneDrive - HAN/Research/Digital engineers/case-studies/opal-design-review.md`). Article's "five-layer verification process found ten defects… single-layer review would have found two" needs to match registry P1-H8a–c claims.
+4. Move body into `src/pages/writing/ai-productivity-software-bias.astro` (use ese-bot or splitting article as template).
+5. Register in `src/data/writing.ts`.
+6. Generate cover image: edit headline and slug in `scripts/gen-social-image.py`, run, lands at `public/social/ai-productivity-software-bias.png`.
+7. Embed `public/diagrams/ai-productivity-software-bias.svg` (already generated).
+8. Add inline source links + Sources block at the bottom of the article (style decision logged 2026-05-10).
+9. Run `npm run dev`, read cold, ship via Netlify.
+10. Cross-post to LinkedIn (Pulse + short feed post + log in `memory/external-comments.md` per CLAUDE.md's three-surface default).

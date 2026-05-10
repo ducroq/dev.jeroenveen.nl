@@ -15,23 +15,29 @@
 
 I notice the senior engineers I work with often trust AI output less than the juniors do. They read what the agent produced, recognise that it looks plausible, and slow down. The juniors paste it in. For a while I assumed this was the standard generational story: older devs are slower with new tools. The data does not support that read.
 
-JetBrains' 2025 Developer Ecosystem survey of 24,500 software developers found that those with ten or more years of experience report low trust in AI output 61% of the time. Those with zero to two years of experience report low trust 48% of the time. Stack Overflow's 2025 Developer Survey, separately, with 65,000 respondents, found that overall trust in AI output has been declining year over year, from 52% in 2023 to 46% in 2025. The decline is not driven by people who never tried it. It is driven by people who used it most.
+[JetBrains' 2025 Developer Ecosystem survey](https://www.jetbrains.com/lp/devecosystem-2025/) of 24,500 software developers found that those with ten or more years of experience report low trust in AI output 61% of the time. Those with zero to two years of experience report low trust 48% of the time. [Stack Overflow's 2025 Developer Survey](https://survey.stackoverflow.co/2025), separately, with 49,000 respondents, found that 46% of developers actively distrust AI output accuracy. Of the experienced developers in the sample, only 2.6% reported "highly trusting" AI outputs and 20% reported "highly distrusting" them: the lowest trust and highest distrust of any experience bracket.
 
-The more time you spend with the tool, the less you trust it. That is the opposite of how new tools usually work.
+Engineers with more years of practice trust the tool less. That is the opposite of how new tools usually work.
 
 The piece I wrote last week argued that engineering work has decomposed into producing output and validating it, and that validation is the harder of the two. The senior-trust gap is the same observation from a different angle. Seniors trust less because they have validated more, and validation has shown them more. They have seen the plausible-but-wrong code enough times to recognise the pattern in AI output specifically. Juniors have not yet seen enough wrong-looking code in general to develop the calibration.
 
-A small concrete example. Three weeks ago I was reviewing a retrieval function the agent had written for the ese-bot codebase. Plausible. Type-checked. Wrong about which boundary the retrieval was supposed to respect. It took me twenty minutes to find the error. The generation had taken five seconds. The trust calibration in that moment was not about familiarity with AI. It was about familiarity with the failure modes of code that looks right but is not.
+A small concrete example. Three weeks ago I was reviewing a retrieval function the agent had written for the ese-bot codebase. Plausible. Type-checked. Wrong about which boundary the retrieval was supposed to respect. It took me fifteen minutes to find the error. The generation had taken seconds. The trust calibration in that moment was not about familiarity with AI. It was about familiarity with the failure modes of code that looks right but is not.
 
-The other 2025 study worth pairing with this is METR's. They put senior open-source contributors on tasks in their own codebases, with and without AI assistance. The contributors were 19% slower with AI. They reported feeling 20% faster. The discrepancy is the senior-trust pattern made visible in stopwatch terms: the calibration is happening, but slowly, and not where the user can feel it.
+The other 2025 study worth pairing with this is [METR's](https://arxiv.org/abs/2507.09089). They put senior open-source contributors on tasks in their own codebases, with and without AI assistance. The contributors were 19% slower with AI. They reported feeling 20% faster. The discrepancy is the senior-trust pattern made visible in stopwatch terms: the calibration is happening, but slowly, and not where the user can feel it.
 
-The conventional take in industry coverage is that AI is a junior-shaped problem. It replaces junior work, and seniors will be fine because they were already fine. The data flips this. AI is most disruptive to the population that knows enough to validate what it produced. Seniors are the ones currently noticing. Juniors are the ones who will inherit code bases full of plausible-but-wrong output and a culture of not checking.
+The conventional take in industry coverage is that AI is a junior-shaped problem. It replaces junior work, and seniors will be fine because they were already fine. The data flips this. AI is most disruptive to the population that knows enough to validate what it produced. Seniors are the ones currently noticing. Juniors will inherit a code base shaped by validation that did not happen.
 
 This matters for how teams invest in their AI practice. If aggregate productivity numbers look positive but the senior productivity number is negative, the aggregate is hiding a population split. The investment that pays off is not training juniors to prompt better. It is making the validation work that seniors are already doing legible enough to scale.
 
 The next piece will be about another split that aggregate numbers hide. The data I cited above is software-developer survey data: JetBrains, Stack Overflow, METR's open-source contributors. Equivalent surveys do not exist for hardware, embedded, control, or chemistry. What does exist in those domains is validation-failure research that did not measure trust. The next piece looks at that asymmetry.
 
 If you have noticed your own trust in AI output going down rather than up, where in your work did that shift happen?
+
+## Sources
+
+- JetBrains. (2025). *State of Developer Ecosystem 2025.* https://www.jetbrains.com/lp/devecosystem-2025/
+- Stack Overflow. (2025). *2025 Developer Survey.* https://survey.stackoverflow.co/2025
+- Becker, J., Rush, N., Barnes, B., & Rein, D. (2025). *Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.* arXiv:2507.09089. https://arxiv.org/abs/2507.09089
 
 ---
 
