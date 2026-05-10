@@ -87,9 +87,9 @@ const publishedOn = '2026-05-01';
           engineering teams use AI tools now, depending on which survey you trust.
           That number reads like a triumph. Underneath it sits a different number:
           the share of teams that can say, with evidence, what their AI use is
-          actually doing to their output quality. In Jellyfish's 2025 survey, only
-          20% of organisations using AI extensively could measure its impact. The
-          other 80% are doing the work and hoping.
+          actually doing to their output quality. In <a href="https://jellyfish.co/resources/2025-state-of-engineering-management-report/" target="_blank" rel="noopener">Jellyfish's 2025 survey</a>,
+          only 20% of organisations could measure its impact. The other 80% are
+          doing the work and hoping.
         </p>
 
         <p>
@@ -120,6 +120,16 @@ const publishedOn = '2026-05-01';
           down. The more specifically I can trace where the shape of the work has
           changed, the less of this I have to write from one engineer's window.
         </p>
+
+        <aside class="article-sources">
+          <span class="article-label">Sources</span>
+          <ul>
+            <li>
+              Jellyfish. (2025). <em>2025 State of Engineering Management Report.</em>
+              <a href="https://jellyfish.co/resources/2025-state-of-engineering-management-report/" target="_blank" rel="noopener">jellyfish.co/resources/2025-state-of-engineering-management-report</a>
+            </li>
+          </ul>
+        </aside>
       </div>
     </article>
   </main>
@@ -234,6 +244,37 @@ const publishedOn = '2026-05-01';
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .article-sources {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .article-sources li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .article-sources a {
+    color: inherit;
+    border-bottom: 1px dotted var(--amber-dim);
+    word-break: break-all;
+  }
+
+  .article-sources a:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
   }
 
   .site-footer {

@@ -104,9 +104,11 @@ const publishedOn = '2026-04-21';
 
         <p>
           The European AI picture is less bleak than I assumed a year ago. Mistral has
-          been fine for what I need. Around it, EuroLLM now covers 35 EU languages
-          under Apache 2.0. GPT-NL is underway with TNO and SURF. Salamandra sits at
-          the Barcelona Supercomputing Center. Teuken is a German initiative. I am not
+          been fine for what I need. Around it, <a href="https://huggingface.co/utter-project/EuroLLM-9B-Instruct" target="_blank" rel="noopener">EuroLLM</a> now covers 35 languages
+          including the full EU official set, under Apache 2.0.
+          <a href="https://gpt-nl.nl/" target="_blank" rel="noopener">GPT-NL</a> is underway with TNO, NFI, and SURF.
+          <a href="https://huggingface.co/BSC-LT" target="_blank" rel="noopener">Salamandra</a> sits at the
+          Barcelona Supercomputing Center. <a href="https://www.iais.fraunhofer.de/en/industries_and_cross-sector_solutions/cross-sector_solutions/generative-ai/opengpt-x.html" target="_blank" rel="noopener">Teuken</a> is a German initiative. I am not
           claiming any of these replace Mistral for my workload today, and some of them
           are still more announcement than product. But a year ago my honest answer
           to "is there a European alternative?" was "not really." Today it is
@@ -142,6 +144,28 @@ const publishedOn = '2026-04-21';
           Repository:
           <a href="https://github.com/ducroq/ese_bot" target="_blank" rel="noopener">github.com/ducroq/ese_bot</a>
         </p>
+
+        <aside class="article-sources">
+          <span class="article-label">Sources</span>
+          <ul>
+            <li>
+              EuroLLM (UTTER project consortium). <em>EuroLLM-9B-Instruct model card.</em>
+              <a href="https://huggingface.co/utter-project/EuroLLM-9B-Instruct" target="_blank" rel="noopener">huggingface.co/utter-project/EuroLLM-9B-Instruct</a>
+            </li>
+            <li>
+              GPT-NL.
+              <a href="https://gpt-nl.nl/" target="_blank" rel="noopener">gpt-nl.nl</a>
+            </li>
+            <li>
+              Salamandra (Language Technologies Laboratory, Barcelona Supercomputing Center).
+              <a href="https://huggingface.co/BSC-LT" target="_blank" rel="noopener">huggingface.co/BSC-LT</a>
+            </li>
+            <li>
+              Teuken-7B (OpenGPT-X / Fraunhofer IAIS).
+              <a href="https://www.iais.fraunhofer.de/en/industries_and_cross-sector_solutions/cross-sector_solutions/generative-ai/opengpt-x.html" target="_blank" rel="noopener">iais.fraunhofer.de</a>
+            </li>
+          </ul>
+        </aside>
       </div>
     </article>
   </main>
@@ -285,6 +309,37 @@ const publishedOn = '2026-04-21';
     font-family: var(--font-mono);
     font-size: 0.9rem;
     color: var(--text-dim);
+  }
+
+  .article-sources {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .article-sources li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .article-sources a {
+    color: inherit;
+    border-bottom: 1px dotted var(--amber-dim);
+    word-break: break-all;
+  }
+
+  .article-sources a:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
   }
 
   .site-footer {
