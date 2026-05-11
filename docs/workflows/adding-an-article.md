@@ -24,6 +24,11 @@ The default packaging for a published article is **all three surfaces**:
 2. **Short feed post**: links to the Pulse article (or to the website, depending on goal). Hook in first ~210 chars; one comment prompt at the end.
 3. **Canonical home**: the dev.jeroenveen.nl article page itself.
 
-Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. Log the publish in `memory/external-comments.md` with all three URLs and a 5–7 day check-in note (which surface out-reached, what landed, what to feed into the next post).
+Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. After posting:
+
+1. Log the publish in `memory/external-comments.md` with all three URLs and a 5–7 day check-in note (which surface out-reached, what landed, what to feed into the next post).
+2. Move the draft from `drafts/<slug>-linkedin.md` to `memory/posted-linkedin/<slug>.md` and update its status header from "Ready to publish" (or similar) to "Published YYYY-MM-DD, see `memory/external-comments.md` for reception". The file preserves the full posted text for reuse as a template by future cross-posts. `drafts/` is for in-progress work only.
+
+The `memory/posted-linkedin/the-work-is-splitting.md` record is the working example of this end-state. Asymmetry to know about: the ese-bot LinkedIn record has no `posted-linkedin/` file because the live version diverged from the draft pre-publish; only the `memory/external-comments.md` log entry exists. That's acceptable; the move step is the default when the draft and the posted text materially match.
 
 The Pulse vs short-post-only choice is a tradeoff. Pulse gives more LinkedIn reach but creates a duplicate-content situation that hurts website SEO (LinkedIn Pulse can outrank a young site). Default to both surfaces while the site is young and inbound is thin; revisit when the site has authority.
