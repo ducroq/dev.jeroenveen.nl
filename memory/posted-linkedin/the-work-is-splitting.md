@@ -1,7 +1,7 @@
-# LinkedIn cross-post — The work is splitting
+# LinkedIn cross-post record — The work is splitting
 
-> **Status:** Ready to publish. Article live at https://dev.jeroenveen.nl/writing/the-work-is-splitting/ since 2026-05-01.
-> **Strategy:** Both surfaces — long-form Pulse article for LinkedIn discovery, short post linking to the Pulse article for feed reach. Website SEO sacrificed in favour of LinkedIn audience reach (deliberate; site is too young to outrank a Pulse copy).
+> **Status:** Published 2026-05-01 across all three surfaces. URLs and reception notes are in `memory/external-comments.md` (section "2026-05-01 — Publish: The work is splitting"). This file preserves the full text of what was posted (long-form Pulse article + short feed post) for reuse as a template.
+> **Strategy as posted:** Both surfaces. Long-form Pulse article for LinkedIn discovery, short post linking to the Pulse article for feed reach. Website SEO sacrificed in favour of LinkedIn audience reach (deliberate; site was too young to outrank a Pulse copy).
 > **Hashtag set:** #AI #DeveloperProductivity #AugmentedEngineering
 
 ---
