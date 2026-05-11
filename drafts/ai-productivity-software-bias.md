@@ -17,7 +17,7 @@ If you read most industry coverage of AI in engineering, you would conclude that
 
 JetBrains, Stack Overflow, GitHub, METR. Each of these names a survey or study with thousands of respondents. Each is, on inspection, a software-developer survey. The "AI productivity" findings circulating in engineering management discussions trace back, in nearly every case, to a software-developer benchmark or a software-developer survey. The senior-trust gap I wrote about last week was no different. It was JetBrains, Stack Overflow, METR. Three software studies.
 
-Hardware, embedded, control engineering, and chemistry have AI assistance too. They do not have these surveys. That absence has consequences for how the field talks about AI.
+Hardware, embedded, and control engineering have AI assistance too. They do not have these surveys. That absence has consequences for how the field talks about AI.
 
 The clearest published exception is a 2025 paper by Park and colleagues on AI-assisted hazard and operability analysis in chemical engineering. They asked an LLM to produce HAZOP output for plant scenarios. The result, scored against the textual conventions of HAZOP reports, was 86% plausible. Scored against semantic validity (whether the hazards identified were the actual ones in the scenario) the number was between 19% and 37% correct. The model produced output that read like a HAZOP report. Less than half of it found the hazards.
 
