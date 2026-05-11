@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320"
-     width="1000" height="320" role="img"
-     aria-label="JetBrains 2025: software developers with 10+ years of experience report low trust in AI output 61% of the time. Developers with 0 to 2 years report low trust 48% of the time.">
-  <rect width="1000" height="320" fill="#0b0b0f"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540"
+     width="1000" height="540" role="img"
+     aria-label="Two-column hand-drawn sketch. Left column labelled 'junior' showing a laptop with abstracted code lines, annotation 'looks good' and time stamp 'seconds'. Right column labelled 'senior' showing the same laptop with annotations 'wait, what is this lookup doing' and 'wrong boundary' pointing at specific code lines, and time stamp '15 minutes'. A vertical spine between the columns reads 'VALIDATION'. Caption beneath: 'seniors trust less because they have validated more.'">
+  <rect width="1000" height="540" fill="#0b0b0f"/>
+  
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#8a8895"/>
+  </marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#c88a20"/>
+  </marker>
+</defs>
 
-  <text x="500.0" y="70" text-anchor="middle"
-        font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="16" fill="#7a7a85" letter-spacing="2">low trust in ai output  ·  jetbrains 2025</text>
-
-  <text x="320" y="195" text-anchor="middle"
-        font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="76" font-weight="500" fill="#e8e8ed">61%</text>
-  <text x="320" y="245" text-anchor="middle"
-        font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="20" fill="#9898a8">10+ years</text>
-
-  <text x="680" y="195" text-anchor="middle"
-        font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="76" font-weight="500" fill="#e8e8ed">48%</text>
-  <text x="680" y="245" text-anchor="middle"
-        font-family="JetBrains Mono, ui-monospace, monospace"
-        font-size="20" fill="#9898a8">0–2 years</text>
-
-  <line x1="180.0" y1="285" x2="820.0" y2="285"
-        stroke="#3a3a48" stroke-width="1" stroke-linecap="round"/>
+  <text x="300" y="80" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="30" fill="#b8b5b0">junior</text>
+  <text x="700" y="80" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="30" fill="#b8b5b0">senior</text>
+  <path d="M 189.1,128.3 L 264.1,127.9 L 336.8,129.3 L 407.8,130.0 L 407.7,179.7 L 407.8,228.0 L 409.6,281.6 L 334.8,278.6 L 264.0,282.2 L 190.4,279.5 L 192.4,227.7 L 191.8,178.9 Z" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 189.1,283.0 L 409.5,284.8 L 437.2,302.2 L 162.3,301.7 Z" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 210.0,155.0 L 253.3,154.1 L 295.5,154.4 L 339.6,155.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 210.0,180.0 L 240.4,179.9 L 269.6,180.2 L 300.0,180.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 210.0,205.0 L 260.9,204.6 L 312.6,205.4 L 363.0,205.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 210.0,230.0 L 244.3,230.1 L 279.7,230.8 L 314.4,230.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 210.0,255.0 L 254.9,254.6 L 299.8,254.2 L 343.2,255.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 589.6,131.3 L 661.6,129.9 L 734.4,130.8 L 811.3,130.4 L 811.9,179.1 L 811.0,230.5 L 810.4,279.8 L 738.4,282.2 L 663.2,280.8 L 587.8,281.0 L 590.7,232.5 L 591.6,178.9 Z" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 589.7,284.4 L 808.8,283.9 L 837.2,301.0 L 560.9,302.7 Z" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 610.0,155.0 L 652.5,154.5 L 696.2,155.7 L 739.6,155.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 610.0,180.0 L 639.2,179.9 L 670.1,180.8 L 700.0,180.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 610.0,205.0 L 661.6,205.7 L 711.6,204.8 L 763.0,205.0" fill="none" stroke="#c88a20" stroke-width="1.5" stroke-linecap="round"/><path d="M 610.0,230.0 L 644.5,230.8 L 680.5,229.3 L 714.4,230.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/><path d="M 610.0,255.0 L 653.8,254.5 L 698.3,255.0 L 743.2,255.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="70" y="170" font-family="JetBrains Mono, ui-monospace, monospace" font-size="17" fill="#7a7a85">looks good</text>
+  <path d="M 150.0,166.0 L 161.2,162.2 L 170.8,159.4 L 182.7,156.6 L 195.1,153.7 L 205.0,150.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr)"/>
+  <text x="820" y="175" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#b8b5b0">wait, what is</text>
+  <text x="820" y="194" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#b8b5b0">this lookup</text>
+  <text x="820" y="213" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#b8b5b0">doing</text>
+  <path d="M 814.0,189.0 L 801.2,192.5 L 788.8,194.3 L 776.6,199.3 L 763.7,202.5 L 750.0,205.0" fill="none" stroke="#c88a20" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr-amber)"/>
+  <text x="820" y="250" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#b8b5b0">wrong</text>
+  <text x="820" y="269" font-family="JetBrains Mono, ui-monospace, monospace" font-size="15" fill="#b8b5b0">boundary</text>
+  <path d="M 814.0,258.0 L 790.9,252.1 L 767.4,247.1 L 744.5,240.1 L 722.1,234.8 L 700.0,230.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" marker-end="url(#arr)"/>
+  <text x="300" y="358" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="18" font-style="italic" fill="#7a7a85">seconds</text>
+  <text x="700" y="358" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="18" font-style="italic" fill="#7a7a85">15 minutes</text>
+  <path d="M 500.0,92.0 L 499.5,129.9 L 499.3,166.4 L 499.2,202.5 L 501.0,239.4 L 500.3,276.9 L 499.9,314.0 L 499.4,351.7 L 499.2,387.5 L 499.0,424.5 L 500.0,462.0" fill="none" stroke="#8a8895" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+  <text x="500" y="110.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">V</text>
+  <text x="500" y="146.66666666666666" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">A</text>
+  <text x="500" y="183.33333333333331" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">L</text>
+  <text x="500" y="220.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">I</text>
+  <text x="500" y="256.66666666666663" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">D</text>
+  <text x="500" y="293.3333333333333" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">A</text>
+  <text x="500" y="330.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">T</text>
+  <text x="500" y="366.66666666666663" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">I</text>
+  <text x="500" y="403.3333333333333" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">O</text>
+  <text x="500" y="440.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="32" font-weight="500" fill="#b8b5b0">N</text>
+  <text x="500.0" y="490" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" fill="#b8b5b0">seniors trust less because they have validated more.</text>
 </svg>
