@@ -13,7 +13,8 @@ The publishing workflow for a `/writing/` article on `dev.jeroenveen.nl`.
 7. Generate a cover image: edit the headline and slug constants in `scripts/gen-social-image.py`, then `python scripts/gen-social-image.py`. Output lands at `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover.
 8. Decide if the argument earns an in-article figure. Most do not. If yes, follow one of the patterns: `scripts/gen-<slug>-diagram.py` (sketch register, see `gen-article-diagram.py` and `gen-ese-bot-diagram.py`) or `scripts/gen-<slug>-figure.py` (Tufte typographic, see `gen-senior-trust-figure.py`). Output to `public/diagrams/<slug>.svg`. Embed via `<figure class="article-sketch">` (borderless), distinct from `<figure class="article-figure">` (the polished card used for screenshots). Audit against the *It Is Both* visual-register memory rule (`feedback_visual_register.md`) before shipping any figure.
 9. Run `npm run dev` and check the article reads cleanly cold.
-10. Commit and push to `main`. Netlify rebuilds and deploys.
+10. **Cross-model review pass.** Paste the article body (or the live preview URL once deployed) into a different model (GPT, Gemini) or a fresh Claude session with no project context, using [`templates/review-prompt.md`](file:///C:/local_dev/agent-ready-papers/templates/review-prompt.md) Variant B (non-empirical) as the prompt. Address logic gaps, unsupported assertions, citation drift, and tone issues before pushing. Filter the review output against the project's voice rules in `docs/writing-guide.md` Section 6 (cross-vendor reviewers do not read your voice and will frequently suggest label-coining, subheadings, or popular-psychology references that the rule rejects). Per `docs/writing-guide.md` Section 7.
+11. Commit and push to `main`. Netlify rebuilds and deploys.
 
 ## LinkedIn cross-post (after the article is live)
 

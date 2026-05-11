@@ -7,3 +7,8 @@ Thumbs.db
 
 # Claude Code local-only overrides
 .claude/settings.local.json
+
+# Local visual reference library (third-party content with copyright surface).
+# Allowlist generated outputs that the diagram scripts reference by path.
+memory/visual-references/*
+!memory/visual-references/senior-trust-gemini-draft.jpg

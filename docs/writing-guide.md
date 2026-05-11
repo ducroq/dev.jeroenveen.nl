@@ -141,6 +141,19 @@ Map confidence tier to article language:
 
 If a number cannot survive Step 6 (read the relevant section of the primary source and confirm it says what you claim it says), the article either drops the claim or downshifts the language to match the actual confidence tier. Citation drift is silent: the failure mode is to leave the language at ESTABLISHED ("demonstrates X") when the source only supports SUPPORTED ("found X in this sample").
 
+### Cross-model review pass
+
+Every article gets a cross-model review before publish. An agent that helped draft a section has sunk-cost bias in its context and will not catch its own errors there. Same-family models share enough of that bias for the same blind spot to apply at the family level, not just the session level.
+
+Procedure:
+
+1. Article is final in `src/pages/writing/<slug>.astro`, reads cleanly cold.
+2. Open a different model (GPT, Gemini) or at minimum a fresh Claude session with no project context.
+3. Paste the article body together with the agent-ready-papers [`templates/review-prompt.md`](file:///C:/local_dev/agent-ready-papers/templates/review-prompt.md) (Variant B, non-empirical) as the prompt.
+4. Address logic gaps, unsupported assertions, citation drift, and tone issues before pushing. Trivial fixes get a small follow-up commit; structural issues mean back to the draft.
+
+This step is *not* bundled with the heavier academic gates (Toulmin typing, equation verification) that an essay does not need. Those genuinely are overkill for a personal essay. Cross-model review costs a few minutes and catches the class of error that same-model self-review reliably misses, which is a different cost-benefit profile.
+
 ### In-article references
 
 Cited sources get two surfaces, working together:
@@ -182,6 +195,7 @@ Read the draft as the target reader (Section 2). Specifically check:
 - [ ] **Numbers paired with meaning**, not floating
 - [ ] **No em-dashes** anywhere in the body (use a colon, comma, or sentence break instead)
 - [ ] **No "key takeaways" or "in conclusion"**: essay-mode landing
+- [ ] **Cross-model review pass** run (different model, or fresh Claude session with no project context, using `templates/review-prompt.md` Variant B). See Section 7.
 
 ---
 
