@@ -33,17 +33,19 @@ Reactions and replies posted on LinkedIn or other external platforms. Captured h
 - LinkedIn Pulse (long-form): https://www.linkedin.com/pulse/small-gdpr-safe-chatbot-jeroen-veen-sotoe/
 - Canonical home: https://dev.jeroenveen.nl/writing/ese-bot-eu-sovereign-rag/
 
-**Posted short-post hook (captured 2026-05-10 from the live URL, partial — LinkedIn gates the rest):**
+**Posted short-post body (full, captured 2026-05-10, confirmed complete by Jeroen 2026-05-11):**
 
 > A year ago my honest answer to "is there a European alternative?" was "not really." Today it is "yes, probably, depending on your horizon."
 >
 > Notes from running a small GDPR-safe chatbot for my students, one year in.
 
-The full body, hashtags, and closing prompt were not retrievable without auth. At fetch time: 29 reactions, 2 comments (Rudie Van Den Heuvel, Casper T.).
+The auto-card under the hook links to the Pulse article ("A small GDPR-safe chatbot"). No additional hashtags or closing prompt. At first fetch (2026-05-10): 29 reactions, 2 comments (Rudie Van Den Heuvel, Casper T.).
+
+**Full Pulse article body:** captured at `memory/posted-linkedin/ese-bot-eu-sovereign-rag.md` (supplied by Jeroen 2026-05-11 from the live Pulse URL).
 
 **Notes:**
-- Logged retroactively (URLs supplied 2026-05-10). Strategy notes from publish-time were not captured.
-- The posted short-post hook ("A year ago my honest answer to 'is there a European alternative?'...") differs materially from the body in `drafts/linkedin-post-ese-bot-unpublished.md` ("Last year I built a RAG chatbot for my students."). The draft never shipped as-written; the actual published version reframed around the European-alternative question. Treat the draft as historical, not as a record of what's live.
+- Logged retroactively (URLs supplied 2026-05-10, full bodies supplied 2026-05-11). Strategy notes from publish-time were not captured.
+- The published version reframed substantially from the original short-post draft, which opened "Last year I built a RAG chatbot for my students." That draft (formerly at `drafts/linkedin-post-ese-bot-unpublished.md`) has been retired. The European-alternative framing in the live post is the canonical record.
 
 **Phrasing worth reusing:**
 - *"A year ago my honest answer to '[X]?' was 'not really.' Today it is 'yes, probably, depending on your horizon.'"* — durable opener structure for tracking shifts in capability or availability over time. The "depending on your horizon" hedge does real work: it concedes that "yes" isn't unconditional without retreating to "no."

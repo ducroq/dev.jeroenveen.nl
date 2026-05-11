@@ -29,6 +29,10 @@ Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. Aft
 1. Log the publish in `memory/external-comments.md` with all three URLs and a 5–7 day check-in note (which surface out-reached, what landed, what to feed into the next post).
 2. Move the draft from `drafts/<slug>-linkedin.md` to `memory/posted-linkedin/<slug>.md` and update its status header from "Ready to publish" (or similar) to "Published YYYY-MM-DD, see `memory/external-comments.md` for reception". The file preserves the full posted text for reuse as a template by future cross-posts. `drafts/` is for in-progress work only.
 
-The `memory/posted-linkedin/the-work-is-splitting.md` record is the working example of this end-state. Asymmetry to know about: the ese-bot LinkedIn record has no `posted-linkedin/` file because the live version diverged from the draft pre-publish; only the `memory/external-comments.md` log entry exists. That's acceptable; the move step is the default when the draft and the posted text materially match.
+The `memory/posted-linkedin/` directory holds two working examples:
+- `the-work-is-splitting.md` — drafted, posted, then moved here at the publish step. The default lifecycle.
+- `ese-bot-eu-sovereign-rag.md` — reconstructed retroactively from the live URLs because the original short-post draft diverged from what shipped and was retired. The European-alternative framing was the live reframing.
+
+Either path is acceptable. Default workflow: move the draft when the posted text materially matches it. For divergent posts (significant rewrites between draft and live), capture the live text directly into `memory/posted-linkedin/<slug>.md` after publish.
 
 The Pulse vs short-post-only choice is a tradeoff. Pulse gives more LinkedIn reach but creates a duplicate-content situation that hurts website SEO (LinkedIn Pulse can outrank a young site). Default to both surfaces while the site is young and inbound is thin; revisit when the site has authority.
