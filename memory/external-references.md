@@ -58,3 +58,30 @@ Each entry captures: what the artifact is, why it's worth keeping, useful extrac
 
 **Decision rule for this kind of artifact:**
 List-post taxonomies in this genre are useful as foils when they crystallise the dominant view *cleanly*. Don't engage in the comments — that drives traffic to a course-seller's funnel. File for use under Jeroen's own name where the analytical move can do its work.
+
+---
+
+## 2026-05-12 — Linumiz GmbH talk announcement: "Embedded DX: From Datasheet to Zephyr Driver" (LinkedIn post)
+
+**Source:** LinkedIn post by Linumiz GmbH, URN `urn:li:activity:7459131799605190656`. Live URL: https://www.linkedin.com/feed/update/urn:li:activity:7459131799605190656/. Talk scheduled for 2026-05-12 at the Zephyr Project Meetup in Copenhagen, hosted by Demant.
+
+**Why filed:** This is the embedded-domain version of post 3's argument happening in real time. Linumiz is asking, in public on LinkedIn: *can offline AI help embedded teams move faster from datasheets to working Zephyr drivers?* And framing the question honestly: *"where AI-assisted hardware enablement proves genuinely valuable and where careful oversight remains essential."* That is the produce-vs-validate split transposed onto embedded firmware work. The conversation is happening; the published-research surveys (JetBrains, Stack Overflow, METR) do not see it.
+
+**Talk title (verbatim, for reuse / reference):**
+*"Embedded DX: From Datasheet to Zephyr Driver — Can Offline AI Accelerate Hardware Enablement?"*
+
+**Hashtag set** (heavily embedded-domain, useful as a reference for post 3 audience-filtering hashtag selection): #ZephyrRTOS, #EmbeddedSystems, #FirmwareDevelopment, #DeviceDrivers, #Devicetree, #HardwareEnablement, #EdgeAI, #AIForEmbedded, #EmbeddedDX, plus the broader #EmbeddedLinux, #YoctoProject, #Semiconductor.
+
+**Why this matters for the WHY arc:**
+
+- Post 3 (`drafts/ai-productivity-software-bias.md`) argues that AI-productivity research is software-developer-centric and misses hardware / embedded / control. The Linumiz post is a live data point: an embedded firm publicly asking the AI-acceleration question, framing it carefully, soliciting community feedback. This is the conversation post 3 is claiming exists, and provides external evidence for it.
+- The Linumiz framing ("where it proves genuinely valuable and where careful oversight remains essential") maps directly to the produce-vs-validate frame from post 1 and the senior-trust validation work from post 2. Useful as evidence that embedded practitioners are arriving at similar conclusions independently.
+- "Offline AI" specifically (local LLMs, not cloud) is an EU-relevant angle (GDPR adjacency, same as the ese-bot piece). Reinforces that the EU-embedded-engineering audience is differentiated from the US-cloud-AI audience.
+
+**Engagement context (not engaged with publicly yet):**
+
+- Johan Korten commented and tagged Jeroen and Victor Hogeweij. Comment text not captured at filing time (auth-gated for the WebFetch tool). Worth reading the tag in-app to understand what Johan is asking.
+- Decided 2026-05-12 not to engage publicly yet. Filed for reference; possible engagement after post 3 ships (then the redirect-to-post move is natural: "wrote about this here, would be useful to compare notes with what you're seeing in Zephyr work").
+- Potential foil: if Linumiz's talk lands with a strong "AI accelerates, here's how" message, that's a positive case to engage with. If their talk lands with a strong "here's where it breaks" message, that's the same case post 3 is making.
+
+**To revisit:** After the Zephyr meetup (post-2026-05-12), check whether Linumiz published a recap or slides. If yes, those are concrete embedded-domain evidence for post 3.
