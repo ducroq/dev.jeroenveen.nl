@@ -27,7 +27,7 @@ The piece I wrote last week argued that engineering work has decomposed into pro
 
 A small concrete example. Three weeks ago I was reviewing a retrieval function the agent had written for the ese-bot codebase. Plausible. Type-checked. Wrong about which boundary the retrieval was supposed to respect. It took me fifteen minutes to find the error. The generation had taken seconds. The trust calibration in that moment was not about familiarity with AI. It was about familiarity with the failure modes of code that looks right but is not.
 
-The conventional take in industry coverage is that AI is a junior-shaped problem. It replaces junior work, and seniors will be fine because they were already fine. The data flips this. AI is most disruptive to the population that knows enough to validate what it produced. Seniors are the ones currently noticing. Juniors will inherit a code base shaped by validation that did not happen.
+The conventional take in industry coverage is that AI replaces junior work, so juniors are at risk and seniors are fine. The data flips this. Seniors are the ones currently absorbing the cost, because they do the validation: recognising what looks plausible but isn't, slowing down on each piece. Juniors paste it in. The code base will be shaped by whatever validation did not happen.
 
 This matters for how teams invest in their AI practice. If aggregate productivity numbers look positive but the senior productivity number is negative, the aggregate is hiding a population split. The investment that pays off is not training juniors to prompt better. It is making the validation work that seniors are already doing legible enough to scale.
 
@@ -51,7 +51,7 @@ I keep noticing this in my own teams: senior engineers read AI output, recognise
 
 In JetBrains' 2025 survey of 24,500 developers, those with ten or more years of experience report low trust in AI output 61% of the time. The zero-to-two-years bracket: 48%. Stack Overflow's 2025 survey of 49,000 developers found the same direction: experienced developers have the lowest "highly trust" rate (2.6%) and the highest "highly distrust" rate (20%) of any bracket.
 
-The conventional take is that AI is a junior-shaped problem. The data says AI is most disruptive to the population that knows enough to validate what it produced. Seniors are the ones currently noticing. Juniors will inherit a code base shaped by validation that did not happen.
+The conventional take is that AI replaces junior work, so juniors are at risk and seniors are fine. The data flips this. Seniors are the ones currently absorbing the cost, because they do the validation: recognising what looks plausible but isn't, slowing down on each piece. Juniors paste it in. The code base will be shaped by whatever validation did not happen.
 
 Where in your work did your trust in AI output shift?
 
