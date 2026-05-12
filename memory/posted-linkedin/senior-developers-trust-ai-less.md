@@ -1,7 +1,7 @@
-# LinkedIn cross-post: Senior developers trust AI less than juniors.
+# LinkedIn cross-post record: Senior developers trust AI less than juniors.
 
-> **Status:** Draft, awaiting cold re-read. Article live at https://dev.jeroenveen.nl/writing/senior-developers-trust-ai-less/ since 2026-05-12.
-> **Strategy:** Both surfaces. Long-form Pulse article for LinkedIn discovery, short post linking to the Pulse article for feed reach. Same call as work-is-splitting (post 1 of 3 in the WHY arc); the site has slightly more authority now (3 published pieces, one with the new figure) but still young.
+> **Status:** Published 2026-05-12 across all three surfaces. URLs and reception notes in `memory/external-comments.md` (section "2026-05-12 — Publish: Senior developers trust AI less than juniors."). This file preserves the full text of what was posted (Pulse article + short feed post) for reuse as a template.
+> **Strategy as posted:** Both surfaces. Long-form Pulse article for LinkedIn discovery, short post linking to the Pulse article for feed reach. Same call as work-is-splitting (post 1 of 3 in the WHY arc); the site has slightly more authority now (3 published pieces, one with the new figure) but still young.
 > **Hashtag set:** #AI #DeveloperProductivity #AugmentedEngineering
 > **Arc context:** Post 2 of 3. Post 1 (`the-work-is-splitting`) set up the produce-vs-validate split. This piece is the same observation from a different angle: the senior trust gap is what validation accumulating looks like at the individual level.
 
@@ -55,7 +55,7 @@ The conventional take is that AI replaces junior work, so juniors are at risk an
 
 Where in your work did your trust in AI output shift?
 
-[paste LinkedIn article URL here once published]
+https://www.linkedin.com/pulse/senior-developers-trust-ai-less-than-juniors-jeroen-veen-1biue/
 
 #AI #DeveloperProductivity #AugmentedEngineering
 

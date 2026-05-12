@@ -162,3 +162,37 @@ This split is sharper than "independence vs not" and worth keeping for future wr
 **To do once posted:**
 - Promote this entry from DRAFT to a regular dated entry (drop the "pending" marker).
 - Watch whether Geert engages with the stance-shaped vs. knowledge-shaped split. If he does, this thread is approaching post 2 / 3 territory and may be worth signalling redirect rather than continuing to refine privately.
+
+
+---
+
+## 2026-05-12 — Publish: "Senior developers trust AI less than juniors." (post 2 of 3 in WHY arc)
+
+**Surfaces shipped (all three live):**
+- Short LinkedIn post (link share): https://www.linkedin.com/posts/jeroen-veen-3244444_the-conventional-take-is-that-ai-replaces-activity-7459851440463904768-sPvM
+- LinkedIn Pulse (long-form): https://www.linkedin.com/pulse/senior-developers-trust-ai-less-than-juniors-jeroen-veen-1biue/
+- Canonical home: https://dev.jeroenveen.nl/writing/senior-developers-trust-ai-less/
+
+**Strategy choices (worth re-examining after data comes in):**
+- **Both surfaces** (Pulse + short feed post). Same as work-is-splitting. The site has a touch more authority now but is still young.
+- **Subtitle rewritten pre-publish**: from "What multiple 2025 surveys keep finding." to "An observation from three developer surveys." (matches work-is-splitting register, drops year-stamping).
+- **Punchline paragraph rewritten pre-publish** for the conventional-take-flip. Original was abstract ("AI is most disruptive to the population that knows enough to validate what it produced"); rewrote to functional ("Seniors are the ones currently absorbing the cost, because they do the validation: recognising what looks plausible but isn't, slowing down on each piece"). This was driven by Jeroen flagging the original didn't land conceptually on first read. Worth watching whether the rewrite improves comment quality vs. work-is-splitting's punchline.
+- **Sketch figure** (vectorised junior/senior validation comparison) on the website article only; not embedded in Pulse (LinkedIn doesn't handle SVG cleanly, and the cover image at `public/social/senior-developers-trust-ai-less.png` carries the visual presence on the Pulse + feed-post-auto-card surfaces).
+- **Hashtag set consistent with post 1**: `#AI #DeveloperProductivity #AugmentedEngineering`. Maintains series signal for the algorithm.
+
+**Review trail (multi-model in-family review pattern applied for the first time):**
+- Opus subagent review on the LinkedIn draft: 4.3/5.0, accept with minor revisions. Found subtitle drift and CTA pre-loading. Both fixed pre-publish.
+- Haiku subagent review on the same draft: 4.3/5.0, accept with minor revisions. All hard rules pass. Two soft additions suggested (sample-scope clarity, METR N=16 parenthetical); neither applied.
+- Gemini cross-vendor review on the short post: 4.56/5.0, accept. Most suggestions failed project voice rules (label-coining "Validation Tax", slogan "technical debt at the speed of light", subheading suggestion, chart suggestion, popular-psych reference); all filtered. Net actionable findings after voice-rule filter: 0.
+- Empirical finding from this triple-review: intra-family multi-size review (Haiku for rule compliance, Opus for argument-shape) caught the substantive issues; cross-vendor review surfaced mostly voice-rule violations on this voice-sensitive content. Captured as `agent-ready-papers` issue #7 (DR-011 proposal: Multi-Model Review Pattern).
+
+**To do (5-7 day check-in):**
+- Compare reception against work-is-splitting (Pulse views, short-post reactions, comments).
+- Watch the comment-prompt response rate. The closing question ("Where in your work did your trust in AI output shift?") is the tightened version of the original 23-word formulation; testing whether the 9-word neutral form earns better replies than the original directional form.
+- Watch for "but seniors are slow adopters" responses. The article's paragraph 1 names that read; the response in comments is to point at METR's 19%-slower-with-AI finding (seniors who DO use AI are objectively slower, so their distrust matches measured reality, not generational lag).
+- If the rewritten punchline paragraph performs well (clearer comments, more on-topic replies), promote the rewrite pattern: when a conceptual punchline depends on bridging abstractions, unpack to functional terms.
+
+**Phrasing worth reusing:**
+- *"Seniors are the ones currently absorbing the cost, because they do the validation."* — names *who* and *why* in one sentence. Reusable for any "who pays the hidden cost?" framing.
+- *"The code base will be shaped by whatever validation did not happen."* — the inheritance frame for skipped validation work. Travels to debt / maintainability / institutional-memory contexts.
+- *"recognising what looks plausible but isn't, slowing down on each piece"* — what validation actually feels like, in concrete terms. Reusable when "validation work" needs to stop being abstract.
