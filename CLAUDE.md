@@ -15,7 +15,8 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md`: voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
 | Defining or auditing a term Jeroen uses (coined frames like validation, AE, ground truth; or field vocabulary like agent, workflow, evaluator-optimizer, HITL) | `docs/glossary.md`: working definitions, drift notes, AE-frame relevance |
 | Continuing a parked draft | `drafts/<slug>.md`: articles in progress live here until they ship |
-| Reviewing past LinkedIn comments or external replies | `memory/external-comments.md`: log of posted reactions with framing notes and iteration history |
+| Reviewing past LinkedIn comments or external replies | `memory/external-comments.md`: log of posted reactions and publish events with framing notes, URLs, and reception history |
+| Continuing or referencing a previously posted LinkedIn cross-post | `memory/posted-linkedin/<slug>.md`: full text of posted Pulse articles + short feed posts. Reuse as templates for new cross-posts. Records exist for `the-work-is-splitting` and `ese-bot-eu-sovereign-rag` |
 | Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `docs/workflows/adding-an-article.md`: full publishing workflow including draft, verification record, page file, registry, cover image, references, and LinkedIn cross-post |
 | Verifying claims in an article (draft or published) | `docs/verification/<slug>.md`: per-article anti-hallucination record. Apply Step 0 + Steps 4–6 of the [agent-ready-papers](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md) checklist for every load-bearing statistic, named study, or coined attribution before publish. Trace each number to primary source, not to an intermediate ANALYSIS file. Confidence tier maps to article language per `docs/writing-guide.md` Section 7. |
@@ -34,7 +35,11 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 - The `CNAME` file must stay as `dev.jeroenveen.nl`. Retained from the GitHub Pages era; Netlify uses the DNS settings directly.
 - `.github/workflows/deploy.yml` is an orphaned GitHub Pages workflow. Do not treat it as active CI. Deployment goes through Netlify.
 - Keep the site accessible: skip-nav link, `aria-label` on external links, `:focus-visible` styles, semantic HTML
-- **LinkedIn post drafts are SSoT here**, not in `work-income`. Naming: `drafts/linkedin-post-<topic>-unpublished.md` while drafted; drop the `-unpublished` suffix once posted (or move the record to `memory/external-comments.md`). Career strategy stays in `work-income/cv/`.
+- **LinkedIn drafts are SSoT here**, not in `work-income`. Two patterns:
+  - **General LinkedIn drafts** (ideas backlog, replies, standalone posts): `drafts/linkedin-post-<topic>-unpublished.md`. Drop `-unpublished` once posted, or log the publish in `memory/external-comments.md` and delete the draft.
+  - **Article-specific cross-post drafts** (Pulse + short feed post tied to a `/writing/<slug>/` article): `drafts/<slug>-linkedin.md`. After posting, log URLs in `memory/external-comments.md` AND move the full text to `memory/posted-linkedin/<slug>.md`. See `docs/workflows/adding-an-article.md` for the lifecycle. The `the-work-is-splitting` and `ese-bot-eu-sovereign-rag` records are the working examples.
+
+  Career strategy stays in `work-income/cv/`.
 
 ## Architecture
 
@@ -54,7 +59,14 @@ dev.jeroenveen.nl/
     workflows/                      # Numbered workflow steps for adding cards / articles, loaded on demand
   drafts/
     <slug>.md                       # Article drafts in progress (cold-re-read parking spot)
-    linkedin-post-<topic>-unpublished.md  # LinkedIn post drafts (SSoT, not in work-income)
+    <slug>-linkedin.md              # Article-specific LinkedIn cross-post drafts; moved to memory/posted-linkedin/ after publish
+    linkedin-post-<topic>-unpublished.md  # General LinkedIn drafts (ideas, replies, standalone posts) — SSoT, not in work-income
+  memory/
+    external-comments.md            # Publish events + reply log: URLs, reception, reusable phrasings
+    external-references.md          # Observed-but-not-engaged-with external content
+    gotcha-log.md                   # Problem-fix archive; reviewed at end of session
+    posted-linkedin/<slug>.md       # Full text of posted LinkedIn cross-posts (Pulse body + short feed post), for template reuse
+    visual-references/              # Local reference images (gitignored; allowlist exception for files the diagram scripts reference)
   public/
     CNAME                           # GitHub Pages custom domain
     robots.txt                      # Crawl rules + sitemap pointer
@@ -89,8 +101,9 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `docs/glossary.md` | Working definitions: Jeroen's coined frames + field vocabulary, with drift notes |
 | `docs/verification/<slug>.md` | Per-article anti-hallucination verification record. One file per article slug. Step 0 + Steps 4–6 of the agent-ready-papers checklist; confidence tier per claim; recommended Sources block to embed in the article. |
 | `docs/workflows/<name>.md` | Numbered workflow steps for adding a project card or an article, loaded on demand from the Before You Start table. |
-| `memory/external-comments.md` | Log of posted LinkedIn / external replies |
+| `memory/external-comments.md` | Publish events + log of posted LinkedIn / external replies (URLs, reception, reusable phrasings) |
 | `memory/external-references.md` | Observed external content filed for later reference (foils, vocabulary) |
+| `memory/posted-linkedin/<slug>.md` | Full text of posted LinkedIn cross-posts (Pulse body + short feed post). For reuse as templates. Working examples: `the-work-is-splitting`, `ese-bot-eu-sovereign-rag` |
 | `memory/gotcha-log.md` | Problem-fix archive; reviewed at end of session |
 | `astro.config.mjs` | Site URL, sitemap integration |
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |

@@ -1,4 +1,4 @@
-# LinkedIn cross-post — Senior developers trust AI less than juniors.
+# LinkedIn cross-post: Senior developers trust AI less than juniors.
 
 > **Status:** Draft, awaiting cold re-read. Article live at https://dev.jeroenveen.nl/writing/senior-developers-trust-ai-less/ since 2026-05-12.
 > **Strategy:** Both surfaces. Long-form Pulse article for LinkedIn discovery, short post linking to the Pulse article for feed reach. Same call as work-is-splitting (post 1 of 3 in the WHY arc); the site has slightly more authority now (3 published pieces, one with the new figure) but still young.
@@ -66,7 +66,7 @@ Where in your work did your trust in AI output shift?
 1. Publish the LinkedIn Pulse article first. Copy its URL once live.
 2. Paste that URL into the short post in place of the placeholder.
 3. Publish the short post.
-4. Log this engagement in `memory/external-comments.md` after a day or two — note any replies worth tracking, what landed, what didn't.
+4. Log this engagement in `memory/external-comments.md` after a day or two. Note any replies worth tracking, what landed, what didn't.
 5. After publish: move this file from `drafts/` to `memory/posted-linkedin/senior-developers-trust-ai-less.md`, update its status header (per `docs/workflows/adding-an-article.md`).
 
 ## Notes for next time
@@ -79,7 +79,7 @@ Where in your work did your trust in AI output shift?
 
 - [ ] First-sentence audit: filters for senior/AI-lead reader, not a teaching post
 - [ ] Title is argument-form: "Senior developers trust AI less than juniors. The data flips the conventional take." (counter-claim + intensifier)
-- [ ] Strongest line is the title — leads
+- [ ] Strongest line is the title; leads
 - [ ] No HAN / institutional jargon
 - [ ] No colleague's lived moment as load-bearing element
 - [ ] One CTA (the closing question), not three

@@ -2,7 +2,7 @@
 
 > **Status:** DRAFT, awaiting cold re-read (parked 2026-05-07).
 > **Series:** post 3 of 3 in the WHY arc. Domain-differentiation post.
-> **Anchor:** Park et al. 2025 (HAZOP, 86% textual / 19 to 37% semantic) + OPAL case study.
+> **Anchor:** TBD published study (hardware / embedded / control domain) + OPAL case study. Park HAZOP dropped 2026-05-11 to avoid AlphaFold foil; candidate replacements in publish-prep section.
 > **Target slug:** `ai-productivity-software-bias`
 > **Target file:** `src/pages/writing/ai-productivity-software-bias.astro` once approved.
 > **Word count:** ~720.
@@ -19,17 +19,15 @@ JetBrains, Stack Overflow, GitHub, METR. Each of these names a survey or study w
 
 Hardware, embedded, and control engineering have AI assistance too. They do not have these surveys. That absence has consequences for how the field talks about AI.
 
-The clearest published exception is a 2025 paper by Park and colleagues on AI-assisted hazard and operability analysis in chemical engineering. They asked an LLM to produce HAZOP output for plant scenarios. The result, scored against the textual conventions of HAZOP reports, was 86% plausible. Scored against semantic validity (whether the hazards identified were the actual ones in the scenario) the number was between 19% and 37% correct. The model produced output that read like a HAZOP report. Less than half of it found the hazards.
-
-If you only read the textual-plausibility number, AI is good at HAZOP. If you read the semantic-validity number, AI is in the failure regime where the output looks correct and is not. The two numbers do different jobs. Most coverage uses the first.
+<!-- TODO 2026-05-11: published-study anchor (hardware / embedded / control). Park HAZOP dropped to avoid AlphaFold foil. Replacement candidates in publish-prep section: Naser 2023 (FE/PE exam, civil / structural — local PDF available, registry VERIFIED P0, dramatic 0% structural-design number), Akolekar 2025, Moss 2025 (arXiv:2506.14567), Ghosh & Mittal (arXiv:2511.14478), other registry P1-H4 entries (IC, power, electronics). Verify domain alignment + run Step 0-6 anti-hallucination checklist before drafting the paragraph here. The article needs a published study to back OPAL (N=1); without one the argument rests on Jeroen's own work alone, which his own rules flag as insufficient. -->
 
 A concrete moment from my own work. On OPAL, an ESP32-based optical instrument I have worked on, a five-layer verification process found ten defects in AI-assisted code. A typical single-layer review, of the kind that constitutes most "review" in industry, would have found two. Eight defects required someone to look at the same output through a different lens: not "does it compile" but "does it correspond to the actual sensor's behaviour." The validation work was not optional. It was load-bearing.
 
-This is one project. It is the kind of evidence the published-research conversation does not have for non-software domains, and it suggests the same pattern as Park: AI output that passes a software-style review can fail when subjected to physics, hardware, or domain-specific verification.
+This is one project. It is the kind of evidence the published-research conversation does not have for non-software domains, and it suggests the pattern: AI output that passes a software-style review can fail when subjected to physics, hardware, or domain-specific verification.
 
 Why does the software bias matter? Because the conventional narrative (AI is making engineers more productive, here are the numbers) is doing population-extension work the data does not support. When a chemical engineer or an embedded systems engineer reads a productivity statistic, what is in front of them is software-developer productivity, even if the headline says "engineers." The senior-trust calibration described in last week's piece, the validation gap from two pieces ago, both of those patterns are at work in those domains. They just have not been measured.
 
-This matters for procurement, for training programmes, and for what teams choose to invest in. If you are running an embedded team and the case for AI tooling is built on benchmarks from a different discipline, the case is weaker than it looks. If you are running a chemical engineering team and the only domain-specific study you can cite flagged 19 to 37% semantic validity, the case is something else entirely.
+This matters for procurement, for training programmes, and for what teams choose to invest in. If you are running an embedded, hardware, or control engineering team and the case for AI tooling is built on benchmarks from a different discipline, the case is weaker than it looks.
 
 The pieces after this one will not be more arguments about the gap. They will be about what people are doing in their actual work, mine included. Less rhetoric, more craft.
 
@@ -48,10 +46,10 @@ The arc closes coherently: each post hits a different cognitive register (argume
 
 ## Revision notes (what was deliberate in this draft)
 
-- **Title is argument-form** and audience-filtering: an embedded, hardware, control, or chemistry engineer recognises themselves in "software bias problem"; a software-only reader stays for the methodological argument.
+- **Title is argument-form** and audience-filtering: an embedded, hardware, or control engineer recognises themselves in "software bias problem"; a software-only reader stays for the methodological argument.
 - **Strongest line is the opening sentence**: *"If you read most industry coverage of AI in engineering, you would conclude that engineering means writing software."* Counter-claim, modest delivery, sets the audience filter on contact.
-- **Three sources, two indirect, one direct**: JetBrains / Stack Overflow / METR (named as the software trio that Post 2 leaned on, now reframed as the bias's exemplar); Park et al. 2025 (the published exception, the article's anchor); OPAL (Jeroen's own concrete moment, the kind of evidence the literature does not have for non-software domains).
-- **Numbers paired with meaning**: 86% (textual plausibility) vs 19 to 37% (semantic validity); 10 defects (five-layer review) vs 2 (single-layer).
+- **Three sources, two indirect, one direct**: JetBrains / Stack Overflow / METR (named as the software trio that Post 2 leaned on, now reframed as the bias's exemplar); TBD replacement published study from hardware / embedded / control domain (Park HAZOP dropped 2026-05-11 to avoid AlphaFold foil; candidate replacements in publish-prep section); OPAL (Jeroen's own concrete moment, the kind of evidence the literature does not have for non-software domains).
+- **Numbers paired with meaning**: TBD (replacement study's headline numbers); 10 defects (five-layer review) vs 2 (single-layer).
 - **Connection to Post 1 and Post 2** explicit but lean: one short clause linking the senior-trust calibration and the validation gap to the domains under discussion, no re-explaining.
 - **Forward look pivots register** rather than promising another argument piece. The arc closes.
 - **One CTA**, an open question pointed at the underrepresented domains.
@@ -61,7 +59,7 @@ The arc closes coherently: each post hits a different cognitive register (argume
 
 - Is the OPAL paragraph's claim verifiable for a senior reviewer who clicks through to the augmented-engineering case study? The "ten defects vs two" framing is documented; the "five layers" needs to map cleanly to what the case study actually documents (bench tests, simulation, peer review, etc.). Verify before publishing.
 - Is the sentence "Less rhetoric, more craft" too taglineable? It is at the structural pivot point of the arc, so it carries weight. But it has the rhythm of a slogan. Audit on cold read: does it land as observation or as pull-quote bait? If the latter, soften.
-- Does the closing question land specifically enough? "If your domain has been left out…" is broad. A domain-naming variant ("If you are doing chemistry, hardware, embedded, or control work…") might earn more replies. Test on cold read.
+- Does the closing question land specifically enough? "If your domain has been left out…" is broad. A domain-naming variant ("If you are doing hardware, embedded, or control work…") might earn more replies. Test on cold read.
 - Word count is ~720, well inside the 600 to 800 series target.
 
 ## Voice and constraint audit (already passed)
@@ -79,14 +77,13 @@ The arc closes coherently: each post hits a different cognitive register (argume
 
 ## Diagram
 
-A small typographic figure is pre-generated at `public/diagrams/ai-productivity-software-bias.svg`. Not a sketch; not a coverage diagram (a domain-coverage sketch would be the asymmetry-as-the-whole-argument move that the *It Is Both* memory rule warns against). Just the headline pair from Park et al. 2025: 86% textual plausibility / 19 to 37% semantic validity. Tufte-style. Drop in mid-article when promoting to `src/pages/writing/`, between paragraph 4 ("...less than half of it found the hazards") and paragraph 5 ("If you only read the textual-plausibility number..."), or wherever the cold re-read lands it.
+Figure needs regeneration. The current `public/diagrams/ai-productivity-software-bias.svg` shows the Park HAZOP 86% / 19-37% pair, which is no longer the article's anchor (dropped 2026-05-11 along with chemistry). Regenerate after the replacement study from the hardware / embedded / control domain is chosen and verified. The register stays the same (Tufte typographic, not a sketch; not a coverage diagram per the *It Is Both* memory rule).
 
 ## When ready to publish
 
 1. **Citation verification.** Build a verification record at `docs/verification/ai-productivity-software-bias.md` modeled on the post-2 record. Required Step 6 reading at primary source for each cited claim. Local PDFs available in HAN Digital Engineers project at `OneDrive - HAN/Research/Digital engineers/sources/pdfs/`:
-   - `Naser-2023-FE-PE-Exam.pdf` — 0% structural design, 70.9% FE overall (registry P1-H4b VERIFIED P0)
-   - No local PDF for Park HAZOP / *Safety Science* 2025 — fetch via DOI: https://www.sciencedirect.com/science/article/abs/pii/S0925753525002644
-   - No local PDFs for Akolekar 2025, Oblitas, Moss 2025 (arXiv:2506.14567), Ghosh & Mittal (arXiv:2511.14478) — fetch via arXiv / DOI
+   - **Recommended candidate**: `Naser-2023-FE-PE-Exam.pdf` — 0% structural design, 70.9% FE overall (registry P1-H4b VERIFIED P0). Civil / structural is physical-stakes-adjacent to embedded; dramatic 0% number parallels the dropped Park HAZOP 19-37% finding without invoking AlphaFold counter-foil.
+   - Other candidates: Akolekar 2025, Oblitas, Moss 2025 (arXiv:2506.14567), Ghosh & Mittal (arXiv:2511.14478) — fetch via arXiv / DOI. Confirm domain alignment with hardware / embedded / control before selecting.
    - HAN registry has these all at VERIFIED P0/P1 — see `propositions/CLAIM-REGISTRY.md` claims P1-H4a–h
 2. **Consider broadening the evidence base** beyond Park + OPAL. Registry P1-H4 has 8 cross-domain validation studies (chemical, civil, mechanical, IC, power, electronics) showing the same plausible-but-wrong pattern. Currently the article uses 1 + own work. Stronger argument with 3–4 + own work (the cross-domain convergence is itself the evidence for "this isn't software-specific").
 3. Verify the OPAL paragraph against the actual case study documentation (`OneDrive - HAN/Research/Digital engineers/case-studies/opal-design-review.md`). Article's "five-layer verification process found ten defects… single-layer review would have found two" needs to match registry P1-H8a–c claims.

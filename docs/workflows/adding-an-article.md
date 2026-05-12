@@ -30,8 +30,8 @@ Draft both LinkedIn pieces in `drafts/<slug>-linkedin.md` before publishing. Aft
 2. Move the draft from `drafts/<slug>-linkedin.md` to `memory/posted-linkedin/<slug>.md` and update its status header from "Ready to publish" (or similar) to "Published YYYY-MM-DD, see `memory/external-comments.md` for reception". The file preserves the full posted text for reuse as a template by future cross-posts. `drafts/` is for in-progress work only.
 
 The `memory/posted-linkedin/` directory holds two working examples:
-- `the-work-is-splitting.md` — drafted, posted, then moved here at the publish step. The default lifecycle.
-- `ese-bot-eu-sovereign-rag.md` — reconstructed retroactively from the live URLs because the original short-post draft diverged from what shipped and was retired. The European-alternative framing was the live reframing.
+- `the-work-is-splitting.md`: drafted, posted, then moved here at the publish step. The default lifecycle.
+- `ese-bot-eu-sovereign-rag.md`: reconstructed retroactively from the live URLs because the original short-post draft diverged from what shipped and was retired. The European-alternative framing was the live reframing.
 
 Either path is acceptable. Default workflow: move the draft when the posted text materially matches it. For divergent posts (significant rewrites between draft and live), capture the live text directly into `memory/posted-linkedin/<slug>.md` after publish.
 
