@@ -11,7 +11,7 @@
 
 **Title:** Senior developers trust AI less than juniors. The data flips the conventional take.
 
-**Subtitle:** What multiple 2025 surveys keep finding.
+**Subtitle:** An observation from three developer surveys.
 
 **Body:**
 
