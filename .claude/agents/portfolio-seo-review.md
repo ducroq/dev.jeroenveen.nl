@@ -144,7 +144,7 @@ After the checklist, produce a prioritized action list:
   "jobTitle": "Engineer & Researcher",
   "sameAs": [
     "https://github.com/ducroq",
-    "https://linkedin.com/in/jeroenveen"
+    "https://www.linkedin.com/in/jeroen-veen-3244444/"
   ]
 }
 </script>
