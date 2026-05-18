@@ -8,14 +8,6 @@ export interface Article {
 
 export const articles: Article[] = [
   {
-    slug: 'who-runs-the-drc',
-    title: 'Who runs the design-rule check?',
-    excerpt:
-      'Three AI hardware-design platforms answer the same question differently: where does validation live in the stack? Only one of the three holds up to the definition of the word.',
-    date: '2026-05-18',
-    readTime: '~5 min',
-  },
-  {
     slug: 'senior-developers-trust-ai-less',
     title: 'Senior developers trust AI less than juniors.',
     excerpt:

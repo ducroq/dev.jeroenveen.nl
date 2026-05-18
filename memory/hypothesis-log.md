@@ -56,6 +56,23 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ---
 
+### [2026-05-18] The V&V arc closer is a methods piece grounded in own work
+
+**Position (provisional):** Post 3 of the V&V arc should be one of the methods pieces Jeroen actually uses (candidates: Reproduce-Don't-Assess from the driven-pendulum case; OPAL's five-layer verification; the assertion patterns in OPAL or vmodel.eu; whatever the AE site's most-developed pattern is). The substitution attempts with `ai-productivity-software-bias` (shelved 2026-05-18, literature-bias frame) and `who-runs-the-drc` (pulled 2026-05-18, cross-domain platform survey) were both diagnosed as wrong shape for an arc that's been about practitioner cognitive work. The right shape: one specific method, grounded in own work, with what it catches and what it costs, framed as observation rather than how-to.
+
+**Alternative:** The methods piece, when drafted, lands as too narrow or too internal. Reads as tool documentation rather than the closing piece of an observation arc. Signal: in cold-read, the piece doesn't bridge naturally to the practitioner pattern-library framing from post 2; comments engage with the method's particulars but not with the arc-level observation that makes the method matter.
+
+**Method:** Draft one methods piece. Cold re-read against the arc's promised tone (observation grounded in own work, plus a forward look that lets the AE-pattern pieces follow naturally). If the piece reads as observation + arc closure, Position holds. If it reads as how-to, restructure to lead with the observation that the method is grounded in, with the method itself in the second half.
+
+**Revisit trigger:** Drafting begins on a methods piece for the V&V arc.
+
+**Review by:** 2026-07-01 (give it about six weeks for the drafting to begin).
+
+**Domain:** WHY/V&V arc, post 3, methods pieces
+**Status:** open
+
+---
+
 ### [2026-05-18] First inversion trigger fires within 12 months
 
 **Position (provisional):** dev.jeroenveen.nl is in deliberate mid-drift toward AE-method-leading positioning (see `project_inversion_plan.md` in auto-memory). Three candidate inversion triggers are named: (1) critical mass of AE-pattern articles at the AE site, (2) ovr.news launch needing a clean personal-site point-of-reference, (3) external use of "augmented engineering" returning to Jeroen and sticking. **At least one will fire within 12 months of today, i.e. by 2027-05-18.**
@@ -77,4 +94,6 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ### [2026-05-18] Post-3 reframe holds: descriptive AE-definitional shape lands cleaner than the literature-bias shape
 
-**Outcome (2026-05-18, same-day resolution before publish):** Nuanced — direction confirmed, shape refuted. The reframe pointed correctly away from literature-bias complaint toward practitioner observation, but the actual post 3 was drafted from scratch by Jeroen as a *three-platform comparative analysis* (`who-runs-the-drc.md`: tscircuit / Zoo Zookeeper / cad-khana, ranked against validation-independence) rather than the descriptive cross-domain map I had imagined. The new shape carries the same AE-grounded argument more concretely (mechanism per platform, not survey across domains) and earned its own minor-revisions cross-model review pass. The descriptive cross-domain map remains available as a *later* AE-piece candidate if needed. Entry resolves before its Review-by date because the direction of the bet was tested and learned from in the drafting process itself, ahead of any publish reception data. Article published as post 3 at https://dev.jeroenveen.nl/writing/who-runs-the-drc/ on 2026-05-18.
+**Outcome (2026-05-18, same-day pull after publish):** Refuted at the arc level. The reframe correctly pointed away from literature-bias complaint and toward practitioner observation, and the three-platform comparative (`who-runs-the-drc`) shipped that day. Within roughly two hours of publishing, the deeper diagnosis surfaced: the article is doing AE-cross-domain work, not V&V arc closure. Post 2 promised the survey/research asymmetry in non-software domains; the published article delivered a platform-architecture comparison in non-software AI. Same domain, different topic. The piece pre-empted the methods pieces that should be the V&V arc closer (Reproduce-Don't-Assess, OPAL's layered verification, the assertion patterns used in own work). Pulled the same day. Article body, draft, verification record, and cover image retained for potential recast as an AE-cross-domain piece in a sibling arc. The article never reached LinkedIn cross-post; lived on the site for about two hours, zero known external readers.
+
+**Larger lesson logged:** When substituting a draft for an arc position, audit against the arc's *promised topic* (from prior posts' forward-looks), not just against the draft's own merits. The substitution attempt (`who-runs-the-drc` for `ai-productivity-software-bias`) seemed better in isolation because the new draft was concrete and well-argued; it was actually worse for the arc because Post 2 had promised one specific follow-on topic (survey-data asymmetry) and the substitute delivered a different topic (platform architecture). Both involve hardware; only one is a V&V arc continuation. Both candidate post-3 drafts (`ai-productivity-software-bias` shelved; `who-runs-the-drc` pulled) are now off the V&V arc track.

@@ -1,6 +1,8 @@
 # Who runs the design-rule check?
 
-*Status: first draft, 2026-05-18. WHY arc, post 3 — closes the arc. Sequel to "Senior developers trust AI less than juniors" (post 2, published 2026-05-12) and "The work is splitting" (post 1). Verification record at `docs/verification/who-runs-the-drc.md` (built 2026-05-18; four of five sources verified at primary; Adafruit pending browser fetch). Confidence tier per claim recorded there; article language already matches tier per writing-guide Section 7.*
+*Status: PULLED 2026-05-18 (same day as publish). The article shipped briefly to the live site (live for approximately two hours) and was then pulled after recognising the deeper diagnosis: this is AE-cross-domain work, not V&V arc closure. Post 2 promised the survey/research asymmetry in non-software domains; this article delivered a platform-architecture comparison in non-software AI. Same domain, different topic. The piece pre-empted the methods pieces that should be the V&V arc closer (Reproduce-Don't-Assess, OPAL's layered verification, the assertion patterns used in own work). Body, verification record, and cover-image generation logic retained. Possible future use: recast as the first piece in a sibling AE-cross-domain arc rather than as the V&V arc closer. Do not promote to `src/pages/writing/` again without re-positioning the arc framing. See `memory/hypothesis-log.md` Resolved entry for the full diagnosis.*
+
+*Original status (now superseded): first draft, 2026-05-18. WHY arc, post 3 closes the arc. Sequel to "Senior developers trust AI less than juniors" (post 2, published 2026-05-12) and "The work is splitting" (post 1). Verification record at `docs/verification/who-runs-the-drc.md` (built 2026-05-18; four of five sources verified at primary; Adafruit pending browser fetch). Confidence tier per claim recorded there; article language already matches tier per writing-guide Section 7.*
 
 ---
 
