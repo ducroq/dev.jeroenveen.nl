@@ -25,8 +25,13 @@
 - Homepage Writing section shows the 2 most recent articles between Projects and Background.
 - **Background section rewritten** 2026-04-21 — real positioning (physics + signals + AI), concrete examples (Parkinson's ESP32 / Augur / ESE Bot / vmodel.eu), soft freelance availability.
 - **Project-local writing guide added** 2026-04-28 (`docs/writing-guide.md`). Captures lessons from the ESE Bot LinkedIn post-mortem (audience filtering, packaging), the named-colleague rule, and the no-em-dashes voice preference. CLAUDE.md "Before You Start" + "Adding an Article" point to it. Replaces two short-lived auto-memory feedback files (now removed; canonical content lives in the guide).
-- **Three-post article series planned** (2026-04-28). Order: (1) "The work is splitting. Most teams haven't noticed." (the WHY / framing post; sets up the validation-vs-production lens). (2) "Senior developers trust AI less than juniors." (counter-intuitive data; JetBrains 2025). (3) "AI productivity research has a software bias problem." (domain differentiation; HAZOP 86%/19-37%). Each hits a different register: argument, data, domain.
-- **Post 1 drafted and parked** at `drafts/the-work-is-splitting.md` (2026-04-28, ~810 words). Awaiting cold re-read. Source line: Jellyfish 2025 (90% adoption, 20% can measure). Open questions for review noted in the draft file's footer.
+- **WHY arc — all three posts now in flight** (state as of 2026-05-18):
+  - Post 1: `the-work-is-splitting` (published 2026-05-01). Validation as new structural problem.
+  - Post 2: `senior-developers-trust-ai-less` (published 2026-05-12). Plausibility-vs-correctness from senior trust data.
+  - Post 3: `who-runs-the-drc` (published 2026-05-18). Three-platform comparative (tscircuit / Zoo Zookeeper / cad-khana) on where validation lives when an agent designs the hardware. Closes the WHY arc.
+  - Post 3 *replaces* the shelved `drafts/ai-productivity-software-bias.md` (literature-bias frame); shelve annotation in that draft documents the reframe.
+- **Verification record** for post 3 at `docs/verification/who-runs-the-drc.md` (built 2026-05-18). 4/5 sources verified at primary; Adafruit upgraded SPECULATIVE → SUPPORTED after Jeroen browser-fetched. Three primary-source nuances applied to the draft, plus cross-model review (Haiku + Opus, disjoint coverage; 4 of 5 Opus findings applied).
+- **Three new seed notes filed 2026-05-18** sketching follow-on pieces, all *Hold as seed*: `code-native-vs-agent-native.md` (load-bearing property = code-nativity), `validation-along-the-stack.md` (long view across SW/embedded/PCB/CAD), `where-value-is-migrating.md` (practitioner-convergence thesis; waits for one more source). Sequence: WHY arc → these.
 - Three review agents in `.claude/agents/` (copy, design, SEO).
 - No test suite — static site, build success is the gate.
 - **Open issues**: #2 (case study pages) — arguably served by the new /writing section; consider closing or reframing.

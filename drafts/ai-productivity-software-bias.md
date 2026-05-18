@@ -1,15 +1,49 @@
 # AI productivity research has a software bias problem.
 
-> **Status:** DRAFT, awaiting cold re-read (parked 2026-05-07).
-> **Series:** post 3 of 3 in the WHY arc. Domain-differentiation post.
-> **Anchor:** TBD published study (hardware / embedded / control domain) + OPAL case study. Park HAZOP dropped 2026-05-11 to avoid AlphaFold foil; candidate replacements in publish-prep section.
-> **Target slug:** `ai-productivity-software-bias`
-> **Target file:** `src/pages/writing/ai-productivity-software-bias.astro` once approved.
-> **Word count:** ~720.
+> **Status:** SHELVED 2026-05-18 — superseded by `drafts/who-runs-the-drc.md` as post 3 of the WHY arc. The Reframe note below (also 2026-05-18) was the first attempt to redirect this draft; it pointed in the right direction (practitioner observation over literature complaint) but post 3 was ultimately drafted from scratch in `who-runs-the-drc.md`, which uses a three-platform comparative analysis (tscircuit / Zoo / cad-khana) rather than a domain map. This file is kept for the diff trail. Do not work it further unless the descriptive-map shape becomes desirable as a *later* AE piece (e.g., the cross-domain map article that retrospectively names AE).
+>
+> **Status:** REFRAMED 2026-05-18 — see "Reframe note" section directly below. The body further down ("Article body") is the pre-reframe draft, retained for reference but no longer the working spine.
+> **Series:** post 3 of 3 in the WHY arc. Closes the arc by *describing* what augmented engineering is, across engineering domains. Bridges into the next arc (AE patterns).
+> **Target slug:** TBD. `ai-productivity-software-bias` no longer fits. Candidates: `augmented-engineering-across-domains`, `what-augmented-engineering-is`, `engineering-with-ai-across-domains`. Decide closer to publish.
+> **Word count target:** ~600–900 (was ~720; a descriptive map may want slightly more, but tighten relentlessly).
+
+## Reframe note (2026-05-18)
+
+**What changed.** The pre-reframe thesis ("the AI-productivity literature is software-developer literature, therefore the conversation has a software bias") is a methodological complaint about the literature. Posts 1 and 2 are about the *work*; post 3 as drafted pivots to a meta-argument about who got measured. Register shift down, not across. The HAZOP-symmetry note from 2026-05-12 was never actually used in the body. The OPAL N=1 worry was a symptom of the wrong thesis, not the disease.
+
+**New thesis.** Post 3 is the *descriptive piece that earns the #AugmentedEngineering tag.* AI is doing materially different work across engineering domains — code generation in software, surrogate models and topology optimisation in mechanical / aerospace, controller tuning and system identification in control, structure prediction in chemistry, HDL / firmware generation in embedded, RTL / EDA assistance in IC, design-and-compliance assistance in civil / structural — and the validation work has to match the artifact and the ground truth in each domain. The piece *describes* that cross-domain practice, names it as augmented engineering, and the literature-bias observation reduces to one sentence inside the description, not the spine.
+
+**How the arc reads after this reframe.**
+- **Post 1**: validation is the new structural problem (the work is splitting).
+- **Post 2**: seniors hold the validation cost (pattern library for plausible-but-wrong).
+- **Post 3 (reframed)**: here is what that work looks like across engineering domains — this is what augmented engineering means.
+
+The forward pivot then hands cleanly to the AE patterns (Reproduce-Don't-Assess, etc.) at the AE site. Post 3 describes *what AE is*; the next pieces describe *how it's done*.
+
+**What the description carries (the implicit argument).** "AI productivity" and "AI in engineering" name an object that doesn't actually exist as a uniform thing — and the real practice (augmented engineering) is defined by the cross-domain match between AI's output and the validation work, not by the AI tool itself. Sharper than the original literature-bias claim. The description does the argumentative work because the description is what the field is missing.
+
+**Implications for the existing draft.**
+- The pre-reframe body (audience-filter opener, JetBrains/Stack Overflow/METR exemplar paragraph, literature-bias spine, "less rhetoric, more craft" closer) is no longer the working draft. All of it needs revisiting under the new thesis.
+- The evidence base is no longer "1 published study + OPAL." It's a domain-by-domain descriptive map. OPAL becomes one row (embedded / sensor-shaped output) rather than the load-bearing example.
+- Park HAZOP / Naser 2023 / N studies + OPAL — secondary. Cited studies illustrate rows of the map; they do not carry the argument.
+- The current diagram (`public/diagrams/ai-productivity-software-bias.svg`, the 86 / 19-37 figure) is obsolete twice over (anchor dropped + the article isn't about numbers anymore). A new typographic *map* (domain × what AI does × validation object) is the candidate, with a hard *It Is Both* register check before drawing (no BEFORE/AFTER, no 2×2 quadrant, no taxonomy tree).
+- "Less rhetoric, more craft" may be too taglineable AND may have less work to do if the body is already descriptive. Audit on rewrite.
+- AI Transfer Lab's held phrasings ("silent debt until an unrelated change surfaces it" / "the window for noticing closes well before symptoms do") drop off post 3's critical path. Return to the candidate-phrasings bucket in `memory/external-comments.md` for adjacent work.
+- The original-draft framing-risk note from 2026-05-12 (post 2 reception, conservative misread risk, HAZOP symmetry, defer adoption pivot) is *defused* by this reframe: a descriptive AE piece cannot easily be claimed as "don't adopt AI" because it describes what adoption already looks like across domains.
+
+**Consultations before drafting the rewrite.**
+1. **HAN Digital Engineers literature repo.** Two questions, in order:
+   - **Domain × AI-application × validation-object map.** Does the registry already have a table (even partial) for each engineering domain: named AI tools / studies, kind of artifact produced, kind of ground truth required? Skeleton material for post 3's spine. If absent, the article has to assemble it from scratch — and may need to be honest about where the map is thin.
+   - **Per-domain validation-practice texture.** Where a domain is covered, what does the registry say about *how* validation is done in that domain (bench tests, simulation, standards compliance, expert reproduction, fabrication, closed-loop stability, etc.)?
+2. **AE site (`C:\local_dev\augmented-engineering\`).** What patterns are already publicly named? Post 3 needs to *set up* the patterns the AE site teaches, not duplicate or pre-empt them. The forward pivot only works if the next pieces have somewhere to land.
+
+**Risk to watch on the rewrite.** A pure descriptive piece can read as a survey article — competent but flat. Keep some of the original draft's bite *inside* the description, so the reader's "so what?" lands. The argumentative claim is now structural ("AI in engineering" names a non-uniform object; AE is the frame that captures the real practice), not rhetorical, but it still needs to be felt.
 
 ---
 
 ## Article body
+
+> **Pre-reframe draft, retained for reference. No longer the working spine. See Reframe note above.**
 
 **Subtitle:** *What gets measured, and what doesn't.*
 
