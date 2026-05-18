@@ -184,6 +184,7 @@ Pick one. Not three.
 
 Read the draft as the target reader (Section 2). Specifically check:
 
+- [ ] **Arc-position audit**: if this article is part of an ongoing arc, does its topic match what prior posts' forward-looks explicitly promised? A stronger draft in the wrong arc is still in the wrong arc. Run this before evaluating the draft on its own merits.
 - [ ] **First-sentence audit**: does it filter for the right reader, or could it open a teaching post?
 - [ ] **Title is argument-form**, not artifact-form
 - [ ] **Strongest line is in the top half** — if it is buried at paragraph seven, restructure

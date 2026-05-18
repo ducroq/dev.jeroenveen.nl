@@ -42,6 +42,7 @@
 
 - if drafting or reviewing an article (or its LinkedIn cross-post), then read `docs/writing-guide.md` first — promoted from this session's analytics-driven post-mortem (2026-04-28)
 - if proposing an article anchored on a named colleague's anecdote, then substitute with own work or an aggregate pattern — see `docs/writing-guide.md` Section 5 (2026-04-28)
+- if substituting a draft for an arc position, then audit against the arc's promised topic from prior posts' forward-looks before evaluating the draft on its own merits — see `docs/writing-guide.md` Section 9 and gotcha-log entry (2026-05-18)
 
 ## Key File Paths
 
