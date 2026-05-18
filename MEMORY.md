@@ -14,6 +14,7 @@
 | File | When to load | Key insight |
 |------|-------------|-------------|
 | `memory/gotcha-log.md` | Stuck or debugging | Problem-fix archive |
+| `memory/hypothesis-log.md` | Recording a provisional editorial position to revisit later (post-publish reception checks, frame-landing bets, reframe outcomes) | Position / Alternative / Method / Revisit trigger / Review by. New 2026-05-18 per agent-ready-projects v1.10.0. |
 | `docs/writing-guide.md` | Drafting / reviewing / planning an article (or a LinkedIn cross-post of one) | Audience filtering, LinkedIn packaging, named-colleague rule, what to avoid |
 
 ## Current State
