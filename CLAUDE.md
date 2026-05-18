@@ -1,16 +1,19 @@
+---
+stack: Astro 5, TypeScript (strict), CSS custom properties, GitHub Actions
+status: Production (live at https://dev.jeroenveen.nl)
+repo: github.com/ducroq/dev.jeroenveen.nl
+framework: agent-ready-projects v1.10.0
+---
+
 # dev.jeroenveen.nl
 
 Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static site with a homepage (projects, writing, background) and a `/writing/` section for articles. Dark theme with amber accent. Deployed to Netlify (auto-rebuilds on push to `main`).
-
-- **Stack**: Astro 5, TypeScript (strict), CSS custom properties, GitHub Actions
-- **Status**: Production (live at https://dev.jeroenveen.nl)
-- **Repo**: github.com/ducroq/dev.jeroenveen.nl
-- **agent-ready-projects**: v1.3.2
 
 ## Before You Start
 
 | When | Read |
 |------|------|
+| Starting any session | Compare the `framework: agent-ready-projects vX.Y.Z` line in this file's header against `C:/local_dev/agent-ready-projects/CHANGELOG.md` (local clone) or https://github.com/ducroq/agent-ready-projects/blob/master/CHANGELOG.md. If the project is behind the latest released version, briefly surface the drift to the user before starting work. Don't auto-update — adopting changes is the engineer's call. |
 | Adding or editing a project card | `docs/workflows/adding-a-project-card.md`: the `projects` array shape (`src/pages/index.astro`) and screenshot conventions |
 | Drafting in Jeroen's voice (articles, LinkedIn comments, replies, posts) | `docs/writing-guide.md`: voice, audience, LinkedIn packaging, em-dash rule, what to avoid. Applies to anything published under his name, not only `/writing/` articles |
 | Defining or auditing a term Jeroen uses (coined frames like validation, AE, ground truth; or field vocabulary like agent, workflow, evaluator-optimizer, HITL) | `docs/glossary.md`: working definitions, drift notes, AE-frame relevance |
@@ -25,8 +28,9 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro`: head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css`: all CSS custom properties live here |
 | Stuck or debugging something weird | `memory/gotcha-log.md`: problem-fix archive |
+| Recording a provisional editorial position to revisit later | `memory/hypothesis-log.md`: Position / Alternative / Method / Revisit trigger / Review by. For bets whose evidence lives in the future — post-publish reception checks, frame-landing bets, reframe outcomes. Different from gotchas (problems solved) and commit-message decisions (decisions made). |
 | Reviewing copy, design, or SEO concerns | `.claude/agents/`: three review docs from previous audit sessions |
-| Ending a session | `memory/gotcha-log.md`: review, promote patterns, retire stale entries |
+| Ending a session | Run `/curate`: covers gotcha-log promotion, freshness check, doc sync, hypothesis-log surface (flags overdue revisits), and project-file size budget. The gotcha archive itself lives in `memory/gotcha-log.md`. |
 
 ## Hard Constraints
 
@@ -65,6 +69,7 @@ dev.jeroenveen.nl/
     external-comments.md            # Publish events + reply log: URLs, reception, reusable phrasings
     external-references.md          # Observed-but-not-engaged-with external content
     gotcha-log.md                   # Problem-fix archive; reviewed at end of session
+    hypothesis-log.md               # Provisional editorial positions whose evidence lives in the future
     posted-linkedin/<slug>.md       # Full text of posted LinkedIn cross-posts (Pulse body + short feed post), for template reuse
     visual-references/              # Local reference images (gitignored; allowlist exception for files the diagram scripts reference)
   public/
@@ -105,6 +110,7 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `memory/external-references.md` | Observed external content filed for later reference (foils, vocabulary) |
 | `memory/posted-linkedin/<slug>.md` | Full text of posted LinkedIn cross-posts (Pulse body + short feed post). For reuse as templates. Working examples: `the-work-is-splitting`, `ese-bot-eu-sovereign-rag` |
 | `memory/gotcha-log.md` | Problem-fix archive; reviewed at end of session |
+| `memory/hypothesis-log.md` | Provisional editorial positions whose evidence lives in the future — post-publish reception checks, frame-landing bets, reframe outcomes |
 | `astro.config.mjs` | Site URL, sitemap integration |
 | `package.json` | Dependencies (astro, @astrojs/sitemap) and scripts |
 | `public/robots.txt` | Crawl directives |
