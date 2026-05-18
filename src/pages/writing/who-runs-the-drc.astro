@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 
 const title = 'Who runs the design-rule check? | dev.jeroenveen.nl';
-const description = 'Three AI hardware-design platforms (tscircuit, Zoo Zookeeper, cad-khana) answer the same question differently: where does validation live in the stack? Only one answer holds up to the definition of the word.';
+const description = 'Three AI hardware-design platforms (tscircuit, Zoo Zookeeper, cad-khana) answer the same question differently: where does validation live in the stack? One structural answer stands apart from the other two.';
 const publishedOn = '2026-05-18';
 ---
 
@@ -37,6 +37,16 @@ const publishedOn = '2026-05-18';
           <a href="https://tscircuit.com/" target="_blank" rel="noopener">tscircuit</a>,
           and the agent was Codex. No conventional CAD, no manual routing.
           The brief was prompts; the output was a board.
+        </p>
+
+        <p>
+          What tscircuit is doing, and what Zoo and cad-khana are doing
+          alongside it, is on its own terms an engineering achievement.
+          Natural language to compile-ready board layout. Conversational
+          reasoning over geometry with engineering tools in the loop.
+          Diagnostic-first agent-assisted CAD. None of these existed a
+          year ago. The question this piece traces is narrower: where,
+          in each, does validation live?
         </p>
 
         <p>
@@ -86,8 +96,7 @@ const publishedOn = '2026-05-18';
           measurements." The agent behaves like an engineer. It runs the
           model. It looks at it. It measures. This is more than tscircuit
           offers. But the check is by the same agent that produced the
-          artifact. The verification distribution is the agent's verification
-          distribution. The errors a model is most likely to make when
+          artifact. The errors a model is most likely to make when
           generating are the errors it is most likely to find plausible when
           reviewing, because both passes draw on the same priors. If the
           agent missed a kind of failure when it generated the part, it will
@@ -139,15 +148,16 @@ const publishedOn = '2026-05-18';
           conversational agent from the start, with a custom CAD language and
           its own geometry kernel. Zookeeper's snapshot-and-measure loop is
           genuinely more thoughtful than the absence in tscircuit's docs. But
-          the loop has the failure mode that all single-model loops have: it
+          the loop has the limit that all single-model loops have: it
           can only catch what its training distribution lets it notice. There
           is no independent ground truth in the check.
         </p>
 
         <p>
           cad-khana is the smallest and probably the least known. It also
-          happens to be the only one of the three whose design correctly
-          identifies what validation requires. If validation is establishing
+          happens to be the only one of the three whose design treats
+          independence as a structural property of the system rather than
+          a habit of the user. If validation is establishing
           that a generated artifact meets the requirement against an evidence
           source independent of the generation process, then assertions
           running in a build system separate from the agent's generation step

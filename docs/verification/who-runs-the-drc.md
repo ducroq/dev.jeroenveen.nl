@@ -2,6 +2,7 @@
 
 **Article**: `src/pages/writing/who-runs-the-drc.astro` (status: **PUBLISHED 2026-05-18**)
 **Live URL**: https://dev.jeroenveen.nl/writing/who-runs-the-drc/
+**Post-publish edit (2026-05-18, same day):** Added an upfront credit paragraph naming the three teams' engineering achievement (paragraph 2, between Adafruit lede and tscircuit-docs paragraph). Tuned down validation-criticism in three places to make room and soften the verdict-tone: (1) removed the abstract *"the verification distribution is the agent's verification distribution"* sentence in the Zoo paragraph (mechanism + intuition sentences still close the warrant); (2) *"failure mode"* → *"limit"* in the Zoo comparative paragraph; (3) *"correctly identifies what validation requires"* → *"treats independence as a structural property of the system rather than a habit of the user"* in the cad-khana comparative paragraph. Description in frontmatter softened from *"Only one answer holds up to the definition of the word"* to *"One structural answer stands apart from the other two."* **No claim status changes; all verified claims still hold.** Net word change roughly +45.
 **Article slug**: `who-runs-the-drc`
 **Last verified**: 2026-05-18
 **Method**: Anti-hallucination checklist (Step 0 + Steps 4–6) per [agent-ready-papers framework](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md).
