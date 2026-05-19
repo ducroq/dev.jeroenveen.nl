@@ -1,0 +1,277 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Most production AI grades its own output. · dev.jeroenveen.nl';
+const description = 'Notes from a year of building a production AI tool. The single structural decision that has shaped most of the work, and the second decision that makes the first one honest.';
+const publishedOn = '2026-05-19';
+---
+
+<Layout title={title} description={description}>
+  <a href="#article" class="skip-nav">Skip to article</a>
+  <main>
+    <article class="article">
+      <nav class="article-nav" aria-label="Site navigation">
+        <a href="/">← dev.jeroenveen.nl</a>
+      </nav>
+
+      <header class="article-header" id="article">
+        <span class="article-label">Writing</span>
+        <h1 class="article-title">Most production AI grades its own output.</h1>
+        <p class="article-subtitle">
+          Notes from a year of building a tool I am not going to describe.
+        </p>
+        <p class="article-meta">
+          <time datetime={publishedOn}>19 May 2026</time>
+          <span class="sep">·</span>
+          <span>~5 min read</span>
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          Most AI-tooling posts read like demos. The product is shown working,
+          often with a metric attached, and the implicit claim is <em>this is
+          what an AI system looks like</em>. The framing skips the engineering
+          decisions that decide whether you can trust the system at all, and
+          one decision in particular keeps coming up in my own work.
+        </p>
+
+        <p>
+          The system runs in production under GDPR constraints, so the system
+          description belongs in the system, not here. What I want to write
+          about is the decision.
+        </p>
+
+        <p>
+          The decision is that I do not let the LLM grade its own output. That
+          sounds obvious until you look at the dominant patterns in the
+          LLM-evaluation literature: llm-as-judge, self-consistency check,
+          evaluator-optimizer, critic-actor, reflection. They differ in their
+          decoration. They share one property: the evaluator inherits the
+          actor's assumptions, because they came from the same training
+          distribution and they are reading the same artifact in the same way.
+        </p>
+
+        <p>
+          The structural alternative is not novel as a pattern, only uncommon
+          in the products I see shipped. The LLM is the finder. Deterministic
+          code, written by hand against a fixed rubric, is the grader. The
+          rubric is derived from engineering standards that exist outside any
+          LLM. The LLM finds candidate issues; the grader scores them against
+          rules that were defined and agreed upon before any LLM was ever
+          called. The grader has no opinion. It enforces.
+        </p>
+
+        <p>
+          The difference matters, but it is partial. When the grader is the
+          LLM, you are measuring how the LLM feels about its own output. When
+          the grader is deterministic code reading a fixed rubric, you are
+          measuring whether the output meets the rubric. Those are different
+          things. What this buys is grading-time independence: the scoring is
+          no longer a re-reading by something with the same priors as the
+          producer. What it does not buy is finding-time independence. Anything
+          the LLM-finder fails to surface never reaches the grader. The
+          discipline is about precision against a rubric, not coverage.
+        </p>
+
+        <p>
+          Two honest objections live in this. The first is the one I just made:
+          a sibling discipline (cross-model review, scheduled audits,
+          something) has to push back on the finder-side blindness, and that is
+          a different piece. The second is that the rubric authors have
+          opinions, and rubrics edited in response to disagreements with the
+          finder will drift toward what the finder surfaces well. The grader
+          inherits the rubric, which inherits whatever pressure the LLM's
+          failure modes put on the people maintaining it.
+        </p>
+
+        <figure class="article-figure">
+          <img
+            src="/diagrams/the-model-is-not-the-grader.svg"
+            alt="Single-panel hand-drawn sketch reading left to right. On the left, a rounded box labelled 'new prompt'. An arrow goes to a stack of papers labelled 'reference set'. Another arrow goes to a small box with curly braces labelled 'grader'. Beyond that, two short columns of numbers headed 'baseline' and 'new', with a curly bracket and annotation 'within tolerance?'. On the right, a trapezoid gate with two outputs: a short arrow down to 'ship', and a long arrow looping back across the top of the picture to the 'new prompt' box, labelled 'block. rubric edit? argue it explicitly.' Caption beneath: 'what a calibration gate actually does.'"
+            width="1200"
+            height="520"
+            loading="lazy"
+          />
+        </figure>
+
+        <p>
+          The discipline that holds the second objection honest is a
+          checkpoint. Every time we change a prompt, the new prompt runs
+          against a small set of cases we already know the right answers to.
+          The grader scores them, and those scores get compared to what the old
+          prompt got. If they match closely enough, the change ships. If they
+          do not, the change is blocked, and a rubric edit that shifts scores
+          on that set has to be argued for explicitly, not slipped in. We call
+          this a calibration gate. Not a unit test. A calibration check against
+          a known sample, the way you do not change a measurement instrument
+          without re-checking it against a reference standard.
+        </p>
+
+        <p>
+          What has this cost. Mostly time. Building a baseline set is slow, and
+          the baseline set is what makes the calibration gate meaningful.
+          Maintaining it is slower. The decisions sit in a stack of
+          architecture-decision records, each with a paragraph attached
+          explaining the alternative we considered and the reason we did not
+          adopt it. That documentation does not show up in any demo. It is the
+          thing that makes the system defensible when somebody senior asks the
+          question that defines whether a system is defensible: <em>how do you
+          know this works?</em>
+        </p>
+
+        <p>
+          The previous pieces here have argued that validation is the harder
+          half of engineering work, and that the engineers most cautious about
+          AI output are the ones who have validated it most. The past year is
+          what taking that seriously has looked like in one specific case. Not
+          a methodology, not a generalisable claim, not a paper. One decision,
+          and the second decision that makes the first one honest, in case it
+          is useful as evidence that the work the previous pieces describe is
+          not abstract.
+        </p>
+
+        <p>
+          What I have not solved is the rubric-drift problem on a longer
+          horizon than the held-out set can see. That is a different piece.
+        </p>
+
+        <p>
+          If you are letting the LLM grade its own output and that is working
+          for you, I would like to know how.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links">
+      <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/jeroen-veen-3244444/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .article-nav {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 60ch;
+  }
+
+  .article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-meta .sep {
+    color: var(--border);
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--amber);
+  }
+
+  .article-body a {
+    border-bottom: 1px dotted var(--amber-dim);
+  }
+  .article-body a:hover {
+    border-bottom-color: var(--text);
+  }
+
+  .article-body hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0 2rem;
+  }
+
+  .article-figure {
+    margin: 2.5rem 0;
+  }
+
+  .article-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links .sep {
+    color: var(--text-dim);
+  }
+</style>

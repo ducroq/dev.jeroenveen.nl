@@ -8,6 +8,14 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'the-model-is-not-the-grader',
+    title: 'Most production AI grades its own output.',
+    excerpt:
+      'Most production AI lets the LLM grade its own output. Notes from a year of building one that does not, and the second decision that makes the first one honest.',
+    date: '2026-05-19',
+    readTime: '~5 min',
+  },
+  {
     slug: 'senior-developers-trust-ai-less',
     title: 'Senior developers trust AI less than juniors.',
     excerpt:

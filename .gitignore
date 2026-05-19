@@ -12,3 +12,4 @@ Thumbs.db
 # Allowlist generated outputs that the diagram scripts reference by path.
 memory/visual-references/*
 !memory/visual-references/senior-trust-gemini-draft.jpg
+!memory/visual-references/model-not-grader-gemini-draft.png
