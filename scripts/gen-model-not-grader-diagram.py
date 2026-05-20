@@ -35,17 +35,18 @@ OUT_PATH = (
 W, H = 1200, 520
 
 BG = "#0b0b0f"           # site --bg
-STROKE = "#8a8895"       # muted neutral (pencil-on-dark)
+STROKE = "#d0d0d6"       # pencil-on-dark, thumbnail-legible
 STROKE_AMBER = "#c88a20" # --amber-dim, accent for the loop-back path
-TEXT = "#b8b5b0"         # warm off-white, like pencil
-TEXT_DIM = "#7a7a85"
+TEXT = "#e8e8ed"         # near-white, thumbnail-legible
+TEXT_DIM = "#c8c8d0"     # subordinate (baseline/new headers, italic captions)
 
 # Sketch params
 
 JITTER = 2.5
 SEGMENTS_PER_SIDE = 3
-STROKE_WIDTH = 1.5
+STROKE_WIDTH = 3
 SKETCH_SEED = 11
+FONT_WEIGHT = "bold"     # applied to every <text> element below
 
 # Layout
 
@@ -248,7 +249,7 @@ def grader_box(x: float, y: float, w: float, h: float, rng: random.Random) -> st
     cx, cy = x + w / 2, y + h / 2 + 9
     parts.append(
         f'<text x="{cx}" y="{cy}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="28" fill="{TEXT}">{{ }}</text>'
     )
     return "".join(parts)
@@ -294,12 +295,12 @@ def diagram_layer(rng: random.Random) -> str:
     )))
     parts.append(
         f'<text x="{PROMPT_X + PROMPT_W / 2}" y="{PROMPT_Y + 32}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="18" fill="{TEXT}">new</text>'
     )
     parts.append(
         f'<text x="{PROMPT_X + PROMPT_W / 2}" y="{PROMPT_Y + 54}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="18" fill="{TEXT}">prompt</text>'
     )
 
@@ -317,7 +318,7 @@ def diagram_layer(rng: random.Random) -> str:
     stack_label_cx = STACK_X + STACK_W / 2 + (STACK_LAYERS - 1) * STACK_OFFSET / 2
     parts.append(
         f'<text x="{stack_label_cx}" y="{STACK_Y + STACK_H + 32}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="16" fill="{TEXT}">reference set</text>'
     )
 
@@ -333,7 +334,7 @@ def diagram_layer(rng: random.Random) -> str:
     parts.append(grader_box(GRADER_X, GRADER_Y, GRADER_W, GRADER_H, rng))
     parts.append(
         f'<text x="{GRADER_X + GRADER_W / 2}" y="{GRADER_Y + GRADER_H + 28}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="16" fill="{TEXT}">grader</text>'
     )
 
@@ -349,24 +350,24 @@ def diagram_layer(rng: random.Random) -> str:
     col2_x = SCORES_X + SCORES_GAP
     parts.append(
         f'<text x="{col1_x}" y="{SCORES_TOP}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="16" fill="{TEXT_DIM}">baseline</text>'
     )
     parts.append(
         f'<text x="{col2_x}" y="{SCORES_TOP}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="16" fill="{TEXT_DIM}">new</text>'
     )
     for i, (baseline_val, new_val) in enumerate(SCORES_VALUES):
         y = SCORES_TOP + SCORES_ROW * (i + 1) + 8
         parts.append(
             f'<text x="{col1_x}" y="{y}" text-anchor="middle" '
-            f'font-family="JetBrains Mono, ui-monospace, monospace" '
+            f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
             f'font-size="18" fill="{TEXT}">{baseline_val}</text>'
         )
         parts.append(
             f'<text x="{col2_x}" y="{y}" text-anchor="middle" '
-            f'font-family="JetBrains Mono, ui-monospace, monospace" '
+            f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
             f'font-size="18" fill="{TEXT}">{new_val}</text>'
         )
 
@@ -374,7 +375,7 @@ def diagram_layer(rng: random.Random) -> str:
     parts.append(curly_bracket(BRACKET_X, BRACKET_TOP, BRACKET_BOTTOM, point_dx=14))
     parts.append(
         f'<text x="{BRACKET_X + 24}" y="{(BRACKET_TOP + BRACKET_BOTTOM) / 2 + 5}" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="15" font-style="italic" fill="{TEXT_DIM}">within tolerance?</text>'
     )
 
@@ -393,7 +394,7 @@ def diagram_layer(rng: random.Random) -> str:
     )))
     parts.append(
         f'<text x="{SHIP_X}" y="{SHIP_Y}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="18" fill="{TEXT}">ship</text>'
     )
 
@@ -412,14 +413,14 @@ def diagram_layer(rng: random.Random) -> str:
     for i, line in enumerate(block_lines):
         parts.append(
             f'<text x="{BLOCK_LABEL_X}" y="{BLOCK_LABEL_Y + i * 22}" '
-            f'font-family="JetBrains Mono, ui-monospace, monospace" '
+            f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
             f'font-size="17" fill="{STROKE_AMBER}">{line}</text>'
         )
 
     # Bottom caption
     parts.append(
         f'<text x="{W / 2}" y="{CAPTION_Y}" text-anchor="middle" '
-        f'font-family="JetBrains Mono, ui-monospace, monospace" '
+        f'font-family="JetBrains Mono, ui-monospace, monospace" font-weight="{FONT_WEIGHT}" '
         f'font-size="22" fill="{TEXT}">what a calibration gate actually does.</text>'
     )
 

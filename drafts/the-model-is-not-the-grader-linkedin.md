@@ -63,11 +63,13 @@ If you have landed on a different grader architecture and it is working for you,
 
 ## Publish order (suggested)
 
-1. Publish the LinkedIn article (Pulse) first. Copy its URL once live.
-2. Paste that URL into the short post in place of the placeholder.
-3. Publish the short post.
-4. Log this engagement in `memory/external-comments.md` after a day or two: any replies worth tracking, what landed, what did not.
-5. Move this file from `drafts/the-model-is-not-the-grader-linkedin.md` to `memory/posted-linkedin/the-model-is-not-the-grader.md` and update the status header to "Published YYYY-MM-DD".
+1. Open https://www.linkedin.com/article/new/.
+2. Upload the cover image: `public/social/the-model-is-not-the-grader.png` (1200×630, the calibration-gate diagram centered on a dark canvas; regenerated 2026-05-20).
+3. Paste the article title, subtitle, and body. No inline figure; the cover carries the diagram.
+4. Publish the Pulse article. Copy its URL.
+5. Paste that URL into the short post in place of the placeholder. Publish the short post.
+6. Log this engagement in `memory/external-comments.md` after a day or two: any replies worth tracking, what landed, what did not.
+7. Move this file from `drafts/the-model-is-not-the-grader-linkedin.md` to `memory/posted-linkedin/the-model-is-not-the-grader.md` and update the status header to "Published YYYY-MM-DD".
 
 ## Notes for next time
 

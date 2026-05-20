@@ -23,7 +23,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `docs/workflows/adding-an-article.md`: full publishing workflow including draft, verification record, page file, registry, cover image, references, and LinkedIn cross-post |
 | Verifying claims in an article (draft or published) | `docs/verification/<slug>.md`: per-article anti-hallucination record. Apply Step 0 + Steps 4–6 of the [agent-ready-papers](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md) checklist for every load-bearing statistic, named study, or coined attribution before publish. Trace each number to primary source, not to an intermediate ANALYSIS file. Confidence tier maps to article language per `docs/writing-guide.md` Section 7. |
-| Generating a social/cover image for an article | `scripts/gen-social-image.py`. Outputs typographic 1200×630 PNG to `public/social/<slug>.png`. Doubles as the LinkedIn Pulse cover. |
+| Generating a social/cover image for an article | `scripts/gen-social-image.py` (typographic title-card, the default). Outputs 1200×630 PNG to `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover. For articles with a strong central figure, the **diagram-as-cover** variant is also valid: derive a bolder thumbnail-legible variant of the canonical SVG and compose it onto a 1200×630 canvas. Working example: `scripts/gen-model-not-grader-cover.py`. See step 7 of `docs/workflows/adding-an-article.md`. |
 | Generating an in-article diagram or figure | `scripts/gen-<slug>-diagram.py` (sketch register: jittered SVG paths, mono lowercase labels) or `scripts/gen-<slug>-figure.py` (Tufte typographic: numbers + citation, no shapes). Output to `public/diagrams/<slug>.svg`. Audit against the visual-register memory rule (`feedback_visual_register.md`) before shipping any figure. |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro`: head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css`: all CSS custom properties live here |
@@ -80,7 +80,8 @@ dev.jeroenveen.nl/
     social/                         # Article cover / OG images (1200×630 PNG, generated)
     diagrams/                       # In-article SVG diagrams and figures (generated)
   scripts/
-    gen-social-image.py             # Generates the typographic cover image for an article
+    gen-social-image.py             # Generates the typographic cover image for an article (default)
+    gen-<slug>-cover.py             # Per-article diagram-as-cover script (variant; see gen-model-not-grader-cover.py)
     gen-<slug>-diagram.py           # Per-article sketch generators (jittered SVG paths)
     gen-<slug>-figure.py            # Per-article Tufte-style typographic figure generators
   .github/workflows/
@@ -117,7 +118,8 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `public/screenshots/` | Project card screenshot images |
 | `public/social/` | Article cover / OG images (generated, 1200×630 PNG) |
 | `public/diagrams/` | In-article SVG diagrams and figures (generated) |
-| `scripts/gen-social-image.py` | Generates a typographic cover image; edit the headline + slug constants per article and run `python scripts/gen-social-image.py` |
+| `scripts/gen-social-image.py` | Generates a typographic cover image (default pattern); edit the headline + slug constants per article and run `python scripts/gen-social-image.py` |
+| `scripts/gen-<slug>-cover.py` | Per-article diagram-as-cover script (variant pattern, for articles with a strong central figure). Working example: `gen-model-not-grader-cover.py` |
 | `scripts/gen-<slug>-diagram.py` | Per-article sketch diagram generators (jittered paths, sketch register) |
 | `scripts/gen-<slug>-figure.py` | Per-article typographic figure generators (Tufte-style data citations) |
 | `.claude/agents/` | Three review agents (copy, design, SEO) from prior audits |
