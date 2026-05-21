@@ -39,23 +39,6 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ## Open
 
-### [2026-05-12] Post-2 (senior-trust) reception will not be successfully claimed by conservatives as anti-adoption ammunition — *DUE FOR REVIEW*
-
-**Position (provisional):** Senior-trust article (published 2026-05-12) will not be successfully misread as "don't adopt AI" by conservative-leaning readers. The frame ("seniors are absorbing the validation cost *while using* AI") is robust enough on its own. If misreads happen, they will be isolated, not amplified.
-
-**Alternative:** Comments / shares pick up the post as evidence for "AI is bad / AI doesn't work" or for refusing AI adoption. Signal: comments using "this is why we shouldn't use AI" framing; shares to anti-AI accounts or communities; requests to elaborate the anti-adoption read; AI-skeptic LinkedIn voices reposting without the validation-cost framing.
-
-**Method:** Monitor post-2 LinkedIn comments + repost behaviour for 5-7 days. Skim engagement for the misread frame. Three outcomes: misread is rare and not amplified → Position holds. Misread is present but not dominant → file post-3 framing-risk note (already done 2026-05-12) and proceed. Misread dominates → intervene with a clarifying reply or a short follow-up note before post 3.
-
-**Revisit trigger:** 5-7 days post-publish (2026-05-17 to 2026-05-19). **Trigger has fired — entry is due for revisit as of 2026-05-18.**
-
-**Review by:** 2026-05-22 — hard backstop.
-
-**Domain:** WHY arc, post 2, reception monitoring
-**Status:** open — **DUE FOR REVIEW**
-
----
-
 ### [2026-05-18] The V&V arc closer is a methods piece grounded in own work
 
 **Position (provisional):** Post 3 of the V&V arc should be one of the methods pieces Jeroen actually uses (candidates: Reproduce-Don't-Assess from the driven-pendulum case; OPAL's five-layer verification; the assertion patterns in OPAL or vmodel.eu; whatever the AE site's most-developed pattern is). The substitution attempts with `ai-productivity-software-bias` (shelved 2026-05-18, literature-bias frame) and `who-runs-the-drc` (pulled 2026-05-18, cross-domain platform survey) were both diagnosed as wrong shape for an arc that's been about practitioner cognitive work. The right shape: one specific method, grounded in own work, with what it catches and what it costs, framed as observation rather than how-to.
@@ -91,6 +74,14 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 ---
 
 ## Resolved
+
+### [2026-05-12] Post-2 (senior-trust) reception will not be successfully claimed by conservatives as anti-adoption ammunition
+
+**Outcome (2026-05-21, t+9 days post-publish, LinkedIn analytics + comment-thread review):** Position holds, weakly. The misread frame did not materialise in observable reception. Specifically: 0 reposts on the short post against 8,521 impressions (the post was not picked up to reframe in either direction); 1 comment (AI Transfer Lab, sharpening the on-frame "experience as pattern library for plausible-but-wrong" axis; no anti-adoption framing in the thread); the predicted "seniors are slow adopters" pushback never surfaced. Engagement rate 0.20% (the broad reach diluted to a thin profile). The thin engagement means the right framing is *no evidence of misread amplification* rather than *Position robustly confirmed by lots of on-frame engagement* — a more robust confirmation would have required more comments engaging with the validation-cost framing specifically. The reach went broad enough to escape the HAN bubble but didn't generate enough reception to fully stress-test the frame.
+
+**Larger lesson logged:** Conservative-misread risk on counter-intuitive framing observations was likely overestimated at publish time. The post-publish framing-risk note (added 2026-05-12 to the `external-comments.md` publish entry) cautioned against breaking frame mid-arc to inoculate against the misread; that caution turned out to be unneeded — the misread didn't materialise. Worth noting for future arc-position drafting: don't pre-emptively defend against misreads that haven't shown signal of materialising; the defensive register costs more than the speculative misread it tries to head off.
+
+---
 
 ### [2026-05-18] Post-3 reframe holds: descriptive AE-definitional shape lands cleaner than the literature-bias shape
 

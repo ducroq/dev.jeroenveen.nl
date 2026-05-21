@@ -1,13 +1,15 @@
-# LinkedIn cross-post draft: Most production AI grades its own output.
+# LinkedIn cross-post record — Most production AI grades its own output
 
-> **Status:** Ready to publish.
-> **Strategy:** Both surfaces. Long-form Pulse article for LinkedIn discovery; short post linking to the Pulse article for feed reach. Same default as `the-work-is-splitting`.
+> **Status:** Published 2026-05-21 across both LinkedIn surfaces. URLs and reception notes are in `memory/external-comments.md` (section "2026-05-21 — Publish: Most production AI grades its own output"). This file preserves the full text of what was posted (long-form Pulse article + short feed post) for reuse as a template.
+> **Strategy as posted:** Both surfaces. Long-form Pulse article for LinkedIn discovery; short post linking to the Pulse article for feed reach. Same default as `the-work-is-splitting` and `senior-developers-trust-ai-less`.
 > **Hashtag set:** #AI #ProductionAI #AugmentedEngineering
-> **Arc position:** Standalone, *not* the V&V arc closer. Post 2's hardware/embedded/control forward-look is still owed. Do not frame this post as continuation of that arc; let it stand on its own.
+> **Arc position:** Standalone. *Not* the V&V arc closer. Post 2's hardware/embedded/control forward-look is still owed.
 
 ---
 
 ## 1. LinkedIn article (long-form / Pulse)
+
+**URL:** https://www.linkedin.com/pulse/most-production-ai-grades-its-own-output-jeroen-veen-3aoke/
 
 **Title:** Most production AI grades its own output.
 
@@ -47,7 +49,11 @@ If you have landed on a different grader architecture and it is working for you,
 
 ## 2. Short LinkedIn post (links to the Pulse article)
 
-Most production AI tools let the LLM evaluate its own work. The tool I have been building for the past year does not.
+**URL:** https://www.linkedin.com/feed/update/urn:li:ugcPost:7463114007982325761/
+
+**Body (as posted):**
+
+Most production AI tools let the LLM evaluate its own work. Some tools I have been building for the past year do not.
 
 The LLM finds. Deterministic code grades against a fixed rubric from engineering standards. Every prompt change runs against a held-out reference set first; if scores drift from baseline, the change does not deploy.
 
@@ -55,21 +61,17 @@ Not exotic. Their absence in most public AI tooling is a choice, not a constrain
 
 If you have landed on a different grader architecture and it is working for you, I would like to know what made the trade-off come out that way.
 
-[paste LinkedIn article URL here once published]
+https://www.linkedin.com/pulse/most-production-ai-grades-its-own-output-jeroen-veen-3aoke/
+
+[auto-card linking to the Pulse article]
 
 #AI #ProductionAI #AugmentedEngineering
 
+**Publish-time edit vs draft:** "The tool I have been building … does not" → "Some tools I have been building … do not". Plural-indefinite softens the singling-out of any one product, consistent with the disclosure constraint (the system is not named in the article surface). Live wording is the canonical record.
+
+**Post-publish edit (2026-05-21, same day as publish):** Initial publish was card-only (the auto-generated Pulse card rendered below the body; the explicit URL was not in the body text). Edited later that day to add the explicit Pulse URL on its own line between the CTA and the hashtags, in addition to the card. Final state: URL + card.
+
 ---
-
-## Publish order (suggested)
-
-1. Open https://www.linkedin.com/article/new/.
-2. Upload the cover image: `public/social/the-model-is-not-the-grader.png` (1200×630, the calibration-gate diagram centered on a dark canvas; regenerated 2026-05-20).
-3. Paste the article title, subtitle, and body. No inline figure; the cover carries the diagram.
-4. Publish the Pulse article. Copy its URL.
-5. Paste that URL into the short post in place of the placeholder. Publish the short post.
-6. Log this engagement in `memory/external-comments.md` after a day or two: any replies worth tracking, what landed, what did not.
-7. Move this file from `drafts/the-model-is-not-the-grader-linkedin.md` to `memory/posted-linkedin/the-model-is-not-the-grader.md` and update the status header to "Published YYYY-MM-DD".
 
 ## Notes for next time
 

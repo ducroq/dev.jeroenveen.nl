@@ -19,7 +19,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Defining or auditing a term Jeroen uses (coined frames like validation, AE, ground truth; or field vocabulary like agent, workflow, evaluator-optimizer, HITL) | `docs/glossary.md`: working definitions, drift notes, AE-frame relevance |
 | Continuing a parked draft | `drafts/<slug>.md`: articles in progress live here until they ship |
 | Reviewing past LinkedIn comments or external replies | `memory/external-comments.md`: log of posted reactions and publish events with framing notes, URLs, and reception history |
-| Continuing or referencing a previously posted LinkedIn cross-post | `memory/posted-linkedin/<slug>.md`: full text of posted Pulse articles + short feed posts. Reuse as templates for new cross-posts. Records exist for `the-work-is-splitting` and `ese-bot-eu-sovereign-rag` |
+| Continuing or referencing a previously posted LinkedIn cross-post | `memory/posted-linkedin/<slug>.md`: full text of posted Pulse articles + short feed posts. Reuse as templates for new cross-posts. Records exist for `ese-bot-eu-sovereign-rag`, `the-work-is-splitting`, `senior-developers-trust-ai-less`, `the-model-is-not-the-grader` (4 as of 2026-05-21) |
 | Filing or recalling an external post / talk / paper for later reference | `memory/external-references.md`: observed-but-not-engaged-with material (foils, vocabulary, citation candidates) |
 | Adding an article | `docs/workflows/adding-an-article.md`: full publishing workflow including draft, verification record, page file, registry, cover image, references, and LinkedIn cross-post |
 | Verifying claims in an article (draft or published) | `docs/verification/<slug>.md`: per-article anti-hallucination record. Apply Step 0 + Steps 4–6 of the [agent-ready-papers](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md) checklist for every load-bearing statistic, named study, or coined attribution before publish. Trace each number to primary source, not to an intermediate ANALYSIS file. Confidence tier maps to article language per `docs/writing-guide.md` Section 7. |
@@ -41,7 +41,7 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 - Keep the site accessible: skip-nav link, `aria-label` on external links, `:focus-visible` styles, semantic HTML
 - **LinkedIn drafts are SSoT here**, not in `work-income`. Two patterns:
   - **General LinkedIn drafts** (ideas backlog, replies, standalone posts): `drafts/linkedin-post-<topic>-unpublished.md`. Drop `-unpublished` once posted, or log the publish in `memory/external-comments.md` and delete the draft.
-  - **Article-specific cross-post drafts** (Pulse + short feed post tied to a `/writing/<slug>/` article): `drafts/<slug>-linkedin.md`. After posting, log URLs in `memory/external-comments.md` AND move the full text to `memory/posted-linkedin/<slug>.md`. See `docs/workflows/adding-an-article.md` for the lifecycle. The `the-work-is-splitting` and `ese-bot-eu-sovereign-rag` records are the working examples.
+  - **Article-specific cross-post drafts** (Pulse + short feed post tied to a `/writing/<slug>/` article): `drafts/<slug>-linkedin.md`. After posting, log URLs in `memory/external-comments.md` AND move the full text to `memory/posted-linkedin/<slug>.md`. See `docs/workflows/adding-an-article.md` for the lifecycle. Working examples: `ese-bot-eu-sovereign-rag`, `the-work-is-splitting`, `senior-developers-trust-ai-less`, `the-model-is-not-the-grader` (4 records as of 2026-05-21).
 
   Career strategy stays in `work-income/cv/`.
 
@@ -109,7 +109,7 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `docs/workflows/<name>.md` | Numbered workflow steps for adding a project card or an article, loaded on demand from the Before You Start table. |
 | `memory/external-comments.md` | Publish events + log of posted LinkedIn / external replies (URLs, reception, reusable phrasings) |
 | `memory/external-references.md` | Observed external content filed for later reference (foils, vocabulary) |
-| `memory/posted-linkedin/<slug>.md` | Full text of posted LinkedIn cross-posts (Pulse body + short feed post). For reuse as templates. Working examples: `the-work-is-splitting`, `ese-bot-eu-sovereign-rag` |
+| `memory/posted-linkedin/<slug>.md` | Full text of posted LinkedIn cross-posts (Pulse body + short feed post). For reuse as templates. Working examples: `ese-bot-eu-sovereign-rag`, `the-work-is-splitting`, `senior-developers-trust-ai-less`, `the-model-is-not-the-grader` (4 as of 2026-05-21). |
 | `memory/gotcha-log.md` | Problem-fix archive; reviewed at end of session |
 | `memory/hypothesis-log.md` | Provisional editorial positions whose evidence lives in the future — post-publish reception checks, frame-landing bets, reframe outcomes |
 | `astro.config.mjs` | Site URL, sitemap integration |
