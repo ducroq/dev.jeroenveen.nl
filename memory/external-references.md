@@ -140,3 +140,37 @@ Reported but not yet personally verified to primary source. Treat as candidates,
 - Some of the most quotable phrasings ("fallible people spirits", "decade not year", "jagged intelligence") came through secondary commentary; primary-source verification is mandatory before any of them ships in a Jeroen-authored piece. The Dwarkesh interview transcript and the YC talk full transcript are the targets when that work is needed.
 - Karpathy posts heavily on X. Anything sourced from a tweet is more time-bound and more retract-prone than his blog posts; weight blog + talks higher than tweets for citation.
 - He is a high-status interlocutor with a different audience. Citing him is a positioning move with consequences both ways (signals fluency; can read as deference if the citation is uncritical). The add-don't-carve frame applies: cite where the agreement is genuine, then extend in Jeroen's own register.
+
+---
+
+## 2026-05-21 — Caveman (Claude Code output-compression skill by Julius Brussee)
+
+**Source:** https://github.com/JuliusBrussee/caveman — Claude Code / Cursor / Codex skill that forces terse "caveman speak" output. Project site: https://juliusbrussee.github.io/caveman/. Author: Julius Brussee, 19, Leiden University student. Repo climbed from dozens to >20k stars in ~half a day on HN. Picked up by Dutch press as a "Dutch student amazes AI companies" piece.
+
+**Why filed:** Not the technique — output-terseness via system prompt is well-trodden (LLMLingua etc.). The interesting artifact is the **framing**. "Talk like caveman" is a memorable, playful packaging of a known idea (be concise). That framing is what drove ~20k stars and NVIDIA attention, not novel mechanism. Direct lesson for Jeroen's writing arc: **fun framing sells**, even — maybe especially — for technical work that would otherwise read as dry prompt-engineering tips.
+
+**What's actually under the hood:**
+
+- A system-prompt skill that constrains output style. Does not touch model weights, inference, or reasoning tokens (author explicitly clarified on HN).
+- Reports ~65% output-token reduction vs no-system-prompt baseline.
+- **Three-arm evaluation methodology** (baseline / "Answer concisely" terse / full caveman rules). Honest framing: the *real* delta vs a one-line "be concise" instruction is ~24%, not 65%. Most prompt-skill claims compare skill-vs-baseline and overstate.
+- Includes sub-skills: `caveman-commit`, `caveman-review`, `caveman-compress` (compresses CLAUDE.md / memory files).
+- Cites a March 2026 paper *"Brevity Constraints Reverse Performance Hierarchies in Language Models"* claiming brevity improves accuracy by 26pp. Worth primary-source check before citing.
+
+**Useful phrasings to harvest:**
+
+- *"why use many token when few token do trick"* — tagline. Memorable because it performs its own claim. Compare with the typical engineering-blog headline "Optimizing token usage in large language models."
+- *"the most powerful prompt skill in 2026"* — community reception phrasing; foil for any post arguing reach ≠ depth.
+- The **three-arm comparison** as a methodological move: "the fair comparison is not vs baseline, it's vs the simplest reasonable alternative." This is the same shape as Jeroen's "compare to baseline, not to nothing" rule in the validation arc. Concrete external instance.
+
+**Potential uses:**
+
+- **As a framing case study** in any meta-post about technical communication / why some engineering writing travels. The mechanism is unremarkable; the wrapper is everything. Pairs with the WHY arc's question of how validation-discipline ideas get adopted vs ignored.
+- **As an honest-evaluation foil.** Most "X% improvement" claims in the prompt-engineering genre do not run a three-arm comparison. Caveman does and reports the smaller honest number alongside the bigger marketing number. That's the same epistemic move as `docs/verification/<slug>.md` per-article audits — worth citing as an example of a vendor / tool author doing it right.
+- **Cautionary use:** the lesson is *frame memorably*, not *frame goofily*. Jeroen's register is dry-precise; copying caveman-speak would break voice. Take the principle (vivid packaging), not the surface (broken English).
+
+**Caveats:**
+
+- Loading the skill itself costs context tokens. End-to-end savings ≠ README headline.
+- Compresses *output*, not *input*. Useless for batch text-processing pipelines (where LLMLingua or routing to Haiku is the right tool).
+- The paper citation needs primary-source verification before use; "26pp accuracy improvement from brevity" is the kind of headline number that often doesn't survive scrutiny.
