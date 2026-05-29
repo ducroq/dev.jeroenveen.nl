@@ -51,6 +51,30 @@ Not a comprehensive field dictionary. If a term is widely understood and Jeroen 
 
 ---
 
+## Interdependence Thesis
+
+**As Jeroen uses it:** the claim that effective AI-augmented engineering requires three factors at once: domain expertise, validation capability, and context awareness. They combine multiplicatively, not additively. If any one approaches zero, overall competency collapses. An engineer without domain knowledge cannot evaluate AI output. An engineer without validation discipline cannot tell good output from plausible-looking wrong output. An engineer without situational awareness produces work that is technically correct but does not fit. Tool proficiency is not on the list. The capitalised label is from the broader research project these terms were coined in; in articles on this site the underlying idea travels, not the label (see writing-guide section 6).
+
+**As commonly used (when it differs):** mainstream AI-productivity coverage tends to treat tool proficiency as the limiting factor: better prompts, better models, better workflows, and the rest follows. Multiplicative-three framings exist in academic competency literature but rarely cross over into engineering-practice writing. Coverage that fixes one factor in isolation, often validation, misses the point: domain and context are co-required, not exchangeable for more validation effort.
+
+**Why noted:** validation alone is the term Jeroen has been writing about so far on this site. The Interdependence framing is what stops "validation" from collapsing into a workflow add-on. The entry is the house definition the drafts will reach for when a piece needs to argue that more-validation alone is not the answer, and why.
+
+**Where it appears:** not yet in published articles. Canonical definition lives in the broader research project these terms were coined in. Closest neighbour on this site is the **Validation** entry above.
+
+---
+
+## Abstraction Principle
+
+**As Jeroen uses it:** the claim that effective AI-augmented work proceeds Concept → Model → Implementation, in that order. Concept: what problem is actually being solved. Model: what components and relationships are at stake. Implementation: the specific code, calculation, or text. Skipping straight to implementation is the failure mode. AI makes that skip much more tempting because implementation is now cheap, and cheap output looks convincing whether or not the upstream thinking happened. As with **Interdependence Thesis**, the capitalised label is from the broader research project; in articles on this site the idea travels under its components, not as a label.
+
+**As commonly used (when it differs):** "abstraction" in software circles usually means the noun: an abstraction layer, an abstract type, an interface. The Principle is not about that noun. It is a sequencing claim about where engineers should be thinking when AI is in the loop. The closest in-circulation neighbour is "problem framing before solving," which has the right spirit but does not name the cheap-implementation trap that makes the sequencing load-bearing in an AI context.
+
+**Why noted:** this is what is upstream of validation. If implementation has already happened before the engineer has decided what the model should be, validation is checking output against a target that was never specified. A lot of "the AI just wrote it" failures are not validation failures. They are abstraction failures with validation downstream of the wrong thing. Worth a house definition so drafts can name that distinction precisely instead of folding it into "validation".
+
+**Where it appears:** not yet in published articles. Canonical definition lives in the broader research project these terms were coined in. Connects directly to **Validation** (validates against what?) and **Interdependence Thesis** (abstraction is implicit in both context awareness and domain expertise).
+
+---
+
 # Field vocabulary (in circulation)
 
 ## Agent
@@ -94,3 +118,21 @@ Not a comprehensive field dictionary. If a term is widely understood and Jeroen 
 **Relevance to AE frame:** useful term for matching mainstream vocabulary, but the loaded framing is worth noting. Putting a human or human-grounded evidence at the foundation of validation is a different stance from placing them as a checkpoint inside the agent's loop.
 
 **Where it appears:** `memory/external-references.md` (15-pattern foil entry).
+
+---
+
+## Grounding
+
+**Standard definition:** in everyday AI usage, "grounding" means anchoring a model's output to retrieved, verifiable sources at inference time, rather than letting it generate from training-memory alone. RAG, citation-enforced generation, and web-search-augmented answering are the common instances. The broader concept covers several distinct senses, often conflated:
+
+- **Retrieval / factual:** anchor outputs to documents or live search at inference time. The "grounded generation" most product copy refers to.
+- **Temporal:** keep outputs aligned with the current state of the world, not the training snapshot. Web-search integration is the usual implementation.
+- **Symbolic / world (the symbol-grounding problem from cognitive science):** words have meaning only when connected to real-world referents. A model that knows the word "apple" but has no perceptual contact with one is ungrounded in this deeper sense.
+- **Multimodal:** link language to images, audio, sensor data, so concepts connect to perceptual experience rather than only to other words.
+- **Embodied / metaphorical (Lakoff and Johnson):** abstract concepts are grounded indirectly, through metaphor built on top of more concrete embodied experience. "A nation is strong" borrows from physical strength. "Argument is war" borrows from conflict. "Time is money" borrows from exchange. Abstraction sits on top of concrete grounding, not free-floating.
+
+**Drift to watch for:** product copy and pattern-library posts use "grounded" as if all five senses were the same thing. They are not. The retrieval sense is an engineering technique against hallucination. The symbolic and embodied senses are claims about what it would take for a model to actually understand what it says. An LLM "grounded" via RAG is still not grounded in the Lakoff/Johnson sense: it has the linguistic residue of millions of human experiences baked into text, but none of the experiences. It has read millions of descriptions of nations but has never lived under one, felt belonging or exclusion, watched a border shift. The chain from embodied to social to abstract is missing, and what remains is a sophisticated map of how humans talk about the territory, without the territory itself. "Grounded model" in vendor copy almost always means only the first sense.
+
+**Relevance to AE frame:** grounding-the-technique is upstream of validation, not a substitute for it. A well-grounded model can still produce output that follows from the retrieved sources but is wrong about the world the sources describe, or right about the world but wrong for the engineer's context. The independence requirement in **Ground truth** above is what stops grounding from collapsing into self-consistency: the source the model retrieves from and the source the validator checks against cannot sit on the same chain. The deeper senses (symbolic, embodied) are why even a well-grounded model produces outputs that sound competent and miss what a domain expert catches instantly. Worth keeping distinct so a draft can say "grounded" in the retrieval sense without inheriting the implication that the model now understands its subject.
+
+**Where it appears:** not yet load-bearing in published articles. Connects directly to **Ground truth** (independence) and **Validation** (the activity grounding does not perform on its own).
