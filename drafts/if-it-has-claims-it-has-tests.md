@@ -1,6 +1,6 @@
 # If it has claims, it has tests
 
-*Status: seed note. Captured 2026-05-12 from a conversation about whether agent-ready-papers generalises beyond academic writing. Sibling to the three application-level seeds filed the same day (`plausibility-vs-correctness.md`, `auto-loading-cliff.md`, `cross-model-review.md`). This is the **theory layer** that names the shape they all instantiate.*
+*Status: seed note. Captured 2026-05-12 from a conversation about whether agent-ready-papers generalises beyond academic writing. Sibling to the three application-level seeds filed the same day (`plausibility-vs-correctness.md`, `auto-loading-cliff.md`, `cross-model-review.md`). Also adjacent to `verification-is-a-workflow-problem.md` (2026-05-31), which makes a narrower argument on the layer at which verification has to live. This is the **theory layer** that names the shape they all instantiate.*
 
 ---
 

@@ -1,6 +1,6 @@
 # The same model that wrote it cannot catch its own errors
 
-*Status: seed note. Captured 2026-05-12 from agent-ready-papers DR-011 (multi-model review pattern), with fresh empirical data from the senior-trust article publish on the same day.*
+*Status: seed note. Captured 2026-05-12 from agent-ready-papers DR-011 (multi-model review pattern), with fresh empirical data from the senior-trust article publish on the same day. Adjacent to `verification-is-a-workflow-problem.md` (2026-05-31), which uses the DR-011 pattern as one of three workflow properties in a process-vs-model-verification argument.*
 
 ---
 
