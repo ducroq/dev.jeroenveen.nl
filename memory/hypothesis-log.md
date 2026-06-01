@@ -39,23 +39,6 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ## Open
 
-### [2026-05-18] The V&V arc closer is a methods piece grounded in own work
-
-**Position (provisional):** Post 3 of the V&V arc should be one of the methods pieces Jeroen actually uses (candidates: Reproduce-Don't-Assess from the driven-pendulum case; OPAL's five-layer verification; the assertion patterns in OPAL or vmodel.eu; whatever the AE site's most-developed pattern is). The substitution attempts with `ai-productivity-software-bias` (shelved 2026-05-18, literature-bias frame) and `who-runs-the-drc` (pulled 2026-05-18, cross-domain platform survey) were both diagnosed as wrong shape for an arc that's been about practitioner cognitive work. The right shape: one specific method, grounded in own work, with what it catches and what it costs, framed as observation rather than how-to.
-
-**Alternative:** The methods piece, when drafted, lands as too narrow or too internal. Reads as tool documentation rather than the closing piece of an observation arc. Signal: in cold-read, the piece doesn't bridge naturally to the practitioner pattern-library framing from post 2; comments engage with the method's particulars but not with the arc-level observation that makes the method matter.
-
-**Method:** Draft one methods piece. Cold re-read against the arc's promised tone (observation grounded in own work, plus a forward look that lets the AE-pattern pieces follow naturally). If the piece reads as observation + arc closure, Position holds. If it reads as how-to, restructure to lead with the observation that the method is grounded in, with the method itself in the second half.
-
-**Revisit trigger:** Drafting begins on a methods piece for the V&V arc.
-
-**Review by:** 2026-07-01 (give it about six weeks for the drafting to begin).
-
-**Domain:** WHY/V&V arc, post 3, methods pieces
-**Status:** open
-
----
-
 ### [2026-05-18] First inversion trigger fires within 12 months
 
 **Position (provisional):** dev.jeroenveen.nl is in deliberate mid-drift toward AE-method-leading positioning (see `project_inversion_plan.md` in auto-memory). Three candidate inversion triggers are named: (1) critical mass of AE-pattern articles at the AE site, (2) ovr.news launch needing a clean personal-site point-of-reference, (3) external use of "augmented engineering" returning to Jeroen and sticking. **At least one will fire within 12 months of today, i.e. by 2027-05-18.**
@@ -74,6 +57,14 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 ---
 
 ## Resolved
+
+### [2026-05-18] The V&V arc closer is a methods piece grounded in own work
+
+**Outcome (2026-06-01):** Position validated by the drafting choices made over the following two weeks. Both drafts in the V&V arc closer slot are methods pieces grounded in own work: `two-reviews-missed-what-reproduction-caught.md` (the driven-pendulum Reproduce-Don't-Assess case, already at READY status by 2026-05-19) and `cross-model-review.md` (the multi-pass review pattern, touched up to first-pass prose 2026-06-01 with the senior-trust empirical case as anchor). Neither candidate is the wrong-shape attempts that triggered the original entry (`ai-productivity-software-bias` and `who-runs-the-drc`). The arc-shape constraint is now an active criterion in the drafting pool, not a re-litigated question. Closing the entry; the resolution of *which* methods piece ships first is downstream and depends on the verification-is-a-workflow-problem reception data.
+
+**Larger lesson logged:** When a hypothesis bets on a future drafting direction, the resolution signal is the drafts themselves, not the published artifact. If the drafts being produced match the bet's predicted shape, the position is validated even before publish-time data lands. This is the logbook function of the hypothesis log (per the 2026-06-01 user / blog + logbook memory): hypotheses about drafting direction get resolved on the drafting record, not on reception.
+
+---
 
 ### [2026-05-12] Post-2 (senior-trust) reception will not be successfully claimed by conservatives as anti-adoption ammunition
 
