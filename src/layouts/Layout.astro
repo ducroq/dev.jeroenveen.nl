@@ -2,9 +2,22 @@
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description = 'Jeroen Veen — Engineer & Researcher. Production systems across AI/ML, embedded electronics, and product design.' } = Astro.props;
+const defaultDescription = 'Jeroen Veen — Engineer & Researcher. Production systems across AI/ML, embedded electronics, and product design.';
+const siteUrl = Astro.site ?? new URL('https://dev.jeroenveen.nl');
+
+const {
+  title,
+  description = defaultDescription,
+  ogImage,
+  ogType = 'website',
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const absoluteOgImage = ogImage ? new URL(ogImage, siteUrl).toString() : undefined;
 ---
 
 <!doctype html>
@@ -14,16 +27,18 @@ const { title, description = 'Jeroen Veen — Engineer & Researcher. Production 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
 
-    <link rel="canonical" href="https://dev.jeroenveen.nl" />
+    <link rel="canonical" href={canonicalUrl} />
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dev.jeroenveen.nl" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    {absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content={absoluteOgImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {absoluteOgImage && <meta name="twitter:image" content={absoluteOgImage} />}
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
