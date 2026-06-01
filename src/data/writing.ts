@@ -8,6 +8,14 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'verification-is-a-workflow-problem',
+    title: 'Verification is a workflow problem, not a model problem.',
+    excerpt:
+      'A frontier model drafted a verdict on a €5k decision. Two fresh-session reviewers caught fifteen issues with near-zero overlap. The failures lived in the drafting context, where model-level interventions cannot reach.',
+    date: '2026-06-01',
+    readTime: '~4 min',
+  },
+  {
     slug: 'the-model-is-not-the-grader',
     title: 'Most production AI grades its own output.',
     excerpt:
