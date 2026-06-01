@@ -17,6 +17,7 @@ The publishing workflow for a `/writing/` article on `dev.jeroenveen.nl`.
 9. Run `npm run dev` and check the article reads cleanly cold.
 10. **Cross-model review pass.** Paste the article body (or the live preview URL once deployed) into a different model (GPT, Gemini) or a fresh Claude session with no project context, using [`templates/review-prompt.md`](file:///C:/local_dev/agent-ready-papers/templates/review-prompt.md) Variant B (non-empirical) as the prompt. Address logic gaps, unsupported assertions, citation drift, and tone issues before pushing. Filter the review output against the project's voice rules in `docs/writing-guide.md` Section 6 (cross-vendor reviewers do not read your voice and will frequently suggest label-coining, subheadings, or popular-psychology references that the rule rejects). Per `docs/writing-guide.md` Section 7.
 11. Commit and push to `main`. Netlify rebuilds and deploys.
+12. **Delete the source draft** at `drafts/<slug>.md` once the article is live. `drafts/` is for in-progress work only. The canonical published copy lives at `src/pages/writing/<slug>.astro`; the verification record lives at `docs/verification/<slug>.md`; the LinkedIn cross-post (if any) lives at `memory/posted-linkedin/<slug>.md`. The pre-publish markdown draft is redundant once those three exist.
 
 ## LinkedIn cross-post (after the article is live)
 
