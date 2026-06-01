@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520"
+     width="1200" height="520" role="img"
+     aria-label="Single-panel hand-drawn sketch on dark canvas. A large rectangular boundary labelled 'drafting session' encloses four elements: a box labelled 'drafter' with an arrow leading to a box labelled 'verdict', and below them, two rounded shapes labelled '5.48 GB' and 'category swap'. Below the boundary stand two further boxes labelled 'reviewer 1' and 'reviewer 2', each captioned 'fresh session'. Two amber arrows rise from the reviewer boxes, cross the boundary line, and reach the two error shapes inside.">
+  <rect width="1200" height="520" fill="#0b0b0f"/>
+  
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#d0d0d6"/>
+  </marker>
+  <marker id="arr-amber" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#c88a20"/>
+  </marker>
+</defs>
+
+  <path d="M 69.1,58.3 L 424.1,57.9 L 776.8,59.3 L 1127.8,60.0 L 1127.7,166.3 L 1127.8,271.3 L 1129.6,381.6 L 774.8,378.6 L 424.0,382.2 L 70.4,379.5 L 72.4,271.1 L 71.8,165.6 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="94" y="90" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-style="italic" font-size="18" fill="#c8c8d0">drafting session</text>
+  <path d="M 128.2,128.1 L 182.4,131.6 L 235.1,130.4 L 290.7,129.4 L 290.2,151.1 L 287.8,175.2 L 290.9,199.6 L 235.7,200.4 L 183.1,199.0 L 131.5,201.0 L 128.7,177.0 L 130.1,155.2 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="210.0" y="173.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="22" fill="#e8e8ed">drafter</text>
+  <path d="M 294.0,165.0 L 319.5,165.8 L 345.0,166.7 L 368.8,169.3 L 394.0,170.0" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr)"/>
+  <path d="M 398.3,139.9 L 444.4,140.8 L 494.7,140.4 L 541.9,139.1 L 541.0,160.5 L 540.4,179.8 L 541.7,202.2 L 493.2,200.8 L 444.5,201.0 L 400.7,202.5 L 401.6,178.9 L 399.4,160.8 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470.0" y="178.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="22" fill="#e8e8ed">verdict</text>
+  <path d="M 406.6,259.9 L 541.0,258.9 Q 570.0,260.0 568.7,288.8 L 568.9,311.2 Q 570.0,340.0 541.7,341.1 L 406.7,339.8 Q 380.0,340.0 380.1,313.2 L 381.0,289.1 Q 380.0,260.0 407.3,259.7 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="475.0" y="308.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="22" fill="#e8e8ed">5.48 GB</text>
+  <path d="M 647.6,261.2 L 833.4,259.0 Q 860.0,260.0 859.0,287.2 L 859.2,312.0 Q 860.0,340.0 832.3,339.3 L 646.5,339.8 Q 620.0,340.0 619.6,312.2 L 621.4,288.6 Q 620.0,260.0 648.0,260.4 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="740.0" y="308.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="22" fill="#e8e8ed">category swap</text>
+  <path d="M 250.9,417.8 L 312.0,421.4 L 371.9,421.5 L 429.5,419.5 L 428.0,440.7 L 427.8,457.8 L 428.5,478.3 L 369.2,477.8 L 307.5,478.3 L 248.0,479.3 L 247.6,461.9 L 250.6,438.2 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="340.0" y="458.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="20" fill="#e8e8ed">reviewer 1</text>
+  <text x="340.0" y="502" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-style="italic" font-size="14" fill="#c8c8d0">fresh session</text>
+  <path d="M 738.8,419.2 L 812.7,418.1 L 888.4,422.5 L 959.8,419.9 L 957.9,438.0 L 959.2,458.8 L 961.6,478.3 L 884.3,482.3 L 813.5,478.2 L 740.2,477.6 L 740.1,462.4 L 741.8,441.0 Z" fill="none" stroke="#d0d0d6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="850.0" y="458.0" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-size="20" fill="#e8e8ed">reviewer 2</text>
+  <text x="850.0" y="502" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-weight="bold" font-style="italic" font-size="14" fill="#c8c8d0">fresh session</text>
+  <path d="M 340.0,416.0 L 361.9,403.7 L 384.2,392.7 L 407.6,380.7 L 429.6,367.3 L 453.3,357.2 L 475.0,344.0" fill="none" stroke="#c88a20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+  <path d="M 850.0,416.0 L 832.5,404.8 L 814.1,392.6 L 794.3,380.0 L 776.3,366.8 L 757.2,355.4 L 740.0,344.0" fill="none" stroke="#c88a20" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arr-amber)"/>
+</svg>

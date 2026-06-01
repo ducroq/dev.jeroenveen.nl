@@ -1,0 +1,290 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Verification is a workflow problem, not a model problem. · dev.jeroenveen.nl';
+const description = 'Notes from a €5k hardware research session: a frontier model drafted a verdict, two fresh-session reviewers caught fifteen issues with near-zero overlap. The verifier has to be outside.';
+const publishedOn = '2026-06-01';
+---
+
+<Layout title={title} description={description}>
+  <a href="#article" class="skip-nav">Skip to article</a>
+  <main>
+    <article class="article">
+      <nav class="article-nav" aria-label="Site navigation">
+        <a href="/">← dev.jeroenveen.nl</a>
+      </nav>
+
+      <header class="article-header" id="article">
+        <span class="article-label">Writing</span>
+        <h1 class="article-title">Verification is a workflow problem, not a model problem.</h1>
+        <p class="article-subtitle">
+          Notes from a €5k hardware research session.
+        </p>
+        <p class="article-meta">
+          <time datetime={publishedOn}>1 June 2026</time>
+          <span class="sep">·</span>
+          <span>~4 min read</span>
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          A €5k hardware-purchase research exercise, gated on revenue. I
+          drafted a verdict using a strong frontier model with full session
+          context. The verdict read internally consistent.
+        </p>
+
+        <p>
+          Two fresh-session reviewers found fifteen issues in it, with
+          near-zero overlap between them. One was a small same-family model
+          running a mechanical checklist. One was a large same-family model
+          in a fresh session running an argument-shape critique.
+        </p>
+
+        <p>
+          Two of those issues are useful here.
+        </p>
+
+        <p>
+          The first was a number nobody could source. A trade-press article
+          had stated that a recent open-weight model needed only 5.48 GB of
+          GPU memory to hold a million-token context, framed as a
+          hardware-does-not-matter-anymore argument. The figure was credited
+          to an unnamed analyst using unspecified modeling benchmarks. The
+          drafting context took the number as authoritative. Four independent
+          technical sources, when checked, gave figures from 9.6 GB up. The
+          vendor's own model card gave only a relative figure.
+        </p>
+
+        <p>
+          The second was a category swap the drafter never flagged. An
+          argument about demand for a specific kind of GenAI coding tool was
+          using a different kind of GenAI agent platform as load-bearing
+          evidence. The two products shared the "self-hosted AI agent"
+          framing. A reviewer with no investment in the drafting context,
+          asked directly whether the cited platform's stated primary purpose
+          matched the use case being argued, surfaced the swap immediately.
+        </p>
+
+        <figure class="article-figure">
+          <img
+            src="/diagrams/verification-is-a-workflow-problem.svg"
+            alt="Single-panel hand-drawn sketch on dark canvas. A large rectangular boundary labelled 'drafting session' encloses four elements: a box labelled 'drafter' with an arrow leading to a box labelled 'verdict', and below them, two rounded shapes labelled '5.48 GB' and 'category swap'. Below the boundary stand two further boxes labelled 'reviewer 1' and 'reviewer 2', each captioned 'fresh session'. Two amber arrows rise from the reviewer boxes, cross the boundary line, and reach the two error shapes inside."
+            width="1200"
+            height="520"
+            loading="lazy"
+          />
+        </figure>
+
+        <p>
+          Notice what would not have caught either of these. Most advice on
+          catching GenAI mistakes points at the model. Retrieval-augmented
+          generation, citation checkers, grounded generation, judge models.
+          The implicit picture is that if the model had more information, or
+          the right kind of supervision, the output would be more reliable.
+          Neither error here is that kind of failure.
+        </p>
+
+        <p>
+          RAG retrieves what you ask for. The drafter had access to the
+          trade-press article and to vendor documentation; what was missing
+          was a prompt to compare them against each other. Citation checkers
+          confirm that referenced sources exist. The 5.48 number had a
+          citation, vaguely, with no name and no methodology. That is exactly
+          the pattern model-level checkers cannot flag. Grounded generation
+          pins outputs to a corpus. It does not check whether the corpus
+          supports the kind of claim the output makes.
+        </p>
+
+        <p>
+          What did catch the errors was a workflow with three properties: a
+          registry that named which claims supported which conclusions and
+          required source-tier metadata on each, a fresh-session reviewer
+          with no investment in the conclusion, and a multi-pass structure
+          that escapes the bias of the drafting session at two different
+          scales. The registry is the verification artefact. The reviewer is
+          the verifier. The multi-pass structure is the redundancy. None of
+          this lives inside the model.
+        </p>
+
+        <p>
+          The framework I used is one I have been building, <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>,
+          and the name almost gates the invitation. The scope has been
+          widening: a recent decision-record opened it to speculative-design
+          work, another added the multi-pass review pattern using a blog
+          article and a LinkedIn cross-post as the empirical surface. The
+          README explicitly names WhatsApp and Slack messages with
+          quantitative claims as in-scope. None of this is paper-specific.
+          The paper-specific bits, page budgets, LaTeX, journal style guides,
+          are about twenty percent of the framework. The other eighty percent
+          is "GenAI failure modes need verification infrastructure because
+          the failures are not noise, they are structural."
+        </p>
+
+        <p>
+          What I have come to see is that this generalises cleanly to
+          research and decision-making. If you are about to commit money or
+          reputation based on GenAI-synthesised claims, the typed registry,
+          source tiering, anti-hallucination checklist, and multi-pass review
+          apply identically. None of them require the artefact to be a paper.
+        </p>
+
+        <p>
+          The honest counter-argument is overhead. A V&amp;V battery costs
+          real time. For low-stakes work the model-level interventions are
+          the right tool: cheap, fast, no infrastructure. The framework
+          starts earning its keep where the cost of being wrong exceeds the
+          cost of running the verification. Hardware purchase decisions cross
+          that threshold. Most strategic decisions do. Most personal coding
+          sessions do not.
+        </p>
+
+        <p>
+          The discourse will catch up to this distinction slowly. Every
+          GenAI-engineering thread right now defaults to model-level: which
+          retriever, which evaluator, which prompt template. These are real,
+          and they matter. But they will not catch the failures whose cause
+          lives in the workflow that wraps the model. Category-shape and
+          source-shape are not properties the model has access to from
+          inside a single call. The verifier has to be outside.
+        </p>
+
+        <p>
+          Where have you seen verification at the wrong layer catch up with
+          you?
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links">
+      <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/jeroen-veen-3244444/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .article-nav {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 60ch;
+  }
+
+  .article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-meta .sep {
+    color: var(--border);
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--amber);
+  }
+
+  .article-body a {
+    border-bottom: 1px dotted var(--amber-dim);
+  }
+  .article-body a:hover {
+    border-bottom-color: var(--text);
+  }
+
+  .article-body hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0 2rem;
+  }
+
+  .article-figure {
+    margin: 2.5rem 0;
+  }
+
+  .article-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links .sep {
+    color: var(--text-dim);
+  }
+</style>
