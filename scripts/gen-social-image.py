@@ -45,9 +45,9 @@ def render(out_path: Path) -> None:
     head_font = font(head_size, bold=True)
     line_h = int(head_size * 1.18)
     headline = [
-        "Most production AI",
-        "grades its own output.",
-        "This one does not.",
+        "Verification is a",
+        "workflow problem,",
+        "not a model problem.",
     ]
     head_y = PAD_T + 80
     for i, line in enumerate(headline):
@@ -61,7 +61,7 @@ def render(out_path: Path) -> None:
 
     # Bottom-right: article slug breadcrumb
     slug_font = font(18, bold=False)
-    slug = "/writing/the-model-is-not-the-grader"
+    slug = "/writing/verification-is-a-workflow-problem"
     bbox = draw.textbbox((0, 0), slug, font=slug_font)
     slug_w = bbox[2] - bbox[0]
     draw.text((W - PAD_R - slug_w, H - PAD_B - 22), slug, font=slug_font, fill=TEXT_DIM)
@@ -75,4 +75,4 @@ def render(out_path: Path) -> None:
 
 
 if __name__ == "__main__":
-    render(Path("public/social/the-model-is-not-the-grader.png"))
+    render(Path("public/social/verification-is-a-workflow-problem.png"))
