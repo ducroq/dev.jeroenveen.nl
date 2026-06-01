@@ -7,7 +7,7 @@ const recentWriting = [...articles]
   .slice(0, 2);
 
 // Only show the first N projects publicly; keep the rest in the array for easy re-exposure.
-const VISIBLE_PROJECT_COUNT = 2;
+const VISIBLE_PROJECT_COUNT = 3;
 
 const projects = [
   {
@@ -27,6 +27,14 @@ const projects = [
     linkLabel: 'Live',
     accent: '#fb923c',
     img: '/screenshots/ese-bot.png',
+  },
+  {
+    title: 'agent-ready-papers',
+    desc: 'Verification framework for AI-assisted claim-bearing artifacts. Typed claim registry with source-tier metadata, anti-hallucination checklist applied before commit, multi-pass review with reviewer-bias escapes at different scales. Originally for papers; the discipline applies to any artifact where the cost of being wrong exceeds the cost of verification.',
+    tags: ['Methodology', 'V&V', 'Anti-Hallucination', 'AI-Augmented Writing'],
+    link: 'https://github.com/ducroq/agent-ready-papers',
+    linkLabel: 'Repo',
+    accent: '#fbbf24',
   },
   {
     title: 'ovr.news — Intelligence Pipeline',
