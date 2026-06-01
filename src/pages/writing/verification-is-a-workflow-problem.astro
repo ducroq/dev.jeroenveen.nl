@@ -84,7 +84,8 @@ const publishedOn = '2026-06-01';
           generation, citation checkers, grounded generation, judge models.
           The implicit picture is that if the model had more information, or
           the right kind of supervision, the output would be more reliable.
-          Neither error here is that kind of failure.
+          Neither error here lives in the model's output. Both live in
+          the drafting context, which the model cannot see from inside.
         </p>
 
         <p>
@@ -95,7 +96,9 @@ const publishedOn = '2026-06-01';
           citation, vaguely, with no name and no methodology. That is exactly
           the pattern model-level checkers cannot flag. Grounded generation
           pins outputs to a corpus. It does not check whether the corpus
-          supports the kind of claim the output makes.
+          supports the kind of claim the output makes. All three operate
+          on the model's output. None of them operate on the context that
+          produced it.
         </p>
 
         <p>
@@ -103,7 +106,7 @@ const publishedOn = '2026-06-01';
           registry that named which claims supported which conclusions and
           required source-tier metadata on each, a fresh-session reviewer
           with no investment in the conclusion, and a multi-pass structure
-          that escapes the bias of the drafting session at two different
+          that escapes the bias of the drafting context at two different
           scales. The registry is the verification artefact. The reviewer is
           the verifier. The multi-pass structure is the redundancy. None of
           this lives inside the model.
@@ -148,7 +151,7 @@ const publishedOn = '2026-06-01';
           and they matter. But they will not catch the failures whose cause
           lives in the workflow that wraps the model. Category-shape and
           source-shape are not properties the model has access to from
-          inside a single call. The verifier has to be outside.
+          inside its own context. The verifier has to be outside.
         </p>
 
         <p>
