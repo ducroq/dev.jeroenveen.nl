@@ -13,15 +13,15 @@ Reactions and replies posted on LinkedIn or other external platforms. Captured h
 **What this draws on:**
 - Augmented Engineering pattern: Reproduce, Don't Assess (driven-pendulum case: 68 equations, two LLMs found zero errors, reproduction caught three)
 - vmodel.eu: V-model framing, requirements as artifact-not-throwaway
-- Domain pushback: embedded firmware, certified medical/automotive software, numerical implementations — domains where the implementation is the contract, not a throwaway
+- Domain pushback: embedded firmware, certified medical/automotive software, numerical implementations, domains where the implementation is the contract, not a throwaway
 
 **Why this framing:** Witek is a friend in the same Dutch AI-onderwijs space, not a debate opponent. Goal was to add a dimension (validation of output) without overwriting his three questions, and to gently complicate the "wegwerpartefact" analogy without dismissing it. The V-model reference is a subtle nod to vmodel.eu work that Witek can pick up if he wants to follow the thread.
 
 **Iterations the comment went through (for future reuse):**
-- A: short, plain "validation matters" addition — too generic
-- B: SER-2025 / Digital Engineers framing — too research-paper for a comment
-- C: full Reproduce-Don't-Assess case with numbers (68/0/3, factor 5) — too many specifics for a comment
-- D: tegendraads on "wegwerpartefact" — risk of reading as correction to a friend
+- A: short, plain "validation matters" addition (too generic)
+- B: SER-2025 / Digital Engineers framing (too research-paper for a comment)
+- C: full Reproduce-Don't-Assess case with numbers (68/0/3, factor 5; too many specifics for a comment)
+- D: tegendraads on "wegwerpartefact" (risk of reading as correction to a friend)
 - E (final, mix of C+D): empirical pattern in one line + voorzichtige nuance + domain examples + V-model + dual student-vraag closing
 
 ---
@@ -48,12 +48,12 @@ The auto-card under the hook links to the Pulse article ("A small GDPR-safe chat
 - The published version reframed substantially from the original short-post draft, which opened "Last year I built a RAG chatbot for my students." That draft (formerly at `drafts/linkedin-post-ese-bot-unpublished.md`) has been retired. The European-alternative framing in the live post is the canonical record.
 
 **Phrasing worth reusing:**
-- *"A year ago my honest answer to '[X]?' was 'not really.' Today it is 'yes, probably, depending on your horizon.'"* — durable opener structure for tracking shifts in capability or availability over time. The "depending on your horizon" hedge does real work: it concedes that "yes" isn't unconditional without retreating to "no."
+- *"A year ago my honest answer to '[X]?' was 'not really.' Today it is 'yes, probably, depending on your horizon.'"*: durable opener structure for tracking shifts in capability or availability over time. The "depending on your horizon" hedge does real work: it concedes that "yes" isn't unconditional without retreating to "no."
 
 **Reception data (captured 2026-05-21, post is 29 days old, LinkedIn analytics export):**
 - **Short post**: 1,668 impressions, 969 members reached, 29 reactions, 2 comments, 0 reposts, 0 saves, 19 profile views, 0 followers gained.
-- **Article (Pulse) views: 83** — *the highest CTR-to-Pulse of the three posts measured so far* (5.0% of impressions clicked through, vs. 1.4% on `the-work-is-splitting` and 0.9% on `senior-developers-trust-ai-less`).
-- **Engagement rate: 1.86%** — also the highest of the three posts (vs. 0.85% and 0.20%). Narrower reach, denser engagement.
+- **Article (Pulse) views: 83**. *The highest CTR-to-Pulse of the three posts measured so far* (5.0% of impressions clicked through, vs. 1.4% on `the-work-is-splitting` and 0.9% on `senior-developers-trust-ai-less`).
+- **Engagement rate: 1.86%**. Also the highest of the three posts (vs. 0.85% and 0.20%). Narrower reach, denser engagement.
 - **Audience mix**: Arnhem-Nijmegen Region 37% + Netherlands 31% (heavily Dutch); Entry 39% / Senior 33% (the only post where Entry is top seniority); HAN 26%, Higher Education 18%. In-network distribution, much of it the immediate university orbit.
 
 **What the reception data tells us (in retrospect):**
@@ -77,16 +77,16 @@ The auto-card under the hook links to the Pulse article ("A small GDPR-safe chat
 
 **Reception data (captured 2026-05-21, post is 20 days old, LinkedIn analytics export):**
 - **Short post**: 1,650 impressions, 1,191 members reached, 9 reactions, 3 comments, **1 repost, 1 save**, 3 profile views, 0 followers gained.
-- **Article (Pulse) views: 23** — CTR-to-Pulse 1.4%, much lower than `ese-bot-eu-sovereign-rag` (5.0%) and just above `senior-developers-trust-ai-less` (0.9%).
-- **Engagement rate: 0.85%** — middle of the three posts.
+- **Article (Pulse) views: 23**. CTR-to-Pulse 1.4%, much lower than `ese-bot-eu-sovereign-rag` (5.0%) and just above `senior-developers-trust-ai-less` (0.9%).
+- **Engagement rate: 0.85%**. Middle of the three posts.
 - **Audience mix**: Senior 53% (the highest senior-share of the three posts); HAN 40% (heaviest in-network of the three); 1,001-5,000 employees 47%.
 - **Reposts + saves: this is the only one of the three measured posts to earn either** (1 repost, 1 save). Both are stronger frame-endorsement signals than reactions.
 
 **What the reception data tells us (in retrospect):**
-- The validation-vs-production frame travels: someone wanted to associate themselves with it publicly (repost) and someone else wanted to return to it (save). Posts 2 and 3 in the WHY arc did *not* earn either signal — so post 1 carried the frame, and posts 2/3 leaned on it without re-earning it.
-- The closing prompt ("Where in your work has validation become heavier than production?") drew 3 comments — the highest of the arc — even on the smallest reach. Open-ended-but-domain-anchored prompts beat the tightened 9-word neutral prompt on `senior-developers-trust-ai-less` for comment volume.
+- The validation-vs-production frame travels: someone wanted to associate themselves with it publicly (repost) and someone else wanted to return to it (save). Posts 2 and 3 in the WHY arc did *not* earn either signal, so post 1 carried the frame, and posts 2/3 leaned on it without re-earning it.
+- The closing prompt ("Where in your work has validation become heavier than production?") drew 3 comments (the highest of the arc), even on the smallest reach. Open-ended-but-domain-anchored prompts beat the tightened 9-word neutral prompt on `senior-developers-trust-ai-less` for comment volume.
 - The both-surfaces strategy was the right call: Pulse views (separate dataset, not captured here) + 1,650 short-post impressions vs. the website's much smaller direct traffic. Confirmed for posts 2 and 3.
-- Audience filter worked: 53% Senior, 40% HAN, 47% mid-size enterprise — exactly the engineering-leadership audience the frame was aimed at. The price is narrow reach (1,650 impressions), but the *right* narrow reach.
+- Audience filter worked: 53% Senior, 40% HAN, 47% mid-size enterprise. Exactly the engineering-leadership audience the frame was aimed at. The price is narrow reach (1,650 impressions), but the *right* narrow reach.
 
 ---
 
@@ -204,33 +204,33 @@ This split is sharper than "independence vs not" and worth keeping for future wr
 
 **Reception data (captured 2026-05-21, post is 9 days old, LinkedIn analytics export):**
 - **Short post**: **8,521 impressions, 6,478 members reached** (5× the prior two posts), 16 reactions, 1 comment, 0 reposts, 0 saves, 7 profile views, **1 follower gained**.
-- **Article (Pulse) views: 76** — CTR-to-Pulse 0.9%, the lowest of the three posts (broad reach diluted click-through; the absolute number 76 is comparable to ese-bot's 83 but on 5× the impressions).
-- **Engagement rate: 0.20%** — the lowest of the three (broader reach = thinner engagement, exactly the trade you'd expect when the algorithm pushes past the in-network audience).
-- **Audience mix**: Senior 38% / Entry 33% (mixed, more entry-share than work-is-splitting); 10,001+ employees 23% (large-enterprise audience appears for the first time); 201-500 employees 12%; **HAN absent from the top-company list** — the post broke out of the in-network HAN bubble.
-- **Followers gained: 1** — first follower acquired from the arc.
+- **Article (Pulse) views: 76**. CTR-to-Pulse 0.9%, the lowest of the three posts (broad reach diluted click-through; the absolute number 76 is comparable to ese-bot's 83 but on 5× the impressions).
+- **Engagement rate: 0.20%**. The lowest of the three (broader reach = thinner engagement, exactly the trade you'd expect when the algorithm pushes past the in-network audience).
+- **Audience mix**: Senior 38% / Entry 33% (mixed, more entry-share than work-is-splitting); 10,001+ employees 23% (large-enterprise audience appears for the first time); 201-500 employees 12%; **HAN absent from the top-company list**. The post broke out of the in-network HAN bubble.
+- **Followers gained: 1**. First follower acquired from the arc.
 
 **What the reception data tells us (in retrospect):**
-- The counter-intuitive hook ("Senior developers trust AI less than juniors") did real algorithm work — 5× the reach of the prior posts. The trade was reach-vs-depth: 5× more eyes, but on a less in-network audience that engaged less per impression and clicked through less.
+- The counter-intuitive hook ("Senior developers trust AI less than juniors") did real algorithm work: 5× the reach of the prior posts. The trade was reach-vs-depth: 5× more eyes, but on a less in-network audience that engaged less per impression and clicked through less.
 - The 9-word neutral comment-prompt ("Where in your work did your trust in AI output shift?") under-performed work-is-splitting's longer directional prompt (3 → 1 comments). The reach gain did *not* translate to comment volume. Worth weighing in future posts: tighter prompts may not earn more replies; they may earn fewer.
 - No reposts or saves despite 5× the reach. The frame ("seniors are absorbing the validation cost") didn't travel the way work-is-splitting's frame did. Possibly because it reads as observation about a group, not a frame the reader can adopt and reuse.
 - The "but seniors are slow adopters" pushback never materialised in comments. Either the article's paragraph-1 inoculation worked, or the audience that would have pushed back didn't reach the comments.
-- The rewritten functional punchline paragraph ("Seniors are the ones currently absorbing the cost, because they do the validation") appears to have done its work — no "I don't follow" responses, but comment volume too low to confirm the rewrite improved clarity. Hold the promote-the-rewrite-pattern decision until more data points exist.
+- The rewritten functional punchline paragraph ("Seniors are the ones currently absorbing the cost, because they do the validation") appears to have done its work: no "I don't follow" responses, but comment volume too low to confirm the rewrite improved clarity. Hold the promote-the-rewrite-pattern decision until more data points exist.
 
 **Phrasing worth reusing:**
-- *"Seniors are the ones currently absorbing the cost, because they do the validation."* — names *who* and *why* in one sentence. Reusable for any "who pays the hidden cost?" framing.
-- *"The code base will be shaped by whatever validation did not happen."* — the inheritance frame for skipped validation work. Travels to debt / maintainability / institutional-memory contexts.
-- *"recognising what looks plausible but isn't, slowing down on each piece"* — what validation actually feels like, in concrete terms. Reusable when "validation work" needs to stop being abstract.
+- *"Seniors are the ones currently absorbing the cost, because they do the validation."*: names *who* and *why* in one sentence. Reusable for any "who pays the hidden cost?" framing.
+- *"The code base will be shaped by whatever validation did not happen."*: the inheritance frame for skipped validation work. Travels to debt / maintainability / institutional-memory contexts.
+- *"recognising what looks plausible but isn't, slowing down on each piece"*: what validation actually feels like, in concrete terms. Reusable when "validation work" needs to stop being abstract.
 
-**Strategic note on post 3 — draft carefully (added 2026-05-12, immediately after post 2 publish):**
+**Strategic note on post 3, draft carefully (added 2026-05-12, immediately after post 2 publish):**
 
 Sensed risk after post 2 went live: conservative-leaning readers may claim it as ammunition for "don't adopt AI," which inverts its actual frame (seniors are *absorbing the validation cost while using AI*, not refusing to use it). Post 3 closes the WHY arc (HAZOP / domain bias) and needs to land carefully without breaking frame.
 
 Points to think through when drafting:
 
 - **Don't break frame mid-arc.** Post 3 is still WHY. A defensive "but I'm pro-AI" rider would muddle the argument and tell against posts 1 and 2.
-- **The domain-bias frame has both edges — use both.** HAZOP / domain-specific failure modes show where seniors are *right* to distrust AI in their own field, and where they're *wrong* to distrust in fields they don't know. Skepticism is domain-specific, and so is trust. This symmetry defuses the "seniors are blanket skeptics" read that conservatives would want to keep.
+- **The domain-bias frame has both edges. Use both.** HAZOP / domain-specific failure modes show where seniors are *right* to distrust AI in their own field, and where they're *wrong* to distrust in fields they don't know. Skepticism is domain-specific, and so is trust. This symmetry defuses the "seniors are blanket skeptics" read that conservatives would want to keep.
 - **Watch the closing line.** Don't terminate the arc on a note conservatives can frame as a finishing flourish. Depending on post-2 reception data, one sentence pointing forward (to a HOW arc) may be needed; or the closer may need to name the asymmetry explicitly (skepticism that does work vs. skepticism that's just refusal).
-- **The actual adoption pivot belongs in the next arc, not in post 3.** Adoption-with-validation is promoted *through evidence of Jeroen's own use* — ese-bot in production, Reproduce-Don't-Assess catching what two LLMs missed, vmodel.eu, Linumiz / Zephyr-Meetup talk — not through defensive statements in the WHY arc. Conservatives can claim a defensive line; they can't claim "here's what I shipped."
+- **The actual adoption pivot belongs in the next arc, not in post 3.** Adoption-with-validation is promoted *through evidence of Jeroen's own use*: ese-bot in production, Reproduce-Don't-Assess catching what two LLMs missed, vmodel.eu, Linumiz / Zephyr-Meetup talk. Not through defensive statements in the WHY arc. Conservatives can claim a defensive line; they can't claim "here's what I shipped."
 - **Pre-publish review:** apply the multi-model review pattern as on post 2 (Opus + Haiku in-family for argument shape and rule compliance; cross-vendor optional). Verify every named study / statistic via `docs/verification/<slug>.md` before publish.
 
 Revisit this note after the post-2 5–7 day reception check-in.
@@ -257,8 +257,8 @@ Substantive, additive sharpening. Restated experience as a pattern library for s
 - "validation gap" stays their phrase; no label-coining on top.
 
 **Phrasings worth reusing:**
-- *"silent debt until an unrelated change later surfaces what the original validation would have caught"* — concrete form of the latent-debt failure mode. Candidate for post 3 of the WHY arc, or for AE pattern writing on validation independence.
-- *"The window for noticing closes well before symptoms do"* — sharp closing line for the production-cheap / validation-hard asymmetry when the audience needs the *temporal* version of it rather than the *rate* version.
+- *"silent debt until an unrelated change later surfaces what the original validation would have caught"*: concrete form of the latent-debt failure mode. Candidate for post 3 of the WHY arc, or for AE pattern writing on validation independence.
+- *"The window for noticing closes well before symptoms do"*: sharp closing line for the production-cheap / validation-hard asymmetry when the audience needs the *temporal* version of it rather than the *rate* version.
 
 **Revisit trigger:** If the thread develops more replies, or AI Transfer Lab engages further on the post, reconsider posting the draft (or a trimmed version). If post 3 of the WHY arc draws on the latent-debt framing, this phrasing is the candidate to lift.
 
@@ -281,30 +281,30 @@ Substantive, additive sharpening. Restated experience as a pattern library for s
 
 **Reception data (captured 2026-05-31, post is 10 days old, LinkedIn analytics export):**
 - **Short post**: 1,250 impressions, 981 members reached, 2 reactions, 0 comments, 0 reposts, **1 save**, 0 sends, 2 profile views, 0 followers gained.
-- **Article (Pulse) views: 19** — CTR-to-Pulse 1.52%, sitting between `the-work-is-splitting` (1.4%) and `ese-bot-eu-sovereign-rag` (5.0%); comfortably above `senior-developers-trust-ai-less` (0.9%).
-- **Engagement rate: 0.24%** — the weak axis. Same band as senior-trust's broad/shallow profile (0.20%), well below the two narrow/dense ones (1.86%, 0.85%). The over-tight audience-filter CTA is the most likely cause.
-- **Audience mix (partial — LinkedIn surfaced only company-size)**: 1,001–5,000 employees 64%. The `#ProductionAI` swap + tighter CTA pulled distribution toward mid-size engineering teams as intended; reach did not broaden the way `#DeveloperProductivity` + counter-intuitive hook did on senior-trust.
-- **Saves: 1; reposts: 0** — frame still earned a save (second post to do so, alongside `the-work-is-splitting`), but no repost. The frame is adoptable for one's own use, less repostable as a public endorsement than "production is cheap, validation is not."
+- **Article (Pulse) views: 19**. CTR-to-Pulse 1.52%, sitting between `the-work-is-splitting` (1.4%) and `ese-bot-eu-sovereign-rag` (5.0%); comfortably above `senior-developers-trust-ai-less` (0.9%).
+- **Engagement rate: 0.24%**. The weak axis. Same band as senior-trust's broad/shallow profile (0.20%), well below the two narrow/dense ones (1.86%, 0.85%). The over-tight audience-filter CTA is the most likely cause.
+- **Audience mix (partial; LinkedIn surfaced only company-size)**: 1,001–5,000 employees 64%. The `#ProductionAI` swap + tighter CTA pulled distribution toward mid-size engineering teams as intended; reach did not broaden the way `#DeveloperProductivity` + counter-intuitive hook did on senior-trust.
+- **Saves: 1; reposts: 0**. Frame still earned a save (second post to do so, alongside `the-work-is-splitting`), but no repost. The frame is adoptable for one's own use, less repostable as a public endorsement than "production is cheap, validation is not."
 
 **What the reception data tells us (in retrospect):**
-- **Narrow-distribution profile, with the engagement-rate cost of an over-tight CTA.** Reach (1,250) and CTR-to-Pulse (1.52%) sit cleanly inside the narrow/dense band established by ese-bot and work-splitting. Not a new profile — a known profile with one weak axis.
-- **The diagram-as-cover variant did not materially shift CTR.** 1.52% vs work-splitting's 1.4% on typographic. With N=1 and the URL+card edit as a confounder, the early read is *neutral* — neither promote nor demote diagram-as-cover as the default. Keep typographic as the default per `docs/workflows/adding-an-article.md` step 7; use diagram-as-cover when the article has a strong central figure that survives at thumbnail.
+- **Narrow-distribution profile, with the engagement-rate cost of an over-tight CTA.** Reach (1,250) and CTR-to-Pulse (1.52%) sit cleanly inside the narrow/dense band established by ese-bot and work-splitting. Not a new profile, a known profile with one weak axis.
+- **The diagram-as-cover variant did not materially shift CTR.** 1.52% vs work-splitting's 1.4% on typographic. With N=1 and the URL+card edit as a confounder, the early read is *neutral*: neither promote nor demote diagram-as-cover as the default. Keep typographic as the default per `docs/workflows/adding-an-article.md` step 7; use diagram-as-cover when the article has a strong central figure that survives at thumbnail.
 - **The URL+card variant did not materially lift CTR either.** Same N=1 caveat; same neutral read. No reason to change the card-only default yet.
 - **The over-tight CTA filter zeroed out comments.** "If you've landed on a different grader architecture, defend the choice" asks for a population that barely exists on the timeline. 0 comments on 1,250 impressions is the worst comment-yield of the four posts. Hypothesis worth carrying to next time: shipped-system-specific filters earn 0 comments rather than higher-quality ones. Calibrate CTA-tightness against the size of the population that can credibly answer, not just against perceived noise-reduction value.
 - **The diagram-as-cover did not break out of the narrow distribution band.** Reach was in line with work-splitting and ese-bot (~1.2-1.7k each), suggesting the cover style is not the dominant determinant of broad-vs-narrow distribution; hook + claim type are.
-- **Predicted commenter pushbacks did not arrive.** No "is this vmodel.eu?" question; no "what about non-rubric domains?" challenge. Either the post did not reach readers who would push back, or the framing pre-empted them. With 0 comments overall, the absence of pushback is not informative — it's just absence.
-- **Interleaving a standalone shipped-system post between arc posts** still looks fine as a pattern — the post held its own (CTR in line) — but the engagement-rate cost suggests calibrating the CTA on the next interleaved post to match the broader-band audience, not just the narrow filter.
+- **Predicted commenter pushbacks did not arrive.** No "is this vmodel.eu?" question; no "what about non-rubric domains?" challenge. Either the post did not reach readers who would push back, or the framing pre-empted them. With 0 comments overall, the absence of pushback is not informative. It's just absence.
+- **Interleaving a standalone shipped-system post between arc posts** still looks fine as a pattern (the post held its own, CTR in line), but the engagement-rate cost suggests calibrating the CTA on the next interleaved post to match the broader-band audience, not just the narrow filter.
 
 **Phrasings worth reusing:**
-- *"the evaluator inherits the actor's assumptions, because they came from the same training distribution and they are reading the same artifact in the same way"* — sharpest condensation of the self-grading critique. Sibling to the Witek-thread phrase *"the validator inherits the implementation's assumptions"*, but pushed to the *priors* level. Reusable in any cross-model / critic-actor / LLM-as-judge context.
-- *"The grader has no opinion. It enforces."* — clean one-line statement of the deterministic-grader argument. Reusable when distinguishing rule-application from judgment.
-- *"How do you know this works?"* — the senior-engineer question that defines defensibility. Reusable when distinguishing demo-grade from production-grade systems.
-- *"A calibration check against a known sample, the way you do not change a measurement instrument without re-checking it against a reference standard."* — the metrology analogy for calibration gates. Travels well to anyone with a hardware / measurement background.
-- *"Not a methodology, not a generalisable claim, not a paper. One decision, and the second decision that makes the first one honest."* — modesty register for an evidence-from-own-work piece. Reusable closing structure when the piece is concrete-case-only, not generalisation.
+- *"the evaluator inherits the actor's assumptions, because they came from the same training distribution and they are reading the same artifact in the same way"*: sharpest condensation of the self-grading critique. Sibling to the Witek-thread phrase *"the validator inherits the implementation's assumptions"*, but pushed to the *priors* level. Reusable in any cross-model / critic-actor / LLM-as-judge context.
+- *"The grader has no opinion. It enforces."*: clean one-line statement of the deterministic-grader argument. Reusable when distinguishing rule-application from judgment.
+- *"How do you know this works?"*: the senior-engineer question that defines defensibility. Reusable when distinguishing demo-grade from production-grade systems.
+- *"A calibration check against a known sample, the way you do not change a measurement instrument without re-checking it against a reference standard."*: the metrology analogy for calibration gates. Travels well to anyone with a hardware / measurement background.
+- *"Not a methodology, not a generalisable claim, not a paper. One decision, and the second decision that makes the first one honest."*: modesty register for an evidence-from-own-work piece. Reusable closing structure when the piece is concrete-case-only, not generalisation.
 
 **Full text of both posted surfaces:** captured at `memory/posted-linkedin/the-model-is-not-the-grader.md`.
 
-**Natural experiment: card-only → URL + card (edited same day as publish):** Initial short-post publish rendered the Pulse article as auto-card only; the explicit URL was not in the body text. Edited later 2026-05-21 to add the URL on its own line above the hashtags, in addition to the card. Worth watching whether this lifts CTR-to-Pulse vs. the card-only baselines on `the-work-is-splitting` and `senior-developers-trust-ai-less`. Caveats: (a) edit happened mid-data-collection, so before/after analytics aren't separable in LinkedIn's export; (b) editing a post can itself affect algorithmic distribution; (c) N=1. Treat as suggestive, not conclusive — if CTR comes in well above the typographic-cover baselines (work-splitting 1.4%, senior-trust 0.9%), the diagram-as-cover variant *and* the URL+card combination are both candidate explanations, and we can't isolate them from this single data point.
+**Natural experiment: card-only → URL + card (edited same day as publish):** Initial short-post publish rendered the Pulse article as auto-card only; the explicit URL was not in the body text. Edited later 2026-05-21 to add the URL on its own line above the hashtags, in addition to the card. Worth watching whether this lifts CTR-to-Pulse vs. the card-only baselines on `the-work-is-splitting` and `senior-developers-trust-ai-less`. Caveats: (a) edit happened mid-data-collection, so before/after analytics aren't separable in LinkedIn's export; (b) editing a post can itself affect algorithmic distribution; (c) N=1. Treat as suggestive, not conclusive. If CTR comes in well above the typographic-cover baselines (work-splitting 1.4%, senior-trust 0.9%), the diagram-as-cover variant *and* the URL+card combination are both candidate explanations, and we can't isolate them from this single data point.
 
 ---
 
@@ -318,19 +318,19 @@ Substantive, additive sharpening. Restated experience as a pattern library for s
 **Strategy choices (worth re-examining after data comes in):**
 - **Both surfaces** (Pulse + short feed post). Default for the V&V arc continuation; matches `the-work-is-splitting`, `senior-developers-trust-ai-less`, `the-model-is-not-the-grader`.
 - **Frame-traveling design:** "verification lives in the workflow, not the model" is intentionally adoptable as a frame. Per `project_linkedin_post_reception_patterns.md`, frame-adoptable framings earn saves and reposts (the `the-work-is-splitting` signal); travel observations do not.
-- **Hashtag set:** `#AI #ProductionAI #AugmentedEngineering` — same as `the-model-is-not-the-grader`, sibling shipped-system register.
+- **Hashtag set:** `#AI #ProductionAI #AugmentedEngineering`, same as `the-model-is-not-the-grader`, sibling shipped-system register.
 - **Hook (short post):** frame-claim hook ("The verifier has to be outside.") as the first line, then the €5k case as supporting evidence. The frame-claim-first pattern landed the saves on work-splitting; concrete-case-first is the natural alternative if reception underperforms.
-- **CTA structure:** "Where have you seen verification at the wrong layer catch up with you?" — medium-tight (specific topic, personal-experience question). Calibration test against the over-tight model-not-grader CTA that zeroed out comments at 1,250 impressions. Target ≥1 comment, ideally ≥3.
-- **vmodel.eu non-disclosure:** the article does not name vmodel.eu. The €5k case is a *different* shipped system (personal hardware research, not the production AI). If asked "is this vmodel?", honest answer is no — that one is the system referenced in `the-model-is-not-the-grader`.
+- **CTA structure:** "Where have you seen verification at the wrong layer catch up with you?" Medium-tight (specific topic, personal-experience question). Calibration test against the over-tight model-not-grader CTA that zeroed out comments at 1,250 impressions. Target ≥1 comment, ideally ≥3.
+- **vmodel.eu non-disclosure:** the article does not name vmodel.eu. The €5k case is a *different* shipped system (personal hardware research, not the production AI). If asked "is this vmodel?", honest answer is no. That one is the system referenced in `the-model-is-not-the-grader`.
 - **Cover image:** typographic (default per `docs/workflows/adding-an-article.md` step 7). Not diagram-as-cover; the article's central object is the workflow argument rather than a single figure.
 
-**Pulse URL note:** LinkedIn assigned slug `verification-workflow-problem-model-jeroen-veen-6nrie` — dropped "not" from the article title, kept "model". The draft's placeholder URL guess (`verification-workflow-problem-not-model-jeroen-veen`) was wrong; replaced with actual after publish. Worth remembering: LinkedIn's auto-slug is unpredictable in negation handling.
+**Pulse URL note:** LinkedIn assigned slug `verification-workflow-problem-model-jeroen-veen-6nrie`. Dropped "not" from the article title, kept "model". The draft's placeholder URL guess (`verification-workflow-problem-not-model-jeroen-veen`) was wrong; replaced with actual after publish. Worth remembering: LinkedIn's auto-slug is unpredictable in negation handling.
 
 **Reception checkpoint (~5–7 days post-publish, target check date 2026-06-08):**
 - Reach band (narrow/dense vs broad/shallow): expect narrow/dense given the frame-traveling design and #ProductionAI hashtag. Baseline: `the-model-is-not-the-grader` 1,250 impressions / 19 Pulse views.
 - CTR to Pulse: target ≥1.5% (work-splitting baseline 1.4%, the-model-is-not-the-grader 1.52%).
 - Comments: target ≥1, ideally ≥3 (calibration test for the medium-tight CTA vs the over-tight model-not-grader CTA that returned zero).
-- Saves: any save is a frame-adoption signal — pay attention to whether the workflow-vs-model frame travels. Two prior posts have earned saves (`the-work-is-splitting`, `the-model-is-not-the-grader`); frame-claim hook + adoptable framing should be the strongest save-earning combination so far.
+- Saves: any save is a frame-adoption signal; pay attention to whether the workflow-vs-model frame travels. Two prior posts have earned saves (`the-work-is-splitting`, `the-model-is-not-the-grader`); frame-claim hook + adoptable framing should be the strongest save-earning combination so far.
 - Reposts: still zero on every post in the four-post baseline. A repost here would be the first signal that an adoptable frame can earn public endorsement, not just private save.
 
 **Full text of both posted surfaces:** captured at `memory/posted-linkedin/verification-is-a-workflow-problem.md`.
