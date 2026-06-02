@@ -1,6 +1,6 @@
 # The same model that wrote it cannot catch its own errors.
 
-*Status: DRAFT first-pass prose, written 2026-06-01 from earlier seed (2026-05-12). Reception-checkpoint pending on `verification-is-a-workflow-problem` (published 2026-06-01, posts to LinkedIn 2026-06-02) before deciding publish timing. Sibling to that article, which uses the multi-pass review pattern as one of three workflow properties; this piece goes deep on the multi-pass component specifically.*
+*Status: DRAFT first-pass prose, written 2026-06-01 from earlier seed (2026-05-12). Reception-checkpoint pending on `verification-is-a-workflow-problem` (published 2026-06-01, posts to LinkedIn 2026-06-02) before deciding publish timing. Sibling to that article, which uses the multi-pass review pattern as one of three workflow properties; this piece goes deep on the multi-pass component specifically. Two-axes-of-outside-ness beat added 2026-06-02 after today's IOU verification against `new_hardware/vv/` surfaced the gap; see also gotcha-log 2026-04-28 (sub-agent sandbox).*
 
 *Working subtitle:* Notes from a three-pass review.
 
@@ -29,6 +29,10 @@ The naive version of the multi-model review advice says: use a different model t
 The pattern I have landed on is more discriminating. The two intra-family passes, mechanical plus argument-shape, run on every publish. They are cheap and they catch the classes of error the producer is most likely to miss for plain reasons. The cross-vendor pass runs only when the stakes warrant the noise: high-stakes claims, citation-heavy passages, anything where the cost of a missed error exceeds the cost of filtering false alarms. And when it runs, the house-style rules go with it as an explicit filter, so the cross-vendor reviewer's stylistic disagreements get categorised as out of scope before they reach the actionable list.
 
 The validator inherits the implementation's assumptions. That is true at the model-family level. It is also true at the prompt level and the rubric level. A reviewer prompted by the producer, against criteria the producer wrote, will inherit a lot more than just the producer's family. It will inherit the producer's beliefs about what counts as a problem. Multi-pass review is most useful when the passes disagree about that.
+
+It is also true at the context level, which is where multi-pass review hits a structural ceiling. A reviewer can be outside the drafting context (different model, fresh session, no carry-over) and still be inside the producer's filesystem reach. When the claim being verified lives in a sibling project, say a measurement record or source artefact in a separate repo, pasting that content into the reviewer's context loops the producer's selection back in. The producer chose what to paste; the reviewer reads what was chosen.
+
+The honest verification move for cross-repo claims is to do the comparison in the session that has reach to both the article and the source, not in a downstream reviewer that has reach to only the article. Outside-ness has two axes. Multi-pass review handles the first: the producer wrote the draft and a different model reads it. It does not handle the second: the reviewer cannot reach the artefact the draft makes claims about.
 
 What three reviewers showed me, in the article we ran them on, was that they disagreed in distinct ways. The mechanical pass disagreed with the producer about rule compliance. The argument-shape pass disagreed about logic. The cross-vendor pass disagreed about voice, and that disagreement was the one I needed to discount most carefully.
 
@@ -73,6 +77,7 @@ The draft above uses the senior-trust review pass as its empirical anchor withou
   - *"The validator inherits the implementation's assumptions."* (in the draft, mid-body)
   - *"Stance-shaped errors and knowledge-shaped errors require different reviewers."* (from the Geert thread; the draft uses the distinction without coining the phrase, worth pulling forward)
   - *"Match the pass to the failure mode you are trying to escape."* (closing line, candidate for subtitle or LinkedIn hook)
+  - *"Outside-ness has two axes. Multi-pass review handles the first, not the second."* (added 2026-06-02; structural ceiling beat. Candidate for the LinkedIn cross-post hook if the workflow-piece reception suggests appetite for a deeper sibling.)
 - **Possible homes:**
   - **dev.jeroenveen.nl article (current draft target).** Sibling to verification-is-a-workflow-problem. Cost: narrower audience than the parent article; pays off when the parent frame has traveled.
   - **AE pattern essay.** This is genuinely AE territory; it is the *mitigation* recipe for the validation-inherits-implementation-assumptions failure mode. Could live on the AE site as a pattern note linking to DR-011. The dev.jeroenveen.nl article would point to it.
