@@ -305,3 +305,32 @@ Substantive, additive sharpening. Restated experience as a pattern library for s
 **Full text of both posted surfaces:** captured at `memory/posted-linkedin/the-model-is-not-the-grader.md`.
 
 **Natural experiment: card-only → URL + card (edited same day as publish):** Initial short-post publish rendered the Pulse article as auto-card only; the explicit URL was not in the body text. Edited later 2026-05-21 to add the URL on its own line above the hashtags, in addition to the card. Worth watching whether this lifts CTR-to-Pulse vs. the card-only baselines on `the-work-is-splitting` and `senior-developers-trust-ai-less`. Caveats: (a) edit happened mid-data-collection, so before/after analytics aren't separable in LinkedIn's export; (b) editing a post can itself affect algorithmic distribution; (c) N=1. Treat as suggestive, not conclusive — if CTR comes in well above the typographic-cover baselines (work-splitting 1.4%, senior-trust 0.9%), the diagram-as-cover variant *and* the URL+card combination are both candidate explanations, and we can't isolate them from this single data point.
+
+---
+
+## 2026-06-02 — Publish: "Verification is a workflow problem, not a model problem" (V&V arc, interleaved evidence-from-own-work)
+
+**Surfaces shipped (both live):**
+- Short LinkedIn post (link share): https://www.linkedin.com/posts/jeroen-veen-3244444_ai-productionai-augmentedengineering-activity-7467455776672972800--QlF
+- LinkedIn Pulse (long-form): https://www.linkedin.com/pulse/verification-workflow-problem-model-jeroen-veen-6nrie/
+- Canonical home: https://dev.jeroenveen.nl/writing/verification-is-a-workflow-problem/
+
+**Strategy choices (worth re-examining after data comes in):**
+- **Both surfaces** (Pulse + short feed post). Default for the V&V arc continuation; matches `the-work-is-splitting`, `senior-developers-trust-ai-less`, `the-model-is-not-the-grader`.
+- **Frame-traveling design:** "verification lives in the workflow, not the model" is intentionally adoptable as a frame. Per `project_linkedin_post_reception_patterns.md`, frame-adoptable framings earn saves and reposts (the `the-work-is-splitting` signal); travel observations do not.
+- **Hashtag set:** `#AI #ProductionAI #AugmentedEngineering` — same as `the-model-is-not-the-grader`, sibling shipped-system register.
+- **Hook (short post):** frame-claim hook ("The verifier has to be outside.") as the first line, then the €5k case as supporting evidence. The frame-claim-first pattern landed the saves on work-splitting; concrete-case-first is the natural alternative if reception underperforms.
+- **CTA structure:** "Where have you seen verification at the wrong layer catch up with you?" — medium-tight (specific topic, personal-experience question). Calibration test against the over-tight model-not-grader CTA that zeroed out comments at 1,250 impressions. Target ≥1 comment, ideally ≥3.
+- **vmodel.eu non-disclosure:** the article does not name vmodel.eu. The €5k case is a *different* shipped system (personal hardware research, not the production AI). If asked "is this vmodel?", honest answer is no — that one is the system referenced in `the-model-is-not-the-grader`.
+- **Cover image:** typographic (default per `docs/workflows/adding-an-article.md` step 7). Not diagram-as-cover; the article's central object is the workflow argument rather than a single figure.
+
+**Pulse URL note:** LinkedIn assigned slug `verification-workflow-problem-model-jeroen-veen-6nrie` — dropped "not" from the article title, kept "model". The draft's placeholder URL guess (`verification-workflow-problem-not-model-jeroen-veen`) was wrong; replaced with actual after publish. Worth remembering: LinkedIn's auto-slug is unpredictable in negation handling.
+
+**Reception checkpoint (~5–7 days post-publish, target check date 2026-06-08):**
+- Reach band (narrow/dense vs broad/shallow): expect narrow/dense given the frame-traveling design and #ProductionAI hashtag. Baseline: `the-model-is-not-the-grader` 1,250 impressions / 19 Pulse views.
+- CTR to Pulse: target ≥1.5% (work-splitting baseline 1.4%, the-model-is-not-the-grader 1.52%).
+- Comments: target ≥1, ideally ≥3 (calibration test for the medium-tight CTA vs the over-tight model-not-grader CTA that returned zero).
+- Saves: any save is a frame-adoption signal — pay attention to whether the workflow-vs-model frame travels. Two prior posts have earned saves (`the-work-is-splitting`, `the-model-is-not-the-grader`); frame-claim hook + adoptable framing should be the strongest save-earning combination so far.
+- Reposts: still zero on every post in the four-post baseline. A repost here would be the first signal that an adoptable frame can earn public endorsement, not just private save.
+
+**Full text of both posted surfaces:** captured at `memory/posted-linkedin/verification-is-a-workflow-problem.md`.
