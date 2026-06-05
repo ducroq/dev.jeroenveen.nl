@@ -40,7 +40,7 @@ The discipline-shape that follows:
 - `cross-model-review.md` — the pattern itself
 - `epistemic-humility.md` — adjacent stance
 - `if-it-has-claims-it-has-tests.md` — the unit-of-claim discipline
-- `plausibility-vs-correctness.md` — the gap this exploits
+- `ai-review-is-plausibility-review.md` — the gap this exploits
 - `two-reviews-missed-what-reproduction-caught.md` — related failure mode
 - `verification-is-a-workflow-problem-linkedin.md` — already-shaped-for-publish sibling. Consider whether this draft is a Pulse companion or a separate frame.
 

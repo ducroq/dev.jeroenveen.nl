@@ -1,0 +1,332 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Plausibility passes the AI review. Correctness does not. · dev.jeroenveen.nl';
+const description = 'AI review is plausibility review unless you make it not be. Notes on a 68-equation case and what it shows about the kit that catches what plausibility passes.';
+const publishedOn = '2026-06-05';
+---
+
+<Layout title={title} description={description} ogImage="/social/ai-review-is-plausibility-review.png" ogType="article">
+  <a href="#article" class="skip-nav">Skip to article</a>
+  <main>
+    <article class="article">
+      <nav class="article-nav" aria-label="Site navigation">
+        <a href="/">← dev.jeroenveen.nl</a>
+      </nav>
+
+      <header class="article-header" id="article">
+        <span class="article-label">Writing</span>
+        <h1 class="article-title">Plausibility passes the AI review. Correctness does not.</h1>
+        <p class="article-subtitle">
+          Notes on a 68-equation case and what it shows about the kit.
+        </p>
+        <p class="article-meta">
+          <time datetime={publishedOn}>5 June 2026</time>
+          <span class="sep">·</span>
+          <span>~4 min read</span>
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          In a 68-equation theory document, two AI reviews in assessment mode
+          caught zero errors. A third pass with the same model family but a
+          reproduction instruction caught three.
+        </p>
+
+        <p>
+          Some context. A theory document I had been working on for several
+          months. Ten chapters, AI-assisted throughout, covering pendulum
+          mechanics, synchronisation, electromagnetism, control, power
+          analysis, and the error budget. Hardware was about to be built on
+          top of it. I needed to know whether the equations were right.
+        </p>
+
+        <p>
+          I ran two LLM reviews in the usual assessment mode. Read this, check
+          it for physical soundness, flag anything that looks wrong. One pass
+          used Gemini, one used Claude. Both came back the same. No errors
+          found. Dimensions checked out, magnitudes were in plausible ranges,
+          the prose was internally consistent.
+        </p>
+
+        <p>
+          Then I ran a third pass with a different instruction. Same family as
+          the Claude pass, but the prompt forced reproduction rather than
+          judgment. Substitute the stated input values into every equation.
+          Compute the result step by step. Compare against the value in the
+          document. Never skip a calculation, never paraphrase a table.
+        </p>
+
+        <p>
+          That pass caught three errors.
+        </p>
+
+        <p>
+          The first was a label mismatch. A table headed "5 degrees" contained
+          values that had been computed at 1 degree. Coupling estimates in the
+          relevant chapter were therefore five times more optimistic than the
+          design called for. The second was a formula error in a dwell-time
+          calculation: a missing variable and a spurious factor of two made
+          the tabulated values roughly seven times too small. The third was an
+          internal inconsistency. An hourly correction stated as 36 s/hr did
+          not survive the arithmetic. 3.3 ms per swing, times 3,600 swings
+          per hour, lands near 12 s/hr, not 36. The text said one thing, the
+          underlying numbers said another.
+        </p>
+
+        <p>
+          All three errors produced individually plausible numbers. Right
+          units, reasonable magnitudes, coherent with the surrounding prose.
+          An assessment-mode reviewer is checking whether the artifact looks
+          right. These errors looked right. AI review is plausibility review
+          unless you make it not be.
+        </p>
+
+        <p>
+          Reproduction strips out the degree of freedom plausibility lives in.
+          A calculator does not have an opinion about whether 3.3 times 3,600
+          equals 36 seconds per hour. The instruction to compute rather than
+          to judge removes the move where "this reads as reasonable" gets to
+          substitute for "this is correct." Same model. Different mode.
+          Different result. The pattern lives in
+          <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>
+          as the equation-checker template, and the decision record behind it
+          is DR-009 (calculation-verification). The 68-equation case is the
+          empirical anchor for both. The controlled variable was the mode of
+          instruction; readers who want the full prompt-counterfactual will
+          find it in the
+          <a href="https://github.com/ducroq/agent-ready-papers/blob/main/audits/driven-pendulum-retrofit.md" target="_blank" rel="noopener">audit doc</a>.
+        </p>
+
+        <p>
+          The mechanism is not arithmetic-specific. Assessment checks the
+          surface the artifact presents. Reproduction operates on a surface
+          the artifact cannot fake. Citations are plausibility-shaped too. An
+          invented DOI looks like a real DOI, an invented author looks like a
+          real author, a paraphrased abstract looks like an abstract. An LLM
+          asked "does this citation support the claim" can answer fluently
+          and confidently while the citation does not exist. The
+          anti-hallucination checklist in the same framework is the
+          citation-equivalent of the equation-checker. It forces a check that
+          the source exists and says what the prose says it says, rather than
+          a judgment about whether the citation reads plausible.
+        </p>
+
+        <p>
+          Citations have an external registry to check against; code does
+          not, and the same shape still recurs. Functions that compile, pass
+          their tests, and solve the wrong problem are plausibility-passing.
+          A reviewer running the tests reads the output as evidence of
+          correctness, but when the same head writes test and implementation,
+          the test inherits the implementer's frame. The check that escapes
+          the loop is reproduction in the runtime sense: run the function
+          against a case the implementer did not write the test for, ideally
+          generated by a different head.
+        </p>
+
+        <p>
+          Each instance of the pattern is the same. The artifact reads as
+          right. The reviewer accepts what reads as right. The escape is a
+          different kind of check, not a sharper version of the same judgment
+          but a check that operates on a different surface from the artifact
+          itself.
+        </p>
+
+        <p>
+          Structural problems take a set of tools, not one.
+          Calculation-verification handles equations. The anti-hallucination
+          checklist handles citations. The other parts of the kit fill in
+          failures that neither of those catches alone. The shape is not
+          "more tools is better". It is that no single check escapes a
+          structural failure mode.
+        </p>
+
+        <p>
+          This set of tools costs real time, and not every artifact warrants
+          it. A personal scratch script does not need a claim registry. The
+          framework starts earning its keep where the cost of being wrong
+          exceeds the cost of running the verification. A theory document
+          with hardware about to be built on top of it crosses that
+          threshold. A €5k research exercise crosses it. A blog post about a
+          topic the reader will quote at you publicly crosses it. So does a
+          production deployment whose failure mode is being wrong, quietly,
+          for months. A weekend prototype probably does not. The pattern that
+          names the equation-specific move is on the
+          <a href="https://augmented-engineering.eu/patterns/reproduce-dont-assess" target="_blank" rel="noopener">augmented engineering site</a>;
+          this piece is the evidence-anchor for why that pattern, and the
+          others alongside it, have to exist.
+        </p>
+
+        <p>
+          Which of your current review steps would survive being reframed as
+          reproduction rather than assessment?
+        </p>
+
+        <aside class="article-sources">
+          <span class="article-label">Sources</span>
+          <ul>
+            <li>
+              <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>
+              (framework, templates, decision records).
+            </li>
+            <li>
+              <a href="https://github.com/ducroq/agent-ready-papers/blob/main/audits/driven-pendulum-retrofit.md" target="_blank" rel="noopener">Driven pendulum retrofit audit, §9.1</a>
+              (the 68-equation case and the three errors).
+            </li>
+            <li>
+              <a href="https://augmented-engineering.eu/patterns/reproduce-dont-assess" target="_blank" rel="noopener">Reproduce, don't assess</a>
+              (the AE pattern page with a usable prompt template).
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links">
+      <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/jeroen-veen-3244444/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .article-nav {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 60ch;
+  }
+
+  .article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-meta .sep {
+    color: var(--border);
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--amber);
+  }
+
+  .article-body a {
+    border-bottom: 1px dotted var(--amber-dim);
+  }
+  .article-body a:hover {
+    border-bottom-color: var(--text);
+  }
+
+  .article-sources {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .article-sources li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .article-sources a {
+    color: inherit;
+    border-bottom: 1px dotted var(--amber-dim);
+    word-break: break-all;
+  }
+
+  .article-sources a:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links .sep {
+    color: var(--text-dim);
+  }
+</style>

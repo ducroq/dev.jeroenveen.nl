@@ -12,7 +12,7 @@
 
 - **Two reviews missed what one reproduction caught.** (mechanism-forward, working pick)
 - *The errors two reviews didn't see.* (artifact-leaning, sharper number-in-title)
-- *Plausibility passes the review. Correctness does not.* (overlaps with the standalone seed in `drafts/plausibility-vs-correctness.md`, so probably leave it for that piece)
+- *Plausibility passes the review. Correctness does not.* (overlaps with the standalone seed in `drafts/ai-review-is-plausibility-review.md`, so probably leave it for that piece)
 - *Reproduce, don't assess.* (overlaps with the AE pattern name; better as a phrase inside the body than as the title here)
 
 ---
@@ -69,9 +69,9 @@ The next pieces will look at where validation work shows up across the rest of t
 
 **Cross-model review.** Per writing-guide §7 + DR-011: Pass 1 Haiku and Pass 2 Opus on the final `.astro` body before publish.
 
-**Pre-empt check.** This piece names Reproduce-Don't-Assess once via the AE link without re-explaining it, and uses the "do not assess, reproduce" line as the in-text crystallisation. It does not pre-empt the standalone `plausibility-vs-correctness` framework piece because:
+**Pre-empt check.** This piece names Reproduce-Don't-Assess once via the AE link without re-explaining it, and uses the "do not assess, reproduce" line as the in-text crystallisation. It does not pre-empt the standalone `ai-review-is-plausibility-review` framework piece because:
 - This piece is grounded in *one* case from own work and frames the broader claim only at the closing.
-- The standalone piece would generalise: plausibility-vs-correctness across citation, code-review, and prose-claim contexts; this case as one of several pieces of evidence.
+- The standalone piece would generalise: ai-review-is-plausibility-review across citation, code-review, and prose-claim contexts; this case as one of several pieces of evidence.
 - The standalone piece would also have to make the prompt-engineering generalisation argument explicitly; this piece punts to the AE pattern page.
 
 If you'd prefer the standalone framing instead of the V&V-closer framing, that's a different draft that probably borrows two paragraphs from this one and reshapes the rest. Flag if you want me to take that path instead.

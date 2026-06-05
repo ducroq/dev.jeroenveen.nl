@@ -1,6 +1,6 @@
 # If it has claims, it has tests
 
-*Status: seed note. Captured 2026-05-12 from a conversation about whether agent-ready-papers generalises beyond academic writing. Sibling to the three application-level seeds filed the same day (`plausibility-vs-correctness.md`, `auto-loading-cliff.md`, `cross-model-review.md`). Also adjacent to `verification-is-a-workflow-problem.md` (2026-05-31), which makes a narrower argument on the layer at which verification has to live. This is the **theory layer** that names the shape they all instantiate.*
+*Status: seed note. Captured 2026-05-12 from a conversation about whether agent-ready-papers generalises beyond academic writing. Sibling to the three application-level seeds filed the same day (`ai-review-is-plausibility-review.md`, `auto-loading-cliff.md`, `cross-model-review.md`). Also adjacent to `verification-is-a-workflow-problem.md` (2026-05-31), which makes a narrower argument on the layer at which verification has to live. This is the **theory layer** that names the shape they all instantiate.*
 
 ---
 
@@ -64,7 +64,7 @@ Refined formulation: **anything in the verifiable-claims family** (artifact + de
 
 | Seed | Layer | Connection |
 |---|---|---|
-| `plausibility-vs-correctness.md` | Evidence (the 68-equation case) | What goes wrong without the framework |
+| `ai-review-is-plausibility-review.md` | Evidence (the 68-equation case) | What goes wrong without the framework |
 | `cross-model-review.md` | Mitigation (DR-011 pattern) | What partially fixes it |
 | `auto-loading-cliff.md` | Workflow (auto-load + task-triggered pointers) | The repo-level scaffolding |
 | `if-it-has-claims-it-has-tests.md` (this) | Theory (verifiable-claims family) | The shape all three instantiate |

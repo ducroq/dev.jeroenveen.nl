@@ -1,6 +1,6 @@
 # vmodel.eu as application-evidence case study
 
-*Status: seed note. Captured 2026-05-12 from a real read of `C:\local_dev\vmodel.eu\CLAUDE.md`. Fifth seed in the framework-articles queue, alongside `if-it-has-claims-it-has-tests`, `plausibility-vs-correctness`, `cross-model-review`, `auto-loading-cliff`.*
+*Status: seed note. Captured 2026-05-12 from a real read of `C:\local_dev\vmodel.eu\CLAUDE.md`. Fifth seed in the framework-articles queue, alongside `if-it-has-claims-it-has-tests`, `ai-review-is-plausibility-review`, `cross-model-review`, `auto-loading-cliff`.*
 
 *This seed is a different shape from the other four. Those are about generalisable claims (theory, evidence, mitigation, workflow). This is about a specific running instantiation that anchors them all.*
 
@@ -19,7 +19,7 @@ For the four framework seeds:
 | Framework seed | What vmodel.eu instantiates |
 |---|---|
 | `if-it-has-claims-it-has-tests` | Findings have priority and confidence; trace to IEEE 29148 / INCOSE / V-model citations; calibration gate is the SE quality gate; held-out validation set is the test coverage. SE shape, in production. |
-| `plausibility-vs-correctness` | `_validate_findings()` drops garbage, per-finding confidence levels, `context_warning` propagation, deterministic-scoring-not-LLM-scoring. The system explicitly does not trust plausible-looking LLM output. |
+| `ai-review-is-plausibility-review` | `_validate_findings()` drops garbage, per-finding confidence levels, `context_warning` propagation, deterministic-scoring-not-LLM-scoring. The system explicitly does not trust plausible-looking LLM output. |
 | `cross-model-review` | Different models for different agents (Gemma 3 27B for quality/alignment, Phi-4 14B for coverage/traceability). Cross-model *task allocation* rather than cross-model *review of same output*; sibling pattern worth naming. |
 | `auto-loading-cliff` | Standard agent-ready-projects scaffolding at production scale: Before You Start with 8 task-triggered pointers, memory/ with privacy-protocol + calibration-history + gotcha-log, 20 ADRs. |
 
@@ -79,11 +79,11 @@ Update to the quartet table in `if-it-has-claims-it-has-tests.md`:
 | Seed | Layer | What it provides |
 |---|---|---|
 | `if-it-has-claims-it-has-tests` | Theory | The SE shape that generalises |
-| `plausibility-vs-correctness` | Evidence (failure mode) | What goes wrong without the framework |
+| `ai-review-is-plausibility-review` | Evidence (failure mode) | What goes wrong without the framework |
 | `cross-model-review` | Mitigation | What partially fixes one class of failure |
 | `auto-loading-cliff` | Workflow | The repo-level scaffolding |
 | `vmodel-case-study` (this) | Application | A running instantiation that anchors all four |
 
 ## Decision
 
-Hold as seed. Strongest path is: ship one framework article first (probably `plausibility-vs-correctness` because the empirical hook is sharpest) using vmodel.eu as the implicit worked example, then write the standalone case study afterward. Revisit when WHY post 3 ships and a framework article is next on the queue.
+Hold as seed. Strongest path is: ship one framework article first (probably `ai-review-is-plausibility-review` because the empirical hook is sharpest) using vmodel.eu as the implicit worked example, then write the standalone case study afterward. Revisit when WHY post 3 ships and a framework article is next on the queue.

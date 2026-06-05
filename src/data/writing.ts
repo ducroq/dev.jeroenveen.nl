@@ -8,6 +8,14 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'ai-review-is-plausibility-review',
+    title: 'Plausibility passes the AI review. Correctness does not.',
+    excerpt:
+      'In a 68-equation theory document, two AI reviews in assessment mode caught zero errors. A third pass with the same model family but a reproduction instruction caught three. AI review is plausibility review unless you make it not be.',
+    date: '2026-06-05',
+    readTime: '~4 min',
+  },
+  {
     slug: 'verification-is-a-workflow-problem',
     title: 'Verification is a workflow problem, not a model problem.',
     excerpt:
