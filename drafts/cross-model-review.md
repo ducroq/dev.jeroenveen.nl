@@ -1,6 +1,6 @@
 # The same model that wrote it cannot catch its own errors.
 
-*Status: DRAFT first-pass prose, written 2026-06-01 from earlier seed (2026-05-12). Reception-checkpoint pending on `verification-is-a-workflow-problem` (published 2026-06-01, posts to LinkedIn 2026-06-02) before deciding publish timing. Sibling to that article, which uses the multi-pass review pattern as one of three workflow properties; this piece goes deep on the multi-pass component specifically. Two-axes-of-outside-ness beat added 2026-06-02 after today's IOU verification against `new_hardware/vv/` surfaced the gap; see also gotcha-log 2026-04-28 (sub-agent sandbox).*
+*Status: DRAFT first-pass prose, written 2026-06-01 from earlier seed (2026-05-12). Reception-checkpoint pending on `verification-is-a-workflow-problem` (published 2026-06-01, posts to LinkedIn 2026-06-02) before deciding publish timing. Sibling to that article, which uses the multi-pass review pattern as one of three workflow properties; this piece goes deep on the multi-pass component specifically. Two-axes-of-outside-ness beat added 2026-06-02 after that day's IOU verification against `new_hardware/vv/` surfaced the gap; see also gotcha-log 2026-04-28 (sub-agent sandbox). Trust + context-orchestration frame woven in 2026-06-05 after Jeroen flagged that "escape" undersells what each pass is for; see `memory/feedback_multi_pass_review_frame.md`.*
 
 *Working subtitle:* Notes from a three-pass review.
 
@@ -22,6 +22,8 @@ That is the finding worth thinking about. Each pass caught what only that pass c
 
 The structural insight is straightforward. A reviewer escapes the bias of the producer to the extent that it has different priors. A model from the same family shares enough of the producer's training distribution that it will accept assumptions the producer made by inheritance. Running the same family twice helps a little: fresh-session bias clears, the new instance reads with different mood and depth. Running a different family helps differently: the cross-vendor reviewer breaks out of a wider class of shared assumption, which catches a different kind of error.
 
+The verb worth replacing in that account is *escape*. Reviewers do not escape the producer's context. The producer chooses what context to put each reviewer in. Multi-pass review is the act of orchestrating those contexts. The mechanical pass operates in a rules-loaded context. The fresh-session argument-shape pass operates in a no-prior-session context. The cross-vendor pass operates in a different-priors context. Each pass is a context the producer designs in order to earn trust on a different axis. The goal is not catching more errors. It is trust-by-axis. The error-catching is the side effect of the orchestration that worked.
+
 But "different kind of error" is where the cost-benefit gets sharp. Cross-vendor review surfaces stance-shaped errors more reliably. Those are the assumptions, framings, and unspoken positions that the producer's training distribution baked in. It does not surface knowledge-shaped errors more reliably; those tend to come from the same evidence base regardless of model family. And it actively introduces noise on voice-sensitive material, where the cross-vendor reviewer has no way to distinguish house style from violation of general writing convention.
 
 The naive version of the multi-model review advice says: use a different model to check your AI output, because a different model will catch what the original missed. That advice is right about the catching, and silent on what gets caught. For knowledge-shaped output, citations, factual claims, technical accuracy, cross-vendor review pays off cheaply. For stance-shaped output, essays, opinion pieces, anything with voice, cross-vendor review catches what the producer wrote on purpose and complains about it.
@@ -36,7 +38,7 @@ The honest verification move for cross-repo claims is to do the comparison in th
 
 What three reviewers showed me, in the article we ran them on, was that they disagreed in distinct ways. The mechanical pass disagreed with the producer about rule compliance. The argument-shape pass disagreed about logic. The cross-vendor pass disagreed about voice, and that disagreement was the one I needed to discount most carefully.
 
-The advice that travels: match the pass to the failure mode you are trying to escape. Cheap passes for cheap escapes. Expensive passes only when the failure mode justifies the noise filtering.
+The advice that travels: orchestrate the passes to match the trust-axes the artifact needs. Cheap passes for cheap axes. Expensive passes only when the artifact's trust requirements justify the noise filtering.
 
 Where has cross-vendor review paid off for you, and where has it produced mostly noise?
 
