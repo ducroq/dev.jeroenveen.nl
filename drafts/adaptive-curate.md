@@ -22,7 +22,17 @@
 
 ## The observation (modest register, one paragraph)
 
+### Option A (current): lead with the failure mode
+
 The first time I built an agent memory system, I worried about how to capture lessons. Two months in, the problem had reversed. The system was full of lessons that were no longer true. The agent was confidently citing memory entries about a file that had been renamed two weeks earlier, an architectural decision that had been superseded, a workflow we no longer used. The fix turned out to be small, and on reflection obvious. At the end of every session, the agent reads the gotcha log and the memory index and asks of each entry: *is this still true?*
+
+### Option B (added 2026-06-05): lead with the incantation
+
+I noticed I say almost the same words at the end of every session. *Let us wrap up. Clean up the repo. Update the docs. Curate. Commit, push, deploy.* The phrase has hardened into a sequence, and it took me a while to see why *curate* in particular sat where it did, between the docs update and the commit.
+
+The first time I built an agent memory system, I worried about how to capture lessons. Two months in, the problem had reversed. The memory was full of lessons that were no longer true. The agent was confidently citing entries about a file that had been renamed two weeks earlier, an ADR that had been superseded, a workflow we had stopped using. *Curate* is the slot in the closing sequence where that gets caught. The agent reads the gotcha log and the memory index and asks of each entry: *is this still true?*
+
+**Trade-off note.** Option A is tighter (one paragraph) and lands the failure mode first, per the register-note rule. Option B trades a paragraph of length for a more concrete entry (an actual phrase Jeroen says, not a recalled feeling) and positions curate as a verb in a specific sequence rather than an abstract habit. Option B also opens a small follow-on beat available later in the piece: that crystallized closing phrases are evidence the underlying workflow has stabilised, which is a frame that travels to other AE rituals (the multi-model review battery being the obvious sibling).
 
 ## Anchor evidence
 
