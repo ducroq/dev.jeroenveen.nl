@@ -45,9 +45,9 @@ def render(out_path: Path) -> None:
     head_font = font(head_size, bold=True)
     line_h = int(head_size * 1.18)
     headline = [
-        "Plausibility passes",
-        "the AI review.",
-        "Correctness does not.",
+        "AI review",
+        "measures",
+        "plausibility.",
     ]
     head_y = PAD_T + 80
     for i, line in enumerate(headline):

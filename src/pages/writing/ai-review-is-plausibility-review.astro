@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const title = 'Plausibility passes the AI review. Correctness does not. · dev.jeroenveen.nl';
+const title = 'AI review measures plausibility. · dev.jeroenveen.nl';
 const description = 'AI review is plausibility review unless you make it not be. Notes on a 68-equation case and what it shows about the kit that catches what plausibility passes.';
 const publishedOn = '2026-06-05';
 ---
@@ -16,7 +16,7 @@ const publishedOn = '2026-06-05';
 
       <header class="article-header" id="article">
         <span class="article-label">Writing</span>
-        <h1 class="article-title">Plausibility passes the AI review. Correctness does not.</h1>
+        <h1 class="article-title">AI review measures plausibility.</h1>
         <p class="article-subtitle">
           Notes on a 68-equation case and what it shows about the kit.
         </p>
@@ -36,9 +36,9 @@ const publishedOn = '2026-06-05';
 
         <p>
           Some context. A theory document I had been working on for several
-          months. Ten chapters, AI-assisted throughout, covering pendulum
-          mechanics, synchronisation, electromagnetism, control, power
-          analysis, and the error budget. Hardware was about to be built on
+          months. Ten chapters, AI-assisted throughout, covering mechanics,
+          synchronisation, electromagnetism, control, power analysis, and
+          the error budget. Hardware was about to be built on
           top of it. I needed to know whether the equations were right.
         </p>
 
@@ -63,16 +63,11 @@ const publishedOn = '2026-06-05';
         </p>
 
         <p>
-          The first was a label mismatch. A table headed "5 degrees" contained
-          values that had been computed at 1 degree. Coupling estimates in the
-          relevant chapter were therefore five times more optimistic than the
-          design called for. The second was a formula error in a dwell-time
-          calculation: a missing variable and a spurious factor of two made
-          the tabulated values roughly seven times too small. The third was an
-          internal inconsistency. An hourly correction stated as 36 s/hr did
-          not survive the arithmetic. 3.3 ms per swing, times 3,600 swings
-          per hour, lands near 12 s/hr, not 36. The text said one thing, the
-          underlying numbers said another.
+          Coupling estimates came out optimistic by a factor; timing values
+          nearly an order of magnitude too small. Two arithmetic bugs of the
+          same kind, neither survived recomputation. The third was sharper,
+          because it self-contradicted on the page. The text said one thing;
+          the numbers said another.
         </p>
 
         <p>
@@ -93,10 +88,7 @@ const publishedOn = '2026-06-05';
           <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>
           as the equation-checker template, and the decision record behind it
           is DR-009 (calculation-verification). The 68-equation case is the
-          empirical anchor for both. The controlled variable was the mode of
-          instruction; readers who want the full prompt-counterfactual will
-          find it in the
-          <a href="https://github.com/ducroq/agent-ready-papers/blob/main/audits/driven-pendulum-retrofit.md" target="_blank" rel="noopener">audit doc</a>.
+          empirical anchor for both.
         </p>
 
         <p>

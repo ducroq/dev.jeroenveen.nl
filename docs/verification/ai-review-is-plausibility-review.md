@@ -1,4 +1,4 @@
-# Verification record: *Plausibility passes the AI review. Correctness does not.*
+# Verification record: *AI review measures plausibility.*
 
 **Article:** `drafts/ai-review-is-plausibility-review.md` (status: DRAFT awaiting promotion to `src/pages/writing/ai-review-is-plausibility-review.astro`)
 **Article slug:** `ai-review-is-plausibility-review`
