@@ -45,14 +45,13 @@ def render(out_path: Path) -> None:
     head_font = font(head_size, bold=True)
     line_h = int(head_size * 1.18)
     headline = [
-        "AI review",
-        "measures",
-        "plausibility.",
+        "AI review is",
+        "plausibility review.",
     ]
     head_y = PAD_T + 80
     for i, line in enumerate(headline):
-        # The third line gets the amber for emphasis (mirrors the splitting cover pattern)
-        fill = AMBER if i == 2 else TEXT
+        # The last line gets the amber for emphasis (mirrors the splitting cover pattern)
+        fill = AMBER if i == len(headline) - 1 else TEXT
         draw.text((PAD_L, head_y + i * line_h), line, font=head_font, fill=fill)
 
     # Bottom-left: domain (small, dim, mono)

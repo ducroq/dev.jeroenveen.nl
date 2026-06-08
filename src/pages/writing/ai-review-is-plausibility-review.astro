@@ -1,8 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const title = 'AI review measures plausibility. · dev.jeroenveen.nl';
-const description = 'AI review is plausibility review unless you make it not be. Notes on a 68-equation case and what it shows about the kit that catches what plausibility passes.';
+const title = 'AI review is plausibility review. · dev.jeroenveen.nl';
+const description = 'AI review is plausibility review, unless you force it not to be. Notes on a 68-equation case.';
 const publishedOn = '2026-06-05';
 ---
 
@@ -16,9 +16,9 @@ const publishedOn = '2026-06-05';
 
       <header class="article-header" id="article">
         <span class="article-label">Writing</span>
-        <h1 class="article-title">AI review measures plausibility.</h1>
+        <h1 class="article-title">AI review is plausibility review.</h1>
         <p class="article-subtitle">
-          Notes on a 68-equation case and what it shows about the kit.
+          Notes on a 68-equation case.
         </p>
         <p class="article-meta">
           <time datetime={publishedOn}>5 June 2026</time>
@@ -29,53 +29,53 @@ const publishedOn = '2026-06-05';
 
       <div class="article-body">
         <p>
-          In a 68-equation theory document, two AI reviews in assessment mode
-          caught zero errors. A third pass with the same model family but a
-          reproduction instruction caught three.
+          Two AI reviews in assessment mode caught zero errors in a
+          68-equation theory document. A third pass with the same model
+          family but a reproduction instruction, caught three.
         </p>
 
         <p>
           Some context. A theory document I had been working on for several
           months. Ten chapters, AI-assisted throughout, covering mechanics,
-          synchronisation, electromagnetism, control, power analysis, and
-          the error budget. Hardware was about to be built on
-          top of it. I needed to know whether the equations were right.
+          synchronization, electromagnetism, control, power analysis, and
+          the error budget. Hardware was about to be built on top of it. I
+          needed to know whether the equations were right.
         </p>
 
         <p>
-          I ran two LLM reviews in the usual assessment mode. Read this, check
-          it for physical soundness, flag anything that looks wrong. One pass
-          used Gemini, one used Claude. Both came back the same. No errors
-          found. Dimensions checked out, magnitudes were in plausible ranges,
-          the prose was internally consistent.
+          First, I ran two LLM reviews in the usual assessment mode: Read
+          this, check it for physical soundness, and flag anything that
+          looks wrong. One pass used Gemini, the other Claude. Both came
+          back clean. No errors found. Dimensions checked out, magnitudes
+          were in plausible ranges, and the prose was internally consistent.
         </p>
 
         <p>
-          Then I ran a third pass with a different instruction. Same family as
-          the Claude pass, but the prompt forced reproduction rather than
-          judgment. Substitute the stated input values into every equation.
-          Compute the result step by step. Compare against the value in the
-          document. Never skip a calculation, never paraphrase a table.
+          Then I ran a third pass with a fundamentally different instruction.
+          This time, the prompt forced reproduction rather than judgment:
+          Substitute the stated input values into every equation. Compute the
+          result step by step using code and calculation tools. Compare the
+          output against the value in the document. Never skip a calculation;
+          never paraphrase a table.
         </p>
 
         <p>
-          That pass caught three errors.
+          That pass caught the errors.
         </p>
 
         <p>
           Coupling estimates came out optimistic by a factor; timing values
-          nearly an order of magnitude too small. Two arithmetic bugs of the
-          same kind, neither survived recomputation. The third was sharper,
-          because it self-contradicted on the page. The text said one thing;
-          the numbers said another.
+          were nearly an order of magnitude too small. Two were arithmetic
+          bugs of the same kind; neither survived recomputation. The third
+          error was sharper because it self-contradicted on the page: the
+          text said one thing, but the math said another.
         </p>
 
         <p>
-          All three errors produced individually plausible numbers. Right
-          units, reasonable magnitudes, coherent with the surrounding prose.
-          An assessment-mode reviewer is checking whether the artifact looks
-          right. These errors looked right. AI review is plausibility review
-          unless you make it not be.
+          All three errors produced individually plausible numbers. They had
+          the right units, reasonable magnitudes, and cohered perfectly with
+          the surrounding prose. An assessment-mode reviewer checks whether
+          an artifact looks right. These errors looked right.
         </p>
 
         <p>
@@ -84,75 +84,66 @@ const publishedOn = '2026-06-05';
           equals 36 seconds per hour. The instruction to compute rather than
           to judge removes the move where "this reads as reasonable" gets to
           substitute for "this is correct." Same model. Different mode.
-          Different result. The pattern lives in
-          <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>
-          as the equation-checker template, and the decision record behind it
-          is DR-009 (calculation-verification). The 68-equation case is the
-          empirical anchor for both.
+          Different result.
         </p>
 
         <p>
-          The mechanism is not arithmetic-specific. Assessment checks the
-          surface the artifact presents. Reproduction operates on a surface
-          the artifact cannot fake. Citations are plausibility-shaped too. An
-          invented DOI looks like a real DOI, an invented author looks like a
-          real author, a paraphrased abstract looks like an abstract. An LLM
-          asked "does this citation support the claim" can answer fluently
-          and confidently while the citation does not exist. The
-          anti-hallucination checklist in the same framework is the
-          citation-equivalent of the equation-checker. It forces a check that
-          the source exists and says what the prose says it says, rather than
-          a judgment about whether the citation reads plausible.
+          AI review is plausibility review, unless you force it not to be.
         </p>
 
         <p>
-          Citations have an external registry to check against; code does
-          not, and the same shape still recurs. Functions that compile, pass
-          their tests, and solve the wrong problem are plausibility-passing.
-          A reviewer running the tests reads the output as evidence of
-          correctness, but when the same head writes test and implementation,
-          the test inherits the implementer's frame. The check that escapes
-          the loop is reproduction in the runtime sense: run the function
-          against a case the implementer did not write the test for, ideally
-          generated by a different head.
+          This mechanism isn't specific to arithmetic. Assessment checks the
+          surface an artifact presents; reproduction operates on a reality
+          the artifact cannot fake.
         </p>
 
         <p>
-          Each instance of the pattern is the same. The artifact reads as
-          right. The reviewer accepts what reads as right. The escape is a
-          different kind of check, not a sharper version of the same judgment
-          but a check that operates on a different surface from the artifact
-          itself.
+          Citations are a perfect example. They are entirely
+          plausibility-shaped: an invented DOI looks like a real DOI, and a
+          hallucinated author sounds like a real author. An LLM asked "does
+          this citation support the claim?" can answer fluently while
+          referencing a paper that doesn't exist. The escape velocity is
+          forcing the AI to verify that the source actually exists and
+          explicitly matches the text, rather than judging whether the
+          citation reads plausibly.
         </p>
 
         <p>
-          Structural problems take a set of tools, not one.
-          Calculation-verification handles equations. The anti-hallucination
-          checklist handles citations. The other parts of the kit fill in
-          failures that neither of those catches alone. The shape is not
-          "more tools is better". It is that no single check escapes a
-          structural failure mode.
+          Code follows the exact same pattern. Functions that compile, pass
+          their tests, but solve entirely the wrong problem are
+          "plausibility-passing." When the same developer writes both the
+          implementation and the test, the test inherits the implementer's
+          blind spots. The only check that escapes this loop is reproduction
+          in the runtime sense: executing the function against edge cases the
+          implementer failed to anticipate.
         </p>
 
         <p>
-          This set of tools costs real time, and not every artifact warrants
-          it. A personal scratch script does not need a claim registry. The
-          framework starts earning its keep where the cost of being wrong
-          exceeds the cost of running the verification. A theory document
-          with hardware about to be built on top of it crosses that
-          threshold. A €5k research exercise crosses it. A blog post about a
-          topic the reader will quote at you publicly crosses it. So does a
-          production deployment whose failure mode is being wrong, quietly,
-          for months. A weekend prototype probably does not. The pattern that
-          names the equation-specific move is on the
-          <a href="https://augmented-engineering.eu/patterns/reproduce-dont-assess" target="_blank" rel="noopener">augmented engineering site</a>;
-          this piece is the evidence-anchor for why that pattern, and the
-          others alongside it, have to exist.
+          In every instance, the pattern is identical: the artifact reads as
+          right, so the reviewer accepts it. The escape is a completely
+          different kind of check, not a sharper version of the same
+          judgment.
         </p>
 
         <p>
-          Which of your current review steps would survive being reframed as
-          reproduction rather than assessment?
+          These patterns form the backbone of a framework called
+          <a href="https://github.com/ducroq/agent-ready-papers" target="_blank" rel="noopener">agent-ready-papers</a>,
+          which includes the equation-checker for arithmetic, the
+          anti-hallucination checklist for citations, and reproduction tests
+          for code.
+        </p>
+
+        <p>
+          Rigorous verification costs real time and compute, and not every
+          artifact warrants it. A weekend prototype probably doesn't. But a
+          theory document with hardware waiting on it easily crosses the
+          threshold. So does a €5k procurement exercise, or a production
+          deployment whose failure mode is being quietly wrong for months.
+        </p>
+
+        <p>
+          The framework starts earning its keep the moment the cost of being
+          wrong exceeds the cost of running the verification.
         </p>
 
         <aside class="article-sources">
