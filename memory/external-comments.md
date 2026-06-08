@@ -334,3 +334,54 @@ Substantive, additive sharpening. Restated experience as a pattern library for s
 - Reposts: still zero on every post in the four-post baseline. A repost here would be the first signal that an adoptable frame can earn public endorsement, not just private save.
 
 **Full text of both posted surfaces:** captured at `memory/posted-linkedin/verification-is-a-workflow-problem.md`.
+
+---
+
+## 2026-06-08 — Publish: "AI review is plausibility review." (V&V arc, register experiment)
+
+**Surfaces shipped (both live):**
+- Short LinkedIn post (link share, with Pulse auto-card): https://www.linkedin.com/posts/jeroen-veen-3244444_ai-productionai-augmentedengineering-activity-7469630799009574912-3TEj
+- LinkedIn Pulse (long-form): https://www.linkedin.com/pulse/ai-review-measures-plausibility-jeroen-veen-hyrde/
+- Canonical home: https://dev.jeroenveen.nl/writing/ai-review-is-plausibility-review/
+
+**Register experiment — explicit framing:**
+
+This is a deliberate noise-injection / register experiment, not a standard cross-post. The previous four cross-posts have produced a tight cluster of low-engagement outcomes (verification-workflow 628 imp / 0 comments / 1 save; the-model-is-not-the-grader 1,250 / 0 / 1; the-work-is-splitting 1,650 / 1 / 1; senior-developers-trust-ai-less the only broad outlier at 8,521 / 0 / 0). Always sampling the modesty-register neighborhood is producing only one shape of distribution. This post tests whether a louder, more conversational register breaks out.
+
+**Baseline (modesty register):** verification-workflow (2026-06-02), nearest comparable — same V&V arc, same hashtag set, same shipped-system register, frame-claim hook, open-question CTA. 628 imp / 0 comments / 0 reposts / 1 save / CTR 1.9%.
+
+**Variant (this post, louder/conversational register):**
+- **Hook:** concrete stakes-first ("We almost built expensive hardware using flawed math")
+- **First-person:** "we" throughout (vs. "I" in baseline)
+- **Voice/register:** conversational, idiom-rich ("smart-sounding prose," "skimmed past," "spin up," "vibe check")
+- **Frame line:** absent; substituted by closing imperative ("Make it do the work itself")
+- **Closing CTA:** imperative statement, not a question
+- **Format:** single block, no paragraph breaks
+- **Pulse linkage:** auto-card on post (URL not in body but card preserves CTR-to-Pulse measurability)
+- **Pulse title chosen:** "AI review is plausibility review." (frame-claim form) rather than site article's "AI review measures plausibility." (measured form)
+
+**Held constant:** V&V arc, hashtag set (#AI #ProductionAI #AugmentedEngineering), both surfaces shipped, Pulse + auto-card combination.
+
+**Confounds (acknowledged honestly):**
+- The louder register changes multiple levers at once (hook + first-person + voice + closing structure + paragraph format). Cannot isolate which lever produced any effect.
+- Day-of-week differs: verification-workflow shipped Tue 2026-06-02; this shipped Mon 2026-06-08. Algorithmic distribution can vary by day.
+- The hook is genuinely stronger ("we almost built expensive hardware") independent of register. Even if reach lifts, the register may not be the cause.
+
+**Reception checkpoint (~5–7 days post-publish, target check date 2026-06-15):**
+- Reach: ≥1,000 imp signals the noise-injection helped distribution (back to model-not-grader baseline or above). If only matches verification-workflow (~600), the louder register did not break the narrow distribution.
+- CTR to Pulse: target ≥1.5%. Auto-card present, so measurable.
+- Comments: target ≥1. The closing imperative is structurally harder to comment on than an open question, so any comments would be unusual and meaningful.
+- Saves: ≥1. The explicit frame line is gone; saves would have to come from the hook strength rather than from a quotable frame.
+- Reposts: still watching for the first across the cross-post baseline.
+
+**Decision rules after the data comes in:**
+- **Louder register beats baseline on reach AND produces ≥1 comment:** modesty register *was* the binding constraint; the next post tests a calibrated middle register (some loosening of voice, keep the frame line and the question CTA).
+- **Louder register beats baseline on reach but still zero comments:** distribution is hook-driven, not register-driven; engagement is CTA-driven independent of register. Next post: strong hook + question CTA + restored frame line.
+- **Louder register matches baseline (~600 imp, zero comments):** modesty register was not the binding constraint. The arc itself may be the filter. Possible to consider a non-arc topic for the next cross-post, or accept that V&V is a low-engagement-but-credibility-accruing topic.
+- **Louder register underperforms baseline:** register matters in the wrong direction. The modesty register was actually *helping* among the audience that does engage. Return to baseline.
+
+**Notes:**
+- LinkedIn auto-slug was unpredictable again: published Pulse title was "AI review is plausibility review." but the assigned slug used the *measured*-form ("ai-review-measures-plausibility"). Possibly LinkedIn slugged from the initial draft title before publish-time edit. Worth a pattern note: do not rely on slug matching the final title.
+- Pulse cover image (regenerated typographic cover with "plausibility." in amber) was uploaded; matches the article title.
+
+**Full text of both posted surfaces:** captured at `memory/posted-linkedin/ai-review-is-plausibility-review.md`.
