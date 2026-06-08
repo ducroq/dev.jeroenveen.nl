@@ -39,6 +39,23 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ## Open
 
+### [2026-06-08] Louder / conversational register breaks the V&V arc's narrow-distribution cluster
+
+**Position (provisional):** The previous four cross-posts in the V&V arc family produced a tight cluster of low-engagement outcomes under the modesty register (verification-workflow 628 imp / 0 comments / 1 save; the-model-is-not-the-grader 1,250 / 0 / 1; the-work-is-splitting 1,650 / 1 / 1; senior-developers-trust-ai-less the only broad outlier at 8,521 / 0 / 0). The 2026-06-08 cross-post of `ai-review-is-plausibility-review` injects noise: louder / conversational register, "we" first-person, no explicit frame line, closing imperative instead of an open question, single-paragraph block. **Prediction:** reach ≥1,000 impressions (back to the model-not-grader baseline or higher) AND ≥1 comment within 7 days post-publish. The bet is that the modesty register was a local minimum and the louder variant breaks distribution.
+
+**Alternative:** The louder variant reproduces verification-workflow's reach band (~600 imp) and earns zero comments. Signal: distribution remains narrow despite the register variation, confirming that modesty register was *not* the binding constraint — topic, arc-saturation, or audience-filtering is dominant. Or louder variant underperforms baseline on reach (rare expectation) and on comments (expected given the closing imperative is not a question), signalling that register matters in the wrong direction and the modesty register was actually helping the audience that does engage.
+
+**Method:** LinkedIn analytics 5 to 7 days post-publish for short feed post URN `7469630799009574912`. Compare on three axes against the verification-workflow baseline (628 imp / 0 comments / 0 reposts / 1 save / CTR 1.9%): (1) reach, (2) comments, (3) saves. Apply the four decision rules in `memory/external-comments.md` 2026-06-08 entry verbatim, do not loosen them at read-in time. Confounds acknowledged: multiple levers changed at once (hook + register + CTA + first-person + paragraph format), so the result diagnoses the bundle, not any single lever. The follow-on draft after this read-in should isolate one lever, not all of them.
+
+**Revisit trigger:** 2026-06-15 reception-checkpoint export from LinkedIn analytics for post `7469630799009574912` (the short feed post).
+
+**Review by:** 2026-06-22 — backstop one week after the reception-checkpoint trigger fires.
+
+**Domain:** LinkedIn cross-post strategy, register calibration, V&V arc reception
+**Status:** open
+
+---
+
 ### [2026-05-18] First inversion trigger fires within 12 months
 
 **Position (provisional):** dev.jeroenveen.nl is in deliberate mid-drift toward AE-method-leading positioning (see `project_inversion_plan.md` in auto-memory). Three candidate inversion triggers are named: (1) critical mass of AE-pattern articles at the AE site, (2) ovr.news launch needing a clean personal-site point-of-reference, (3) external use of "augmented engineering" returning to Jeroen and sticking. **At least one will fire within 12 months of today, i.e. by 2027-05-18.**
