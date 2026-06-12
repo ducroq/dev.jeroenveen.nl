@@ -143,6 +143,27 @@ Reported but not yet personally verified to primary source. Treat as candidates,
 
 ---
 
+## 2026-06-12 — Elsevier LeapSpace launch (AI research workspace with claim-level verification features)
+
+**Source:** LinkedIn promo post by Elsevier: https://www.linkedin.com/posts/elsevier_why-elsevier-activity-7470384266326007808-K8gq (campaign post, surfaced via paid distribution; auth-gated for WebFetch, content not captured). Durable artifacts: launch press release https://www.elsevier.com/about/press-releases/elsevier-launches-leapspace-an-ai-assisted-workspace-to-accelerate-research-and-discovery (November 2025), product page https://www.elsevier.com/products/leapspace/introducing-research-grade-ai, and the survey behind the pitch, *Researcher of the Future* (Confidence in Research, 2025): https://www.elsevier.com/insights/confidence-in-research/researcher-of-the-future
+
+**Why filed:** The largest scientific publisher productized claim-level verification, for the reading side only. Trust Cards (claim-source alignment), Claim Radar (claim vs literature consensus). Built on their own survey numbers: 84% of researchers have used AI tools, 22% believe the tools are trustworthy (3,200+ researchers, 113 countries). This is simultaneously (a) commercial confirmation of the V&V arc's central claim that trust returns claim-by-claim, (b) the named vendor-copy foil the `grounding-is-not-ground-truth` draft was waiting for ("research-grade AI"; the Trust Card judge sits on the generation chain), and (c) the data anchor the trust-naming piece needed.
+
+**Status:** Engaged. Article drafted 2026-06-12: `drafts/claim-verification-is-now-a-product.md`, verification record at `docs/verification/claim-verification-is-now-a-product.md`, cross-post draft at `drafts/claim-verification-is-now-a-product-linkedin.md`. Decision recorded there: do not link the promo post in the article or post bodies; durable Elsevier pages carry the citations. The survey is also indexed in agent-ready-papers as literature entry L48 (same-day verification).
+
+**Useful extracts (verified at the product/press pages 2026-06-12):**
+- Trust Cards show *"how a claim aligns with its cited source"*; Claim Radar shows *"how it holds up across the broader body of research"*.
+- Positioning vocabulary: "research-grade AI", "transparency, traceability for every result, supporting continuous human validation and critical thinking".
+- Corpus claim: "16+ million peer-reviewed articles and books" plus licensing with Emerald, IOP, NEJM Group, OUP, Sage. Independent advisory board for publisher-neutrality.
+- Timeline: announced September 2025, launched November 2025, paid availability Q1 2026.
+
+**Potential further uses:**
+- `grounding-is-not-ground-truth` draft: LeapSpace is the named foil that draft's "what would make it real" section asks for. Keep the Lakoff/Johnson layer there; the launched article only borrows the chain paragraph.
+- Hypothesis-log candidate (either repo): does publisher verification tooling stay consumption-side or expand into authoring? Revisit trigger: any LeapSpace feature announcement touching user manuscripts.
+- agent-ready-papers Paper 1 ("The Verification Gap"): L48 + LeapSpace as evidence that the production side remains unaddressed by publisher tooling.
+
+---
+
 ## 2026-05-21 — Caveman (Claude Code output-compression skill by Julius Brussee)
 
 **Source:** https://github.com/JuliusBrussee/caveman. Claude Code / Cursor / Codex skill that forces terse "caveman speak" output. Project site: https://juliusbrussee.github.io/caveman/. Author: Julius Brussee, 19, Leiden University student. Repo climbed from dozens to >20k stars in ~half a day on HN. Picked up by Dutch press as a "Dutch student amazes AI companies" piece.

@@ -52,6 +52,7 @@ Risk: the piece can read as semantic policing if the engineering observation is 
 
 ## Foils to engage (find specifics before drafting)
 
+- **FOUND 2026-06-12: Elsevier LeapSpace** ("research-grade AI"; Trust Cards judge claim-source alignment from inside the generation chain). Filed in `memory/external-references.md`. Note: `drafts/claim-verification-is-now-a-product.md` already uses one paragraph of the chain critique against this foil; if that piece ships first, this draft should go deeper (the Lakoff/Johnson layer) rather than repeat it.
 - Vendor "grounded in your enterprise data" framings (Anthropic Workspace, OpenAI enterprise, Google Vertex). Need at least one concrete piece of marketing copy to argue against.
 - The "15 Agent Patterns" foil (`memory/external-references.md`): same family of confusion. Evaluator-Optimizer presumes validator independence and almost never has it.
 - Anything published claiming RAG "solves" or "eliminates" hallucination.
