@@ -1,0 +1,310 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Agreement is not verification. · dev.jeroenveen.nl';
+const description = 'A "locked" €8,000 GPU plan, two models that agreed, and the cheap checks that turned it into a €750 card. Agreement is not verification.';
+const publishedOn = '2026-06-13';
+---
+
+<Layout title={title} description={description} ogImage="/social/agreement-is-not-verification.png" ogType="article">
+  <a href="#article" class="skip-nav">Skip to article</a>
+  <main>
+    <article class="article">
+      <nav class="article-nav" aria-label="Site navigation">
+        <a href="/">← dev.jeroenveen.nl</a>
+      </nav>
+
+      <header class="article-header" id="article">
+        <span class="article-label">Writing</span>
+        <h1 class="article-title">Agreement is not verification.</h1>
+        <p class="article-subtitle">
+          A "locked" €8,000 GPU plan, and the cheap checks that turned it into a €750 card.
+        </p>
+        <p class="article-meta">
+          <time datetime={publishedOn}>13 June 2026</time>
+          <span class="sep">·</span>
+          <span>~5 min read</span>
+        </p>
+      </header>
+
+      <div class="article-body">
+        <p>
+          A plan arrived from another working session, and it looked finished.
+          One GPU workstation, around €8,000, with the graphics card alone at
+          €4,500 to €5,500. It came with a rationale, a tax treatment, a line in
+          a budget spreadsheet, and the quiet authority of something already
+          decided. The word attached to it was "locked."
+        </p>
+
+        <p>
+          It was also wrong, and the thing that showed it was wrong cost about
+          ten minutes.
+        </p>
+
+        <p>
+          I want to be precise about what "wrong" means here, because the plan
+          was not sloppy. It was internally consistent in the way that makes you
+          stop checking. The 48GB of video memory was justified by the size of
+          the model it would run. The model size was justified by the workload.
+          The cost was justified by a Dutch investment-deduction argument that
+          genuinely does reward buying more in a given tax year. Each step
+          followed from the one before. A confident plan and a correct plan look
+          identical from the outside. Self-consistency reads exactly like
+          correctness, and it is not the same thing.
+        </p>
+
+        <p>
+          The crack was a single question the plan never grounded: did the
+          workload actually need 48GB? The plan asserted it. It did not show it.
+          So I read the actual specification, the source document, not the
+          plan's summary of it. The picture inverted. The large model in this
+          system runs as a frozen oracle: it does inference to generate training
+          labels. It is never itself trained. The thing that does get trained is
+          a small classifier, a fraction of the size, cheap to fit almost
+          anywhere. Running a 27-billion-parameter model for inference at 4-bit
+          precision needs roughly 17GB. A 24GB card covers it with room to
+          spare. The 48GB figure had come from a full-precision number that
+          the actual workload never used, multiplied by a tax argument that
+          happened to reward the larger purchase. The tell was sitting in the
+          same folder: an earlier version of the budget had specced a 24GB card.
+          The expensive version drifted in later and picked up the word "locked"
+          along the way.
+        </p>
+
+        <p>
+          That is the boring kind of error, the kind a careful read catches. The
+          other kind is more interesting, because models are most confident
+          exactly where they are most checkable. A month earlier, a different
+          plan had recommended a specific laptop: a plausible model name, a
+          plausible price, a plausible spec. The machine did not exist. The
+          generation it named had never shipped in that configuration. It was a
+          composite, real parts from three different laptops fused into one model
+          number that no shop had ever sold. What surfaced it was not a smarter
+          prompt. It was asking a second and a third engine the same narrow
+          question independently, and watching them fail to confirm. A part
+          number, a price, a date: that is where fluent output lies with the
+          straightest face, because those are the details that make a
+          recommendation feel researched.
+        </p>
+
+        <p>
+          So for the GPU decision I built the checking in. One model did the
+          primary research. Then two others, different families with different
+          training data and different failure modes, were each handed the same
+          narrow questions: does this card exist, is this price plausible for
+          this market, right now. Where three independent passes agree, you have
+          something close to evidence. Where they diverge, you have a flag, and a
+          flag is more useful than a smoothed-over average. One card in the set
+          came back confirmed by only a single outside model, because the other
+          hit a usage limit mid-run. That gap is worth recording honestly rather
+          than rounding up to "verified." A check you did not actually complete
+          is not a check.
+        </p>
+
+        <p>
+          Then the part I did not expect. Verification has a reputation as the
+          function that reverses decisions, the skeptic in the room who says no.
+          This time it did the opposite. I reopened the entire question across
+          the whole market, thirty-five cards, new and used, consumer and
+          datacenter and even the odd memory-modified import. The sweep did not
+          overturn the cheap option. It confirmed it. A used 24GB card was the
+          only strong single-card fit at a sensible price, and the search
+          surfaced exactly one genuinely new alternative worth filing away for
+          later. Verification that confirms is not wasted motion. It turns a
+          hunch into a decision you can defend, which is a more durable thing to
+          own than a guess that happened to be right.
+        </p>
+
+        <p>
+          Underneath all three episodes is the same confusion, and it is an
+          expensive one. Agreement is cheap. Verification is not. They feel the
+          same from the inside. Two models agreeing, or one session announcing
+          that something is locked, has the texture of having been verified. It
+          is usually just correlation of priors: models trained on overlapping
+          data, or one context agreeing with itself. Real verification is
+          independent or it is nothing. A different model family, though even
+          that is only partly independent: models trained on overlapping slices
+          of the same internet can share a blind spot, so two of them agreeing
+          is weaker than it looks. A fresh session carrying none of the drafting
+          context. Best of all, the primary source read directly, rather than
+          through a fluent summary that has already decided what it says. I have argued before that
+          <a href="/writing/verification-is-a-workflow-problem/">verification is a workflow problem</a>
+          rather than a model problem. This is the same claim with a receipt
+          attached.
+        </p>
+
+        <p>
+          The arithmetic is the part that should bother anyone shipping
+          AI-assisted work. The unverified plan was about €8,000. The verified
+          one is the right card plus a sane build around it, roughly €2,500 to
+          €3,000, and almost all of the gap between that and a cheaper figure I
+          would have quoted a year ago is a memory-chip shortage, not the card.
+          What found the original error was a specification file I had not opened
+          and two short queries to other models. Minutes, against thousands of
+          euros. The costly mistakes in agentic work are rarely the obvious
+          hallucinations, the made-up function or the garbled fact you catch on
+          sight. They are the confident, well-formatted, internally consistent
+          recommendations that no second source ever looked at, because they
+          never asked to be looked at.
+        </p>
+
+        <p>
+          The plan that arrives looking finished is the one to check first. It
+          has stopped inviting questions, which is exactly the moment the
+          question is worth the most.
+        </p>
+
+        <p>
+          When a model hands you a clean, confident answer, what makes you check
+          it anyway, and what makes you let it through?
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-links">
+      <a href="https://github.com/ducroq" target="_blank" rel="noopener">GitHub</a>
+      <span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/jeroen-veen-3244444/" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl" target="_blank" rel="noopener">jeroenveen.nl</a>
+      <span class="sep">/</span>
+      <a href="https://jeroenveen.nl/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </footer>
+</Layout>
+
+<style>
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .article-nav {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .article-header {
+    margin-bottom: 3rem;
+  }
+
+  .article-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .article-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    max-width: 60ch;
+  }
+
+  .article-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .article-meta .sep {
+    color: var(--border);
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .article-body p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
+  }
+
+  .article-body code {
+    font-family: var(--font-mono);
+    font-size: 0.88em;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    color: var(--amber);
+  }
+
+  .article-body a {
+    border-bottom: 1px dotted var(--amber-dim);
+  }
+  .article-body a:hover {
+    border-bottom-color: var(--text);
+  }
+
+  .article-sources {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-sources ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .article-sources li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .article-sources a {
+    color: inherit;
+    border-bottom: 1px dotted var(--amber-dim);
+    word-break: break-all;
+  }
+
+  .article-sources a:hover {
+    color: var(--text);
+    border-bottom-color: var(--text);
+  }
+
+  .site-footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .footer-links .sep {
+    color: var(--text-dim);
+  }
+</style>

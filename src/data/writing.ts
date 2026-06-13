@@ -8,6 +8,14 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: 'agreement-is-not-verification',
+    title: 'Agreement is not verification.',
+    excerpt:
+      'A budget arrived from another session with an €8,000 GPU on it, marked "locked." Two models agreed on the number. Reading the actual spec, and making a different model family check the first, collapsed it to a €750 card. A confident plan and a correct plan look identical.',
+    date: '2026-06-13',
+    readTime: '~5 min',
+  },
+  {
     slug: 'ai-review-is-plausibility-review',
     title: 'AI review is plausibility review.',
     excerpt:
