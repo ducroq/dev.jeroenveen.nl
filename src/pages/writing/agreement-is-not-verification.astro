@@ -24,6 +24,8 @@ const publishedOn = '2026-06-13';
           <time datetime={publishedOn}>13 June 2026</time>
           <span class="sep">·</span>
           <span>~5 min read</span>
+          <span class="sep">·</span>
+          <span>updated 14 June 2026</span>
         </p>
       </header>
 
@@ -159,6 +161,69 @@ const publishedOn = '2026-06-13';
           it anyway, and what makes you let it through?
         </p>
       </div>
+
+      <aside class="article-addendum">
+        <span class="addendum-label">Addendum · 14 June 2026</span>
+        <p class="addendum-lead">I broke this rule the day I published it.</p>
+
+        <p>
+          This essay went up on the thirteenth of June. Within a day, the
+          decision it closes on, the used 24GB card, was reopened and relocked
+          as something else entirely: an Apple machine with 64GB of unified
+          memory, quieter, lower-powered, one sealed appliance instead of a
+          built box. It arrived with a fresh rationale, cross-checked against
+          two other models that broadly agreed, and the quiet authority of
+          something decided. The word attached to it was, again, "locked." I had
+          just finished writing about that word, and I earned it back inside
+          twenty-four hours.
+        </p>
+
+        <p>
+          The new rationale was checked. It was checked against the market,
+          against current prices, against two independent models. It was checked
+          against everything except the one source that actually runs the work:
+          the code. I was holding a summary of what the system needed. I had not
+          read the system.
+        </p>
+
+        <p>
+          Reading it took the decision apart, and two lines did most of the
+          work. One was a comment beside the small scoring models, warning that
+          they must stay in a particular number format because the obvious
+          conversion silently produces nonsense, and that conversion is exactly
+          the one Apple's hardware leans on. Moving them to the new machine
+          risked quietly corrupting the part of the pipeline that is hardest to
+          notice when it fails. The other was the project's own log, months old:
+          the larger model the 64GB was meant to enable had already been tried
+          for the main task, and had not beaten the smaller one. The fix that
+          worked back then was a shorter instruction, not more parameters. Even
+          the memory pressure that seemed to demand a bigger machine turned out,
+          in the code, to be other tenants crowding a borrowed card, the kind of
+          thing that owning any dedicated box removes regardless of its size.
+          More memory was never the lever. The decision fell back to the same
+          used 24GB card this essay had ended on.
+        </p>
+
+        <p>
+          The three episodes above were all me catching someone else's error, or
+          a machine's: a borrowed plan, a laptop that did not exist, a market I
+          re-swept. This one was mine. I made the exact mistake the essay
+          describes, a day after describing it, having described it. That is the
+          part worth keeping, because it is the honest shape of the thing. The
+          principle is not something you learn once and then own. Agreement
+          re-forms the moment you stop reading the source. Two models agreeing
+          felt like verification and was correlation again. The primary source
+          was sitting in the same repository the entire time, and I worked from
+          my summary of it instead of opening it.
+        </p>
+
+        <p>
+          An essay about checking the plan that looks finished is not a vaccine
+          against writing one. If anything it makes the next one more dangerous,
+          because now it sounds like it comes from someone careful. The plan I
+          should have checked first was my own.
+        </p>
+      </aside>
     </article>
   </main>
 
@@ -306,5 +371,36 @@ const publishedOn = '2026-06-13';
 
   .footer-links .sep {
     color: var(--text-dim);
+  }
+
+  .article-addendum {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .addendum-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  .addendum-lead {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .article-addendum p {
+    color: var(--text);
+    max-width: none;
+    margin-bottom: 1.25rem;
   }
 </style>
