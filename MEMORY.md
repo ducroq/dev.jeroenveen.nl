@@ -20,7 +20,7 @@
 ## Current State
 
 - Site live at https://dev.jeroenveen.nl — **hosted on Netlify** (auto-deploys on push to `main`). `.github/workflows/deploy.yml` is orphaned from the prior GitHub Pages setup; kept but inactive.
-- **9 projects** defined in the `projects` array, **first 3 publicly visible** via `VISIBLE_PROJECT_COUNT = 3` in `src/pages/index.astro` (drip-feed stance, 2026-04-21; count was 2 until at least 2026-08-26, and this row said so until 2026-08-27). Bump the constant to re-expose more. Order as of 2026-08-27: **DSP Workshop, Augur, ese-bot**; `agent-ready-papers` was demoted out of view on 2026-08-27 to make room and remains in the array.
+- **9 projects** defined in the `projects` array, **first 3 publicly visible** via `VISIBLE_PROJECT_COUNT = 3` in `src/pages/index.astro` (drip-feed stance, 2026-04-21; count was 2 until at least 2026-08-26, and this row said so until 2026-08-27). Bump the constant to re-expose more. Order as of 2026-08-27: **DSP Workshop, Augur, ese-bot**; `agent-ready-papers` was demoted out of view on 2026-08-27 to make room and remains in the array. <!-- verify: sh scripts/verify-state.sh projects visible_projects -->
 - **Hero section commented out** (JSX `{/* ... */}` wrapper). Source intact for restore.
 - **New /writing section** (2026-04-21): index at `src/pages/writing/index.astro`, per-article pages, shared metadata in `src/data/writing.ts`. First article: "A small GDPR-safe chatbot" at `/writing/ese-bot-eu-sovereign-rag/`.
 - Homepage Writing section shows the 2 most recent articles between Projects and Background.
@@ -38,7 +38,8 @@
 - **Audience correction worth carrying (2026-08-26).** Jeroen's LinkedIn following is **old DSP colleagues and former students**, not the AI/V&V audience the `/writing/` corpus is written for. A draft aimed at the V&V following had to be scrapped. `docs/writing-guide.md` Section 2 describes the *article* reader; it does not describe the *feed* audience, and the two are different.
 - **Do not quote dsp-workshop's build-provenance tiers in external copy.** They describe what a given *page* carries as on-page evidence, not what has been built and measured over a career, and they read as the latter outside the repo. An early launch draft led with "zero have been built and measured on a bench", which was false about Jeroen. Detail in `memory/external-comments.md` under the 2026-08-27 publish entry.
 - Three review agents in `.claude/agents/` (copy, design, SEO).
-- No test suite — static site, build success is the gate.
+- **State claims in this file carry `<!-- verify: -->` annotations as of 2026-08-27**, run by `scripts/verify-state.sh` (ported from `dsp-workshop/tests/verify_state.sh`). Before that this repo had none, which is how the project-count row above stayed wrong with nothing able to catch it. Run `sh scripts/verify-state.sh` to check them all. <!-- verify: sh scripts/verify-state.sh dead_refs gotcha_entries -->
+- No test suite — static site, build success is the gate. <!-- verify: sh scripts/verify-state.sh build -->
 - **Open issues**: #2 (case study pages) — arguably served by the new /writing section; consider closing or reframing.
 
 ## Recently Promoted

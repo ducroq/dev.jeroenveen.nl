@@ -24,12 +24,13 @@ Personal portfolio site for Jeroen Veen (Research & Engineering). Astro static s
 | Adding an article | `docs/workflows/adding-an-article.md`: full publishing workflow including draft, verification record, page file, registry, cover image, references, and LinkedIn cross-post |
 | Verifying claims in an article (draft or published) | `docs/verification/<slug>.md`: per-article anti-hallucination record. Apply Step 0 + Steps 4–6 of the [agent-ready-papers](file:///home/jeroen/repos/agent-ready-papers/templates/anti-hallucination.md) checklist for every load-bearing statistic, named study, or coined attribution before publish. Trace each number to primary source, not to an intermediate ANALYSIS file. Confidence tier maps to article language per `docs/writing-guide.md` Section 7. |
 | Generating a social/cover image for an article | `scripts/gen-social-image.py` (typographic title-card, the default). Outputs 1200×630 PNG to `public/social/<slug>.png` and doubles as the LinkedIn Pulse cover. For articles with a strong central figure, the **diagram-as-cover** variant is also valid: derive a bolder thumbnail-legible variant of the canonical SVG and compose it onto a 1200×630 canvas. Working example: `scripts/gen-model-not-grader-cover.py`. See step 7 of `docs/workflows/adding-an-article.md`. |
-| Generating an in-article diagram or figure | `scripts/gen-<slug>-diagram.py` (sketch register: jittered SVG paths, mono lowercase labels) or `scripts/gen-<slug>-figure.py` (Tufte typographic: numbers + citation, no shapes). Output to `public/diagrams/<slug>.svg`. Keep the two registers distinct and do not mix them in one figure. **A `feedback_visual_register.md` memory file was cited here until 2026-08-27 and does not exist anywhere in the repo**, so that instruction was unfollowable; the rule is stated inline instead. If the file is ever written, point this row back at it. |
+| Generating an in-article diagram or figure | `scripts/gen-<slug>-diagram.py` (sketch register: jittered SVG paths, mono lowercase labels) or `scripts/gen-<slug>-figure.py` (Tufte typographic: numbers + citation, no shapes). Output to `public/diagrams/<slug>.svg`. Keep the two registers distinct and do not mix them in one figure. **A visual-register memory file (feedback_visual_register, unbackticked here on purpose so `scripts/verify-state.sh` does not read it as a live path) was cited here until 2026-08-27 and does not exist anywhere in the repo**, so that instruction was unfollowable; the rule is stated inline instead. If the file is ever written, point this row back at it. |
 | Changing layout, SEO, or meta tags | `src/layouts/Layout.astro`: head, OG tags, structured data |
 | Changing design tokens or global styles | `src/styles/global.css`: all CSS custom properties live here |
 | Stuck or debugging something weird | `memory/gotcha-log.md`: problem-fix archive |
 | Recording a provisional editorial position to revisit later | `memory/hypothesis-log.md`: Position / Alternative / Method / Revisit trigger / Review by. For bets whose evidence lives in the future — post-publish reception checks, frame-landing bets, reframe outcomes. Different from gotchas (problems solved) and commit-message decisions (decisions made). |
 | Reviewing copy, design, or SEO concerns | `.claude/agents/`: three review docs from previous audit sessions |
+| Checking whether this file's or `MEMORY.md`'s state claims are still true | `sh scripts/verify-state.sh` (no args = all 8 checks). Each `<!-- verify: -->` annotation in `MEMORY.md` names the check that backs it. Added 2026-08-27; before that the repo had no verifiable claims at all, which is how the project-count row stayed wrong. Reads expected values *from* the claim where it can, so correcting a document does not read as a failure. |
 | Ending a session | Run `/curate`: covers gotcha-log promotion, freshness check, doc sync, hypothesis-log surface (flags overdue revisits), and project-file size budget. The gotcha archive itself lives in `memory/gotcha-log.md`. |
 
 ## Hard Constraints
@@ -80,6 +81,7 @@ dev.jeroenveen.nl/
     social/                         # Article cover / OG images (1200×630 PNG, generated)
     diagrams/                       # In-article SVG diagrams and figures (generated)
   scripts/
+    verify-state.sh                 # Checks MEMORY.md/CLAUDE.md state claims against the repo (8 checks)
     gen-social-image.py             # Generates the typographic cover image for an article (default)
     gen-<slug>-cover.py             # Per-article diagram-as-cover script (variant; see gen-model-not-grader-cover.py)
     gen-<slug>-diagram.py           # Per-article sketch generators (jittered SVG paths)
@@ -118,6 +120,7 @@ The `/writing/` section is a list-plus-detail pattern: `src/data/writing.ts` is 
 | `public/screenshots/` | Project card screenshot images |
 | `public/social/` | Article cover / OG images (generated, 1200×630 PNG) |
 | `public/diagrams/` | In-article SVG diagrams and figures (generated) |
+| `scripts/verify-state.sh` | Runs the checks behind `MEMORY.md`'s `<!-- verify: -->` annotations: project counts, article registry vs pages, posted-linkedin records, gotcha entries, open/overdue hypotheses, dead references in this file, and a clean build. Ported from `dsp-workshop/tests/verify_state.sh` 2026-08-27. |
 | `scripts/gen-social-image.py` | Generates a typographic cover image (default pattern); edit the headline + slug constants per article and run `python scripts/gen-social-image.py` |
 | `scripts/gen-<slug>-cover.py` | Per-article diagram-as-cover script (variant pattern, for articles with a strong central figure). Working example: `gen-model-not-grader-cover.py` |
 | `scripts/gen-<slug>-diagram.py` | Per-article sketch diagram generators (jittered paths, sketch register) |

@@ -66,7 +66,27 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 **Review by:** 2026-06-22 — backstop one week after the reception-checkpoint trigger fires.
 
 **Domain:** LinkedIn cross-post strategy, register calibration, V&V arc reception
-**Status:** open
+**Status:** **dormant** (2026-08-27) — awaiting data only the owner can pull.
+
+**Dormancy note (2026-08-27, `/curate`):** the `2026-06-15` trigger never fired and `Review by:
+2026-06-22` is **66 days past**. Nothing about the bet has been decided; the analytics export for
+URN `7469630799009574912` was simply never taken, and LinkedIn's per-post impression and save
+figures are visible only to the account owner, so no agent can close this. Marked dormant rather
+than left overdue so it stops reading as an unattended deadline on every session start.
+
+**Method is unchanged and must not be loosened** — the three axes and the four decision rules in
+`memory/external-comments.md` (2026-06-08 entry) still apply verbatim. One caveat for whoever
+reads it in: the window in the Method was 5 to 7 days post-publish, and the numbers now are
+lifetime figures for a post nearly three months old. Reach will have accumulated, so a comparison
+against the 628-impression baseline (also lifetime by now) is the only honest one; do not read a
+late lifetime number as if it were a 7-day number. If that makes the comparison unusable, close
+this entry as **unresolved for want of evidence** and open a fresh bet on a future post rather
+than reinterpreting this one.
+
+**To resolve:** open the post's analytics, record impressions / comments / reposts / saves, apply
+the four rules, then move to `## Resolved` with the outcome. Related: the new
+[2026-08-27] entry bets on a *different* audience for a DSP-native post, and its commenter
+classification would be more informative if this one is settled first.
 
 ---
 
