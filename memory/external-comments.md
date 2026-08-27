@@ -2,6 +2,61 @@
 
 Reactions and replies posted on LinkedIn or other external platforms. Captured here so we can revisit framing, track which threads we've engaged with, and reuse phrasings later.
 
+## 2026-08-27 — Publish: DSP Workshop launch (dsp-workshop.nl)
+
+**Surface shipped:** short LinkedIn feed post (link share), no Pulse article, no `/writing/` piece.
+- Post: https://www.linkedin.com/posts/jeroen-veen-3244444_dsp-workshop-activity-7498650986190671872-ZjDt
+- Shortlink: https://lnkd.in/p/es_nRH6W
+- Activity id: `7498650986190671872` — embed urn is a *different* id,
+  `urn:li:share:7498650985339240448` (LinkedIn mints share and activity ids separately; the embed
+  iframe uses the share urn, the public permalink uses the activity id)
+- Embed: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7498650985339240448?collapsed=1" height="548" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>`
+- Target: https://dsp-workshop.nl
+
+Tracking parameters (`utm_source`, `utm_medium`, `rcm`) stripped from the shared URL before
+logging: `rcm` carries a member token and does not belong in a committed file.
+
+**Posted body:**
+
+> Most DSP teaching stops at the Python or Matlab prototype. The part that actually breaks is what comes next: the same filter in C or VHDL, on a part with no floating-point unit, where an elegant biquad becomes a question about coefficient scaling and headroom.
+>
+> I have been putting years of DSP course material into one place, and it is now live at dsp-workshop.nl.
+>
+> Twelve chapters from sampling through filter design, dozens of standalone topics, and over a hundred exercises. Thirty pages put the embedded C next to the theory, from an 8-bit AVR up to a Cortex-M33 with an NPU, and a couple go to VHDL. Python and scipy throughout.
+>
+> Which DSP topic did you end up learning twice, once in theory and then again on hardware?
+
+**Hashtags:** added by edit after posting (they were forgotten in the original):
+`#DSP #SignalProcessing #EmbeddedSystems #Python #EngineeringEducation`
+
+**Audience note, and why this post is different from the rest of this log.** Jeroen's read of his
+own following (2026-08-26): **old DSP colleagues and former students**, NOT the AI/V&V audience
+the `/writing/` corpus was built for. Every choice followed from that. An earlier draft aimed at
+the V&V following and had to be scrapped.
+
+**Two drafting corrections worth carrying forward:**
+1. The first draft led with the site's build-provenance tiers ("zero have been built and measured
+   on a bench"). **That was false about the author** and was cut. Those tiers describe what a
+   *page* carries as on-page evidence; they are not a record of what has been built and measured
+   over a career, and they read as one outside the repo. Keep them out of external copy.
+2. The V&V mechanism was deliberately left out of this post entirely (decided 2026-08-27). It is
+   a second theme competing with the comment prompt, it suits a different audience, and it was
+   mid-refactor at the time. It remains a candidate `/writing/` piece.
+
+**Card / og:image saga, worth knowing before the next launch.** The site had no Open Graph tags at
+all, so the link previewed bare; that was GH #47's open-graph half, shipped the same day. Then the
+card would not update on LinkedIn despite a correct deploy and a successful Post Inspector
+re-scrape: **LinkedIn caches the image asset by URL, separately from the page metadata.** Only
+renaming the file (`social-cover.png` -> `social-cover-2.png`, old URL now 404) forced the
+refetch. Rule: editing the image in place is enough for new links, never for links already
+shared. Recorded in `dsp-workshop/scripts/gen-social-cover.py`.
+
+**Reception:** not yet checked. First look due ~2026-08-30. The open question is whether a DSP
+post lands with a following that has lately been fed AI and verification material, and whether
+the comment prompt ("which topic did you learn twice") actually draws former students out.
+
+---
+
 ## 2026-04-29 — Reply to Witek ten Hove on spec-driven assessment
 
 **Context:** Witek posted on LinkedIn (28 April 2026) framing AI's assessment shift in education using Karpathy's "software 3.0" analogy. Students submit a specification, the AI generates the artifact, and the artifact becomes a "wegwerpartefact". The rubric shifts to: are assumptions explicit, are alternatives weighed, is the scope right, is the problem understood. He posed three questions about what this means at the level of beroepsproduct, docentschap, and opleiding.

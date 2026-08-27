@@ -1,6 +1,6 @@
 # Writing Guide — dev.jeroenveen.nl
 
-This guide covers what is distinctive about writing for this site. Universal craft principles (voice protection, the five voice traps, essay vs. chapter, logic audit, tension holding, self-reference dosing) live in the canonical Augmented Engineering writing guide at `C:\local_dev\augmented-engineering\docs\writing-guide.md`. Read that first for craft. This guide adds the project-specific layer: who reads dev.jeroenveen.nl, how articles travel beyond it, and the rules that come from learning what works on this audience.
+This guide covers what is distinctive about writing for this site. Universal craft principles (voice protection, the five voice traps, essay vs. chapter, logic audit, tension holding, self-reference dosing) live in the canonical Augmented Engineering writing guide at `~/repos/veen-systems/augmented-engineering/docs/writing-guide.md`. Read that first for craft. This guide adds the project-specific layer: who reads dev.jeroenveen.nl, how articles travel beyond it, and the rules that come from learning what works on this audience.
 
 The voice is the same Jeroen voice used across projects. The audience and packaging are different, and that difference is what this guide is for.
 
@@ -128,7 +128,7 @@ When citing your own work, link to the project page or the source (GitHub, the A
 
 ### Verify before publish
 
-Every load-bearing statistic, named study, or coined attribution gets a verification record at `docs/verification/<slug>.md` before the article ships. Apply Step 0 + Steps 4–6 of the [agent-ready-papers anti-hallucination checklist](file:///C:/local_dev/agent-ready-papers/templates/anti-hallucination.md). Trace each number to primary source, not to an intermediate ANALYSIS file or a downstream registry that says it's already verified. The fluency of an existing summary is exactly the surface where citation drift hides.
+Every load-bearing statistic, named study, or coined attribution gets a verification record at `docs/verification/<slug>.md` before the article ships. Apply Step 0 + Steps 4–6 of the [agent-ready-papers anti-hallucination checklist](file:///home/jeroen/repos/agent-ready-papers/templates/anti-hallucination.md). Trace each number to primary source, not to an intermediate ANALYSIS file or a downstream registry that says it's already verified. The fluency of an existing summary is exactly the surface where citation drift hides.
 
 Map confidence tier to article language:
 
@@ -149,7 +149,7 @@ Procedure:
 
 1. Article is final in `src/pages/writing/<slug>.astro`, reads cleanly cold.
 2. Open a different model (GPT, Gemini) or at minimum a fresh Claude session with no project context.
-3. Paste the article body together with the agent-ready-papers [`templates/review-prompt.md`](file:///C:/local_dev/agent-ready-papers/templates/review-prompt.md) (Variant B, non-empirical) as the prompt.
+3. Paste the article body together with the agent-ready-papers `templates/review-prompt.md` **(`templates/review-prompt.md` was not in `~/repos/agent-ready-papers/templates/` as of 2026-08-27 — the templates there are anti-hallucination, claim-registry, cost-log, decision-record, glossary, hypothesis-log, key-quotes, vv-framework, work-item, writing-guide. Use any cross-model review prompt until it reappears.)** (Variant B, non-empirical) as the prompt.
 4. Address logic gaps, unsupported assertions, citation drift, and tone issues before pushing. Trivial fixes get a small follow-up commit; structural issues mean back to the draft.
 
 This step is *not* bundled with the heavier academic gates (Toulmin typing, equation verification) that an essay does not need. Those genuinely are overkill for a personal essay. Cross-model review costs a few minutes and catches the class of error that same-model self-review reliably misses, which is a different cost-benefit profile.

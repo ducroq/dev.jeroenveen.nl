@@ -35,7 +35,7 @@ Not a comprehensive field dictionary. If a term is widely understood and Jeroen 
 
 **Why noted:** Jeroen's own coined frame, central to the AE site's positioning. Whenever it appears in writing on dev.jeroenveen.nl it should mean the same thing it means on the AE site. If usage drifts, fix here first.
 
-**Where it appears:** AE site (`C:\local_dev\augmented-engineering\`), referenced in `memory/external-comments.md` (Witek thread, Reproduce-Don't-Assess case).
+**Where it appears:** AE site (`~/repos/veen-systems/augmented-engineering/`), referenced in `memory/external-comments.md` (Witek thread, Reproduce-Don't-Assess case).
 
 ---
 

@@ -39,6 +39,20 @@ Lifecycle: **open** → dormant → revisit (with evidence) → resolved (close 
 
 ## Open
 
+### [2026-08-27] A DSP-native post lands with a following the V&V corpus has been feeding
+
+**Position (provisional):** The DSP Workshop launch post (https://www.linkedin.com/posts/jeroen-veen-3244444_dsp-workshop-activity-7498650986190671872-ZjDt) will outperform the V&V-arc posts on *comments* specifically, because it asks for a memory rather than an opinion ("which DSP topic did you end up learning twice, once in theory and then again on hardware?") and because Jeroen's read of his own following is old DSP colleagues and former students, not the AI/verification audience the `/writing/` corpus was written for. Forecast: **>= 8 comments and >= 40 reactions within 7 days**, with a visible share of comments coming from people who are former students or ex-colleagues rather than the usual AI-adjacent commenters.
+
+**Alternative:** The following has drifted toward the AI/V&V topic to the point that DSP reads as off-topic, and the post gets reactions without conversation. **Signal:** high reaction-to-comment ratio (reactions >= 40 but comments < 5), or comments dominated by the same AI-adjacent names that engage with the V&V posts. That would mean the "old DSP colleagues" audience model is wrong — or right about who *follows* and wrong about who still *reads* — and future DSP material needs its own distribution rather than this feed.
+
+**Method:** At the review date, pull reaction and comment counts, and classify commenters into (a) former students / ex-colleagues / DSP practitioners, (b) AI-adjacent regulars, (c) neither. Compare against the V&V baseline recorded in `memory/external-comments.md` (the ese-bot short post drew 29 reactions and 2 comments at first fetch). Do not loosen the >= 8 comments threshold after the fact; if the bet needs redefining, open a new entry.
+
+**Revisit trigger:** 7 days after posting (2026-09-03), or earlier if the post visibly stalls or takes off.
+
+**Review by:** 2026-09-10 — backstop one week after the trigger.
+
+**Consequence if the Position holds:** the provenance-scheme article, which is aimed at the *other* audience, should not assume this feed will carry it; and DSP-native material is worth continuing here rather than treating the site as a one-off announcement.
+
 ### [2026-06-08] Louder / conversational register breaks the V&V arc's narrow-distribution cluster
 
 **Position (provisional):** The previous four cross-posts in the V&V arc family produced a tight cluster of low-engagement outcomes under the modesty register (verification-workflow 628 imp / 0 comments / 1 save; the-model-is-not-the-grader 1,250 / 0 / 1; the-work-is-splitting 1,650 / 1 / 1; senior-developers-trust-ai-less the only broad outlier at 8,521 / 0 / 0). The 2026-06-08 cross-post of `ai-review-is-plausibility-review` injects noise: louder / conversational register, "we" first-person, no explicit frame line, closing imperative instead of an open question, single-paragraph block. **Prediction:** reach ≥1,000 impressions (back to the model-not-grader baseline or higher) AND ≥1 comment within 7 days post-publish. The bet is that the modesty register was a local minimum and the louder variant breaks distribution.
