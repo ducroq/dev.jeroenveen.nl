@@ -51,9 +51,56 @@ renaming the file (`social-cover.png` -> `social-cover-2.png`, old URL now 404) 
 refetch. Rule: editing the image in place is enough for new links, never for links already
 shared. Recorded in `dsp-workshop/scripts/gen-social-cover.py`.
 
-**Reception:** not yet checked. First look due ~2026-08-30. The open question is whether a DSP
-post lands with a following that has lately been fed AI and verification material, and whether
-the comment prompt ("which topic did you learn twice") actually draws former students out.
+**Reception data (captured 2026-08-29, post is 2 days old, LinkedIn analytics export
+`SinglePostAnalytics_Jeroen Veen_7498650986190671872.xlsx`):**
+- **90,201 impressions, 65,264 members reached.** 1.38 impressions per member.
+- 1,077 social engagements (1.19% of impressions): **472 reactions, 17 comments, 29 reposts,
+  516 saves, 43 sends.**
+- **729 link clicks to dsp-workshop.nl** — 0.81% of impressions, 1.12% of members reached.
+- 351 profile viewers, **400 followers gained**.
+
+**This breaks the scale of every prior measurement in this log.** 10.6x the previous outlier
+(`senior-developers-trust-ai-less`, 8,521 imp) and 54-144x the V&V cross-post cluster
+(1,668 / 1,650 / 1,250 / 628). The relevant comparison is not "which post did better" but
+"this is a different distribution regime."
+
+**What the data says, in order of how much it should change future decisions:**
+
+1. **Saves (516) exceed reactions (472).** Every prior post in this log scored 0 or 1 save. This
+   is reference-material behaviour, not agreement behaviour: people filed it to come back to.
+   An artifact that is *useful* is saved; an argument that is *agreeable* is reacted to. The V&V
+   arc has been optimising the second signal against an audience that only ever produced it once.
+2. **More followers gained (400) than profile views (351).** People followed straight off the
+   post without vetting the profile first. Prior posts gained 0-1 followers each. The artifact
+   carried the credibility; the profile did not have to.
+3. **Comments cleared the forecast in absolute terms and failed it per impression.** 17 comments
+   is 5x the previous maximum (3), but only **1.9 comments per 10k impressions** — the thinnest
+   yield in the log (`the-work-is-splitting` ran ~18 per 10k). Reach was won by the artifact, not
+   by the prompt. Do not read 17 comments as evidence the memory-question CTA worked.
+4. **The audience is not the one the post was written for.** Top location is **Greater Bengaluru
+   Area (4%)**, ahead of Amsterdam (3%), Brabantine City Row (3%), Rotterdam/The Hague (3%).
+   Seniority skews **Entry 36% / Senior 28% / Training 7%**. Titles run Software Engineer 4%,
+   Professor 3%, Research Assistant 3%, Postdoc 2%, Teaching Assistant 1%, Lecturer 1%.
+   Industries: Higher Education 9%, Research Services 9%, Semiconductor Manufacturing 8%,
+   Software Development 8%. Companies (all <1% each, i.e. broad not concentrated): Qualcomm,
+   ASML, Synopsys, Intel, Apple, TI, Analog Devices, TU Delft, AMD.
+
+   The post left the following entirely and travelled on topic — into a global, student- and
+   academia-heavy DSP/embedded audience. The "old DSP colleagues and former students" audience
+   model was the right thing to *write for* (it produced a post that reads as useful to anyone
+   learning DSP on hardware) and the wrong thing to *predict distribution from*.
+
+**Carry forward:** a durable artifact with a public URL distributes on a different mechanism than
+an argument does. The V&V cross-posts asked a narrow audience to agree with a frame; this asked a
+large audience to keep something. When the next `/writing/` piece is planned, the question to ask
+first is whether it is a thing someone would save, not whether the frame is adoptable.
+
+**Still open (needs the owner, not the export):** the export carries no commenter identities, so
+the `memory/hypothesis-log.md` [2026-08-27] bet is only half-resolved. Its thresholds
+(>=8 comments, >=40 reactions in 7 days) are cleared at day 2, and the Alternative's signal
+(reactions >=40 with comments <5) did not fire. But the *reasoning* behind the Position — that
+former students and ex-colleagues would be drawn out — is unsupported by the demographics above
+and needs the comment authors classified by hand before the entry can be resolved.
 
 ---
 

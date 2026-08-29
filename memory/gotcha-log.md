@@ -193,6 +193,12 @@
 **Fix**: Pin `image: /social-cover-2.png` in the landing page's own YAML front matter, which beats auto-discovery, and leave a comment there saying why — the `_quarto.yml` setting reads as authoritative to anyone who finds it first.
 **Pattern**: After wiring Open Graph on a Quarto site, **read the deployed page's `og:image` rather than trusting the config**. `curl -sS <url> | grep -oiE '<meta[^>]*og:image[^>]*>'`. Other pages auto-discovering their own hero figure is usually desirable for deep links; it is the landing page that needs pinning.
 
+### `docs/` is published in one repo and not the other, and the assumption transferred (2026-08-29)
+**Problem**: While scoping which files needed an institution name removed, four `docs/verification/*.md` records were classified as **published reader-facing surfaces** and put to the owner as such in a decision prompt. They are not published. Astro routes `src/pages/` only; `docs/` is absent from `dist/`, and two live probes returned 404. The owner answered "published surfaces only" against a list that was wrong, and would have had four internal engineering records rewritten for no reason.
+**Root cause**: The assumption came from the sibling repo. `dsp-workshop` is Quarto, and its `_quarto.yml` render list **does** include `docs/adr/*.md`, so ADRs there really are public pages -- a fact established earlier in the same session, and correctly acted on when ADR-005 turned out to carry the name. That true fact was then carried across a repo boundary into an Astro project where the routing rule is entirely different. Both repos have a `docs/`; only one publishes it.
+**Fix**: Check the build output, not the directory name: `ls dist/` and a live probe of the URL. Corrected before anything was edited, and the corrected scope was nothing-further-to-scrub, since the only live occurrence on this site is the homepage bio the owner chose to keep.
+**Pattern**: **A publishing rule is a property of the generator, not of the directory name.** Two sibling repos with the same folder layout can disagree completely about what ships. Before calling anything "published", confirm it is in the build output or answers on the live site -- the same discipline as reading the deployed `og:image` rather than the config, two entries up. The failure mode is specific to working across sibling repos in one session, where a hard-won fact about one is the most available answer for the other.
+
 ## Promoted
 
 <!-- Track gotchas that have been promoted to topic files or the memory index.
