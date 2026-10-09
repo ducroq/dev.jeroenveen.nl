@@ -7,7 +7,7 @@ const recentWriting = [...articles]
   .slice(0, 2);
 
 // Only show the first N projects publicly; keep the rest in the array for easy re-exposure.
-const VISIBLE_PROJECT_COUNT = 3;
+const VISIBLE_PROJECT_COUNT = 4;
 
 const projects = [
   {
@@ -38,14 +38,6 @@ const projects = [
     img: '/screenshots/ese-bot.png',
   },
   {
-    title: 'agent-ready-papers — Verification Framework',
-    desc: 'Verification framework for AI-assisted claim-bearing artifacts. Typed claim registry with source-tier metadata, anti-hallucination checklist applied before commit, multi-pass review with reviewer-bias escapes at different scales. Originally for papers; the discipline applies to any artifact where the cost of being wrong exceeds the cost of verification.',
-    tags: ['Methodology', 'V&V', 'Anti-Hallucination', 'AI-Augmented Writing'],
-    link: 'https://github.com/ducroq/agent-ready-papers',
-    linkLabel: 'Repo',
-    accent: '#fbbf24',
-  },
-  {
     title: 'ovr.news — News Intelligence Pipeline',
     desc: 'Tracks over a thousand news sources in 25+ languages. Small models trained on LLM labels score every article on five lenses; an open-source LLM writes the summaries. Runs every four hours on local hardware, with blind multi-vendor evaluations of summary faithfulness.',
     tags: ['Python', 'TypeScript', 'Astro', 'MLOps', 'LLM evaluation'],
@@ -53,6 +45,14 @@ const projects = [
     linkLabel: 'Live',
     accent: '#f0a830',
     img: '/screenshots/ovr-news.png',
+  },
+  {
+    title: 'agent-ready-papers — Verification Framework',
+    desc: 'Verification framework for AI-assisted claim-bearing artifacts. Typed claim registry with source-tier metadata, anti-hallucination checklist applied before commit, multi-pass review with reviewer-bias escapes at different scales. Originally for papers; the discipline applies to any artifact where the cost of being wrong exceeds the cost of verification.',
+    tags: ['Methodology', 'V&V', 'Anti-Hallucination', 'AI-Augmented Writing'],
+    link: 'https://github.com/ducroq/agent-ready-papers',
+    linkLabel: 'Repo',
+    accent: '#fbbf24',
   },
   {
     title: 'vmodel.eu — Agentic Requirements Review',

@@ -20,7 +20,7 @@
 ## Current State
 
 - Site live at https://dev.jeroenveen.nl — **hosted on Netlify** (auto-deploys on push to `main`). `.github/workflows/deploy.yml` is orphaned from the prior GitHub Pages setup; kept but inactive.
-- **9 projects** defined in the `projects` array, **first 3 publicly visible** via `VISIBLE_PROJECT_COUNT = 3` in `src/pages/index.astro` (drip-feed stance, 2026-04-21; count was 2 until at least 2026-08-26, and this row said so until 2026-08-27). Bump the constant to re-expose more. Order as of 2026-08-27: **DSP Workshop, Augur, ese-bot**; `agent-ready-papers` was demoted out of view on 2026-08-27 to make room and remains in the array. <!-- verify: sh scripts/verify-state.sh projects visible_projects -->
+- **9 projects** defined in the `projects` array, **first 4 publicly visible** via `VISIBLE_PROJECT_COUNT = 4` in `src/pages/index.astro` (drip-feed stance, 2026-04-21; count was 2 until at least 2026-08-26, and this row said so until 2026-08-27). Bump the constant to re-expose more. Order as of 2026-10-09: **DSP Workshop, Augur, ese-bot, ovr.news** (ovr.news exposed 2026-10-09, card corrected the same day); `agent-ready-papers` was demoted out of view on 2026-08-27 to make room and remains in the array. <!-- verify: sh scripts/verify-state.sh projects visible_projects -->
 - **Hero section commented out** (JSX `{/* ... */}` wrapper). Source intact for restore.
 - **New /writing section** (2026-04-21): index at `src/pages/writing/index.astro`, per-article pages, shared metadata in `src/data/writing.ts`. First article: "A small GDPR-safe chatbot" at `/writing/ese-bot-eu-sovereign-rag/`.
 - Homepage Writing section shows the 2 most recent articles between Projects and Background.
